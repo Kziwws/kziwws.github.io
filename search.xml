@@ -191,6 +191,19 @@
       </tags>
   </entry>
   <entry>
+    <title>《往昔》</title>
+    <url>/2020/03/22/poetry20200322030122/</url>
+    <content><![CDATA[<p>草莺绕飞堤，独自殇离凄。<br>落松曾规啼，已成旧时昔。</p>
+<p>by:霜</p>
+]]></content>
+      <categories>
+        <category>诗</category>
+      </categories>
+      <tags>
+        <tag>poetry</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>《醉无可托》</title>
     <url>/2020/03/22/poetry20200323160213/</url>
     <content><![CDATA[<p>斜阳西照已迢迢，氤氲无限渺。晦桥柔行太匆匆，人流散尽东风中。<br>欲解灯前念谁何，一杯月可托。问君生畏何事多？最难异乡醉墙说。</p>
@@ -199,19 +212,6 @@
       <categories>
         <category>诗</category>
         <category>诗词</category>
-      </categories>
-      <tags>
-        <tag>poetry</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《往昔》</title>
-    <url>/2020/03/22/poetry20200322030122/</url>
-    <content><![CDATA[<p>草莺绕飞堤，独自殇离凄。<br>落松曾规啼，已成旧时昔。</p>
-<p>by:霜</p>
-]]></content>
-      <categories>
-        <category>诗</category>
       </categories>
       <tags>
         <tag>poetry</tag>
@@ -560,7 +560,7 @@
   <entry>
     <title>使用gitee码云搭建Hexo博客</title>
     <url>/2019/06/21/technology20190621061319/</url>
-    <content><![CDATA[<p>使用gitee搭建的博客 <a href="https://kziwws.gitee.io/">https://kziwws.gitee.io</a>。 这儿前面介绍过使用 github 搭建，但是github访问太慢了，每次感觉都要很久才会加载出来。码云搭建的快很多。</p>
+    <content><![CDATA[<p>使用gitee搭建的博客 <a href="https://kziwws.gitee.io/" target="_blank" rel="noopener">https://kziwws.gitee.io</a>。 这儿前面介绍过使用 github 搭建，但是github访问太慢了，每次感觉都要很久才会加载出来。码云搭建的快很多。</p>
 <h5 id="需要安装"><a href="#需要安装" class="headerlink" title="需要安装"></a>需要安装</h5><ul>
 <li>Git</li>
 <li>NodeJs</li>
@@ -597,7 +597,7 @@
 
 </li>
 </ol>
-<p>上面是官网帮助文档里的。这儿你可能琢磨半天不需要二级目录，像我这个一样 <a href="https://kziwws.gitee.io">https://kziwws.gitee.io</a> 你先去建立仓库的名字就是用户名字这样才可以，非这个名字的有二级目录。</p>
+<p>上面是官网帮助文档里的。这儿你可能琢磨半天不需要二级目录，像我这个一样 <a href="https://kziwws.gitee.io" target="_blank" rel="noopener">https://kziwws.gitee.io</a> 你先去建立仓库的名字就是用户名字这样才可以，非这个名字的有二级目录。</p>
 <p>建立的仓库过后，然后去码云个人用户信息里 设置里面注意这儿不是这儿<img src="https://s1.ax1x.com/2020/06/17/NE6stH.png" alt=""></p>
 <p>如果下图是这个位置</p>
 <p><img src="https://s1.ax1x.com/2020/06/17/NEcFjx.png" alt=""></p>
@@ -618,7 +618,7 @@
 <li>ERROR Deployer not found: git<br> 在终端中输入 <code>npm install hexo-deployer-git --save</code>安装 hexo-deployer-git插件</li>
 </ul>
 <h5 id="开启码云的pages功能"><a href="#开启码云的pages功能" class="headerlink" title="开启码云的pages功能"></a>开启码云的pages功能</h5><p><img src="https://s1.ax1x.com/2020/06/17/NE5fud.png" alt=""></p>
-<p>打开https 然后浏览器里访问 上面的网站地址就可以了。这儿配置hexo 文件这些就不说了，前面有一篇文章已经说过了。<a href="https://kziwws.gitee.io/2018/03/18/technology20180318043111/">分类写文章和基础配置介绍</a>，有一个感觉挺好用的在线Markdown编辑器 <a href="https://maxiang.io/" target="_blank" rel="noopener">https://maxiang.io/</a> 马克飞象挺好用。</p>
+<p>打开https 然后浏览器里访问 上面的网站地址就可以了。这儿配置hexo 文件这些就不说了，前面有一篇文章已经说过了。<a href="https://kziwws.gitee.io/2018/03/18/technology20180318043111/" target="_blank" rel="noopener">分类写文章和基础配置介绍</a>，有一个感觉挺好用的在线Markdown编辑器 <a href="https://maxiang.io/" target="_blank" rel="noopener">https://maxiang.io/</a> 马克飞象挺好用。</p>
 ]]></content>
       <categories>
         <category>hexo</category>
