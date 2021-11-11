@@ -1,22 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>《挽秋》</title>
-    <url>/2021/08/21/poetry20210821%20102025/</url>
-    <content><![CDATA[<p>《挽秋》<br>庭前落尽梧桐，红尘尽染萧风。<br>黄粱舞色一梦，承旧已逝春秋。<br>贫富孰与睢鸠，黄泉背赴一宿。<br>叶落参差为何？黄昏秃柳间驹。<br>劳陇头五六清，道尽天下三分。<br>日暮剪烛皈客，人言西沉可多。</p>
-<p>by:霜</p>
-]]></content>
-      <categories>
-        <category>诗</category>
-        <category>诗词</category>
-      </categories>
-      <tags>
-        <tag>poetry</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>flutter基础学习</title>
-    <url>/2020/10/10/technology20201010110234/</url>
+    <url>/2021/10/10/technology20211010110234/</url>
     <content><![CDATA[<p>最近学习了一周flutter,做了一下笔记，之前看到一个推荐入门的视频，初步看了一下很不错，推荐给大家。<strong><strong><a href="https://www.bilibili.com/video/BV1kh411a7Lr?p=2" target="_blank" rel="noopener">全新升级小码哥Flutter实战教学完整版附资料</a></strong></strong> ，如果有Android和IOS原生开发经验的感觉学起来是相对好理解一点。最后面也分享一下写的一个页面代码，由于最近一周公司内部的业务笔记多相对较忙，然后断断续续的学。</p>
 <p><font color="#B22222">1、</font>stl 回车快捷键创建 <code>StatelessWidget</code>。</p>
 <p><font color="#B22222">2、</font>如果像<code>IOS UITableViewCell</code>中子视图设置间距的话，可以使用<code>SizeBox(height: 8)</code>,就是设置上下之前的控件距离8个像素，<br>有点类似<code>IOS ToolBar</code>中添加多个item时的 <code>UIBarButtonSystemItemFlexibleSpace.</code></p>
@@ -58,6 +44,20 @@
       <tags>
         <tag>technology</tag>
         <tag>flutter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《挽秋》</title>
+    <url>/2021/08/21/poetry20210821%20102025/</url>
+    <content><![CDATA[<p>《挽秋》<br>庭前落尽梧桐，红尘尽染萧风。<br>黄粱舞色一梦，承旧已逝春秋。<br>贫富孰与睢鸠，黄泉背赴一宿。<br>叶落参差为何？黄昏秃柳间驹。<br>劳陇头五六清，道尽天下三分。<br>日暮剪烛皈客，人言西沉可多。</p>
+<p>by:霜</p>
+]]></content>
+      <categories>
+        <category>诗</category>
+        <category>诗词</category>
+      </categories>
+      <tags>
+        <tag>poetry</tag>
       </tags>
   </entry>
   <entry>
