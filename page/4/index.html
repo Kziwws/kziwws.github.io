@@ -112,6 +112,88 @@ var _hmt = _hmt || [];
     <div class="outer">
       <section id="main">
   
+    <article id="post-technology20190801101045" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/01/technology20190801101045/" class="article-date">
+  <time datetime="2019-08-01T02:10:45.000Z" itemprop="datePublished">2019-08-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cocosCreator/">cocosCreator</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/01/technology20190801101045/">CocosCreator中XMLHttpReques 网络数据请求</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>XMLHttpRequest 用于短连接, Web 平台上最广泛使用的标准网络接口，在IOS中 类似 AFNetworking 做IOS的应该知道。标准文档请参考 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest" target="_blank" rel="noopener">MDN 中文文档</a>。</p>
+<p><strong>初始化</strong></p>
+<ul>
+<li>可以直接使用 <code>new XMLHttpRequest()</code> 来创建一个连接对象。</li>
+<li><code>cc.loader.getXMLHttpRequest()</code> 来创建。</li>
+</ul>
+<p><strong>使用</strong><br>提交一个表单，它里面有两个字段，假如为 phone = 10086888888 和 password=1234`x。参数有特殊符号转换为ASCII HEX值。如果你用 POST 方法，那么服务器将会接收到一个字符串类似于下面三种情况之一，其中的区别依赖于你采用何种编码类型:</p>
+<ul>
+<li><p>POST ,Content-Type 为  application/x-www-form-urlencoded 编码类型</p>
+<blockquote>
+<p> Content-Type: application/x-www-form-urlencoded<br>phone=10086888888&amp;password=1234%60x</p>
+</blockquote>
+</li>
+<li><p>POST ,Content-Type 为  text/plain 编码类型</p>
+<blockquote>
+<p>Content-Type: text/plain<br>phone=10086888888<br>password=1234%60x</p>
+</blockquote>
+</li>
+<li><p>POST ,Content-Type 为  multipart/form-data 编码类型<br>multipart/form-data不会对参数编码，使用的boundary(分割线)，相当于&amp;，<br>boundary的值是——–314911788813839</p>
+<blockquote>
+<p>Content-Type: multipart/form-data;<br>——–314911788813839<br>Content-Disposition: form-data; name=”phone”<br>10086888888&amp;<br>——–314911788813839<br>Content-Disposition: form-data; name=”password”<br>1234%60x<br>——–314911788813839</p>
+</blockquote>
+</li>
+<li><p>使用 GET 方法 请求Content-Type 属性会被忽略，像下面这样的字符串将被简单的附加到 URL</p>
+<blockquote>
+<p>?phone=10086888888&amp;password=1234%60x</p>
+</blockquote>
+</li>
+</ul>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest" target="_blank" rel="noopener">XMLHttpRequest的基础使用在MDN web docs参考</a>,<font color="red"></p>
+<p>直接上代码。如果有问题可以下面评论留言交流。</font></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/08/01/technology20190801101045/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2019/08/01/technology20190801101045/" data-id="ckvusbra80053wwqgc7x6f4n2" class="article-share-link" data-share="baidu" data-title="CocosCreator中XMLHttpReques 网络数据请求">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2019/08/01/technology20190801101045/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
     <article id="post-poetry20190722034245" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/07/22/poetry20190722034245/" class="article-date">
@@ -146,7 +228,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2019/07/22/poetry20190722034245/" data-id="ckvurwy970013p2qgg53s3ud1" class="article-share-link" data-share="baidu" data-title="《半承言》">分享到</a>
+        <a data-url="https://kziwws.github.io/2019/07/22/poetry20190722034245/" data-id="ckvusbr8x0017wwqge3axhz9m" class="article-share-link" data-share="baidu" data-title="《半承言》">分享到</a>
       
 
     
@@ -195,7 +277,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2019/07/07/poetry20190707032356/" data-id="ckvurwy980016p2qgc4zqf519" class="article-share-link" data-share="baidu" data-title="《赤雨》">分享到</a>
+        <a data-url="https://kziwws.github.io/2019/07/07/poetry20190707032356/" data-id="ckvusbr8w0014wwqg5oxy0uw1" class="article-share-link" data-share="baidu" data-title="《赤雨》">分享到</a>
       
 
     
@@ -244,7 +326,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2019/06/24/poetry20190624025820/" data-id="ckvurwy95000zp2qg3cbe0nt1" class="article-share-link" data-share="baidu" data-title="《半生客》">分享到</a>
+        <a data-url="https://kziwws.github.io/2019/06/24/poetry20190624025820/" data-id="ckvusbr8v0010wwqgfryc3t08" class="article-share-link" data-share="baidu" data-title="《半生客》">分享到</a>
       
 
     
@@ -306,7 +388,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2019/06/21/technology20190621061319/" data-id="ckvurwyaq004qp2qg923zgiic" class="article-share-link" data-share="baidu" data-title="使用gitee码云搭建Hexo博客">分享到</a>
+        <a data-url="https://kziwws.github.io/2019/06/21/technology20190621061319/" data-id="ckvusbra60050wwqg74rqdeqy" class="article-share-link" data-share="baidu" data-title="使用gitee码云搭建Hexo博客">分享到</a>
       
 
     
@@ -355,7 +437,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2019/05/12/poetry20190512025624/" data-id="ckvurwy92000sp2qg5t3abnn4" class="article-share-link" data-share="baidu" data-title="《寄俗》">分享到</a>
+        <a data-url="https://kziwws.github.io/2019/05/12/poetry20190512025624/" data-id="ckvusbr8u000xwwqg4eyp2fxh" class="article-share-link" data-share="baidu" data-title="《寄俗》">分享到</a>
       
 
     
@@ -429,7 +511,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2019/05/04/technology20190504061234/" data-id="ckvurwyas004up2qgf0p32o74" class="article-share-link" data-share="baidu" data-title="CocosCreator打包原生Android项目接入微信登陆">分享到</a>
+        <a data-url="https://kziwws.github.io/2019/05/04/technology20190504061234/" data-id="ckvusbra4004wwwqg6eph4hc9" class="article-share-link" data-share="baidu" data-title="CocosCreator打包原生Android项目接入微信登陆">分享到</a>
       
 
     
@@ -478,7 +560,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2019/03/17/poetry20190317032120/" data-id="ckvurwy93000wp2qgbf0927zg" class="article-share-link" data-share="baidu" data-title="《白首辞》">分享到</a>
+        <a data-url="https://kziwws.github.io/2019/03/17/poetry20190317032120/" data-id="ckvusbr8t000twwqggve54sjx" class="article-share-link" data-share="baidu" data-title="《白首辞》">分享到</a>
       
 
     
@@ -773,7 +855,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2019/03/05/technology20190305060134/" data-id="ckvurwyal004jp2qg76ia0rhs" class="article-share-link" data-share="baidu" data-title="正则表达式">分享到</a>
+        <a data-url="https://kziwws.github.io/2019/03/05/technology20190305060134/" data-id="ckvusbra3004uwwqgh9kt9b4f" class="article-share-link" data-share="baidu" data-title="正则表达式">分享到</a>
       
 
     
@@ -822,7 +904,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2019/01/22/poetry20190122003921/" data-id="ckvurwy8z000np2qgecwwg4m9" class="article-share-link" data-share="baidu" data-title="《故乡桃花》">分享到</a>
+        <a data-url="https://kziwws.github.io/2019/01/22/poetry20190122003921/" data-id="ckvusbr8s000rwwqg5kkl3pya" class="article-share-link" data-share="baidu" data-title="《故乡桃花》">分享到</a>
       
 
     
@@ -838,101 +920,10 @@ var _hmt = _hmt || [];
 </article>
 
   
-    <article id="post-technology20190112101223" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/12/technology20190112101223/" class="article-date">
-  <time datetime="2019-01-12T02:12:23.000Z" itemprop="datePublished">2019-01-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/python/">python</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/12/technology20190112101223/">Python基础语法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><font color="#4183C4">1、</font>以单下划线开头 _foo 的代表不能直接访问的类属性，需通过类提供的接口进行访问，不能用 from xxx import * 而导入。</p>
-<p><font color="#4183C4">2、</font>以双下划线开头的_<em>foo 代表类的私有成员，以双下划线开头和结尾的_<em>foo</em></em> 代表 Python 里特殊方法专用的标识，如_<em>init_</em>() 代表类的构造函数。</p>
-<p><font color="#4183C4">3、</font>Python 的关键字只包含小写字母，and、exec、not、assert、finally、or、break、for    pass、class、from、print、continue、global    、raise、def、if、return、del、import、try、elif、in、while、else、is、with、except、lambda、yield。</p>
-<p><font color="#4183C4">4、</font>缩进的空白数量是可变的，但是所有代码块语句必须包含相同的缩进空白数量，这个必须严格执行。</p>
-<p><font color="#4183C4">5、</font>Python语句中一般以新行作为语句的结束符，一行可以执行多个语句用;分开，可以使用斜杠\将一行的语句分为多行显示。</p>
-<p><font color="#4183C4">6、</font>使用引号( ‘ )、双引号( “ )、三引号( ‘’’ 或 “”” ) 来表示字符串，三引号可以由多行组成，编写多行文本的快捷语法，常用于文档字符串，在文件的特定地点，被当做注释。</p>
-<p><font color="#4183C4">7、</font>python中单行注释采用 # 开头，多行注释使用三个单引号(‘’’)或三个双引号(“””)。</p>
-<p><font color="#4183C4">8、</font>print 默认输出是换行的，如果要实现不换行需要在变量末尾加上逗号 ,。</p>
-<p><font color="#4183C4">9、</font>Python 中的变量赋值不需要类型声明，每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建。</p>
-<p><font color="#4183C4">10、</font>标准数据类型，Numbers（数字）、String（字符串）、List（列表）、Tuple（元组）、Dictionary（字典）。</p>
-<p><font color="#4183C4">11、</font>Python支持四种不同的数字类型，int（有符号整型）、long（长整型[也可以代表八进制和十六进制])、float（浮点型）、complex（复数）</p>
-<p><font color="#4183C4">12、</font>Python 还支持复数，复数由实数部分和虚数部分构成，可以用 a + bj,或者 complex(a,b) 表示， 复数的实部 a 和虚部 b 都是浮点型。 </p>
-<p><font color="#4183C4">13、</font>字符串截取 [头下标:尾下标] 获取的子字符串包含头下标的字符，但不包含尾下标的字符。例如 s = ‘abcdef’ s[1:5] 输出’bcde’，s[2:]，输出从第三个字符开始的字符串 s[1] 的值 b ，s[5] 的值 f。</p>
-<p><font color="#4183C4">14、</font>列表相当于IOS中的数组。截取可以接收第三个参数，参数作用是截取的步长，以下实例在索引 1 到索引 4 的位置并设置为步长为 2（间隔一个位置）来截取字符串，如：ss = [‘c’,’h’,’e’,’c’,’k’,’i’,’o’] ss[1:4:2] 结果为[‘h’,’c’]。</p>
-<p><font color="#4183C4">15、</font>加号（+）是字符串连接运算符 str + “TEST” ，星号（*）是重复操作 s * 2 输出字符串两次。</p>
-<p><font color="#4183C4">16、</font>元组是另一个数据类型，类似于 List（列表）。元组用 () 标识。内部元素用逗号隔开。但是元组不能二次赋值，相当于只读列表。tuple = ( ‘runoob’, 786 , 2.23, ‘john’, 70.2 ) list = [ ‘runoob’, 786 , 2.23, ‘john’, 70.2 ] tuple[2] = 1000 元组中是非法应用 list[2] = 1000 列表中是合法应用</p>
-<p><font color="#4183C4">17、</font>pythan中的字典当中的元素是通过键来存取的，而不是通过偏移存取。字典用”{ }”标识。字典由索引(key)和它对应的值value组成。dict.keys()取出所有键 dict.values()取出所有值 和IOS基本无异。</p>
-<p><font color="#4183C4">18、</font>数据类型转换 float(x) 将x转换到一个浮点数 int(x [,base])将x转换为一个整数 str(x) 将对象 x 转换为字符串 set(s) 转换为可变集合 dict(d) 创建一个字典。d 必须是一个序列 (key,value)元组。</p>
-<p><font color="#4183C4">19、</font>算术运算符，这儿介绍一个// 取整除 - 返回商的整数部分（向下取整）9//2 4 和js基本无异。</p>
-<p><font color="#4183C4">20、</font>Python身份运算符 is 是判断两个标识符是不是引用自一个对象 x is y,  id() 函数用于获取对象内存地址 类似 id(x) == id(y) , 如果引用的是同一个对象则返回 True，否则返回 False is not 是判断两个标识符是不是引用自不同对象</p>
-<p><font color="#4183C4">21、</font>is 与 == 区别 is 用于判断两个变量引用对象是否为同一个(同一块内存空间)， == 用于判断引用变量的值是否相等。</p>
-<p><font color="#4183C4">22、</font>简单的语句，可以在同一行的位置上使用if条件判断语句，如：var = 100 ;if ( var  == 100 ) : print “变量 var 的值为100” .</p>
-<p><font color="#4183C4">23、</font>Python for 循环语句 for iterating_var in sequence: statements(s) for letter in ‘Python’:     # 第一个实例  print ‘当前字母 :’, letter </p>
-<p><font color="#4183C4">24、 </font>使用 class 语句来创建一个新类，class 之后为类的名称并以冒号结尾:<br>class Employee:<br>   ‘所有员工的基类’<br>   empCount = 0</p>
-<p>   def <strong>init</strong>(self, name, salary):<br>      self.name = name<br>      self.salary = salary<br>      Employee.empCount += 1</p>
-<p>   def displayCount(self):<br>     print “Total Employee %d” % Employee.empCount</p>
-<p>   def displayEmployee(self):<br>      print “Name : “, self.name,  “, Salary: “, self.salary</p>
-<p>empCount 变量是一个类变量，它的值将在这个类的所有实例之间共享。你可以在内部类或外部类使用 Employee.empCount 访问。第一种方法<strong>init</strong>()方法是一种特殊的方法，被称为类的构造函数或初始化方法，当创建了这个类的实例时就会调用该方法，self 代表类的实例，self 在定义类的方法时是必须有的，虽然在调用时不必传入相应的参数。</p>
-<p><font color="#4183C4">25、</font>self代表类的实例，而非类 类的方法与普通的函数只有一个特别的区别——它们必须有一个额外的第一个参数名称, 按照惯例它的名称是 self。<br>class Test:<br>    def prt(self):<br>        print(self)<br>        print(self.<strong>class</strong>)</p>
-<p>t = Test()<br>t.prt()</p>
-<p><font color="#4183C4">26、</font>使用点号 . 来访问对象的属性。使用如下类的名称访问类变量:</p>
-<p>emp1.displayEmployee()<br>emp2.displayEmployee()<br>print “Total Employee %d” % Employee.empCount</p>
-<p>也可以删除 del emp1.age  # 删除 ‘age’ 属性</p>
-<p>hasattr(emp1, ‘age’)    # 如果存在 ‘age’ 属性返回 True。<br>getattr(emp1, ‘age’)    # 返回 ‘age’ 属性的值<br>setattr(emp1, ‘age’, 8) # 添加属性 ‘age’ 值为 8<br>delattr(emp1, ‘age’)    # 删除属性 ‘age’</p>
-<p><font color="#4183C4">27、</font>pythan可以多继承，继承过后父类方法的功能不能满足你的需求，子类重写你父类的方法。你可以使用issubclass()或者isinstance()方法来检测。issubclass() - 布尔函数判断一个类是另一个类的子类或者子孙类，语法：issubclass(sub,sup)， isinstance(obj, Class) 布尔函数如果obj是Class类的实例对象或者是一个Class子类的实例对象则返回true。</p>
-<p><font color="#4183C4">28、</font>Python同样支持运算符重载，实例如下：</p>
-<p>class Vector:<br>   def _<em>init_</em>(self, a, b):<br>      self.a = a<br>      self.b = b</p>
-<p>   def _<em>str_</em>(self):<br>      return ‘Vector (%d, %d)’ % (self.a, self.b)</p>
-<p>   def_<em>add_</em>(self,other):<br>      return Vector(self.a + other.a, self.b + other.b)</p>
-<p>v1 = Vector(2,10)<br>v2 = Vector(5,-2)<br>print v1 + v2<br>结果：Vector(7,8)</p>
-<p><font color="#4183C4">29、</font>类的私有属性__private_attrs：两个下划线开头，声明该属性为私有，不能在类的外部被使用或直接访问。在类内部的方法中使用时 self.__private_attrs，在类的内部，使用 def 关键字可以为类定义一个方法，与一般函数定义不同，类方法必须包含参数 self,且为第一个参数。</p>
-<p><font color="#4183C4">30、</font>单下划线、双下划线、头尾双下划线说明：<br>_<em>foo_</em>: 定义的是特殊方法，一般是系统定义名字 ，类似_<em>init_</em>() 之类的。</p>
-<p> _foo: 以单下划线开头的表示的是 protected 类型的变量，即保护类型只能允许其本身与子类进行访问，不能用于 from module import *</p>
-<p>__foo: 双下划线的表示的是私有类型(private)的变量, 只能是允许这个类本身进行访问了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://kziwws.github.io/2019/01/12/technology20190112101223/" data-id="ckvurwyak004gp2qg6lom888a" class="article-share-link" data-share="baidu" data-title="Python基础语法">分享到</a>
-      
-
-    
-  <a href="https://kziwws.github.io/2019/01/12/technology20190112101223/#valine_thread" class="article-comment-link">评论</a>
-
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/3/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">下一页</a>
+    <a class="extend prev" rel="prev" href="/page/3/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">下一页</a>
   </nav>
 </section>
       
@@ -959,7 +950,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cocoapods/">cocoapods</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocosCreator/">cocosCreator</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/regexp/">regexp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/">诗</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%BD%AC%E5%BD%95/">转录</a><span class="category-list-count">1</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cocoapods/">cocoapods</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocosCreator/">cocosCreator</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/regexp/">regexp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/">诗</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%BD%AC%E5%BD%95/">转录</a><span class="category-list-count">1</span></li></ul></li></ul>
     </div>
   </div>
 
@@ -968,7 +959,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoapods/" rel="tag">cocoapods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/" rel="tag">flutter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/" rel="tag">ios</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/poetry/" rel="tag">poetry</a><span class="tag-list-count">44</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regexp/" rel="tag">regexp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology/" rel="tag">technology</a><span class="tag-list-count">16</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoapods/" rel="tag">cocoapods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/" rel="tag">flutter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/" rel="tag">ios</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/poetry/" rel="tag">poetry</a><span class="tag-list-count">45</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regexp/" rel="tag">regexp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology/" rel="tag">technology</a><span class="tag-list-count">16</span></li></ul>
     </div>
   </div>
 
@@ -986,8 +977,8 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <!--<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">5</span></li></ul> -->
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">2020年 10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">2020年 05月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">2020年 04月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">2020年 03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">2020年 02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">2020年 01月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019年 12月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">2019年 10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">2019年 09月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">2019年 08月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">2019年 07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">2019年 06月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">2019年 05月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">2019年 03月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">2019年 01月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年 12月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">2018年 11月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">2018年 08月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">2018年 07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">2018年 06月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">2018年 03月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">2017年 06月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年 12月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年 02月</a><span class="archive-list-count">5</span></li></ul>
+      <!--<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">5</span></li></ul> -->
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">2021年 05月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">2020年 10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">2020年 05月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">2020年 04月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">2020年 03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">2020年 02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">2020年 01月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019年 12月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">2019年 10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">2019年 09月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">2019年 08月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">2019年 07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">2019年 06月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">2019年 05月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">2019年 03月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">2019年 01月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年 12月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">2018年 11月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">2018年 08月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">2018年 07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">2018年 06月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">2018年 03月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">2017年 06月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年 12月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年 02月</a><span class="archive-list-count">5</span></li></ul>
     </div>
   </div>
 
@@ -997,6 +988,10 @@ var _hmt = _hmt || [];
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/05/10/poetry20210510%20102122/">《挽秋》</a>
+          </li>
         
           <li>
             <a href="/2020/10/10/technology20201010110234/">flutter基础学习</a>
@@ -1012,10 +1007,6 @@ var _hmt = _hmt || [];
         
           <li>
             <a href="/2020/05/10/poetry20200510100216/">《难》</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/30/poetry20200430120106/">《心徜徉》</a>
           </li>
         
       </ul>

@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>《挽秋》</title>
+    <url>/2021/05/10/poetry20210510%20102122/</url>
+    <content><![CDATA[<p>《挽秋》<br>庭前落尽梧桐，红尘尽染萧风。<br>黄粱舞色一梦，承旧已逝春秋。<br>贫富孰与睢鸠，黄泉背赴一宿。<br>叶落参差为何？黄昏秃柳间驹。<br>劳陇头五六清，道尽天下三分。<br>日暮剪烛皈客，人言西沉可多。</p>
+<p>by:霜</p>
+]]></content>
+      <categories>
+        <category>诗</category>
+        <category>诗词</category>
+      </categories>
+      <tags>
+        <tag>poetry</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>flutter基础学习</title>
     <url>/2020/10/10/technology20201010110234/</url>
     <content><![CDATA[<p>最近学习了一周flutter,做了一下笔记，之前看到一个推荐入门的视频，初步看了一下很不错，推荐给大家。<strong><strong><a href="https://www.bilibili.com/video/BV1kh411a7Lr?p=2" target="_blank" rel="noopener">全新升级小码哥Flutter实战教学完整版附资料</a></strong></strong> ，如果有Android和IOS原生开发经验的感觉学起来是相对好理解一点。最后面也分享一下写的一个页面代码，由于最近一周公司内部的业务笔记多相对较忙，然后断断续续的学。</p>
-<video id="video" controls="" preload="none" width=100% height= 400 poster="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimages1.tqwba.com%2F20200505%2Favrugle2lsz.png&refer=http%3A%2F%2Fimages1.tqwba.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1638611693&t=84235726bf9fcf5abbf2afa31c709e04.png">
-<source id="mp4" src="https://www.bilibili.com/video/BV1kh411a7Lr?p=6" type="video/mp4">
-</video>
-<font color="#B22222">1、</font>stl 回车快捷键创建 ```StatelessWidget```。
-
+<p><font color="#B22222">1、</font>stl 回车快捷键创建 <code>StatelessWidget</code>。</p>
 <p><font color="#B22222">2、</font>如果像<code>IOS UITableViewCell</code>中子视图设置间距的话，可以使用<code>SizeBox(height: 8)</code>,就是设置上下之前的控件距离8个像素，<br>有点类似<code>IOS ToolBar</code>中添加多个item时的 <code>UIBarButtonSystemItemFlexibleSpace.</code></p>
 <p><font color="#B22222">3、</font>去掉APP展示<code>debug LOGO</code>时在启动 MaterialAPP内 使用<code>debugShowCheckedModeBanner: false</code>。</p>
 <p><font color="#B22222">4、</font> 关于widget 有状态的Widget:StatefulWidget在运行过程中有一些状态data数据需要改变，无状态的widget:StatelessWidget内容是确定的没有状态data数据的改变。</p>
@@ -34,6 +44,7 @@
 <p><font color="#B22222">23、</font>加载本地图片<code>Image(image: AssetImage(&quot;&quot;))</code>，这个里面的图片路径有3个步骤，1、在项目中创建一个文件夹，存储图片 2、在pubspec.yaml进行配置 3、使用图片 如pubspec里的配置 <code>assets: - assets/images/ 这儿后面的可以不写图片名字</code>，就加载所有这个images目录的图片资源，然后在使用的时候<code>Image(image: AssetImage(&quot;assets/images/图片名字.png&quot;))</code>.</p>
 <p><font color="#B22222">24、</font>FlatButton按钮如果再Column中会自动展示 48px间距，如果不足48px会自动填充48 padded，如果想去掉使用，<code>FlatButton(Flatbutton(color: Colors.red,materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,child: Text(&quot;Flot Button&quot;),textColor: Colors.white,onPressed:(){}))</code>.</p>
 <p><font color="#B22222">25、</font>将StatelessWidget转 StatefulWidget 鼠标选中需要转换的类名,或光标放到类名之间 option + enter，抽取代码为单独的Widget 有时候代码嵌套太多,不方便阅读,抽取Widget为一个单独的类,提高代码的阅读性 鼠标选中需要转换的类名,或光标放到类名之间<code>command  + option + W</code>。</p>
+<a id="more"></a>
 <p><font color="#B22222">26、</font>初始化函数 <code>Person(this.name,{int age}):this.age = age ?? 10{}</code>。</p>
 <p><font color="#B22222">27、</font><code>decoration = decoration ?? (color != null ? BoxDecorayion(color: color):null)</code>就是一个赋值语句，意思就是decoration不为空就用这个值，否则就用后面的值。</p>
 <p><strong>一个注册页面</strong></p>
