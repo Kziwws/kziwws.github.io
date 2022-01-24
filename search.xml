@@ -11,17 +11,17 @@
 <li><a href="#certificate_install">安装Mac证书 浏览器请求抓包</a></li>
 <li><a href="#client_install">移动客户端请求抓包</a></li>
 </ul>
-<p><strong>*<a name='certificate_install'><font color="black">一、安装Mac证书</font></a>*</strong></p>
+<p><strong><a name='certificate_install'><font color="black">一、安装Mac证书</font></a></strong></p>
 <p><code>Charles主界面</code> -&gt;<code>Help</code> -&gt; <code>SSL Proxying</code> -&gt;<code>Install Charles Root Certificate</code> </p>
 <img src="https://upload-images.jianshu.io/upload_images/2116934-4bf86eb04006e78e.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp" style="zoom:80%;" />
 
 <p>然后在钥匙串找到 Charles Root Certificate 证书，我这边显示Charles Proxy CA ，然后系统默认是不信任Charles的证书的，此时<code>右键证书</code>-&gt;<code>显示简介</code> -&gt; <code>信任</code>中<code>使用此证书时</code>，把<code>使用系统默认</code>改为<code>始终信任</code></p>
-<p><strong>*<a name='client_install'><font color="black">二、安装客户端证书</font></a>*</strong></p>
+<p><strong><a name='client_install'><font color="black">二、安装客户端证书</font></a></strong></p>
 <ul>
 <li>设置客户端网络ip地址</li>
 </ul>
 <p><code>Charles主界面</code> -&gt;<code>Help</code> -&gt; <code>SSL Proxying</code> -&gt;<code>Install Charles Root Certificate Device or Remote Browser</code></p>
-<p><a href="https://imgtu.com/i/7oTarj" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/01/24/7oTarj.png" alt="7oTarj.png"></a></p>
+<p><a href="https://imgtu.com/i/7oTarj" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/01/24/7oTarj.png" alt=""></a></p>
 <p>只要手机和电脑链接的同一个网络就行，然后在 <code>设置</code> -&gt; <code>无线局域网</code> -&gt; <code>当前连接的无线</code> -&gt; <code>配置代理</code> –&gt; <code>手动</code> –&gt; 在<code>服务器</code>中输入<code>上面图片展示的IP地址</code> –&gt; <code>端口</code>添加<code>8888</code> -&gt; 点击右上角<code>存储</code>按钮。</p>
 <p>备注: 如何有在Charles设置中修改过这个端口号，则上面这个端口号填写修改过后的没有修改过直接服务器ip和端口号填写你自己电脑点开上图上面的ip和端口。</p>
 <p>也可以通过 <code>cat /etc/resolv.conf</code> 指令来查看ip 地址</p>
@@ -38,14 +38,14 @@
 </ul>
 <ul>
 <li><p>安装手机端的证书<br>1、然后点击<code>设置</code> -&gt; <code>通用</code> -&gt; <code>描述文件</code> -&gt;<code>选中 Charles Proxy SSL Proxying</code>按照要求进行安装就可以了。</p>
-<p>2、然后信任证书，点击<code>设置</code> -&gt; <code>关于</code> -&gt; <code>证书信任设置</code> 在针对根证书启用完全信任勾上，Charles proxy SSL Proxying。<br><a href="https://imgtu.com/i/7T9PUS" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/01/24/7T9PUS.png" alt="7T9PUS.png"></a></p>
+<p>2、然后信任证书，点击<code>设置</code> -&gt; <code>关于</code> -&gt; <code>证书信任设置</code> 在针对根证书启用完全信任勾上，Charles proxy SSL Proxying。<br><a href="https://imgtu.com/i/7T9PUS" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/01/24/7T9PUS.png" alt=""></a></p>
 </li>
 </ul>
-<p><strong>*<font color="black">三、Mac端Charles中的设置</font>*</strong></p>
-<h5 id="1、以上一系列设置过后，证书就安装完成。然后就是开始在Mac端-Charles-中开启macOS-Proxy。"><a href="#1、以上一系列设置过后，证书就安装完成。然后就是开始在Mac端-Charles-中开启macOS-Proxy。" class="headerlink" title="1、以上一系列设置过后，证书就安装完成。然后就是开始在Mac端 Charles 中开启macOS Proxy。"></a>1、以上一系列设置过后，证书就安装完成。然后就是开始在Mac端 Charles 中开启macOS Proxy。</h5><p><a href="https://imgtu.com/i/7T96KI" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/01/24/7T96KI.png" alt="7T96KI.png" style="zoom:50%;" /></a></p>
-<h5 id="2、开启-ProxySettings开启-Enable-transparent-http-proxying。"><a href="#2、开启-ProxySettings开启-Enable-transparent-http-proxying。" class="headerlink" title="2、开启 ProxySettings开启 Enable transparent http proxying。"></a>2、开启 <code>ProxySettings</code>开启 Enable transparent http proxying。</h5><p><a href="https://imgtu.com/i/7TCSz9" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/01/24/7TCSz9.png" alt="7TCSz9.png" style="zoom: 50%;" /></a></p>
-<h5 id="3、开启SSL-Proxying-Settings-位置在Proxy-gt-SSL-Proxying-Settings-然后在-Enable-SSL-Proxying-这个一定要勾上-然后在Location-添加-表示全部拦截。到这儿位置就全部设置完毕了。然后开始拦截请求数据吧！"><a href="#3、开启SSL-Proxying-Settings-位置在Proxy-gt-SSL-Proxying-Settings-然后在-Enable-SSL-Proxying-这个一定要勾上-然后在Location-添加-表示全部拦截。到这儿位置就全部设置完毕了。然后开始拦截请求数据吧！" class="headerlink" title="3、开启SSL Proxying Settings,位置在Proxy-&gt;SSL Proxying Settings,然后在 Enable SSL Proxying 这个一定要勾上,然后在Location 添加*:*表示全部拦截。到这儿位置就全部设置完毕了。然后开始拦截请求数据吧！"></a>3、开启SSL Proxying Settings,位置在<code>Proxy</code>-&gt;<code>SSL Proxying Settings</code>,然后在 <font color="red">Enable SSL Proxying</font> 这个一定要勾上,然后在Location 添加*:*表示全部拦截。到这儿位置就全部设置完毕了。然后开始拦截请求数据吧！</h5><p><a href="https://imgtu.com/i/7TCOOI" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/01/24/7TCOOI.png" alt="7TCOOI.png"></a></p>
-<h5 id="最后开始尽情的享受不用找接口然后看到各个接口的数据的快乐吧"><a href="#最后开始尽情的享受不用找接口然后看到各个接口的数据的快乐吧" class="headerlink" title="最后开始尽情的享受不用找接口然后看到各个接口的数据的快乐吧"></a>最后开始尽情的享受不用找接口然后看到各个接口的数据的快乐吧</h5><h5 id="1、如果是哪种客户端加证书请求的APP不可以抓包需要导入Client-Certificaters才可以。"><a href="#1、如果是哪种客户端加证书请求的APP不可以抓包需要导入Client-Certificaters才可以。" class="headerlink" title="1、如果是哪种客户端加证书请求的APP不可以抓包需要导入Client Certificaters才可以。"></a>1、如果是哪种客户端加证书请求的APP不可以抓包需要导入Client Certificaters才可以。</h5><h5 id="2、有些APP是加密了，需要了解解密方式，把抓出来的解密才可以看到数据。"><a href="#2、有些APP是加密了，需要了解解密方式，把抓出来的解密才可以看到数据。" class="headerlink" title="2、有些APP是加密了，需要了解解密方式，把抓出来的解密才可以看到数据。"></a>2、有些APP是加密了，需要了解解密方式，把抓出来的解密才可以看到数据。</h5><p><a href="https://imgtu.com/i/7TieKA" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/01/24/7TieKA.png" alt="7TieKA.png"></a></p>
+<p><strong><font color="black">三、Mac端Charles中的设置</font></strong></p>
+<h5 id="1、以上一系列设置过后，证书就安装完成。然后就是开始在Mac端-Charles-中开启macOS-Proxy。"><a href="#1、以上一系列设置过后，证书就安装完成。然后就是开始在Mac端-Charles-中开启macOS-Proxy。" class="headerlink" title="1、以上一系列设置过后，证书就安装完成。然后就是开始在Mac端 Charles 中开启macOS Proxy。"></a>1、以上一系列设置过后，证书就安装完成。然后就是开始在Mac端 Charles 中开启macOS Proxy。</h5><p><a href="https://imgtu.com/i/7T96KI" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/01/24/7T96KI.png" alt="" style="zoom:50%;" /></a></p>
+<h5 id="2、开启-ProxySettings开启-Enable-transparent-http-proxying。"><a href="#2、开启-ProxySettings开启-Enable-transparent-http-proxying。" class="headerlink" title="2、开启 ProxySettings开启 Enable transparent http proxying。"></a>2、开启 <code>ProxySettings</code>开启 Enable transparent http proxying。</h5><p><a href="https://imgtu.com/i/7TCSz9" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/01/24/7TCSz9.png" alt="" style="zoom: 50%;" /></a></p>
+<h5 id="3、开启SSL-Proxying-Settings-位置在Proxy-gt-SSL-Proxying-Settings-然后在-Enable-SSL-Proxying-这个一定要勾上-然后在Location-添加-表示全部拦截。到这儿位置就全部设置完毕了。然后开始拦截请求数据吧！"><a href="#3、开启SSL-Proxying-Settings-位置在Proxy-gt-SSL-Proxying-Settings-然后在-Enable-SSL-Proxying-这个一定要勾上-然后在Location-添加-表示全部拦截。到这儿位置就全部设置完毕了。然后开始拦截请求数据吧！" class="headerlink" title="3、开启SSL Proxying Settings,位置在Proxy-&gt;SSL Proxying Settings,然后在 Enable SSL Proxying 这个一定要勾上,然后在Location 添加*:*表示全部拦截。到这儿位置就全部设置完毕了。然后开始拦截请求数据吧！"></a>3、开启SSL Proxying Settings,位置在<code>Proxy</code>-&gt;<code>SSL Proxying Settings</code>,然后在 <font color="red">Enable SSL Proxying</font> 这个一定要勾上,然后在Location 添加*:*表示全部拦截。到这儿位置就全部设置完毕了。然后开始拦截请求数据吧！</h5><p><a href="https://imgtu.com/i/7TCOOI" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/01/24/7TCOOI.png" alt=""></a></p>
+<h5 id="最后开始尽情的享受不用找接口然后看到各个接口的数据的快乐吧"><a href="#最后开始尽情的享受不用找接口然后看到各个接口的数据的快乐吧" class="headerlink" title="最后开始尽情的享受不用找接口然后看到各个接口的数据的快乐吧"></a>最后开始尽情的享受不用找接口然后看到各个接口的数据的快乐吧</h5><h5 id="1、如果是客户端加证书请求的APP不可以抓包需要导入Client-Certificaters才可以。"><a href="#1、如果是客户端加证书请求的APP不可以抓包需要导入Client-Certificaters才可以。" class="headerlink" title="1、如果是客户端加证书请求的APP不可以抓包需要导入Client Certificaters才可以。"></a>1、如果是客户端加证书请求的APP不可以抓包需要导入Client Certificaters才可以。</h5><h5 id="2、有些APP是加密了，需要了解解密方式，把抓出来的解密才可以看到数据。"><a href="#2、有些APP是加密了，需要了解解密方式，把抓出来的解密才可以看到数据。" class="headerlink" title="2、有些APP是加密了，需要了解解密方式，把抓出来的解密才可以看到数据。"></a>2、有些APP是加密了，需要了解解密方式，把抓出来的解密才可以看到数据。</h5><p><a href="https://imgtu.com/i/7TieKA" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/01/24/7TieKA.png" alt=""></a></p>
 ]]></content>
       <categories>
         <category>charles</category>
