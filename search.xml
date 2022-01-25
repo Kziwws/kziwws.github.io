@@ -3,7 +3,7 @@
   <entry>
     <title>Mac青花瓷Charles抓包使用详解</title>
     <url>/2021/12/10/technology20211210100122/</url>
-    <content><![CDATA[<p><a href="https://imgtu.com/i/7TVvvD" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/01/24/7TVvvD.png" alt="7TVvvD.png"></a></p>
+    <content><![CDATA[<p><a href="https://imgtu.com/i/7TVvvD" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/01/24/7TVvvD.png" alt=""></a></p>
 <h5 id="Charles青花瓷是一个HTTP代理服务器-HTTP监视器-反转代理服务器，当程序连接Charles的代理访问互联网时，Charles可以监控这个程序发送和接收的所有数据。它允许一个开发者查看所有连接互联网的HTTP通信，这些包括request-response和HTTP-headers-（包含cookies与caching信息）。"><a href="#Charles青花瓷是一个HTTP代理服务器-HTTP监视器-反转代理服务器，当程序连接Charles的代理访问互联网时，Charles可以监控这个程序发送和接收的所有数据。它允许一个开发者查看所有连接互联网的HTTP通信，这些包括request-response和HTTP-headers-（包含cookies与caching信息）。" class="headerlink" title="Charles青花瓷是一个HTTP代理服务器,HTTP监视器,反转代理服务器，当程序连接Charles的代理访问互联网时，Charles可以监控这个程序发送和接收的所有数据。它允许一个开发者查看所有连接互联网的HTTP通信，这些包括request, response和HTTP headers （包含cookies与caching信息）。"></a>Charles青花瓷是一个HTTP代理服务器,HTTP监视器,反转代理服务器，当程序连接Charles的代理访问互联网时，Charles可以监控这个程序发送和接收的所有数据。它允许一个开发者查看所有连接互联网的HTTP通信，这些包括request, response和HTTP headers （包含cookies与caching信息）。</h5><p><font color="#B22222">青花瓷 v 4.6.2</font>下载链接 <a href="https://www.charlesproxy.com/assets/release/4.6.2/charles-proxy-4.6.2.dmg?k=ba07c34dbd" target="_blank" rel="noopener">点击下载 macOS (dmg, 54.3 MB)<br>Compatible with macOS 10.7 - 10.15</a></p>
 <p>青花瓷注册码<br>Registered Name: <code>https://zhile.io</code><br>License Key: <code>48891cf209c6d32bf4</code></p>
 <p>打开charles–help–register charles 输入上面注册码，然后就可以使用了</p>
@@ -13,7 +13,7 @@
 <li><a href="#client_install">移动客户端请求抓包</a></li>
 </ul>
 <h6 id="一、安装Mac证书"><a href="#一、安装Mac证书" class="headerlink" title="一、安装Mac证书"></a><a name='certificate_install'><font color="black">一、安装Mac证书</font></a></h6><p><code>Charles主界面</code> -&gt;<code>Help</code> -&gt; <code>SSL Proxying</code> -&gt;<code>Install Charles Root Certificate</code> </p>
-<p><a href="https://imgtu.com/i/7TZ3GV" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/01/24/7TZ3GV.png" alt="7TZ3GV.png"></a></p>
+<p><a href="https://imgtu.com/i/7TZ3GV" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/01/24/7TZ3GV.png" alt=""></a></p>
 <p>然后在钥匙串找到 Charles Root Certificate 证书，我这边显示Charles Proxy CA ，然后系统默认是不信任Charles的证书的，此时<code>右键证书</code>-&gt;<code>显示简介</code> -&gt; <code>信任</code>中<code>使用此证书时</code>，把<code>使用系统默认</code>改为<code>始终信任</code></p>
 <a id="more"></a>
 <h6 id="二、安装客户端证书"><a href="#二、安装客户端证书" class="headerlink" title="二、安装客户端证书"></a><a name='client_install'><font color="black">二、安装客户端证书</font></a></h6><ul>
