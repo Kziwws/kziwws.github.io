@@ -814,82 +814,81 @@ a.article-title:hover {
 }
 .article-entry a {
   color: #258fb8;
+  text-decoration: none;
+/*text-decoration: underline*/
 }
-#    text-decoration: none {
+.article-entry a:hover {
   text-decoration: underline;
 }
-#    text-decoration: none:hover {
-  text-decoration: underline;
-}
-ul,
-ol,
-dl {
+.article-entry ul,
+.article-entry ol,
+.article-entry dl {
   margin-top: 1.6em;
   margin-bottom: 1.6em;
 }
-img,
-video {
+.article-entry img,
+.article-entry video {
   max-width: 100%;
   height: auto;
   display: block;
   margin: auto;
 }
-iframe {
+.article-entry iframe {
   border: none;
 }
-table {
+.article-entry table {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
 }
-thead {
+.article-entry thead {
   font: 30px;
   background-color: #f8f8f8;
 }
-tbody tr:nth-child(even) {
+.article-entry tbody tr:nth-child(even) {
   background-color: #f8f8f8;
 }
-th {
+.article-entry th {
   font-weight: bold;
 /*border-bottom: 3px solid color-border*/
   border: 1px solid #dfe2e5;
   padding-bottom: 0.5em;
 }
-td {
+.article-entry td {
 /*border-bottom: 1px solid color-border*/
   border: 1px solid #dfe2e5;
   padding: 10px 0;
 }
-blockquote {
+.article-entry blockquote {
   font-family: "Droid Serif", Georgia, Serif;
   margin: 1.6em 0;
   padding: 0 0.8em;
 /*border-left:4px solid #DDD*/
   color: #777;
 }
-blockquote footer {
+.article-entry blockquote footer {
   font-size: 15px;
   margin: 1.6em 0;
   font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-blockquote footer cite:before {
+.article-entry blockquote footer cite:before {
   content: "—";
   padding: 0 0.5em;
 }
-.pullquote {
+.article-entry .pullquote {
   text-align: left;
   width: 45%;
   margin: 0;
 }
-.pullquote.left {
+.article-entry .pullquote.left {
   margin-left: 0.5em;
   margin-right: 1em;
 }
-.pullquote.right {
+.article-entry .pullquote.right {
   margin-right: 0.5em;
   margin-left: 1em;
 }
-.caption {
+.article-entry .caption {
   color: #555;
   display: block;
   font-size: 0.9em;
@@ -897,15 +896,15 @@ blockquote footer cite:before {
   position: relative;
   text-align: center;
 }
-.video-container {
+.article-entry .video-container {
   position: relative;
   padding-top: 56.25%;
   height: 0;
   overflow: hidden;
 }
-.video-container iframe,
-.video-container object,
-.video-container embed {
+.article-entry .video-container iframe,
+.article-entry .video-container object,
+.article-entry .video-container embed {
   position: absolute;
   top: 0;
   left: 0;
@@ -1658,7 +1657,7 @@ pre .javascript .function {
   border-radius: 3px;
 }
 .widget a {
-  color: #555;
+  color: #488db4;
   text-decoration: none;
 }
 .widget a:hover {
@@ -1705,7 +1704,7 @@ pre .javascript .function {
 .tag-list-count,
 .archive-list-count {
   padding-left: 5px;
-  color: #555;
+  color: #488db4;
   font-size: 0.9em;
 }
 .category-list-count:before,
