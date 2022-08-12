@@ -2237,7 +2237,7 @@
 <li>ERROR Deployer not found: git<br> 在终端中输入 <code>npm install hexo-deployer-git --save</code>安装 hexo-deployer-git插件</li>
 </ul>
 <h5 id="开启码云的pages功能"><a href="#开启码云的pages功能" class="headerlink" title="开启码云的pages功能"></a>开启码云的pages功能</h5><p><img src="https://s1.ax1x.com/2020/06/17/NE5fud.png" alt=""></p>
-<p>打开https 然后浏览器里访问 上面的网站地址就可以了。这儿配置hexo 文件这些就不说了，前面有一篇文章已经说过了。<a href="https://kziwws.github.io/2018/03/18/technology20180318043111/">分类写文章和基础配置介绍</a>，有一个感觉挺好用的在线Markdown编辑器 <a href="https://maxiang.io/" target="_blank" rel="noopener">https://maxiang.io/</a> 马克飞象挺好用。</p>
+<p>打开https 然后浏览器里访问 上面的网站地址就可以了。这儿配置hexo 文件这些就不说了，前面有一篇文章已经说过了。<a href="https://kziwws.github.io/2018/03/12/technology20180312011233/">分类写文章和基础配置介绍</a>，有一个感觉挺好用的在线Markdown编辑器 <a href="https://maxiang.io/" target="_blank" rel="noopener">https://maxiang.io/</a> 马克飞象挺好用。</p>
 ]]></content>
       <categories>
         <category>hexo</category>
