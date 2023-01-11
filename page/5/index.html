@@ -112,6 +112,1054 @@ var _hmt = _hmt || [];
     <div class="outer">
       <section id="main">
   
+    <article id="post-poetry20190317032120" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/17/poetry20190317032120/" class="article-date">
+  <time datetime="2019-03-16T19:21:20.000Z" itemprop="datePublished">2019-03-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%97/">诗</a>►<a class="article-category-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/17/poetry20190317032120/">《白首辞》</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>梨花参差春带雨，揽衣起舞暮暮情。<br>昨夜星辰昨夜风，月如君兮君不梦。<br>十里煌绸心聒碎，觑于朝暮翩跹度。<br>落樱春水世难顾，共逝与谁续白昼。<br>枕疏眉语几声留，相寻娇云东逝走。<br>清风拂尘契相生，只语阑珊未羞眸。<br>等闲春深懒红妆，彻鼓欲新待思量。<br>孤鸿寒枝未可栖，天地风情任由意。<br>有情萧何百年过，身陷囹圄良人许。<br>斯时一人一心忧，月上柳梢云未休。<br>何人与你共消酒，化作相思酿作泥。<br>誓恨成蝶伴花丛，枫林风下诉情话。<br>烟雨朦胧未见他，念旧时过往真假。<br>谦逊言温婉举止，再梦回红尘晚霞。<br>形单影只长路漫，不畏牵绊朱颜改。<br>天若有情天亦老，步尘时遥知谁好。<br>知荣岁月度匆忙，恋一生儿女情长。<br>悲欢离合世事道，策马一声诲人啸。</p>
+<p>by:霜</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2019/03/17/poetry20190317032120/" data-id="clcrhm4br000tj48d4p2m46zc" class="article-share-link" data-share="baidu" data-title="《白首辞》">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2019/03/17/poetry20190317032120/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poetry/" rel="tag">poetry</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-technology20190305060134" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/05/technology20190305060134/" class="article-date">
+  <time datetime="2019-03-04T22:01:34.000Z" itemprop="datePublished">2019-03-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/regexp/">regexp</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/05/technology20190305060134/">基础正则表达式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>正则表达式</strong>，又称规则表达式<strong>。</strong>在代码中常简写为regex、regexp或RE，计算机科学的一个概念。正则表达式通常被用来检索、替换那些符合某个模式(规则)的文本。</p>
+<p>给定一个正则表达式和另一个字符串，我们可以达到如下的目的：</p>
+<blockquote>
+<p>给定的字符串是否符合正则表达式的过滤逻辑（“匹配”）；<br>通过正则表达式，从文本字符串中获取我们想要的特定部分（“过滤”）。</p>
+</blockquote>
+<h5 id="正则表达式匹配规则"><a href="#正则表达式匹配规则" class="headerlink" title="正则表达式匹配规则"></a>正则表达式匹配规则</h5><ul>
+<li><a href="#ZF_install">字符</a></li>
+<li><a href="#YDZF_install">预定义字符集</a>(可以写在字符集[…]中)</li>
+<li><a href="#SL_install">数量词</a>(用在字符或(…)之后)</li>
+<li><a href="#BJPP_install">边界匹配</a>(不消耗待匹配字符串中的字符)</li>
+<li><a href="#LJFZ_install">逻辑、分组</a></li>
+<li><a href="#TSGZ_install">特殊构造</a>(不作为分组)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">语法</th>
+<th align="left">说明</th>
+<th align="center">表达式实例</th>
+<th align="center">完整匹配的字符串</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="left"><a name='ZF_install'><strong><font color = red>字符</font></strong></a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">一般字符</td>
+<td align="left">匹配自身</td>
+<td align="center">abc</td>
+<td align="center">abc</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="left">匹配任意除换行符”\n”外的字符。在DOTALL模式中也能匹配换行符。</td>
+<td align="center">a.c</td>
+<td align="center">abc</td>
+</tr>
+<tr>
+<td align="center">\</td>
+<td align="left">转义字符，使后一个字符改变原来的意思,如果字符串中有字符<em>需要匹配，可以使用\</em>或者字符集[*].</td>
+<td align="center">a\.c   a\\c</td>
+<td align="center">a\c</td>
+</tr>
+<tr>
+<td align="center">[…]</td>
+<td align="left">字符集(字符类)。对应的位置可以是字符集中任意字符。字符集中的字符可以逐个列出，也可以给出范围，如[abc]或[a-c].第一个字符如果是^则表示取反，如[^abc]表示不是abc的其他字符。所有的特殊字符在字符集中都失去其原有的特俗含义。在字符集中如果要使用]、-或^,可以在前面加上反斜杠,或把]、-放在第一个字符，把^放在非第一个字符。</td>
+<td align="center">a[bcd]c</td>
+<td align="center">abe ace ade</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><a name='YDZF_install'><strong><font color = red>预定义字符集</font></strong></a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">\d</td>
+<td align="left">数字:[0-9]</td>
+<td align="center">a\dc</td>
+<td align="center">a1c</td>
+</tr>
+<tr>
+<td align="center">\D</td>
+<td align="left">非数字:[^\d]</td>
+<td align="center">a\Dc</td>
+<td align="center">abc</td>
+</tr>
+<tr>
+<td align="center">\s</td>
+<td align="left">空白字符:[&lt;空格&gt;\t\r\n\f\v]</td>
+<td align="center">a\sc</td>
+<td align="center">a c</td>
+</tr>
+<tr>
+<td align="center">\w</td>
+<td align="left">单词字符:[A-Z a-Z 0-9_]</td>
+<td align="center">a\wc</td>
+<td align="center">abc</td>
+</tr>
+<tr>
+<td align="center">\W</td>
+<td align="left">非单词字符:[^\W]</td>
+<td align="center">a\Wc</td>
+<td align="center">a c</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><a name='SL_install'><strong><font color = red>数量词</font></strong></a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="left">匹配前一个字符0或无限次</td>
+<td align="center">abc*</td>
+<td align="center">ab abcc</td>
+</tr>
+<tr>
+<td align="center">+</td>
+<td align="left">匹配前一个字符1次或无限次</td>
+<td align="center">abc+</td>
+<td align="center">abc abcc</td>
+</tr>
+<tr>
+<td align="center">?</td>
+<td align="left">匹配前一个字符0次或1次</td>
+<td align="center">abc?</td>
+<td align="center">ab abc abbc</td>
+</tr>
+<tr>
+<td align="center">{m}</td>
+<td align="left">匹配前一个字符m次</td>
+<td align="center">ab{2}c</td>
+<td align="center">abbc</td>
+</tr>
+<tr>
+<td align="center">{m,n}</td>
+<td align="left">匹配前一个字符m至n次。m和n可以省略:若省略m,则匹配0至n次；若省略n则匹配m至无限次。</td>
+<td align="center">ab{1,2}c</td>
+<td align="center">abc abbc</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><a name='BJPP_install'><strong><font color = red>边界匹配</font></strong></a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td align="left">匹配字符串开头。在多行模式中匹配每一行的开头</td>
+<td align="center">^abc</td>
+<td align="center">abc</td>
+</tr>
+<tr>
+<td align="center">$</td>
+<td align="left">匹配字符串末尾。在多行模式中匹配每一行的末尾</td>
+<td align="center">abc$</td>
+<td align="center">abc</td>
+</tr>
+<tr>
+<td align="center">\A</td>
+<td align="left">仅匹配字符串开头。</td>
+<td align="center">\Aabc</td>
+<td align="center">abc</td>
+</tr>
+<tr>
+<td align="center">\Z</td>
+<td align="left">仅匹配字符串末尾。</td>
+<td align="center">abc\Z</td>
+<td align="center">abc</td>
+</tr>
+<tr>
+<td align="center">\b</td>
+<td align="left">匹配字\w和\W之间。</td>
+<td align="center">a\b!bc</td>
+<td align="center">a!bc</td>
+</tr>
+<tr>
+<td align="center">\B</td>
+<td align="left">[^\b]</td>
+<td align="center">a\Bbc</td>
+<td align="center">abc</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><a name='LJFZ_install'><strong><font color = red>逻辑分组</font></strong></a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">|</td>
+<td align="left">|代表左右表达式任意匹配一个。它总是先尝试匹配左边的表达式，一旦成功匹配则跳过匹配右边的表达式。如果|没有被包括在()中,则它的范围是整个正则表达式。</td>
+<td align="center">abc|def</td>
+<td align="center">abc def</td>
+</tr>
+<tr>
+<td align="center">(…)</td>
+<td align="left">被括起来的表达式将作为分组，从表达式左边开始每遇到一个分组的左括号’(‘,编号+1.另外分组表达式作为一个整体,可以后接数量词。表达式中的|仅在该组中有效。</td>
+<td align="center">(abc){2} a{123|456)c</td>
+<td align="center">abcabc a456c</td>
+</tr>
+<tr>
+<td align="center">(?P&lt;name&gt;…)</td>
+<td align="left">分组除了原来的编号另外再指定一个额外的别名。</td>
+<td align="center">(?P&lt;id&gt;abc){2}</td>
+<td align="center">abcabc</td>
+</tr>
+<tr>
+<td align="center">\&lt;number&gt;</td>
+<td align="left">引用编号为&lt;number&gt;的分组匹配到的字符串。</td>
+<td align="center">(\d)abc\1</td>
+<td align="center">1abc1 5abc5</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><a name='TSGZ_install'><strong><font color = red>特殊构造</font></strong></a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">(?…)</td>
+<td align="left">(…)的部分组版本，用于使用”|”或后接数量词。</td>
+<td align="center">(?:abc){2}</td>
+<td align="center">abcabc</td>
+</tr>
+<tr>
+<td align="center">(?iLmsux)</td>
+<td align="left">iLmsux的每个字符代表一个匹配模式，只能用在正则表达式的开头，可选多个。匹配模式将在下文介绍。</td>
+<td align="center">(?i)abc</td>
+<td align="center">Abc</td>
+</tr>
+<tr>
+<td align="center">(?#…)</td>
+<td align="left">#后的内容将作为注释被忽略。</td>
+<td align="center">abc(?#comment)123</td>
+<td align="center">abc123</td>
+</tr>
+<tr>
+<td align="center">(?=…)</td>
+<td align="left">之后的字符串内容需要匹配表达式。才能成功匹配。不消耗字符串内容。</td>
+<td align="center">a(?=\d)后面是数字的a</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">(?!…)</td>
+<td align="left">之后的字符串内容需要不匹配表达式。才能成功匹配。不消耗字符串内容。</td>
+<td align="center">a(?!\d) 后面不是数字的a</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">(?&lt;=…)</td>
+<td align="left">之前的字符串内容需要匹配表达式。才能成功匹配。不消耗字符串内容。</td>
+<td align="center">a(?&lt;=\d)a 前面是数字的a</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">(?&lt;!…)</td>
+<td align="left">之前的字符串内容需要不匹配表达式。才能成功匹配。不消耗字符串内容。</td>
+<td align="center">a(?&lt;!\d)a 前面不是数字的a</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>表达式</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">[abc]</td>
+<td>字符集。匹配集合中所含的任一字符。</td>
+</tr>
+<tr>
+<td align="center">[^abc]</td>
+<td>否定字符集。匹配任何不在集合中的字符。</td>
+</tr>
+<tr>
+<td align="center">[a-z]</td>
+<td>字符范围。匹配指定范围内的任意字符。</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td>匹配除换行符以外的任何单个字符。</td>
+</tr>
+<tr>
+<td align="center">\</td>
+<td>转义字符。</td>
+</tr>
+<tr>
+<td align="center">\w</td>
+<td>匹配任何字母数字，包括下划线（等价于<code>[A-Za-z0-9_]</code>）。</td>
+</tr>
+<tr>
+<td align="center">\W</td>
+<td>匹配任何非字母数字（等价于<code>[^A-Za-z0-9_]</code>）。</td>
+</tr>
+<tr>
+<td align="center">\d</td>
+<td>数字。匹配任何数字。</td>
+</tr>
+<tr>
+<td align="center">\D</td>
+<td>非数字。匹配任何非数字字符。</td>
+</tr>
+<tr>
+<td align="center">\s</td>
+<td>空白。匹配任何空白字符，包括空格、制表符等。</td>
+</tr>
+<tr>
+<td align="center">\S</td>
+<td>非空白。匹配任何非空白字符。</td>
+</tr>
+<tr>
+<td align="center">(expression)</td>
+<td>分组。匹配括号里的整个表达式。</td>
+</tr>
+<tr>
+<td align="center">(?:expression)</td>
+<td>非捕获分组。匹配括号里的整个字符串但不获取匹配结果，拿不到分组引用。</td>
+</tr>
+<tr>
+<td align="center">\num</td>
+<td>对前面所匹配分组的引用。比如<code>(\d)\1</code>可以匹配两个相同的数字，<code>(Code)(Sheep)\1\2</code>则可以匹配<code>CodeSheepCodeSheep</code>。</td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td>匹配字符串或行开头。</td>
+</tr>
+<tr>
+<td align="center">$</td>
+<td>匹配字符串或行结尾。</td>
+</tr>
+<tr>
+<td align="center">\b</td>
+<td>匹配单词边界。比如Sheep\b可以匹配CodeSheep末尾的Sheep，不能匹配CodeSheepCode中的Sheep</td>
+</tr>
+<tr>
+<td align="center">\B</td>
+<td>匹配非单词边界。比如Code\B可以匹配HelloCodeSheep中的Code，不能匹配HelloCode中的Code。</td>
+</tr>
+<tr>
+<td align="center">?</td>
+<td>匹配前面的表达式0个或1个。即表示可选项。</td>
+</tr>
+<tr>
+<td align="center">+</td>
+<td>匹配前面的表达式至少1个。</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>匹配前面的表达式0个或多个。</td>
+</tr>
+<tr>
+<td align="center">|</td>
+<td>或运算符。并集，可以匹配符号前后的表达式。</td>
+</tr>
+<tr>
+<td align="center">{m}</td>
+<td>匹配前面的表达式m个。</td>
+</tr>
+<tr>
+<td align="center">{m,}</td>
+<td>匹配前面的表达式最少m个。</td>
+</tr>
+<tr>
+<td align="center">{m,n}</td>
+<td>匹配前面的表达式最少m个，最多n个。</td>
+</tr>
+<tr>
+<td align="center">(?=)</td>
+<td>正向预查。比如Code(?=Sheep)能匹配CodeSheep中的Code，但不能匹配CodePig中的Code。</td>
+</tr>
+<tr>
+<td align="center">(?!)</td>
+<td>正向否定预查。比如`Code(?!Sheep)不能匹配CodeSheep中的Code，但能匹配CodePig中的Code。</td>
+</tr>
+<tr>
+<td align="center">(?&lt;=)</td>
+<td>反向预查。比如(?&lt;=Code)Sheep能匹配CodeSheep中的Sheep，但不能匹配`ReadSheep中的Sheep。</td>
+</tr>
+<tr>
+<td align="center">(?&lt;!)</td>
+<td>反向否定预查。比如(?&lt;!Code)Sheep不能匹配CodeSheep中的Sheep，但能匹配`ReadSheep中的Sheep。</td>
+</tr>
+<tr>
+<td align="center">/…/i</td>
+<td>忽略大小写。</td>
+</tr>
+<tr>
+<td align="center">/…/g</td>
+<td>全局匹配。</td>
+</tr>
+<tr>
+<td align="center">/…/m</td>
+<td>多行修饰符。用于多行匹配。</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>数字校验</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>描述</strong></th>
+<th><strong>正则表达式</strong></th>
+<th><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数字</td>
+<td><code>^[0-9]*$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>n位数字</td>
+<td><code>^\d{n}$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>至少n位数字</td>
+<td><code>^\d{n,}$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>m~n位数字</td>
+<td><code>^\d{m,n}$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>整数</td>
+<td><code>^(-?[1-9]\d*)$</code></td>
+<td>非0开头，包括正整数和负整数</td>
+</tr>
+<tr>
+<td>正整数</td>
+<td><code>^[1-9]\d*$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>负整数</td>
+<td><code>^-[1-9]\d*$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>非负整数</td>
+<td>`^(([1-9]\d*)</td>
+<td>0)$`</td>
+</tr>
+<tr>
+<td>非正整数</td>
+<td>`^((-[1-9]\d*)</td>
+<td>0)$`</td>
+</tr>
+<tr>
+<td>浮点数</td>
+<td>`^-?(?:[1-9]\d<em>.\d</em></td>
+<td>0.\d<em>[1-9]\d</em></td>
+</tr>
+<tr>
+<td>正浮点数</td>
+<td>`^(?:[1-9]\d<em>.\d</em></td>
+<td>0.\d<em>[1-9]\d</em>)$`</td>
+</tr>
+<tr>
+<td>负浮点数</td>
+<td>`^-(?:[1-9]\d<em>.\d</em></td>
+<td>0.\d<em>[1-9]\d</em>)$`</td>
+</tr>
+<tr>
+<td>非正浮点数</td>
+<td>`^(?:-(?:[1-9]\d*.\d+</td>
+<td>0.\d<em>[1-9]\d</em>)</td>
+</tr>
+<tr>
+<td>非负浮点数</td>
+<td>`^(?:[1-9]\d*.\d+</td>
+<td>0.\d+</td>
+</tr>
+<tr>
+<td>仅一位小数</td>
+<td>`^-?(?:0</td>
+<td>[1-9][0-9]*).[0-9]{1}$`</td>
+</tr>
+<tr>
+<td>最少一位小数</td>
+<td>`^-?(?:0</td>
+<td>[1-9][0-9]*).[0-9]{1,}$`</td>
+</tr>
+<tr>
+<td>最多两位小数</td>
+<td>`^-?(?:0</td>
+<td>[1-9][0-9]*).[0-9]{1,2}$`</td>
+</tr>
+<tr>
+<td>连续重复的数字</td>
+<td><code>^(\d)\1+$</code></td>
+<td>例如：<code>111</code>，<code>222</code></td>
+</tr>
+</tbody></table>
+<hr>
+<ul>
+<li><strong>字符校验</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>描述</strong></th>
+<th><strong>正则表达式</strong></th>
+<th><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>中文</td>
+<td><code>^[\u4E00-\u9FA5]+$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>全角字符</td>
+<td><code>^[\uFF00-\uFFFF]+$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>半角字符</td>
+<td><code>^[\u0000-\u00FF]+$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>英文字符串（大写）</td>
+<td><code>^[A-Z]+$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>英文字符串（小写）</td>
+<td><code>^[a-z]+$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>英文字符串（不区分大小写）</td>
+<td><code>^[A-Za-z]+$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>中文和数字</td>
+<td>`^(?:[\u4E00-\u9FA5]{0,}</td>
+<td>\d)+$`</td>
+</tr>
+<tr>
+<td>英文和数字</td>
+<td><code>^[A-Za-z0-9]+$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>数字、英文字母或者下划线组成的字符串</td>
+<td><code>^\w+$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>中文、英文、数字包括下划线</td>
+<td><code>^[\u4E00-\u9FA5\w]+$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>不含字母的字符串</td>
+<td><code>^[^A-Za-z]*$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>连续重复的字符串</td>
+<td><code>^(.)\1+$</code></td>
+<td>例如：<code>aa</code>，<code>bb</code></td>
+</tr>
+<tr>
+<td>长度为n的字符串</td>
+<td><code>^.{n}$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>ASCII</td>
+<td><code>^[ -~]$</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<ul>
+<li><strong>日期和时间校验</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>描述</strong></th>
+<th><strong>正则表达式</strong></th>
+<th><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>日期</td>
+<td>`^\d{1,4}-(?:1[0-2]</td>
+<td>0?[1-9])-(?:0?[1-9]</td>
+</tr>
+<tr>
+<td>日期</td>
+<td>`^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]</td>
+<td>1[0-2])-(?:0[1-9]</td>
+</tr>
+<tr>
+<td>时间</td>
+<td>`^(?:1[0-2]</td>
+<td>0?[1-9]):[0-5]\d:[0-5]\d$`</td>
+</tr>
+<tr>
+<td>时间</td>
+<td>`^(?:[01]\d</td>
+<td>2[0-3]):[0-5]\d:[0-5]\d$`</td>
+</tr>
+<tr>
+<td>日期+时间</td>
+<td>`^(\d{1,4}-(?:1[0-2]</td>
+<td>0?[1-9])-(?:0?[1-9]</td>
+</tr>
+</tbody></table>
+<hr>
+<ul>
+<li><strong>日常生活相关</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>描述</strong></th>
+<th><strong>正则表达式</strong></th>
+<th><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>中文名</td>
+<td><code>^[\u4E00-\u9FA5·]{2,16}$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>英文名</td>
+<td><code>^[a-zA-Z][a-zA-Z\s]{0,20}[a-zA-Z]$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>车牌号</td>
+<td><code>^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领][A-HJ-NP-Z][A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳]$</code></td>
+<td>不含新能源</td>
+</tr>
+<tr>
+<td>车牌号</td>
+<td>`^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领]<a href="?:(?:[A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳]">A-HJ-NP-Z</a></td>
+<td>(?:(?:\d{5}[A-HJK])</td>
+</tr>
+<tr>
+<td>火车车次</td>
+<td><code>^[GCDZTSPKXLY1-9]\d{1,4}$</code></td>
+<td>例如：<code>G1234</code></td>
+</tr>
+<tr>
+<td>手机号</td>
+<td>`^(?:(?:+</td>
+<td>00)86)?1[3-9]\d{9}$`</td>
+</tr>
+<tr>
+<td>手机号</td>
+<td>`^(?:(?:+</td>
+<td>00)86)?1(?:(?:3[\d])</td>
+</tr>
+<tr>
+<td>固话号码</td>
+<td>`^(?:(?:\d{3}-)?\d{8}</td>
+<td>^(?:\d{4}-)?\d{7,8})(?:-\d+)?$`</td>
+</tr>
+<tr>
+<td>手机IMEI码</td>
+<td><code>^\d{15,17}$</code></td>
+<td>一般是15位</td>
+</tr>
+<tr>
+<td>邮编</td>
+<td>`^(?:0[1-7]</td>
+<td>1[0-356]</td>
+</tr>
+<tr>
+<td>统一社会信用代码</td>
+<td><code>^[0-9A-HJ-NPQRTUWXY]{2}\d{6}[0-9A-HJ-NPQRTUWXY]{10}$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>身份证号码(1代)</td>
+<td>`^[1-9]\d{7}(?:0\d</td>
+<td>10</td>
+</tr>
+<tr>
+<td>身份证号码(2代)</td>
+<td>`^[1-9]\d{5}(?:18</td>
+<td>19</td>
+</tr>
+<tr>
+<td>QQ号</td>
+<td><code>^[1-9][0-9]{4,}$</code></td>
+<td>一般是5到10位</td>
+</tr>
+<tr>
+<td>微信号</td>
+<td><code>^[a-zA-Z][-_a-zA-Z0-9]{5,19}$</code></td>
+<td>一般6~20位，字母开头，可包含字母、数字、-、_，不含特殊字符</td>
+</tr>
+<tr>
+<td>股票代码</td>
+<td>`^(s[hz]</td>
+<td>S[HZ])(000[\d]{3}</td>
+</tr>
+<tr>
+<td>银行卡卡号</td>
+<td>`^[1-9]{1}(?:\d{15}</td>
+<td>\d{18})$`</td>
+</tr>
+</tbody></table>
+<hr>
+<ul>
+<li><strong>互联网相关</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>描述</strong></th>
+<th><strong>正则表达式</strong></th>
+<th><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>域名</td>
+<td><code>^[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+$</code></td>
+<td>例如：<code>r2coding.com</code></td>
+</tr>
+<tr>
+<td>网址</td>
+<td><code>^(?:https?:\/\/)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+$</code></td>
+<td>例如：<code>https://www.r2coding.com/</code></td>
+</tr>
+<tr>
+<td>带端口号的网址(或IP)</td>
+<td><code>^(?:https?:\/\/)?[\w-]+(?:\.[\w-]+)+:\d{1,5}\/?$</code></td>
+<td>例如：<code>http://127.0.0.1:8888/</code></td>
+</tr>
+<tr>
+<td>URL</td>
+<td><code>^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()!@:%_\+.~#?&amp;\/\/=]*)$</code></td>
+<td>例如：<code>https://www.r2coding.com/#/README?id=1</code></td>
+</tr>
+<tr>
+<td>邮箱email</td>
+<td><code>^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+$</code></td>
+<td>支持中文，例如：<code>codesheep@cs.com</code></td>
+</tr>
+<tr>
+<td>用户名</td>
+<td><code>^[a-zA-Z0-9_-]{4,20}$</code></td>
+<td>4到20位</td>
+</tr>
+<tr>
+<td>弱密码</td>
+<td><code>^[\w]{6,16}$</code></td>
+<td>6~16位，包含大小写字母和数字的组合</td>
+</tr>
+<tr>
+<td>强密码</td>
+<td><code>^.*(?=.{6,})(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@\.#$%^&amp;*? ]).*$</code></td>
+<td>至少6位，包括至少1个大写字母，1个小写字母，1个数字，1个特殊字符</td>
+</tr>
+<tr>
+<td>端口号</td>
+<td>`^(?:[0-9]</td>
+<td>[1-9][0-9]{1,3}</td>
+</tr>
+<tr>
+<td>IPv4地址</td>
+<td>`^(?:(?:\d</td>
+<td>[1-9]\d</td>
+</tr>
+<tr>
+<td>IPv4地址+端口</td>
+<td>`^(?:(?:\d</td>
+<td>[1-9]\d</td>
+</tr>
+<tr>
+<td>IPv6地址</td>
+<td>`^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}</td>
+<td>([0-9a-fA-F]{1,4}:){1,7}:</td>
+</tr>
+<tr>
+<td>IPv6地址+端口</td>
+<td>`^[(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}</td>
+<td>([0-9a-fA-F]{1,4}:){1,7}:</td>
+</tr>
+<tr>
+<td>子网掩码</td>
+<td>`^(?:254</td>
+<td>252</td>
+</tr>
+<tr>
+<td>MAC地址</td>
+<td>`^(?:(?:[a-f0-9A-F]{2}:){5}</td>
+<td>(?:[a-f0-9A-F]{2}-){5})[a-f0-9A-F]{2}$`</td>
+</tr>
+<tr>
+<td>Version版本号</td>
+<td><code>^\d+(?:\.\d+){2}$</code></td>
+<td>例如：<code>12.1.1</code></td>
+</tr>
+<tr>
+<td>图片后缀</td>
+<td>`.(gif</td>
+<td>png</td>
+</tr>
+<tr>
+<td>视频后缀</td>
+<td>`.(swf</td>
+<td>avi</td>
+</tr>
+<tr>
+<td>图片链接</td>
+<td>`(?:https?://)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+.+.(gif</td>
+<td>png</td>
+</tr>
+<tr>
+<td>视频链接</td>
+<td>`(?:https?://)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+.+.(swf</td>
+<td>avi</td>
+</tr>
+<tr>
+<td>迅雷链接</td>
+<td><code>thunderx?:\/\/[a-zA-Z\d]+=</code></td>
+<td></td>
+</tr>
+<tr>
+<td>ed2k链接</td>
+<td><code>ed2k:\/\/|file|.+|\/</code></td>
+<td></td>
+</tr>
+<tr>
+<td>磁力链接</td>
+<td><code>magnet:\?xt=urn:btih:[0-9a-fA-F]{40,}.*</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<ul>
+<li><strong>其他</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>描述</strong></th>
+<th><strong>正则表达式</strong></th>
+<th><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MD5格式</td>
+<td>`^(?:[a-f\d]{32}</td>
+<td>[A-F\d]{32})$`</td>
+</tr>
+<tr>
+<td>BASE64格式</td>
+<td><code>^\s*data:(?:[a-z]+\/[a-z0-9-+.]+(?:;[a-z-]+=[a-z0-9-]+)?)?(?:;base64)?,([a-z0-9!$&amp;&#39;,()*+;=\-._~:@/?%\s]*?)\s*$</code></td>
+<td>例如：<code>data:image/jpeg;base64,xxxx==</code></td>
+</tr>
+<tr>
+<td>UUID</td>
+<td><code>^[a-f\d]{4}(?:[a-f\d]{4}-){4}[a-f\d]{12}$</code></td>
+<td>例如：<code>94f9d45a-71b0-4b3c-b69d-20c4bc9c8fdd</code></td>
+</tr>
+<tr>
+<td>16进制</td>
+<td><code>^[A-Fa-f0-9]+$</code></td>
+<td>例如：<code>FFFFFF</code></td>
+</tr>
+<tr>
+<td>16进制颜色</td>
+<td>`^#?([0-9a-fA-F]{3}</td>
+<td>[0-9a-fA-F]{6})$`</td>
+</tr>
+<tr>
+<td>SQL语句</td>
+<td>`^(?:select</td>
+<td>drop</td>
+</tr>
+<tr>
+<td>Java包名</td>
+<td><code>^(?:[a-zA-Z_]\w*)+(?:[.][a-zA-Z_]\w*)+$</code></td>
+<td>例如：<code>com.r2coding.controller</code></td>
+</tr>
+<tr>
+<td>文件扩展名</td>
+<td>`.(?:doc</td>
+<td>pdf</td>
+</tr>
+<tr>
+<td>Windows文件路径</td>
+<td><code>^[a-zA-Z]:(?:\\[\w\u4E00-\u9FA5\s]+)+[.\w\u4E00-\u9FA5\s]+$</code></td>
+<td>例如：<code>C:\Users\Administrator\Desktop\a.txt</code></td>
+</tr>
+<tr>
+<td>Windows文件夹路径</td>
+<td><code>^[a-zA-Z]:(?:\\[\w\u4E00-\u9FA5\s]+)+$</code></td>
+<td>例如：<code>C:\Users\Administrator\Desktop</code></td>
+</tr>
+<tr>
+<td>Linux文件路径</td>
+<td><code>^\/(?:[^/]+\/)*[^/]+$</code></td>
+<td>例如：<code>/root/library/a.txt</code></td>
+</tr>
+<tr>
+<td>Linux文件夹路径</td>
+<td><code>^\/(?:[^/]+\/)*$</code></td>
+<td>例如：<code>/root/library/</code></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2019/03/05/technology20190305060134/" data-id="clcrhm4di0050j48dbi1l95y7" class="article-share-link" data-share="baidu" data-title="基础正则表达式">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2019/03/05/technology20190305060134/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/regexp/" rel="tag">regexp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-poetry20190122003921" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/22/poetry20190122003921/" class="article-date">
+  <time datetime="2019-01-21T16:39:21.000Z" itemprop="datePublished">2019-01-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%97/">诗</a>►<a class="article-category-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/22/poetry20190122003921/">《故乡桃花》</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>十里桃花<br>三月情染风韵年华<br>冰冷指间<br>难解落雁为谁红霞<br>飘洒延绵风纱<br>漫天定温婉如画<br>空留一毯绿叶红花<br>故乡的桃花<br>风悠悠相思寄眉头<br>十里桃花<br>倔强的年华<br>挥洒热血<br>梦里烟花<br>三春遗落成过往<br>缠绵成桂香<br>镜花水月<br>回眸映前世三千姻缘<br>故乡那时的桃花</p>
+<p>by:霜</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2019/01/22/poetry20190122003921/" data-id="clcrhm4bq000rj48d5p5w0awx" class="article-share-link" data-share="baidu" data-title="《故乡桃花》">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2019/01/22/poetry20190122003921/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poetry/" rel="tag">poetry</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
     <article id="post-technology20190112101223" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/01/12/technology20190112101223/" class="article-date">
@@ -187,7 +1235,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2019/01/12/technology20190112101223/" data-id="cl6xbbcbp004vp18d217me2ya" class="article-share-link" data-share="baidu" data-title="Python基础语法">分享到</a>
+        <a data-url="https://kziwws.github.io/2019/01/12/technology20190112101223/" data-id="clcrhm4df004wj48d9cug0zjz" class="article-share-link" data-share="baidu" data-title="Python基础语法">分享到</a>
       
 
     
@@ -236,7 +1284,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2018/12/23/poetry20181223024620/" data-id="cl6xbbcac000np18dd95wdufr" class="article-share-link" data-share="baidu" data-title="《再无春夏秋冬》">分享到</a>
+        <a data-url="https://kziwws.github.io/2018/12/23/poetry20181223024620/" data-id="clcrhm4bo000oj48dfeyd1iui" class="article-share-link" data-share="baidu" data-title="《再无春夏秋冬》">分享到</a>
       
 
     
@@ -327,7 +1375,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2018/11/10/technology20181110040214/" data-id="cl6xbbcbp004tp18deeic1awh" class="article-share-link" data-share="baidu" data-title="使用git在码云gitee和github上提交代码">分享到</a>
+        <a data-url="https://kziwws.github.io/2018/11/10/technology20181110040214/" data-id="clcrhm4de004uj48d4sqdbqxn" class="article-share-link" data-share="baidu" data-title="使用git在码云gitee和github上提交代码">分享到</a>
       
 
     
@@ -380,7 +1428,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2018/08/15/technology20180815161022/" data-id="cl6xbbcbn004op18df7i9clh6" class="article-share-link" data-share="baidu" data-title="CocosCreator中JS调用Android平台实现复制功能">分享到</a>
+        <a data-url="https://kziwws.github.io/2018/08/15/technology20180815161022/" data-id="clcrhm4dd004pj48deli70pkt" class="article-share-link" data-share="baidu" data-title="CocosCreator中JS调用Android平台实现复制功能">分享到</a>
       
 
     
@@ -460,7 +1508,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2018/08/10/technology20180810152102/" data-id="cl6xbbcbm004lp18ddb4x2sua" class="article-share-link" data-share="baidu" data-title="CocosCreator游戏开发打包安卓apk">分享到</a>
+        <a data-url="https://kziwws.github.io/2018/08/10/technology20180810152102/" data-id="clcrhm4db004ij48dapw0bzsw" class="article-share-link" data-share="baidu" data-title="CocosCreator游戏开发打包安卓apk">分享到</a>
       
 
     
@@ -509,7 +1557,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2018/08/05/poetry20180805051120/" data-id="cl6xbbcaa000lp18d0mfkeoo6" class="article-share-link" data-share="baidu" data-title="《梦宵》">分享到</a>
+        <a data-url="https://kziwws.github.io/2018/08/05/poetry20180805051120/" data-id="clcrhm4bo000mj48dhy2b1a5d" class="article-share-link" data-share="baidu" data-title="《梦宵》">分享到</a>
       
 
     
@@ -558,7 +1606,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2018/07/28/poetry20180728015635/" data-id="cl6xbbca9000ip18dhavn9i5z" class="article-share-link" data-share="baidu" data-title="《彼岸》">分享到</a>
+        <a data-url="https://kziwws.github.io/2018/07/28/poetry20180728015635/" data-id="clcrhm4bm000jj48dffmbadnh" class="article-share-link" data-share="baidu" data-title="《彼岸》">分享到</a>
       
 
     
@@ -567,163 +1615,6 @@ var _hmt = _hmt || [];
 
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poetry/" rel="tag">poetry</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-    <article id="post-poetry20180728015521" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/28/poetry20180728015521/" class="article-date">
-  <time datetime="2018-07-27T17:55:21.000Z" itemprop="datePublished">2018-07-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%97/">诗</a>►<a class="article-category-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/28/poetry20180728015521/">《余生》</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>弥静黑夜中的烛火<br>斑斑点点<br>彻夜通明<br>萦绕着小时候的记忆<br>你诉说理想<br>清澈明亮的眼睛<br>沾染不得生活的一丝浑浊<br>匆匆茫茫的行人<br>从不打烊的灯光<br>映忖着城市的繁华与喧嚣<br>每个长大的人<br>都演绎着哀忧悲怆<br>不一样的肝肠<br>痴心妄想的疯狂<br>从灵魂里涌入冰凉<br>遮住双眼<br>余生太长<br>这俗世<br>这一杯<br>这一次<br>为你行走锋芒</p>
-<p>by:霜</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://kziwws.github.io/2018/07/28/poetry20180728015521/" data-id="cl6xbbca8000gp18d5ak7383f" class="article-share-link" data-share="baidu" data-title="《余生》">分享到</a>
-      
-
-    
-  <a href="https://kziwws.github.io/2018/07/28/poetry20180728015521/#valine_thread" class="article-comment-link">评论</a>
-
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poetry/" rel="tag">poetry</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-    <article id="post-poetry20180620150223" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/20/poetry20180620150223/" class="article-date">
-  <time datetime="2018-06-20T07:02:23.000Z" itemprop="datePublished">2018-06-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%97/">诗</a>►<a class="article-category-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/20/poetry20180620150223/">《採桑》</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>水流脩荺声潺泱，风遇花蕾馥郁芳。<br>残月诗里离合道，佳人烟波阁楼霄。</p>
-<p>by:霜</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://kziwws.github.io/2018/06/20/poetry20180620150223/" data-id="cl6xbbca7000cp18daxxa8duy" class="article-share-link" data-share="baidu" data-title="《採桑》">分享到</a>
-      
-
-    
-  <a href="https://kziwws.github.io/2018/06/20/poetry20180620150223/#valine_thread" class="article-comment-link">评论</a>
-
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poetry/" rel="tag">poetry</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-    <article id="post-technology20180320113530" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/20/technology20180320113530/" class="article-date">
-  <time datetime="2018-03-20T03:35:30.000Z" itemprop="datePublished">2018-03-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/cocosCreator/">cocosCreator</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/20/technology20180320113530/">Hexo博客landscape-plus主题修改侧边栏颜色</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="一、修改左侧边状态栏的文字颜色"><a href="#一、修改左侧边状态栏的文字颜色" class="headerlink" title="一、修改左侧边状态栏的文字颜色"></a>一、修改左侧边状态栏的文字颜色</h4><p>路径地址<code>Hexo/themes/landscape-plus/source/css/_partial/sidebar-aside.styl</code></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#sidebar</span></span><br><span class="line">  <span class="keyword">@media</span> mq-normal</span><br><span class="line">    column(sidebar-column)</span><br><span class="line"></span><br><span class="line">.widget-wrap</span><br><span class="line">  <span class="attribute">margin:</span> block-margin <span class="number">0</span></span><br><span class="line"></span><br><span class="line">.widget-title</span><br><span class="line">  <span class="attribute">font-size:</span> <span class="number">1.2em</span></span><br><span class="line">  @extend $block-caption</span><br><span class="line"></span><br><span class="line">.widget</span><br><span class="line">  <span class="attribute">color:</span> color-sidebar-text</span><br><span class="line">  <span class="attribute">text-shadow:</span> <span class="number">0</span> <span class="number">1px</span> #fff</span><br><span class="line">  <span class="attribute">background:</span> color-widget-background</span><br><span class="line">  <span class="attribute">box-shadow:</span> <span class="number">1px</span> <span class="number">2px</span> <span class="number">3px</span> color-border</span><br><span class="line">  // <span class="attribute">box-shadow:</span> <span class="number">0</span> -<span class="number">1px</span> <span class="number">4px</span> color-widget-border inset</span><br><span class="line">  //<span class="attribute">border:</span> <span class="number">1px</span> solid color-widget-border</span><br><span class="line">  <span class="attribute">padding:</span> <span class="number">15px</span></span><br><span class="line">  <span class="attribute">border-radius:</span> <span class="number">3px</span></span><br><span class="line">  a</span><br><span class="line">    //<span class="attribute">color:</span> color-grey <span class="number">1</span></span><br><span class="line">    <span class="attribute">color:</span> #<span class="number">488</span>DB4 <span class="number">2</span></span><br><span class="line">    <span class="attribute">text-decoration:</span> none</span><br><span class="line">    &amp;:hover</span><br><span class="line">      <span class="attribute">text-decoration:</span> underline</span><br><span class="line">      <span class="attribute">color:</span> color-link</span><br><span class="line">  ul, ol, dl</span><br><span class="line">    ul, ol, dl</span><br><span class="line">      <span class="attribute">margin-left:</span> <span class="number">15px</span></span><br><span class="line">      <span class="attribute">list-style:</span> disc</span><br></pre></td></tr></table></figure>
-<p>由位置1 color: color-grey  变更位置2 color: #488DB4 </p>
-<h4 id="二、修改左侧边栏统计出来的数字颜色"><a href="#二、修改左侧边栏统计出来的数字颜色" class="headerlink" title="二、修改左侧边栏统计出来的数字颜色"></a>二、修改左侧边栏统计出来的数字颜色</h4><p>路径地址<code>Hexo/themes/landscape-plus/source/css/_partial/sidebar.styl</code></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">if</span> <span class="selector-tag">sidebar</span> <span class="selector-tag">is</span> <span class="selector-tag">bottom</span></span><br><span class="line">  <span class="keyword">@import</span> <span class="string">"sidebar-bottom"</span></span><br><span class="line">else</span><br><span class="line">  @import <span class="string">"sidebar-aside"</span></span><br><span class="line"></span><br><span class="line">.widget</span><br><span class="line">  @extend $base-style</span><br><span class="line">  <span class="attribute">line-height:</span> line-height</span><br><span class="line">  <span class="attribute">word-wrap:</span> break-word</span><br><span class="line">  <span class="attribute">font-size:</span> <span class="number">0.9em</span></span><br><span class="line">  ul, ol</span><br><span class="line">    <span class="attribute">list-style:</span> none</span><br><span class="line">    <span class="attribute">margin:</span> <span class="number">0</span></span><br><span class="line">    ul, ol</span><br><span class="line">      <span class="attribute">margin:</span> <span class="number">0</span> <span class="number">20px</span></span><br><span class="line">    ul</span><br><span class="line">      <span class="attribute">list-style:</span> disc</span><br><span class="line">    ol</span><br><span class="line">      <span class="attribute">list-style:</span> decimal</span><br><span class="line"></span><br><span class="line">.category-list-count</span><br><span class="line">.tag-list-count</span><br><span class="line">.archive-list-count</span><br><span class="line">  <span class="attribute">padding-left:</span> <span class="number">5px</span></span><br><span class="line">  //<span class="attribute">color:</span> color-grey <span class="number">1</span></span><br><span class="line">  <span class="attribute">color:</span> #<span class="number">488</span>DB4 <span class="number">2</span></span><br><span class="line">  <span class="attribute">font-size:</span> <span class="number">0.9em</span></span><br><span class="line">  &amp;:before</span><br><span class="line">    <span class="attribute">content:</span> <span class="string">"("</span></span><br><span class="line">  &amp;:after</span><br><span class="line">    <span class="attribute">content:</span> <span class="string">")"</span></span><br><span class="line"></span><br><span class="line">.tagcloud</span><br><span class="line">  <span class="attribute">font-size:</span> <span class="number">1.1em</span></span><br><span class="line">  a</span><br><span class="line">    <span class="attribute">margin-right:</span> <span class="number">5px</span></span><br><span class="line">    <span class="attribute">font-size:</span> <span class="number">20px</span></span><br></pre></td></tr></table></figure>
-<p>由位置1 color: color-grey  变更位置2 color: #488DB4 </p>
-<h4 id="三、修改归档出来的文章按照年统计篇章数"><a href="#三、修改归档出来的文章按照年统计篇章数" class="headerlink" title="三、修改归档出来的文章按照年统计篇章数"></a>三、修改归档出来的文章按照年统计篇章数</h4><p>路径地址<code>Hexo/themes/landscape-plus/layout/_widget/archive.ejs</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (site.posts.length)&#123; %&gt;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-wrap"</span>&gt;</span><br><span class="line">    &lt;h3 <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-title"</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">%=</span> <span class="attr">__</span>('<span class="attr">archive</span>') %&gt;</span><span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget"</span>&gt;</span><br><span class="line">      &lt;!--<span class="xml"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">list_archives</span>() %&gt;</span> --&gt;</span></span><br><span class="line"><span class="xml">      //<span class="tag">&lt;<span class="name">%-</span> <span class="attr">list_archives</span>(&#123;<span class="attr">format:</span> '<span class="attr">YYYY</span>年 <span class="attr">MM</span>月'&#125;) %&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">%-</span> <span class="attr">list_archives</span>(&#123;<span class="attr">format:</span> '<span class="attr">YYYY</span>年'&#125;) %&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;% &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
-<p>由&lt;%- list_archives({format: ‘YYYY年 MM月’}) %&gt; 改成 &lt;%- list_archives({format: ‘YYYY年’}) %&gt;，以年统计减少数据展示更加简洁一些。</p>
-<h4 id="四、修改代码块高亮展示的时候的颜色和行数隐藏"><a href="#四、修改代码块高亮展示的时候的颜色和行数隐藏" class="headerlink" title="四、修改代码块高亮展示的时候的颜色和行数隐藏"></a>四、修改代码块高亮展示的时候的颜色和行数隐藏</h4><p>路径地址<code>Hexo/themes/landscape-plus/source/css/_partial/highlight.styl</code></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br></pre></td><td class="code"><pre><span class="line">highlight-background = #272822 /*#f8f8f8*/</span><br><span class="line">highlight-current-line = #3E3D32</span><br><span class="line">highlight-selection = #488DB4 /*#49483E*/</span><br><span class="line">highlight-foreground = #F8F8F2 /*#525252*/</span><br><span class="line">highlight-comment = #75715E</span><br><span class="line">highlight-red = #F92672</span><br><span class="line">highlight-orange = #42b983 /*#FD971F*/</span><br><span class="line">highlight-yellow = #42b983 /*#E6DB74*/</span><br><span class="line">highlight-green = #A6E22E</span><br><span class="line">highlight-aqua = #A1EFE4</span><br><span class="line">highlight-blue = #e96900 /*#66D9EF*/</span><br><span class="line">highlight-purple = #AE81FF</span><br><span class="line"></span><br><span class="line">$code-block</span><br><span class="line">  <span class="selector-tag">background</span>: <span class="selector-tag">highlight-background</span></span><br><span class="line">  <span class="selector-tag">margin</span>: 0 <span class="selector-tag">article-padding</span> * <span class="selector-tag">-2</span></span><br><span class="line">  <span class="selector-tag">padding</span>: 10<span class="selector-tag">px</span> <span class="selector-tag">article-padding</span></span><br><span class="line">  <span class="selector-tag">border-style</span>: <span class="selector-tag">solid</span></span><br><span class="line">  <span class="selector-tag">border-color</span>: <span class="selector-tag">color-border</span></span><br><span class="line">  <span class="selector-tag">border-width</span>: 0<span class="selector-tag">px</span> 0  <span class="comment">/*1px 0去掉边框*/</span></span><br><span class="line">  <span class="selector-tag">overflow</span>: <span class="selector-tag">auto</span></span><br><span class="line">  <span class="selector-tag">color</span>: <span class="selector-tag">highlight-foreground</span></span><br><span class="line">  <span class="selector-tag">line-height</span>: <span class="selector-tag">font-size</span> * <span class="selector-tag">line-height</span></span><br><span class="line"></span><br><span class="line">$line-numbers</span><br><span class="line">  <span class="selector-tag">color</span>: <span class="selector-id">#666</span></span><br><span class="line">  <span class="selector-tag">font-size</span>: 0<span class="selector-tag">em</span> <span class="comment">/*隐藏展示行数0.85em*/</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.article-entry</span></span><br><span class="line">  <span class="selector-tag">pre</span>, <span class="selector-tag">code</span></span><br><span class="line">    <span class="selector-tag">font-family</span>: <span class="selector-tag">font-mono</span></span><br><span class="line">  <span class="selector-tag">code</span></span><br><span class="line">    <span class="selector-tag">background</span>: <span class="selector-id">#f0f0f0</span></span><br><span class="line">    <span class="selector-tag">text-shadow</span>: 0 1<span class="selector-tag">px</span> <span class="selector-id">#fff</span></span><br><span class="line">    <span class="selector-tag">font-size</span>:  0<span class="selector-class">.85em</span></span><br><span class="line">    <span class="selector-tag">padding</span>: 0 0<span class="selector-class">.3em</span></span><br><span class="line">    <span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#dcdcdc</span></span><br><span class="line">    <span class="selector-tag">border-radius</span>: 3<span class="selector-tag">px</span></span><br><span class="line">  <span class="selector-tag">pre</span></span><br><span class="line">    <span class="keyword">@extend</span> $code-block</span><br><span class="line">    code</span><br><span class="line">      <span class="attribute">background:</span> none</span><br><span class="line">      <span class="attribute">text-shadow:</span> none</span><br><span class="line">      <span class="attribute">padding:</span> <span class="number">0</span></span><br><span class="line">      <span class="attribute">border:</span> none</span><br><span class="line">  .highlight</span><br><span class="line">    @extend $code-block</span><br><span class="line">    pre</span><br><span class="line">      <span class="attribute">border:</span> none</span><br><span class="line">      <span class="attribute">margin:</span> <span class="number">0</span></span><br><span class="line">      <span class="attribute">padding:</span> <span class="number">0</span></span><br><span class="line">    table</span><br><span class="line">      <span class="attribute">margin:</span> <span class="number">0</span></span><br><span class="line">      <span class="attribute">width:</span> auto</span><br><span class="line">    td</span><br><span class="line">      <span class="attribute">border:</span> none</span><br><span class="line">      <span class="attribute">padding:</span> <span class="number">0</span></span><br><span class="line">    figcaption</span><br><span class="line">      clearfix()</span><br><span class="line">      <span class="attribute">font-size:</span> <span class="number">0.85em</span></span><br><span class="line">      <span class="attribute">color:</span> highlight-comment</span><br><span class="line">      <span class="attribute">line-height:</span> <span class="number">1em</span></span><br><span class="line">      <span class="attribute">margin-bottom:</span> <span class="number">1em</span></span><br><span class="line">      a</span><br><span class="line">        <span class="attribute">float:</span> right</span><br><span class="line">    .gutter pre</span><br><span class="line">      @extend $line-numbers</span><br><span class="line">      <span class="attribute">text-align:</span> right</span><br><span class="line">      <span class="attribute">padding-right:</span> <span class="number">20px</span></span><br><span class="line">    .line</span><br><span class="line">      <span class="attribute">height:</span> font-size * line-height</span><br><span class="line">  .gist</span><br><span class="line">    <span class="attribute">margin:</span> <span class="number">0</span> article-padding * -<span class="number">1</span></span><br><span class="line">    <span class="attribute">border-style:</span> solid</span><br><span class="line">    <span class="attribute">border-color:</span> color-border</span><br><span class="line">    <span class="attribute">border-width:</span> <span class="number">1px</span> <span class="number">0</span></span><br><span class="line">    <span class="attribute">background:</span> highlight-background</span><br><span class="line">    <span class="attribute">padding:</span> <span class="number">15px</span> article-padding <span class="number">15px</span> <span class="number">0</span></span><br><span class="line">    .gist-file</span><br><span class="line">      <span class="attribute">border:</span> none</span><br><span class="line">      <span class="attribute">font-family:</span> font-mono</span><br><span class="line">      <span class="attribute">margin:</span> <span class="number">0</span></span><br><span class="line">      .gist-data</span><br><span class="line">        <span class="attribute">background:</span> none</span><br><span class="line">        <span class="attribute">border:</span> none</span><br><span class="line">        .line-numbers</span><br><span class="line">          @extend $line-numbers</span><br><span class="line">          <span class="attribute">background:</span> none</span><br><span class="line">          <span class="attribute">border:</span> none</span><br><span class="line">          <span class="attribute">padding:</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">0</span> <span class="number">0</span></span><br><span class="line">        .line-data</span><br><span class="line">          <span class="attribute">padding:</span> <span class="number">0</span> !important</span><br><span class="line">      .highlight</span><br><span class="line">        <span class="attribute">margin:</span> <span class="number">0</span></span><br><span class="line">        <span class="attribute">padding:</span> <span class="number">0</span></span><br><span class="line">        <span class="attribute">border:</span> none</span><br><span class="line">      .gist-meta</span><br><span class="line">        <span class="attribute">background:</span> highlight-background</span><br><span class="line">        <span class="attribute">color:</span> highlight-comment</span><br><span class="line">        <span class="attribute">font:</span> <span class="number">0.85em</span> font-sans</span><br><span class="line">        <span class="attribute">text-shadow:</span> <span class="number">0</span> <span class="number">0</span></span><br><span class="line">        <span class="attribute">padding:</span> <span class="number">0</span></span><br><span class="line">        <span class="attribute">margin-top:</span> <span class="number">1em</span></span><br><span class="line">        <span class="attribute">margin-left:</span> article-padding</span><br><span class="line">        a</span><br><span class="line">          <span class="attribute">color:</span> color-link</span><br><span class="line">          <span class="attribute">font-weight:</span> normal</span><br><span class="line">          &amp;:hover</span><br><span class="line">            <span class="attribute">text-decoration:</span> underline</span><br><span class="line"></span><br><span class="line">pre</span><br><span class="line">  .comment</span><br><span class="line">  .preprocessor</span><br><span class="line">    <span class="attribute">color:</span> highlight-comment</span><br><span class="line">  .tag</span><br><span class="line">    <span class="attribute">color:</span> highlight-foreground</span><br><span class="line">  .title</span><br><span class="line">  .variable</span><br><span class="line">  .regexp</span><br><span class="line">  .ruby .constant</span><br><span class="line">  .xml .tag .title</span><br><span class="line">  .xml .pi</span><br><span class="line">  .xml .doctype</span><br><span class="line">  .html .doctype</span><br><span class="line">  .css .id</span><br><span class="line">  .css .class</span><br><span class="line">  .css .pseudo</span><br><span class="line">    <span class="attribute">color:</span> highlight-red</span><br><span class="line">  .number</span><br><span class="line">  .built_in</span><br><span class="line">  .literal</span><br><span class="line">  .constant</span><br><span class="line">    <span class="attribute">color:</span> highlight-purple</span><br><span class="line">  .params</span><br><span class="line">    <span class="attribute">color:</span> highlight-orange</span><br><span class="line">  .class</span><br><span class="line">  .ruby .class .title</span><br><span class="line">  .css .rules .attribute</span><br><span class="line">  .attribute</span><br><span class="line">    <span class="attribute">color:</span> highlight-green</span><br><span class="line">  .string</span><br><span class="line">  .value</span><br><span class="line">  .inheritance</span><br><span class="line">  .header</span><br><span class="line">  .ruby .symbol</span><br><span class="line">  .xml .cdata</span><br><span class="line">    <span class="attribute">color:</span> highlight-yellow</span><br><span class="line">  .css .hexcolor</span><br><span class="line">    <span class="attribute">color:</span> highlight-aqua</span><br><span class="line">  .function</span><br><span class="line">  .python .decorator</span><br><span class="line">  .python .title</span><br><span class="line">  .ruby .function .title</span><br><span class="line">  .ruby .title .keyword</span><br><span class="line">  .perl .sub</span><br><span class="line">  .javascript .title</span><br><span class="line">  .coffeescript .title</span><br><span class="line">    <span class="attribute">color:</span> highlight-blue</span><br><span class="line">  .keyword</span><br><span class="line">  .javascript .function</span><br><span class="line">    <span class="attribute">color:</span> highlight-blue</span><br></pre></td></tr></table></figure>
-<p>由于代码快左边会出现行数，在复制的时候容易复制出来，所以给隐藏掉比较好。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://kziwws.github.io/2018/03/20/technology20180320113530/" data-id="cl6xbbcbl004hp18d61hx6luh" class="article-share-link" data-share="baidu" data-title="Hexo博客landscape-plus主题修改侧边栏颜色">分享到</a>
-      
-
-    
-  <a href="https://kziwws.github.io/2018/03/20/technology20180320113530/#valine_thread" class="article-comment-link">评论</a>
-
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/" rel="tag">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
 
     </footer>
   </div>
@@ -761,7 +1652,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/charles/">charles</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocoapods/">cocoapods</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocosCreator/">cocosCreator</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/regexp/">regexp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/">诗</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%BD%AC%E5%BD%95/">转录</a><span class="category-list-count">1</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/charles/">charles</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocoapods/">cocoapods</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocosCreator/">cocosCreator</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/error/">error</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/regexp/">regexp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/">诗</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%BD%AC%E5%BD%95/">转录</a><span class="category-list-count">1</span></li></ul></li></ul>
     </div>
   </div>
 
@@ -770,7 +1661,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoapods/" rel="tag">cocoapods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/" rel="tag">flutter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/" rel="tag">ios</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/poetry/" rel="tag">poetry</a><span class="tag-list-count">45</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regexp/" rel="tag">regexp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology/" rel="tag">technology</a><span class="tag-list-count">17</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoapods/" rel="tag">cocoapods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/" rel="tag">flutter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/" rel="tag">ios</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/poetry/" rel="tag">poetry</a><span class="tag-list-count">45</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regexp/" rel="tag">regexp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology/" rel="tag">technology</a><span class="tag-list-count">20</span></li></ul>
     </div>
   </div>
 
@@ -779,7 +1670,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/android/" style="font-size: 12.5px;">android</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/cocosCreator/" style="font-size: 15px;">cocosCreator</a> <a href="/tags/flutter/" style="font-size: 10px;">flutter</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/poetry/" style="font-size: 20px;">poetry</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/technology/" style="font-size: 17.5px;">technology</a>
+      <a href="/tags/android/" style="font-size: 12px;">android</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/cocosCreator/" style="font-size: 16px;">cocosCreator</a> <a href="/tags/flutter/" style="font-size: 10px;">flutter</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 16px;">hexo</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/poetry/" style="font-size: 20px;">poetry</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/technology/" style="font-size: 18px;">technology</a>
     </div>
   </div>
 
@@ -788,8 +1679,8 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <!--<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">5</span></li></ul> -->
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">2021年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">2020年</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019年</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">2017年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年</a><span class="archive-list-count">6</span></li></ul>
+      <!--<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">5</span></li></ul> -->
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">2022年</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">2021年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">2020年</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019年</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">2017年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -801,6 +1692,14 @@ var _hmt = _hmt || [];
       <ul>
         
           <li>
+            <a href="/2022/10/16/technology20221016191405/">Pycharm2021破解版安装教程</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/16/technology20220916182205/">Pycharm运行闪退报parseVMOptions PYCHARM_VM_OPTIONS</a>
+          </li>
+        
+          <li>
             <a href="/2021/12/10/technology20211210100122/">Mac青花瓷Charles抓包使用详解</a>
           </li>
         
@@ -810,14 +1709,6 @@ var _hmt = _hmt || [];
         
           <li>
             <a href="/2021/08/21/poetry20210821%20102025/">《挽秋》</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/28/poetry20200528021344/">《掩埋》</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/14/poetry20200514110322/">《千嶂古木昏》</a>
           </li>
         
       </ul>
@@ -867,7 +1758,7 @@ var _hmt = _hmt || [];
 
 <!--
 <div id="footer-info" class="inner">
-     &copy; 2022 kziwws<br>
+     &copy; 2023 kziwws<br>
       Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
      .
      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
