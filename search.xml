@@ -90,7 +90,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd &#x2F;Applications&#x2F;PyCharm.app&#x2F;Contents&#x2F;MacOS</span><br><span class="line">.&#x2F;pycharm</span><br></pre></td></tr></table></figure>
 <p>找到后先后执行上面命令，第一句你直接cd过后直接拖上去<code>PyCharm软件的图标</code>，然后都执行完成过后，就会展示出闪退报错我的位置。</p>
 <p><strong>二、如果也是报的上面vmoptions文件的问题</strong></p>
-<p>[<img src="https://img2022.cnblogs.com/blog/825987/202209/825987-20220916220903069-1076378507.jpg" alt=""></p>
+<p><a href="https://imgse.com/i/pSuia11" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2023/01/12/pSuia11.jpg" alt="pSuia11.jpg"></a></p>
 <p>找到 <code>/Users/mac/Library/LaunchAgents/jetbrains.vmoptions.plist</code>，你也可以点击mac前往/Users/mac/Library/LaunchAgents/  mac换成你的电脑用户名。</p>
 <p>然后找到<code>jetbrains.vmoptions.plist</code>文件，用Xcode或者VsCode或者其他工具打开，然后可以看到</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">plist</span> <span class="meta-keyword">PUBLIC</span> <span class="meta-string">"-//Apple//DTD PLIST 1.0//EN"</span> <span class="meta-string">"http://www.apple.com/DTDs/PropertyList-1.0.dtd"</span>&gt;</span><span class="tag">&lt;<span class="name">plist</span> <span class="attr">version</span>=<span class="string">"1.0"</span>&gt;</span><span class="tag">&lt;<span class="name">dict</span>&gt;</span><span class="tag">&lt;<span class="name">key</span>&gt;</span>Label<span class="tag">&lt;/<span class="name">key</span>&gt;</span><span class="tag">&lt;<span class="name">string</span>&gt;</span>jetbrains.vmoptions<span class="tag">&lt;/<span class="name">string</span>&gt;</span><span class="tag">&lt;<span class="name">key</span>&gt;</span>ProgramArguments<span class="tag">&lt;/<span class="name">key</span>&gt;</span><span class="tag">&lt;<span class="name">array</span>&gt;</span><span class="tag">&lt;<span class="name">string</span>&gt;</span>sh<span class="tag">&lt;/<span class="name">string</span>&gt;</span><span class="tag">&lt;<span class="name">string</span>&gt;</span>-c<span class="tag">&lt;/<span class="name">string</span>&gt;</span><span class="tag">&lt;<span class="name">string</span>&gt;</span></span><br><span class="line">launchctl setenv "IDEA_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/idea.vmoptions"</span><br><span class="line">launchctl setenv "CLION_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/clion.vmoptions"</span><br><span class="line">launchctl setenv "PHPSTORM_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/phpstorm.vmoptions"</span><br><span class="line">launchctl setenv "GOLAND_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/goland.vmoptions"</span><br><span class="line">launchctl setenv "PYCHARM_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/pycharm.vmoptions"</span><br><span class="line">launchctl setenv "WEBSTORM_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/webstorm.vmoptions"</span><br><span class="line">launchctl setenv "WEBIDE_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/webide.vmoptions"</span><br><span class="line">launchctl setenv "RIDER_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/rider.vmoptions"</span><br><span class="line">launchctl setenv "DATAGRIP_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/datagrip.vmoptions"</span><br><span class="line">launchctl setenv "RUBYMINE_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/rubymine.vmoptions"</span><br><span class="line">launchctl setenv "APPCODE_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/appcode.vmoptions"</span><br><span class="line">launchctl setenv "DATASPELL_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/dataspell.vmoptions"</span><br><span class="line">launchctl setenv "GATEWAY_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/gateway.vmoptions"</span><br><span class="line">launchctl setenv "JETBRAINS_CLIENT_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/jetbrains_client.vmoptions"</span><br><span class="line">launchctl setenv "JETBRAINSCLIENT_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/jetbrainsclient.vmoptions"</span><br><span class="line">launchctl setenv "STUDIO_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/studio.vmoptions"</span><br><span class="line">launchctl setenv "DEVECOSTUDIO_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/devecostudio.vmoptions"</span><br><span class="line"><span class="tag">&lt;/<span class="name">string</span>&gt;</span><span class="tag">&lt;/<span class="name">array</span>&gt;</span><span class="tag">&lt;<span class="name">key</span>&gt;</span>RunAtLoad<span class="tag">&lt;/<span class="name">key</span>&gt;</span><span class="tag">&lt;<span class="name">true</span>/&gt;</span><span class="tag">&lt;/<span class="name">dict</span>&gt;</span><span class="tag">&lt;/<span class="name">plist</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -450,19 +450,6 @@
       </tags>
   </entry>
   <entry>
-    <title>《往昔》</title>
-    <url>/2020/03/22/poetry20200322030122/</url>
-    <content><![CDATA[<p>草莺绕飞堤，独自殇离凄。<br>落松曾规啼，已成旧时昔。</p>
-<p>by:霜</p>
-]]></content>
-      <categories>
-        <category>诗</category>
-      </categories>
-      <tags>
-        <tag>poetry</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>《醉无可托》</title>
     <url>/2020/03/22/poetry20200323160213/</url>
     <content><![CDATA[<p>斜阳西照已迢迢，氤氲无限渺。晦桥柔行太匆匆，人流散尽东风中。<br>欲解灯前念谁何，一杯月可托。问君生畏何事多？最难异乡醉墙说。</p>
@@ -471,6 +458,19 @@
       <categories>
         <category>诗</category>
         <category>诗词</category>
+      </categories>
+      <tags>
+        <tag>poetry</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《往昔》</title>
+    <url>/2020/03/22/poetry20200322030122/</url>
+    <content><![CDATA[<p>草莺绕飞堤，独自殇离凄。<br>落松曾规啼，已成旧时昔。</p>
+<p>by:霜</p>
+]]></content>
+      <categories>
+        <category>诗</category>
       </categories>
       <tags>
         <tag>poetry</tag>
