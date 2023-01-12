@@ -83,6 +83,8 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rm -rf  /Users/mac/Library/Preferences/PyCharm2021.3</span><br></pre></td></tr></table></figure>
 
 <p>重新删除这个文件运行还是闪退。</p>
+<a id="more"></a>
+
 <p><font color="green"><strong><em>解决办法：</em></strong></font></p>
 <h4 id="首先看见上面的问题，应该找-parseVMOptions-PYCHARM-VM-OPTIONS"><a href="#首先看见上面的问题，应该找-parseVMOptions-PYCHARM-VM-OPTIONS" class="headerlink" title="首先看见上面的问题，应该找 parseVMOptions: PYCHARM_VM_OPTIONS"></a>首先看见上面的问题，应该找 <code>parseVMOptions: PYCHARM_VM_OPTIONS</code></h4><p><strong>一、找到PyCharm在mac上安装位置，在应用程序里。</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd &#x2F;Applications&#x2F;PyCharm.app&#x2F;Contents&#x2F;MacOS</span><br><span class="line">.&#x2F;pycharm</span><br></pre></td></tr></table></figure>

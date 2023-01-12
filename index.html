@@ -174,7 +174,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2022/10/16/technology20221016191405/" data-id="clcsh5jhj005ndz8d3p8gajpm" class="article-share-link" data-share="baidu" data-title="Pycharm2021破解版安装教程">分享到</a>
+        <a data-url="https://kziwws.github.io/2022/10/16/technology20221016191405/" data-id="clcshocnj005tnu8d7kah77s9" class="article-share-link" data-share="baidu" data-title="Pycharm2021破解版安装教程">分享到</a>
       
 
     
@@ -226,25 +226,16 @@ var _hmt = _hmt || [];
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf  /Users/mac/Library/Preferences/PyCharm2021.3</span><br></pre></td></tr></table></figure>
 
 <p>重新删除这个文件运行还是闪退。</p>
-<p><font color="green"><strong><em>解决办法：</em></strong></font></p>
-<h4 id="首先看见上面的问题，应该找-parseVMOptions-PYCHARM-VM-OPTIONS"><a href="#首先看见上面的问题，应该找-parseVMOptions-PYCHARM-VM-OPTIONS" class="headerlink" title="首先看见上面的问题，应该找 parseVMOptions: PYCHARM_VM_OPTIONS"></a>首先看见上面的问题，应该找 <code>parseVMOptions: PYCHARM_VM_OPTIONS</code></h4><p><strong>一、找到PyCharm在mac上安装位置，在应用程序里。</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;Applications&#x2F;PyCharm.app&#x2F;Contents&#x2F;MacOS</span><br><span class="line">.&#x2F;pycharm</span><br></pre></td></tr></table></figure>
-<p>找到后先后执行上面命令，第一句你直接cd过后直接拖上去<code>PyCharm软件的图标</code>，然后都执行完成过后，就会展示出闪退报错我的位置。</p>
-<p><strong>二、如果也是报的上面vmoptions文件的问题</strong></p>
-<p>[<img src="https://img2022.cnblogs.com/blog/825987/202209/825987-20220916220903069-1076378507.jpg" alt=""></p>
-<p>找到 <code>/Users/mac/Library/LaunchAgents/jetbrains.vmoptions.plist</code>，你也可以点击mac前往/Users/mac/Library/LaunchAgents/  mac换成你的电脑用户名。</p>
-<p>然后找到<code>jetbrains.vmoptions.plist</code>文件，用Xcode或者VsCode或者其他工具打开，然后可以看到</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">plist</span> <span class="meta-keyword">PUBLIC</span> <span class="meta-string">"-//Apple//DTD PLIST 1.0//EN"</span> <span class="meta-string">"http://www.apple.com/DTDs/PropertyList-1.0.dtd"</span>&gt;</span><span class="tag">&lt;<span class="name">plist</span> <span class="attr">version</span>=<span class="string">"1.0"</span>&gt;</span><span class="tag">&lt;<span class="name">dict</span>&gt;</span><span class="tag">&lt;<span class="name">key</span>&gt;</span>Label<span class="tag">&lt;/<span class="name">key</span>&gt;</span><span class="tag">&lt;<span class="name">string</span>&gt;</span>jetbrains.vmoptions<span class="tag">&lt;/<span class="name">string</span>&gt;</span><span class="tag">&lt;<span class="name">key</span>&gt;</span>ProgramArguments<span class="tag">&lt;/<span class="name">key</span>&gt;</span><span class="tag">&lt;<span class="name">array</span>&gt;</span><span class="tag">&lt;<span class="name">string</span>&gt;</span>sh<span class="tag">&lt;/<span class="name">string</span>&gt;</span><span class="tag">&lt;<span class="name">string</span>&gt;</span>-c<span class="tag">&lt;/<span class="name">string</span>&gt;</span><span class="tag">&lt;<span class="name">string</span>&gt;</span></span><br><span class="line">launchctl setenv "IDEA_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/idea.vmoptions"</span><br><span class="line">launchctl setenv "CLION_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/clion.vmoptions"</span><br><span class="line">launchctl setenv "PHPSTORM_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/phpstorm.vmoptions"</span><br><span class="line">launchctl setenv "GOLAND_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/goland.vmoptions"</span><br><span class="line">launchctl setenv "PYCHARM_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/pycharm.vmoptions"</span><br><span class="line">launchctl setenv "WEBSTORM_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/webstorm.vmoptions"</span><br><span class="line">launchctl setenv "WEBIDE_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/webide.vmoptions"</span><br><span class="line">launchctl setenv "RIDER_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/rider.vmoptions"</span><br><span class="line">launchctl setenv "DATAGRIP_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/datagrip.vmoptions"</span><br><span class="line">launchctl setenv "RUBYMINE_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/rubymine.vmoptions"</span><br><span class="line">launchctl setenv "APPCODE_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/appcode.vmoptions"</span><br><span class="line">launchctl setenv "DATASPELL_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/dataspell.vmoptions"</span><br><span class="line">launchctl setenv "GATEWAY_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/gateway.vmoptions"</span><br><span class="line">launchctl setenv "JETBRAINS_CLIENT_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/jetbrains_client.vmoptions"</span><br><span class="line">launchctl setenv "JETBRAINSCLIENT_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/jetbrainsclient.vmoptions"</span><br><span class="line">launchctl setenv "STUDIO_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/studio.vmoptions"</span><br><span class="line">launchctl setenv "DEVECOSTUDIO_VM_OPTIONS" "/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/devecostudio.vmoptions"</span><br><span class="line"><span class="tag">&lt;/<span class="name">string</span>&gt;</span><span class="tag">&lt;/<span class="name">array</span>&gt;</span><span class="tag">&lt;<span class="name">key</span>&gt;</span>RunAtLoad<span class="tag">&lt;/<span class="name">key</span>&gt;</span><span class="tag">&lt;<span class="name">true</span>/&gt;</span><span class="tag">&lt;/<span class="name">dict</span>&gt;</span><span class="tag">&lt;/<span class="name">plist</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>找到过后，将上面的目录指向之前破解版的目录vmoptions文件。如果防止以后删除你可以保存一份在/Users/mac/vmoptions 根目录下，然后例如上面的位置：</p>
-<p><code>/Users/mac/Desktop/未命名文件夹/jetbra/vmoptions/idea.vmoptions</code><br>改成<br><code>/Users/mac/vmoptions/idea.vmoptions</code></p>
-<p>将上面的路径全部修改完毕，然后保存，再退出。</p>
-<p><strong>重新运行PyCharm就可以重新运行了</strong></p>
-
+        
+          <p class="article-more-link">
+            <a href="/2022/09/16/technology20220916182205/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2022/09/16/technology20220916182205/" data-id="clcsh5jhk005qdz8d64vm2nw8" class="article-share-link" data-share="baidu" data-title="Pycharm运行闪退报parseVMOptions PYCHARM_VM_OPTIONS">分享到</a>
+        <a data-url="https://kziwws.github.io/2022/09/16/technology20220916182205/" data-id="clcshocnh005onu8dg7kl4plr" class="article-share-link" data-share="baidu" data-title="Pycharm运行闪退报parseVMOptions PYCHARM_VM_OPTIONS">分享到</a>
       
 
     
@@ -307,7 +298,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2021/12/10/technology20211210100122/" data-id="clcsh5jhl005ydz8ddjnf2w8h" class="article-share-link" data-share="baidu" data-title="Mac青花瓷Charles抓包使用详解">分享到</a>
+        <a data-url="https://kziwws.github.io/2021/12/10/technology20211210100122/" data-id="clcshocnf005gnu8d84fqfkyw" class="article-share-link" data-share="baidu" data-title="Mac青花瓷Charles抓包使用详解">分享到</a>
       
 
     
@@ -382,7 +373,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2021/10/10/technology20211010110234/" data-id="clcsh5jhl005vdz8d6hpu9i8l" class="article-share-link" data-share="baidu" data-title="flutter基础学习">分享到</a>
+        <a data-url="https://kziwws.github.io/2021/10/10/technology20211010110234/" data-id="clcshocnh005lnu8df2pychfa" class="article-share-link" data-share="baidu" data-title="flutter基础学习">分享到</a>
       
 
     
@@ -431,7 +422,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2021/08/21/poetry20210821%20102025/" data-id="clcsh5jgx003zdz8d3p5i9jnp" class="article-share-link" data-share="baidu" data-title="《挽秋》">分享到</a>
+        <a data-url="https://kziwws.github.io/2021/08/21/poetry20210821%20102025/" data-id="clcshocmv003unu8d025uamvi" class="article-share-link" data-share="baidu" data-title="《挽秋》">分享到</a>
       
 
     
@@ -505,7 +496,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2020/11/05/technology20201105160509/" data-id="clcsh5jhi005idz8dgjnvaepj" class="article-share-link" data-share="baidu" data-title="CocosCreator运行自带的模拟器报spawn python ENOENT">分享到</a>
+        <a data-url="https://kziwws.github.io/2020/11/05/technology20201105160509/" data-id="clcshocnb0059nu8d7mbxg0al" class="article-share-link" data-share="baidu" data-title="CocosCreator运行自带的模拟器报spawn python ENOENT">分享到</a>
       
 
     
@@ -554,7 +545,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2020/05/28/poetry20200528021344/" data-id="clcsh5jgu003qdz8d4dcehd82" class="article-share-link" data-share="baidu" data-title="《掩埋》">分享到</a>
+        <a data-url="https://kziwws.github.io/2020/05/28/poetry20200528021344/" data-id="clcshocmu003rnu8dd3yfeqxy" class="article-share-link" data-share="baidu" data-title="《掩埋》">分享到</a>
       
 
     
@@ -603,7 +594,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2020/05/14/poetry20200514110322/" data-id="clcsh5jgv003tdz8dci2tf7uo" class="article-share-link" data-share="baidu" data-title="《千嶂古木昏》">分享到</a>
+        <a data-url="https://kziwws.github.io/2020/05/14/poetry20200514110322/" data-id="clcshocmt003onu8d94a7c3dj" class="article-share-link" data-share="baidu" data-title="《千嶂古木昏》">分享到</a>
       
 
     
@@ -652,7 +643,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2020/05/10/poetry20200510100216/" data-id="clcsh5jgs003ndz8da7ic9op1" class="article-share-link" data-share="baidu" data-title="《难》">分享到</a>
+        <a data-url="https://kziwws.github.io/2020/05/10/poetry20200510100216/" data-id="clcshocms003lnu8d85zydgrd" class="article-share-link" data-share="baidu" data-title="《难》">分享到</a>
       
 
     
@@ -701,7 +692,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2020/04/30/poetry20200430120106/" data-id="clcsh5jgr003kdz8dg6n4ean1" class="article-share-link" data-share="baidu" data-title="《心徜徉》">分享到</a>
+        <a data-url="https://kziwws.github.io/2020/04/30/poetry20200430120106/" data-id="clcshocmq003inu8d9cu5b80o" class="article-share-link" data-share="baidu" data-title="《心徜徉》">分享到</a>
       
 
     
