@@ -112,6 +112,196 @@ var _hmt = _hmt || [];
     <div class="outer">
       <section id="main">
   
+    <article id="post-technology20180102082133" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/02/technology20180102082133/" class="article-date">
+  <time datetime="2018-01-02T00:21:33.000Z" itemprop="datePublished">2018-01-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/02/technology20180102082133/">Linux服务器使用Nginx搭建Hexo博客+Github Pages</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>看了很多搭建博客的 <a href="https://wordpress.org/" target="_blank" rel="noopener">wordpress</a>、<a href="https://ghost.org/" target="_blank" rel="noopener">ghost</a>、<a href="https://jekyllcn.com/" target="_blank" rel="noopener">jekyllcn</a>、<a href="https://hexo.io/zh-cn/index.html" target="_blank" rel="noopener">hexo</a>。这些都可以搭建属于自己的博客，各有各的优点，开始的时候使用了wordpress搭建了一个感觉太弱鸡了。先安装一个 <a href="https://www.bt.cn" target="_blank" rel="noopener">宝塔</a>软件，然后安装wordpress没什么难度，关键定制里面的东西感觉一点都不方便，重点是界面极丑，我感觉自己把主题全部换遍了然后都没有一个我自己觉得满意的，然后我放弃了,不用这个搭建。</p>
+<p><strong>然后看了其他很多搭建博客的，后来选择了hexo。</strong></p>
+<blockquote>
+<p><font color= 'grey'>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。Hexo的主题样式也有很多好看的，而且github都有star上万的。说明还是很受欢迎的。</font></p>
+</blockquote>
+<p>如果有人想使用Ghost搭建的轻型博客可以去看一下<a href="https://shevakuilin.com/build-ghost-on-centos7/" target="_blank" rel="noopener">如何在 CentOS 7 上搭建一个 Ghost 博客</a>，朋友就是使用这个搭建的，我选择了hexo我就不去折腾了。</p>
+<p>hexo 搭建博客可以采用 </p>
+<p>​    1、<a href="https://hexo.io/zh-cn/index.html" target="_blank" rel="noopener">Hexo</a> + <a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a> 的方案，前往<a href="https://github.com" target="_blank" rel="noopener">https://github.com</a>注册一个账号。<br>​    2 、采用 CentOS 搭建在云服务器上，我的是CentOS / 7.6 x64系统，就是Linux操作系统的一个发行版本。</p>
+<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><ul>
+<li><a href="#node_install">Node安装</a></li>
+<li><a href="#git_install">Git环境安装</a></li>
+<li><a href="#hexo_install">Hexo安装</a></li>
+<li><a href="#nginx_install">Nginx配置安装</a></li>
+</ul>
+<p><strong>如果直接在放在服务器上,可以不用安装git,只是需要安装<code>node</code>、<code>Hexo</code>、<code>nginx</code>。如果使用Github搭建,则需要按照安装。意思就是如果你想要通过git从一个地方提交到远程仓库，就需要安装。</strong></p>
+<p>免费的代码存储空间，先去上面的网址注册一个账号，这个账号就是作为博客的网址的前缀，注意这个是不能修改的<code>https://xxx.github.io</code>。由于我都使用工具在云服务器操作的，所以这儿推荐一个Mac系统软件上感觉相对好用的软件 <code>FinalShell SSH工具</code><a href="http://www.hostbuf.com" target="_blank" rel="noopener">简陋的官网</a>，不过我喜欢，就喜欢简单而又直白的…。<a href="http://www.hostbuf.com/downloads/finalshell_install.pkg" target="_blank" rel="noopener">macOs系统版本FinalShell下载</a>，<a href="http://www.hostbuf.com/downloads/finalshell_install.exe" target="_blank" rel="noopener">windows版本FinalShell下载</a>。不过你喜欢用其他也行，只要能连接上服务器就完事。</p>
+<p><a name='node_install'><strong>一、配置Node和安装</strong></a></p>
+<ul>
+<li><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">官网</a>下载node安装包，下载<a href="https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-x64.tar.xz" target="_blank" rel="noopener">Linux Binaries (x64) node-v12.14.1-linux-x64.tar.xz includes npm 6.13.4</a> </li>
+</ul>
+<ul>
+<li><p>如果你是使用的Final的话，你自己选择一个node要安装的目录，你也可以新建一个。我的是在主目录新建了一个/soft，然后在命令工具cd /soft 该目录，如果你这儿是想放在其他目录里，你自己cd到要的那个目录里，然后你直接把下载下来的node包拖到这个目录下，就会显示上传。如果你使用的其他工具请自行解决，你也可以使用服务器远程桌面连接，然后在服务上直接下载也行。</p>
+</li>
+<li><p>使用命令 <code>xz -d node-v12.14.1-linux-x64.tar.xz</code>转为 <code>node-v12.14.1-linux-x64.tar</code>文件 然后<code>tar -xvf node-v10.15.1-linux-x64.tar</code>解压，然后使用删除 <code>rm -rf node-v12.14.1-linux-x64.tar</code>源文件，重命文件夹 <code>mv node-v12.14.1-linux-x64 node</code> 后面好使用。</p>
+</li>
+<li><p>建立软连接，就是快捷方式就相当于一个入口相当于桌面快捷方式，前面部分就是你先前安装路径 后面是快捷方式路径。</p>
+<p><code>ln -s /soft/node/bin/node /usr/local/bin/node</code><br><code>ln -s /soft/node/bin/npm /usr/local/bin/npm</code></p>
+</li>
+<li><p>使用 <code>npm - v</code>和<code>node - v</code>是否安装成功，如果成功会输出版本号<code>#node -v v12.14.1</code> 和 `#npm -v6.13.4。</p>
+<p>找到这个 <code>/usr/local/bin</code> 路径会node和npm的快捷方式，带有绿色的箭头。</p>
+</li>
+</ul>
+<p><a name='git_install'><strong>二、Git环境安装</strong></a></p>
+<ul>
+<li><p>选择一个目录安装Git，看你自己安装在哪儿。我的是安装到/usr/local目录下,<code>cd /usr/local/git</code>。</p>
+</li>
+<li><p><a href="https://mirrors.edge.kernel.org/pub/software/scm/git/" target="_blank" rel="noopener">这儿查看git最新版本</a> 或者<a href="https://github.com/git/git/releases" target="_blank" rel="noopener">github上查看</a>，我使用的是<a href="https://github.com/git/git/releases/tag/v2.20.0-rc0" target="_blank" rel="noopener">git v2.20.0-rc0</a>版本，你可以直接下载下来上传到linux环境中。也可以使用命令  <code>wget https://github.com/git/git/archive/v2.20.0-rc0.tar.gz</code>。</p>
+</li>
+<li><p>下载过后然后解压和上面的步骤一样 <code>tar -zxvf git-v2.20.0-rc0.tar.gz</code>,然后删除<code>rm -rf git-v2.20.0-rc0.tar.gz</code>源文件。</p>
+</li>
+<li><p>安装依赖包, <code>yum install curl-devel</code>。</p>
+<p>开始安装Git   <code>./configure --prefix=/usr/local/git</code> 这儿这个/usr/local/git 就儿这个目录是你的git安装目录，之前的解压出来目录是 /usr/local/git-v2.20.0-rc0 。</p>
+<p>执行 <code>make。</code></p>
+<p>再执行完成过后，执行 <code>make install</code>。</p>
+<p>建立软连接，和前面的意思一样快捷方式 <code>ln -s /usr/local/git/bin/* /usr/bin/</code>。</p>
+<p>查看版本<code>git --version</code></p>
+</li>
+<li><p>GitHub 添加 <code>SSH key</code>,先看本地是否有<code>cd ~/.ssh</code> 然后再执行<code>ls</code>，存在会显示 id_rsa、id_rsa.pub、know_hosts 三个文件，没有创建 <code>ssh-keygen -t rsa -C &quot;xxx邮箱&quot;</code>，把 “xxx邮箱” 替换成你真实的注册github时的邮箱,然后回车输入两次密码。直接回车为空就行，成功后通过如下命令拷贝 SSH key 的内容 <code>clip &lt; ~/.ssh/id_rsa.pub</code>不过你也可以直接打开然后再复制。然后再github新建的仓库里，用你的用户名命名。创建成功过后打开<code>SSH and GPD Keys</code>然后填入信息和刚才复制的 <code>SSH keys</code>值 ,到这儿github pages配置完成。</p>
+</li>
+</ul>
+<p><a name='hexo_install'><strong>三、Hexo安装</strong></a></p>
+<ul>
+<li><p>安装 <code>npm install -g hexo-cli</code>,hexo为node的一个模块。</p>
+</li>
+<li><p>建立hexo 软连接 <code>ln -s /soft/node/bin/node/lib/node_modules/hexo-cli/bin/hexo /usr/local/bin/hexo</code>。</p>
+</li>
+<li><p><code>cd  /soft/hexo/hexoblog</code>,然后执行 <code>hexo init hexoblog</code>  <code>npm install</code>。</p>
+</li>
+<li><p>hexoblog目录下会多出来<code>.deploy_git</code>、<code>node_modules</code>、<code>scaffolds</code>、<code>public</code>、<code>source</code>、<code>themes</code>等一些配置文件夹，这儿public就是hexo 执行<code>hexo g</code>过后生成的网站根目录，source是编写的Markdown文件资源,themes是hexo博客的一些主题目录。这儿还有一个重要的目录配置文件<code>_config.yml</code>这个就是配置网站里的基础信息。</p>
+</li>
+<li><p><code>hexo clean</code>、<code>hexo generate、</code> <code>hexo server</code>、 <code>hexo deploy</code> 分别对应简写<code>hexo c、 g 、s 、d</code>，第一个清除所有生成网页文件，第二个生成静态的网页文件，第三个开始启动本地服务器 <code>http://localhost:4000/</code>临时时访问，第四个是生成后立即部署网站。更多指令可以前往<a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="noopener">hexo官网查看</a>。</p>
+</li>
+<li><p>这儿public目录下的<code>_config.yml</code>配置如果是使用github+pages 。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">heme: landscape-plus ##这儿默认是landscape主题官方</span><br><span class="line"></span><br><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:xxx/xxx.github.io.git ##这儿换成你github用户名</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置过后就可以<code>hexo s</code>查看<code>hexo d</code>发布到github了。</p>
+</li>
+</ul>
+<p><a name='nginx_install'><strong>四、Nginx配置安装</strong></a></p>
+<ul>
+<li><p>去<a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">官网下载</a>最新的Nginx安装包<a href="http://nginx.org/download/nginx-1.14.2.tar.gz" target="_blank" rel="noopener">nginx-1.14.2</a>。</p>
+</li>
+<li><p>上传到服务器 <code>/usr/local</code>,和前面一样的解压，然后 <code>cd /usr/local/ngxin-1.14.2</code>,再执行命令<code>./configure --prefix=/usr/local/nginx-1.14.2</code>。</p>
+</li>
+<li><p>执行 <code>make</code> ,再执行 <code>make install</code>。</p>
+</li>
+<li><p>找到安装完成过后的 <code>/usr/local/nginx/sbin/nginx</code>的文件，我这儿把nginx-1.14.2重命名nginx。然后修改nginx的配置。找到路径 /usr/local/nginx/conf/nginx.conf  打开这儿就是一系列的配置。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">      listen       80;#可以修改成其他端口,确定该端口可用</span><br><span class="line">      server_name  localhost;#有域名填写域名</span><br><span class="line">      </span><br><span class="line">      listen <span class="number">443</span> ssl;</span><br><span class="line">      ssl_certificate      server.crt;</span><br><span class="line">      ssl_certificate_key  server_nopwd.key;</span><br><span class="line">      #charset koi8-r;</span><br><span class="line">      #access_log  logs/host.access.log  main;</span><br><span class="line">      location / &#123;</span><br><span class="line">          root   /soft/hexo/nginxblog/<span class="keyword">public</span>; </span><br><span class="line">          #这儿就是你要修改的hexo生成的静态网站目录</span><br><span class="line">          index  index.html index.htm;</span><br><span class="line">      &#125;</span><br><span class="line">      #error_page  404   /404.html;</span><br><span class="line">      # redirect server error pages to the static page /50x.html</span><br><span class="line">      error_page   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span> <span class="number">404</span> /<span class="number">404</span>x.html;</span><br><span class="line">      location = /<span class="number">404</span>x.html &#123;</span><br><span class="line">          root   html;</span><br><span class="line">      &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>然后启动nginx, <code>/usr/local/nginx/sbin/nginx -s reload</code> 如果有错误的话会提示错误。<code>/usr/local/nginx/sbin/nginx -t</code>会检查nginx配置文件是否正确。<code>/usr/local/nginx/sbin/nginx -s stop</code>快速停止。</p>
+</li>
+<li><p>如果启动出现<font color='red'>telnet: connect to address ~ no route to host</font> 重新关闭了重启开始出现的话，请先检查端口是否可用，可以使用指令查看 <code>ps -ef | grep nginx</code>  查看nginx端口是否启动成功。<code>netstat -a</code>  查看所有服务端口运行情况。如果还是没有解决，直接关闭防火墙<code>iptables -F</code>，然后再重启nginx。</p>
+</li>
+<li><p>到这儿如果是80端口的话，你直接在你电脑上输入服务器主ip地址应该就可以看到你的博客界面了。</p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2018/01/02/technology20180102082133/" data-id="clemo1qsj00458f8d2xyl1pwe" class="article-share-link" data-share="baidu" data-title="Linux服务器使用Nginx搭建Hexo博客+Github Pages">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2018/01/02/technology20180102082133/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-technology20170612104702" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/12/technology20170612104702/" class="article-date">
+  <time datetime="2017-06-12T02:47:02.000Z" itemprop="datePublished">2017-06-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/12/technology20170612104702/">IOS关于极光推送JPush不能上报deviceToken的问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><font color="red"><strong>问题一、</strong></font><font color="red"> ld:library not found for -ljpush-ios-3.0.9</font><br>    clang: error: linker command failed with exit code 1 (use -v to see invocation)</p>
+<p><font color="red"><strong>问题二、</strong></font><font color="red">JIGUANGDeviceTokenController</font> Not get deviceToken yet. Maybe: your certificate not configured APNs? or current network is not so good so APNs registration failed?  or there is no APNs register code? Please refer to JPush docs.</p>
+<h5 id="由于项目比较老，推送的SDK版本比较低的原因，之前老的项目可以正常推送，现在在旧项目基础上新改版的一个app不能正常推送，推送账号一切都是正常的。"><a href="#由于项目比较老，推送的SDK版本比较低的原因，之前老的项目可以正常推送，现在在旧项目基础上新改版的一个app不能正常推送，推送账号一切都是正常的。" class="headerlink" title="由于项目比较老，推送的SDK版本比较低的原因，之前老的项目可以正常推送，现在在旧项目基础上新改版的一个app不能正常推送，推送账号一切都是正常的。"></a>由于项目比较老，推送的SDK版本比较低的原因，之前老的项目可以正常推送，现在在旧项目基础上新改版的一个app不能正常推送，推送账号一切都是正常的。</h5>
+        
+          <p class="article-more-link">
+            <a href="/2017/06/12/technology20170612104702/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2017/06/12/technology20170612104702/" data-id="clemo1qsi00428f8dh90feucw" class="article-share-link" data-share="baidu" data-title="IOS关于极光推送JPush不能上报deviceToken的问题">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2017/06/12/technology20170612104702/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/" rel="tag">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
     <article id="post-poetry20151223083608" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/12/23/poetry20151223083608/" class="article-date">
@@ -145,7 +335,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2015/12/23/poetry20151223083608/" data-id="cldsh95ea000caw8d2zss8y2k" class="article-share-link" data-share="baidu" data-title="《无心》">分享到</a>
+        <a data-url="https://kziwws.github.io/2015/12/23/poetry20151223083608/" data-id="clemo1qr700088f8dc737ait7" class="article-share-link" data-share="baidu" data-title="《无心》">分享到</a>
       
 
     
@@ -194,7 +384,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2015/02/15/poetry20150215222104/" data-id="cldsh95e70007aw8d5wl20lda" class="article-share-link" data-share="baidu" data-title="《游州河有感》">分享到</a>
+        <a data-url="https://kziwws.github.io/2015/02/15/poetry20150215222104/" data-id="clemo1qr9000c8f8df60l2jve" class="article-share-link" data-share="baidu" data-title="《游州河有感》">分享到</a>
       
 
     
@@ -243,7 +433,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2015/02/12/poetry20150212101102/" data-id="cldsh95e80008aw8d0b92evrm" class="article-share-link" data-share="baidu" data-title="《唯你不慊》">分享到</a>
+        <a data-url="https://kziwws.github.io/2015/02/12/poetry20150212101102/" data-id="clemo1qr600078f8d5wpbdp3i" class="article-share-link" data-share="baidu" data-title="《唯你不慊》">分享到</a>
       
 
     
@@ -292,7 +482,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2015/02/12/poetry20150212094616/" data-id="cldsh95e60006aw8d3g7q70gi" class="article-share-link" data-share="baidu" data-title="《寻谊》">分享到</a>
+        <a data-url="https://kziwws.github.io/2015/02/12/poetry20150212094616/" data-id="clemo1qr500068f8d11opftpn" class="article-share-link" data-share="baidu" data-title="《寻谊》">分享到</a>
       
 
     
@@ -341,7 +531,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2015/02/12/poetry20150212092232/" data-id="cldsh95e30003aw8dev2o47fe" class="article-share-link" data-share="baidu" data-title="《恋》">分享到</a>
+        <a data-url="https://kziwws.github.io/2015/02/12/poetry20150212092232/" data-id="clemo1qr200038f8d4mc7dzh1" class="article-share-link" data-share="baidu" data-title="《恋》">分享到</a>
       
 
     
@@ -390,7 +580,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2015/02/12/poetry20150212091625/" data-id="cldsh95e00001aw8d5biab85a" class="article-share-link" data-share="baidu" data-title="《拂长夜》">分享到</a>
+        <a data-url="https://kziwws.github.io/2015/02/12/poetry20150212091625/" data-id="clemo1qqz00018f8dab36cc7f" class="article-share-link" data-share="baidu" data-title="《拂长夜》">分享到</a>
       
 
     
@@ -436,7 +626,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/charles/">charles</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocoapods/">cocoapods</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocosCreator/">cocosCreator</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/error/">error</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/regexp/">regexp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/">诗</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%BD%AC%E5%BD%95/">转录</a><span class="category-list-count">1</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/charles/">charles</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocoapods/">cocoapods</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocosCreator/">cocosCreator</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/error/">error</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/regexp/">regexp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/">诗</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%BD%AC%E5%BD%95/">转录</a><span class="category-list-count">1</span></li></ul></li></ul>
     </div>
   </div>
 
@@ -445,7 +635,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoapods/" rel="tag">cocoapods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/" rel="tag">flutter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/" rel="tag">ios</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/poetry/" rel="tag">poetry</a><span class="tag-list-count">46</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regexp/" rel="tag">regexp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology/" rel="tag">technology</a><span class="tag-list-count">20</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoapods/" rel="tag">cocoapods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/" rel="tag">flutter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/" rel="tag">ios</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/poetry/" rel="tag">poetry</a><span class="tag-list-count">46</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regexp/" rel="tag">regexp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology/" rel="tag">technology</a><span class="tag-list-count">22</span></li></ul>
     </div>
   </div>
 
@@ -454,7 +644,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/android/" style="font-size: 12px;">android</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/cocosCreator/" style="font-size: 16px;">cocosCreator</a> <a href="/tags/flutter/" style="font-size: 10px;">flutter</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 16px;">hexo</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/poetry/" style="font-size: 20px;">poetry</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/technology/" style="font-size: 18px;">technology</a>
+      <a href="/tags/android/" style="font-size: 11.67px;">android</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/cocosCreator/" style="font-size: 16.67px;">cocosCreator</a> <a href="/tags/flutter/" style="font-size: 10px;">flutter</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/ios/" style="font-size: 13.33px;">ios</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/poetry/" style="font-size: 20px;">poetry</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/technology/" style="font-size: 18.33px;">technology</a>
     </div>
   </div>
 
@@ -463,8 +653,8 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <!--<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">5</span></li></ul> -->
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">2022年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">2021年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">2020年</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019年</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">2017年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年</a><span class="archive-list-count">6</span></li></ul>
+      <!--<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">5</span></li></ul> -->
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">2023年</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">2022年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">2021年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">2020年</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019年</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">2017年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -476,6 +666,14 @@ var _hmt = _hmt || [];
       <ul>
         
           <li>
+            <a href="/2023/01/21/technology20230121151206/">IOS项目脚本自动化批量打包并上传第三方平台</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/20/technology20230120161001/">IOS项目脚本单独打包并上传第三方平台</a>
+          </li>
+        
+          <li>
             <a href="/2022/10/16/poetry20221016194425/">《叹平生》</a>
           </li>
         
@@ -485,14 +683,6 @@ var _hmt = _hmt || [];
         
           <li>
             <a href="/2022/09/16/technology20220916182205/">Pycharm运行闪退报parseVMOptions PYCHARM_VM_OPTIONS</a>
-          </li>
-        
-          <li>
-            <a href="/2021/12/10/technology20211210100122/">Mac青花瓷Charles抓包使用详解</a>
-          </li>
-        
-          <li>
-            <a href="/2021/10/10/technology20211010110234/">flutter基础学习</a>
           </li>
         
       </ul>
