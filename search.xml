@@ -85,7 +85,7 @@
       </tags>
   </entry>
   <entry>
-    <title>IOS项目脚本单独打包并上传第三方平台</title>
+    <title>IOS项目单独脚本自动化打包</title>
     <url>/2023/01/20/technology20230120161001/</url>
     <content><![CDATA[<h5 id="通过脚本自动化打包IOS项目"><a href="#通过脚本自动化打包IOS项目" class="headerlink" title="通过脚本自动化打包IOS项目"></a>通过脚本自动化打包IOS项目</h5><p>如果想要单个包批量打包请查看<a href="https://kziwws.github.io/2023/01/21/technology20230121151206/">IOS脚本批量打包</a></p>
 <h5 id="一、Shell脚本"><a href="#一、Shell脚本" class="headerlink" title="一、Shell脚本"></a><strong>一、Shell脚本</strong></h5><p>Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。<a href="https://www.runoob.com/linux/linux-shell.html" target="_blank" rel="noopener">shell脚本基础学习</a></p>
@@ -614,19 +614,6 @@
       </tags>
   </entry>
   <entry>
-    <title>《往昔》</title>
-    <url>/2020/03/22/poetry20200322030122/</url>
-    <content><![CDATA[<p>草莺绕飞堤，独自殇离凄。<br>落松曾规啼，已成旧时昔。</p>
-<p>by:霜</p>
-]]></content>
-      <categories>
-        <category>诗</category>
-      </categories>
-      <tags>
-        <tag>poetry</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>《醉无可托》</title>
     <url>/2020/03/22/poetry20200323160213/</url>
     <content><![CDATA[<p>斜阳西照已迢迢，氤氲无限渺。晦桥柔行太匆匆，人流散尽东风中。<br>欲解灯前念谁何，一杯月可托。问君生畏何事多？最难异乡醉墙说。</p>
@@ -635,6 +622,19 @@
       <categories>
         <category>诗</category>
         <category>诗词</category>
+      </categories>
+      <tags>
+        <tag>poetry</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《往昔》</title>
+    <url>/2020/03/22/poetry20200322030122/</url>
+    <content><![CDATA[<p>草莺绕飞堤，独自殇离凄。<br>落松曾规啼，已成旧时昔。</p>
+<p>by:霜</p>
+]]></content>
+      <categories>
+        <category>诗</category>
       </categories>
       <tags>
         <tag>poetry</tag>
