@@ -112,6 +112,87 @@ var _hmt = _hmt || [];
     <div class="outer">
       <section id="main">
   
+    <article id="post-technology2023210090112" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/10/technology2023210090112/" class="article-date">
+  <time datetime="2023-02-10T01:01:12.000Z" itemprop="datePublished">2023-02-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/02/10/technology2023210090112/">利用jekenis自动打包上传阿里云下载和通知钉钉机器人</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="利用jekenis自动打包、上传阿里云OSS生成二维码下载链接、通知钉钉机器人生成打包信息。"><a href="#利用jekenis自动打包、上传阿里云OSS生成二维码下载链接、通知钉钉机器人生成打包信息。" class="headerlink" title="利用jekenis自动打包、上传阿里云OSS生成二维码下载链接、通知钉钉机器人生成打包信息。"></a>利用jekenis自动打包、上传阿里云OSS生成二维码下载链接、通知钉钉机器人生成打包信息。</h5><p>前面介绍了单项目打包，和多项目打包，<a href="https://kziwws.github.io/2023/01/20/technology20230120161001/">IOS项目单独打包 </a>、<a href="https://kziwws.github.io/2023/01/21/technology20230121151206/">IOS脚本批量打包</a>。<br>现在在单独打包的基础上增加一些功能：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">打包完成过后，自动生成Plists文件上传到阿里云OSS, itms-services:&#x2F;&#x2F; URL,这个 URL 是 iOS 应用程序安装包的协议格式，而不是 HTTP 或 HTTPS 协议格式的链接。</span><br><span class="line"></span><br><span class="line">利用ossutil上传IPA包到阿里云OSS过后，然后利用qrserver服务生成QR二维码，同样子上传到阿里云。</span><br><span class="line"></span><br><span class="line">使用markdown语法再转发生成的二维码链接直接下载。</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a href="#ios_jekenis">mac安装jekenis</a></li>
+<li><a href="#ios_xcodebuild">ios项目xcodebuild打包</a></li>
+<li><a href="#ios_uploadl_ipa">ipa包上传阿里云OSS</a></li>
+<li><a href="#ios_plist">生成下载需要的Plist文件</a></li>
+<li><a href="#ios_upload_qr">生成二维码并上传</a></li>
+<li><a href="#ios_ding">通知钉钉发送打包消息</a></li>
+</ul>
+<p><a name='ios_jekenis'><strong>一、mac安装jekenis</strong></a></p>
+<h5 id="安装地址-https-www-jenkins-io-download-lts-macos"><a href="#安装地址-https-www-jenkins-io-download-lts-macos" class="headerlink" title="安装地址  https://www.jenkins.io/download/lts/macos/"></a>安装地址  <a href="https://www.jenkins.io/download/lts/macos/" target="_blank" rel="noopener">https://www.jenkins.io/download/lts/macos/</a></h5><p><code>brew install jenkins-lts</code> 安装最近最新的一次版本</p>
+<p><code>brew install jenkins-lts@YOUR_VERSION</code> 安装对应的其他版本</p>
+<p>如果遇到 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Error1：brew install jenkins Error: The following directories are not writable by your user</span><br><span class="line">在终端执行:</span><br><span class="line">sudo chown -R whoami:admin /usr/<span class="built_in">local</span>/bin</span><br><span class="line">sudo chown -R whoami:admin /usr/<span class="built_in">local</span>/share</span><br><span class="line"></span><br><span class="line">Error2：遇到其他位置问题，重新安装一下最新的Homebrew</span><br><span class="line">可参考地址 https://www.cnblogs.com/somepark/p/16813250.html</span><br><span class="line"></span><br><span class="line">在Terminal 执行 /bin/zsh -c <span class="string">"<span class="variable">$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)</span>"</span>，</span><br><span class="line">这里最好选择第2个源，清华大学下载源。然后根据提示安装</span><br></pre></td></tr></table></figure>
+
+<p>以上安装完成 在重新<code>brew install jenkins-lts</code>执行下载安装 jenkins，如果失败，请选网络或者重试。</p>
+<h5 id="运行Jenkins"><a href="#运行Jenkins" class="headerlink" title="运行Jenkins"></a>运行Jenkins</h5><p><code>brew services start jenkins-lts</code> 开启jenkins</p>
+<p><code>brew services restart jenkins-lts</code> 重启命令</p>
+<p><a name='ios_xcodebuild'><strong>二、ios项目xcodebuild打包</strong></a></p>
+<p>• 编译前清理工程：</p>
+<p> <code>xcodebuild clean -project ${projectName}.xcodeproj</code>。</p>
+<p>• 获取项目工程名：</p>
+<p><code>find . -name *.xcodeproj | awk -F &quot;[/.]&quot; &#39;{print $(NF-1)}</code> 中获取。</p>
+<p>• 获取打包AdHoc、AppStore、Enterprise、Development 所需的plist目录，这个目录在打包脚本的目录里。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 判读用户打包类型</span></span><br><span class="line">packType=$&#123;PackageType&#125;</span><br><span class="line">echo "33[31m 打包参数值:$&#123;packType&#125; n 33[0m"</span><br><span class="line">if [ $packType == "AdHoc" ] ; then</span><br><span class="line">exportOptionsPlistPath="$&#123;plistPath&#125;/AdHocExportOptionsPlist.plist"</span><br><span class="line">echo "当前选择构建AdHoc"</span><br><span class="line">elif [ $packType == "AppStore" ] ; then</span><br><span class="line">exportOptionsPlistPath="$&#123;plistPath&#125;/AppStoreExportOptionsPlist.plist"</span><br><span class="line">echo "当前选择构建AppStore"</span><br><span class="line">elif [ $packType == "Enterprise" ] ; then</span><br><span class="line">exportOptionsPlistPath="$&#123;plistPath&#125;/EnterpriseExportOptionsPlist.plist"</span><br><span class="line">echo "当前选择构建Enterprise"</span><br><span class="line">elif [ $packType == "Development" ] ; then</span><br><span class="line">exportOptionsPlistPath="$&#123;plistPath&#125;/DevelopmentExportOptionsPlist.plist"</span><br><span class="line">echo "当前选择构建Development"</span><br><span class="line">else</span><br><span class="line">echo "参数无效!!!"</span><br><span class="line">exit 1</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<p>• 执行xcodebuild打包IPA。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Build 生成 APP</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 判断编译的项目类型是workspace还是project</span></span><br><span class="line">if $is_workspace ; then</span><br><span class="line"><span class="meta">#</span><span class="bash"> 编译前清理工程</span></span><br><span class="line">xcodebuild clean -workspace $&#123;projectName&#125;.xcworkspace \</span><br><span class="line">                 -scheme $&#123;schemeName&#125; \</span><br><span class="line">                 -configuration $&#123;build_configuration&#125;</span><br><span class="line">xcodebuild archive -workspace $&#123;projectName&#125;.xcworkspace \</span><br><span class="line">                   -scheme $&#123;schemeName&#125; \</span><br><span class="line">                   -configuration $&#123;build_configuration&#125; \</span><br><span class="line">                   -archivePath $&#123;buildDir&#125; \</span><br><span class="line">                   -destination 'generic/platform=iOS' \</span><br><span class="line">                   -quiet</span><br><span class="line">else</span><br><span class="line"><span class="meta">#</span><span class="bash"> 编译前清理工程</span></span><br><span class="line">xcodebuild clean -project $&#123;projectName&#125;.xcodeproj \</span><br><span class="line">                 -scheme $&#123;schemeName&#125; \</span><br><span class="line">                 -configuration $&#123;build_configuration&#125;</span><br><span class="line">xcodebuild archive -project $&#123;projectName&#125;.xcodeproj \</span><br><span class="line">                   -scheme $&#123;schemeName&#125; \</span><br><span class="line">                   -configuration $&#123;build_configuration&#125; \</span><br><span class="line">                   -archivePath $&#123;buildDir&#125; \</span><br><span class="line">                   -destination 'generic/platform=iOS' \</span><br><span class="line">                   -quiet</span><br><span class="line"><span class="meta">#</span><span class="bash"> 生成 ipa</span></span><br><span class="line">xcodebuild -exportArchive \</span><br><span class="line">  -archivePath $&#123;buildDir&#125; \</span><br><span class="line">  -exportOptionsPlist $&#123;exportOptionsPlistPath&#125; \</span><br><span class="line">  -exportPath $&#123;ipaPath&#125; \</span><br><span class="line">  -allowProvisioningUpdates $&#123;YES&#125; \</span><br><span class="line">  -allowProvisioningDeviceRegistration $&#123;YES&#125; \</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2023/02/10/technology2023210090112/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2023/02/10/technology2023210090112/" data-id="clhu4gmar0062pf8d6tyu3rq2" class="article-share-link" data-share="baidu" data-title="利用jekenis自动打包上传阿里云下载和通知钉钉机器人">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2023/02/10/technology2023210090112/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/" rel="tag">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
     <article id="post-technology20230121151206" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2023/01/21/technology20230121151206/" class="article-date">
@@ -155,7 +236,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2023/01/21/technology20230121151206/" data-id="clep35as10066we8dhav7397k" class="article-share-link" data-share="baidu" data-title="IOS项目脚本自动化批量打包并上传第三方平台">分享到</a>
+        <a data-url="https://kziwws.github.io/2023/01/21/technology20230121151206/" data-id="clhu4gmas0067pf8dfeakf6o9" class="article-share-link" data-share="baidu" data-title="IOS项目脚本自动化批量打包并上传第三方平台">分享到</a>
       
 
     
@@ -214,7 +295,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2023/01/20/technology20230120161001/" data-id="clep35as00061we8d4k90cqqd" class="article-share-link" data-share="baidu" data-title="IOS项目单独脚本自动化打包">分享到</a>
+        <a data-url="https://kziwws.github.io/2023/01/20/technology20230120161001/" data-id="clhu4gmar005zpf8dfvdwhh37" class="article-share-link" data-share="baidu" data-title="IOS项目单独脚本自动化打包">分享到</a>
       
 
     
@@ -263,7 +344,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2022/10/16/poetry20221016194425/" data-id="clep35arb003zwe8d39t8aol0" class="article-share-link" data-share="baidu" data-title="《叹平生》">分享到</a>
+        <a data-url="https://kziwws.github.io/2022/10/16/poetry20221016194425/" data-id="clhu4gma0003qpf8d1qw3657i" class="article-share-link" data-share="baidu" data-title="《叹平生》">分享到</a>
       
 
     
@@ -341,7 +422,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2022/10/16/technology20221016191405/" data-id="clep35arz005ywe8dhmxocqu7" class="article-share-link" data-share="baidu" data-title="Pycharm2021破解版安装教程">分享到</a>
+        <a data-url="https://kziwws.github.io/2022/10/16/technology20221016191405/" data-id="clhu4gmap005upf8d9o7hcv51" class="article-share-link" data-share="baidu" data-title="Pycharm2021破解版安装教程">分享到</a>
       
 
     
@@ -402,7 +483,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2022/09/16/technology20220916182205/" data-id="clep35ary005twe8d6xye45ax" class="article-share-link" data-share="baidu" data-title="Pycharm运行闪退报parseVMOptions PYCHARM_VM_OPTIONS">分享到</a>
+        <a data-url="https://kziwws.github.io/2022/09/16/technology20220916182205/" data-id="clhu4gmao005npf8dgpyth3u5" class="article-share-link" data-share="baidu" data-title="Pycharm运行闪退报parseVMOptions PYCHARM_VM_OPTIONS">分享到</a>
       
 
     
@@ -465,7 +546,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2021/12/10/technology20211210100122/" data-id="clep35arv005lwe8dcinl2anw" class="article-share-link" data-share="baidu" data-title="Mac青花瓷Charles抓包使用详解">分享到</a>
+        <a data-url="https://kziwws.github.io/2021/12/10/technology20211210100122/" data-id="clhu4gmat006apf8d9snt5ioz" class="article-share-link" data-share="baidu" data-title="Mac青花瓷Charles抓包使用详解">分享到</a>
       
 
     
@@ -540,7 +621,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2021/10/10/technology20211010110234/" data-id="clep35arx005qwe8d4u2575pn" class="article-share-link" data-share="baidu" data-title="flutter基础学习">分享到</a>
+        <a data-url="https://kziwws.github.io/2021/10/10/technology20211010110234/" data-id="clhu4gman005jpf8d53jt86mf" class="article-share-link" data-share="baidu" data-title="flutter基础学习">分享到</a>
       
 
     
@@ -589,7 +670,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2021/08/21/poetry20210821102025/" data-id="clep35ara003wwe8d2u0fa27w" class="article-share-link" data-share="baidu" data-title="《晚秋》">分享到</a>
+        <a data-url="https://kziwws.github.io/2021/08/21/poetry20210821102025/" data-id="clhu4gma40046pf8d477jgbql" class="article-share-link" data-share="baidu" data-title="《晚秋》">分享到</a>
       
 
     
@@ -663,7 +744,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2020/11/05/technology20201105160509/" data-id="clep35aru005iwe8db7cz88sr" class="article-share-link" data-share="baidu" data-title="CocosCreator运行自带的模拟器报spawn python ENOENT">分享到</a>
+        <a data-url="https://kziwws.github.io/2020/11/05/technology20201105160509/" data-id="clhu4gmak0058pf8damhq3yet" class="article-share-link" data-share="baidu" data-title="CocosCreator运行自带的模拟器报spawn python ENOENT">分享到</a>
       
 
     
@@ -672,55 +753,6 @@ var _hmt = _hmt || [];
 
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-    <article id="post-poetry20200528021344" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/28/poetry20200528021344/" class="article-date">
-  <time datetime="2020-05-27T18:13:44.000Z" itemprop="datePublished">2020-05-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%97/">诗</a>►<a class="article-category-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/28/poetry20200528021344/">《掩埋》</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>笑雨春风夕迟顾，青山遗忘任几出，无数，彷徨来时路。<br>青春荏苒流光束，寒红尤染雪里途，昙华，残刃何年纷葬墓。</p>
-<p>by:霜</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://kziwws.github.io/2020/05/28/poetry20200528021344/" data-id="clep35ar9003twe8ddo537nsb" class="article-share-link" data-share="baidu" data-title="《掩埋》">分享到</a>
-      
-
-    
-  <a href="https://kziwws.github.io/2020/05/28/poetry20200528021344/#valine_thread" class="article-comment-link">评论</a>
-
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poetry/" rel="tag">poetry</a></li></ul>
 
     </footer>
   </div>
@@ -758,7 +790,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/charles/">charles</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocoapods/">cocoapods</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocosCreator/">cocosCreator</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/error/">error</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/regexp/">regexp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/">诗</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%BD%AC%E5%BD%95/">转录</a><span class="category-list-count">1</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/charles/">charles</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocoapods/">cocoapods</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocosCreator/">cocosCreator</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/error/">error</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/regexp/">regexp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/">诗</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%BD%AC%E5%BD%95/">转录</a><span class="category-list-count">1</span></li></ul></li></ul>
     </div>
   </div>
 
@@ -767,7 +799,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoapods/" rel="tag">cocoapods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/" rel="tag">flutter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/" rel="tag">ios</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/poetry/" rel="tag">poetry</a><span class="tag-list-count">46</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regexp/" rel="tag">regexp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology/" rel="tag">technology</a><span class="tag-list-count">22</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoapods/" rel="tag">cocoapods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/" rel="tag">flutter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/" rel="tag">ios</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/poetry/" rel="tag">poetry</a><span class="tag-list-count">46</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regexp/" rel="tag">regexp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology/" rel="tag">technology</a><span class="tag-list-count">23</span></li></ul>
     </div>
   </div>
 
@@ -776,7 +808,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/android/" style="font-size: 11.67px;">android</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/cocosCreator/" style="font-size: 16.67px;">cocosCreator</a> <a href="/tags/flutter/" style="font-size: 10px;">flutter</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/ios/" style="font-size: 13.33px;">ios</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/poetry/" style="font-size: 20px;">poetry</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/technology/" style="font-size: 18.33px;">technology</a>
+      <a href="/tags/android/" style="font-size: 12px;">android</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/cocosCreator/" style="font-size: 16px;">cocosCreator</a> <a href="/tags/flutter/" style="font-size: 10px;">flutter</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 16px;">hexo</a> <a href="/tags/ios/" style="font-size: 14px;">ios</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/poetry/" style="font-size: 20px;">poetry</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/technology/" style="font-size: 18px;">technology</a>
     </div>
   </div>
 
@@ -785,8 +817,8 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <!--<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">5</span></li></ul> -->
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">2023年</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">2022年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">2021年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">2020年</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019年</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">2017年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年</a><span class="archive-list-count">6</span></li></ul>
+      <!--<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">5</span></li></ul> -->
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">2023年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">2022年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">2021年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">2020年</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019年</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">2017年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -796,6 +828,10 @@ var _hmt = _hmt || [];
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/02/10/technology2023210090112/">利用jekenis自动打包上传阿里云下载和通知钉钉机器人</a>
+          </li>
         
           <li>
             <a href="/2023/01/21/technology20230121151206/">IOS项目脚本自动化批量打包并上传第三方平台</a>
@@ -811,10 +847,6 @@ var _hmt = _hmt || [];
         
           <li>
             <a href="/2022/10/16/technology20221016191405/">Pycharm2021破解版安装教程</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/16/technology20220916182205/">Pycharm运行闪退报parseVMOptions PYCHARM_VM_OPTIONS</a>
           </li>
         
       </ul>
