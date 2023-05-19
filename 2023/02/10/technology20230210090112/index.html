@@ -1,0 +1,890 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>利用jekenis自动打包上传阿里云下载和通知钉钉机器人 | 向🐑</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="公司项目脚本自动化打包IOS项目">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用jekenis自动打包上传阿里云下载和通知钉钉机器人">
+<meta property="og:url" content="https://kziwws.github.io/2023/02/10/technology20230210090112/index.html">
+<meta property="og:site_name" content="向🐑">
+<meta property="og:description" content="公司项目脚本自动化打包IOS项目">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2023/05/19/p9h6cs1.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/05/19/p9h6ozd.png">
+<meta property="article:published_time" content="2023-02-10T01:01:12.000Z">
+<meta property="article:modified_time" content="2023-05-19T05:43:36.188Z">
+<meta property="article:author" content="kziwws">
+<meta property="article:tag" content="IOS项目单独脚本自动化打包上传阿里云，发送通知钉钉">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2023/05/19/p9h6cs1.png">
+  
+    <link rel="alternative" href="/atom.xml" title="向🐑" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  <!--  -->
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?51e08434b847b38641d02f11be4eb143";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">向🐑</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">一只站在树上的鸟，从来不害怕树枝突然折断，因为它相信的不是树枝，而是它自己的翅膀！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/tags/technology">编程技术</a>
+        
+          <a class="main-nav-link" href="/tags/poetry">诗</a>
+        
+          <a class="main-nav-link" href="/tags/life">生活随笔</a>
+        
+          <a class="main-nav-link" href="/archives">所有文章</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        
+        
+        <a href="javascript:;" class="popup-trigger nav-icon" id="nav-search-btn"></a>
+        
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="kziwws.github.io">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="local-search-inner"><div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <span id="icon-search"></span>
+    </span>
+    <span class="popup-btn-close">
+      <span id="icon-close"></span>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="本地搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div></div>
+</header>
+
+
+
+    <div class="outer">
+      <section id="main"><article id="post-technology20230210090112" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/10/technology20230210090112/" class="article-date">
+  <time datetime="2023-02-10T01:01:12.000Z" itemprop="datePublished">2023-02-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      利用jekenis自动打包上传阿里云下载和通知钉钉机器人
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="利用jekenis自动打包、上传阿里云OSS生成二维码下载链接、通知钉钉机器人生成打包信息。"><a href="#利用jekenis自动打包、上传阿里云OSS生成二维码下载链接、通知钉钉机器人生成打包信息。" class="headerlink" title="利用jekenis自动打包、上传阿里云OSS生成二维码下载链接、通知钉钉机器人生成打包信息。"></a>利用jekenis自动打包、上传阿里云OSS生成二维码下载链接、通知钉钉机器人生成打包信息。</h5><p>前面介绍了单项目打包，和多项目打包，<a href="https://kziwws.github.io/2023/01/20/technology20230120161001/">IOS项目单独打包 </a>、<a href="https://kziwws.github.io/2023/01/21/technology20230121151206/">IOS脚本批量打包</a>。<br>现在在单独打包的基础上增加一些功能：</p>
+<blockquote>
+<p>打包完成过后，自动生成Plists文件上传到阿里云OSS, itms-services:// URL,这个 URL 是 iOS 应用程序安装包的协议格式，而不是 HTTP 或 HTTPS 协议格式的链接。</p>
+<p>利用ossutil上传IPA包到阿里云OSS过后，然后利用qrserver服务生成QR二维码，同样子上传到阿里云。</p>
+<p>使用markdown语法再转发生成的二维码链接直接下载。</p>
+</blockquote>
+<ul>
+<li><a href="#ios_jekenis">mac安装jekenis</a></li>
+<li><a href="#ios_xcodebuild">ios项目xcodebuild打包</a></li>
+<li><a href="#ios_uploadl_ipa">ipa包上传阿里云OSS</a></li>
+<li><a href="#ios_plist">生成下载需要的Plist文件</a></li>
+<li><a href="#ios_upload_qr">生成二维码并上传</a></li>
+<li><a href="#ios_ding">通知钉钉发送打包消息</a></li>
+</ul>
+<p><a name='ios_jekenis'><strong>一、mac安装jekenis</strong></a></p>
+<h5 id="安装地址-https-www-jenkins-io-download-lts-macos"><a href="#安装地址-https-www-jenkins-io-download-lts-macos" class="headerlink" title="安装地址  https://www.jenkins.io/download/lts/macos/"></a>安装地址  <a href="https://www.jenkins.io/download/lts/macos/" target="_blank" rel="noopener">https://www.jenkins.io/download/lts/macos/</a></h5><p><code>brew install jenkins-lts</code> 安装最近最新的一次版本</p>
+<p><code>brew install jenkins-lts@YOUR_VERSION</code> 安装对应的其他版本</p>
+<p>如果遇到 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Error1：brew install jenkins Error: The following directories are not writable by your user</span><br><span class="line">在终端执行:</span><br><span class="line">sudo chown -R whoami:admin /usr/<span class="built_in">local</span>/bin</span><br><span class="line">sudo chown -R whoami:admin /usr/<span class="built_in">local</span>/share</span><br><span class="line"></span><br><span class="line">Error2：遇到其他位置问题，重新安装一下最新的Homebrew</span><br><span class="line">可参考地址 https://www.cnblogs.com/somepark/p/16813250.html</span><br><span class="line"></span><br><span class="line">在Terminal 执行 /bin/zsh -c <span class="string">"<span class="variable">$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)</span>"</span>，</span><br><span class="line">这里最好选择第2个源，清华大学下载源。然后根据提示安装</span><br></pre></td></tr></table></figure>
+
+<p>以上安装完成 在重新<code>brew install jenkins-lts</code>执行下载安装 jenkins，如果失败，请选网络或者重试。</p>
+<h5 id="运行Jenkins"><a href="#运行Jenkins" class="headerlink" title="运行Jenkins"></a>运行Jenkins</h5><p><code>brew services start jenkins-lts</code> 开启jenkins</p>
+<p><code>brew services restart jenkins-lts</code> 重启命令</p>
+<p><a name='ios_xcodebuild'><strong>二、ios项目xcodebuild打包</strong></a></p>
+<p>• 编译前清理工程：</p>
+<p> <code>xcodebuild clean -project ${projectName}.xcodeproj</code>。</p>
+<p>• 获取项目工程名：</p>
+<p><code>find . -name *.xcodeproj | awk -F &quot;[/.]&quot; &#39;{print $(NF-1)}</code> 中获取。</p>
+<p>• 获取打包AdHoc、AppStore、Enterprise、Development 所需的plist目录，这个目录在打包脚本的目录里。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 判读用户打包类型</span></span><br><span class="line">packType=<span class="variable">$&#123;PackageType&#125;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"33[31m 打包参数值:<span class="variable">$&#123;packType&#125;</span> n 33[0m"</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$packType</span> == <span class="string">"AdHoc"</span> ] ; <span class="keyword">then</span></span><br><span class="line">exportOptionsPlistPath=<span class="string">"<span class="variable">$&#123;plistPath&#125;</span>/AdHocExportOptionsPlist.plist"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"当前选择构建AdHoc"</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$packType</span> == <span class="string">"AppStore"</span> ] ; <span class="keyword">then</span></span><br><span class="line">exportOptionsPlistPath=<span class="string">"<span class="variable">$&#123;plistPath&#125;</span>/AppStoreExportOptionsPlist.plist"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"当前选择构建AppStore"</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$packType</span> == <span class="string">"Enterprise"</span> ] ; <span class="keyword">then</span></span><br><span class="line">exportOptionsPlistPath=<span class="string">"<span class="variable">$&#123;plistPath&#125;</span>/EnterpriseExportOptionsPlist.plist"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"当前选择构建Enterprise"</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$packType</span> == <span class="string">"Development"</span> ] ; <span class="keyword">then</span></span><br><span class="line">exportOptionsPlistPath=<span class="string">"<span class="variable">$&#123;plistPath&#125;</span>/DevelopmentExportOptionsPlist.plist"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"当前选择构建Development"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"参数无效!!!"</span></span><br><span class="line"><span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+
+<p>• 执行xcodebuild打包IPA。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Build 生成 APP</span></span><br><span class="line"><span class="comment"># 判断编译的项目类型是workspace还是project</span></span><br><span class="line"><span class="keyword">if</span> <span class="variable">$is_workspace</span> ; <span class="keyword">then</span></span><br><span class="line"><span class="comment"># 编译前清理工程</span></span><br><span class="line">xcodebuild clean -workspace <span class="variable">$&#123;projectName&#125;</span>.xcworkspace \</span><br><span class="line">                 -scheme <span class="variable">$&#123;schemeName&#125;</span> \</span><br><span class="line">                 -configuration <span class="variable">$&#123;build_configuration&#125;</span></span><br><span class="line">xcodebuild archive -workspace <span class="variable">$&#123;projectName&#125;</span>.xcworkspace \</span><br><span class="line">                   -scheme <span class="variable">$&#123;schemeName&#125;</span> \</span><br><span class="line">                   -configuration <span class="variable">$&#123;build_configuration&#125;</span> \</span><br><span class="line">                   -archivePath <span class="variable">$&#123;buildDir&#125;</span> \</span><br><span class="line">                   -destination <span class="string">'generic/platform=iOS'</span> \</span><br><span class="line">                   -quiet</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="comment"># 编译前清理工程</span></span><br><span class="line">xcodebuild clean -project <span class="variable">$&#123;projectName&#125;</span>.xcodeproj \</span><br><span class="line">                 -scheme <span class="variable">$&#123;schemeName&#125;</span> \</span><br><span class="line">                 -configuration <span class="variable">$&#123;build_configuration&#125;</span></span><br><span class="line">xcodebuild archive -project <span class="variable">$&#123;projectName&#125;</span>.xcodeproj \</span><br><span class="line">                   -scheme <span class="variable">$&#123;schemeName&#125;</span> \</span><br><span class="line">                   -configuration <span class="variable">$&#123;build_configuration&#125;</span> \</span><br><span class="line">                   -archivePath <span class="variable">$&#123;buildDir&#125;</span> \</span><br><span class="line">                   -destination <span class="string">'generic/platform=iOS'</span> \</span><br><span class="line">                   -quiet</span><br><span class="line"><span class="comment"># 生成 ipa</span></span><br><span class="line">xcodebuild -exportArchive \</span><br><span class="line">  -archivePath <span class="variable">$&#123;buildDir&#125;</span> \</span><br><span class="line">  -exportOptionsPlist <span class="variable">$&#123;exportOptionsPlistPath&#125;</span> \</span><br><span class="line">  -exportPath <span class="variable">$&#123;ipaPath&#125;</span> \</span><br><span class="line">  -allowProvisioningUpdates <span class="variable">$&#123;YES&#125;</span> \</span><br><span class="line">  -allowProvisioningDeviceRegistration <span class="variable">$&#123;YES&#125;</span> \</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p><a name='ios_uploadl_ipa'><strong>三、ipa包上传阿里云OSS</strong></a></p>
+<p>• 上传工具安装：</p>
+<p>在执行前需要安装ossutil客户端工具，可参考<a href="https://help.aliyun.com/document_detail/120075.html" target="_blank" rel="noopener">官方文档</a>进行安装，如果上传的文件已存在于oss存储空间中，则会覆盖原有文件，需谨慎操作，需要赋予该脚本执行权限，可以使用chmod +x script.sh命令进行授权。</p>
+<p>安装ossutil</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -v ; curl https:<span class="comment">//gosspublic.alicdn.com/ossutil/install.sh | sudo bash</span></span><br></pre></td></tr></table></figure>
+
+<p>• 查找ossutil安装在本地的目录，后面使用这个目录就不需要设置成全局变量。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">which ossutil</span><br></pre></td></tr></table></figure>
+<p>• 验证是否已成功安装ossutil，如果屏幕中输出ossutil所有支持的命令，表明已成功安装ossutil。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ossutil</span><br></pre></td></tr></table></figure>
+
+<p>• 开始上传IPA包到阿里云OSS。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 执行上传ipa文件操作并记录日志</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"开始上传ipa文件到阿里云OSS..."</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"AccessKeyId: <span class="variable">$ACCESS_KEY_ID</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"AccessKeySecret: <span class="variable">$ACCESS_KEY_SECRET</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Bucket Name: <span class="variable">$BUCKET_NAME</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Region ID: <span class="variable">$REGION_ID</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Remote Path: <span class="variable">$REMOTE_PATH</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"File Name: <span class="variable">$FILE_NAME</span>"</span></span><br><span class="line"></span><br><span class="line">/usr/<span class="built_in">local</span>/bin/ossutil -i <span class="variable">$ACCESS_KEY_ID</span> -k <span class="variable">$ACCESS_KEY_SECRET</span> \</span><br><span class="line">    -e <span class="variable">$REGION_ID</span>.aliyuncs.com \</span><br><span class="line">    cp <span class="variable">$IPA_FILE</span> oss://<span class="variable">$BUCKET_NAME</span>/<span class="variable">$REMOTE_PATH</span><span class="variable">$FILE_NAME</span> \</span><br><span class="line">    &gt;&gt; upload.log 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+
+
+
+<p><a name='ios_plist'><strong>四、生成下载所需要的Plist文件</strong></a></p>
+<p>• 先执行生成Plist。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成plist文件并记录日志</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"开始生成plist文件..."</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"ipa Download URL: <span class="variable">$DOWNLOAD_URL</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Plist Download URL: <span class="variable">$PLIST_URL</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"APP Install URL: <span class="variable">$&#123;APP_INSTALL_URL&#125;</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Bundle Identifier: <span class="variable">$bundleIdentifier</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Bundle Version: <span class="variable">$version</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Display Name: <span class="variable">$displayName</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">""</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'&lt;?xml version="1.0" encoding="UTF-8"?&gt;'</span>&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'&lt;plist version="1.0"&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'&lt;dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'    &lt;key&gt;items&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'    &lt;array&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'        &lt;dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'            &lt;key&gt;assets&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'            &lt;array&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                &lt;dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;key&gt;kind&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;string&gt;software-package&lt;/string&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;key&gt;url&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"                    &lt;string&gt;<span class="variable">$DOWNLOAD_URL</span>&lt;/string&gt;"</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                &lt;/dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                &lt;dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;key&gt;kind&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;string&gt;full-size-image&lt;/string&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;key&gt;needs-shine&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;true/&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;key&gt;url&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;string&gt;&lt;/string&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                &lt;/dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                &lt;dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;key&gt;kind&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;string&gt;display-image&lt;/string&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                   &lt;key&gt;needs-shine&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;true/&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;key&gt;url&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;string&gt;&lt;/string&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                &lt;/dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'            &lt;/array&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'            &lt;key&gt;metadata&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'            &lt;dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'               &lt;key&gt;bundle-identifier&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"                &lt;string&gt;<span class="variable">$bundleIdentifier</span>&lt;/string&gt;"</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                &lt;key&gt;bundle-version&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"                &lt;string&gt;<span class="variable">$version</span>&lt;/string&gt;"</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                &lt;key&gt;kind&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                &lt;string&gt;software&lt;/string&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                &lt;key&gt;title&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"                &lt;string&gt;<span class="variable">$displayName</span>&lt;/string&gt;"</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'            &lt;/dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'        &lt;/dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'    &lt;/array&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'&lt;/dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'&lt;/plist&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">""</span></span><br></pre></td></tr></table></figure>
+
+<p>• 将 Plist 文件保存到指定目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mv <span class="variable">$&#123;PLIST_NAME&#125;</span> <span class="variable">$&#123;ipaPath&#125;</span></span><br><span class="line"><span class="comment"># 定义变量（plist实际路径）</span></span><br><span class="line">PLIST_FILE=<span class="string">"<span class="variable">$&#123;ipaPath&#125;</span>/<span class="variable">$&#123;schemeName&#125;</span>.plist"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Local File: <span class="variable">$PLIST_FILE</span>"</span></span><br></pre></td></tr></table></figure>
+
+<p>• 上传在本地目录中的Plist文件到阿里云OSS。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/bin/ossutil -i <span class="variable">$ACCESS_KEY_ID</span> -k <span class="variable">$ACCESS_KEY_SECRET</span> \</span><br><span class="line">    -e <span class="variable">$REGION_ID</span>.aliyuncs.com \</span><br><span class="line">    cp <span class="variable">$PLIST_FILE</span> oss://<span class="variable">$BUCKET_NAME</span>/<span class="variable">$REMOTE_PATH</span><span class="variable">$PLIST_NAME</span> \</span><br><span class="line">    &gt;&gt; upload.log 2&gt;&amp;1</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"plist文件上传完成！请到阿里云控制台确认。"</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><a name='ios_upload_qr'><strong>五、生成二维码并上传</strong></a></p>
+<p>• 使用在线api-qrserver生成二维码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载二维码并保存到本地</span></span><br><span class="line">QR_CODE_API=<span class="string">"https://api.qrserver.com/v1/create-qr-code/?size=80x80&amp;data=<span class="variable">$(urlencode "$APP_INSTALL_URL")</span>"</span></span><br><span class="line"><span class="comment">#远程qr图片名字（添加时间戳）</span></span><br><span class="line">QR_NAME=<span class="string">"<span class="variable">$&#123;last_part&#125;</span>_qr_<span class="variable">$(date +%Y%m%d%H%M%S)</span>.png"</span></span><br><span class="line"><span class="comment">#保存在本地qr地址</span></span><br><span class="line">QR_LOCAL_PATH=<span class="variable">$&#123;IPA_DIR&#125;</span>/<span class="variable">$&#123;QR_NAME&#125;</span></span><br><span class="line"><span class="comment">##生成二维码图片</span></span><br><span class="line">curl -o <span class="variable">$&#123;QR_LOCAL_PATH&#125;</span> <span class="variable">$&#123;QR_CODE_API&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>• url生成二维码时需要encode编码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义 urlencode 函数，用于对 URL 进行编码</span></span><br><span class="line"><span class="function"><span class="title">urlencode</span></span>() &#123;</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"<span class="variable">$1</span>"</span> | sed <span class="string">'s/%/%25/g; s/\&amp;/%26/g; s/ /%20/g; s/"/%22/g; s/#/%23/g; s/\//%2F/g; s/:/%3A/g; s/\?/%3F/g; s/@/%40/g; s/\+/%2B/g; s/\=/%3D/g'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>• url二维码链接名称附加时间字符串：</p>
+<p>原因是相同的名字，在使用dingtalk的时候，用markdown语法时，不明原因，然后会出现图片缓存，使用不同的二维码图片名字就不会出现二维码发送显示不出来的问题。</p>
+<p>• 使用ossutil上传到阿里云OSS上：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#远程qr地址</span></span><br><span class="line">REMOTE_QR_URL=<span class="string">"https://archive-app.oss-cn-shanghai.aliyuncs.com/<span class="variable">$&#123;REMOTE_PATH&#125;</span><span class="variable">$&#123;QR_NAME&#125;</span>"</span></span><br><span class="line"><span class="comment"># 上传链接地址二维码到阿里云记录日志</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"上传二维码图片链接到阿里云..."</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Local QR Path : <span class="variable">$QR_LOCAL_PATH</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Remote QR URL: <span class="variable">$REMOTE_QR_URL</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">""</span></span><br><span class="line">/usr/<span class="built_in">local</span>/bin/ossutil -i <span class="variable">$ACCESS_KEY_ID</span> -k <span class="variable">$ACCESS_KEY_SECRET</span> \</span><br><span class="line">    -e <span class="variable">$REGION_ID</span>.aliyuncs.com \</span><br><span class="line">    cp <span class="variable">$QR_LOCAL_PATH</span> oss://<span class="variable">$BUCKET_NAME</span>/<span class="variable">$REMOTE_PATH</span><span class="variable">$QR_NAME</span> \</span><br><span class="line">    &gt;&gt; upload.log 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+
+<p>这儿上传的图片地址都是生成过后的本地地址找到该图片资源然后上传到阿里云服务器。</p>
+<p><a name='ios_ding'><strong>五、通知钉钉发送打包消息</strong></a></p>
+<p>• 使用markdown语法组装打包信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打包编译方式</span></span><br><span class="line">MESSAGE=<span class="string">"#### 打包应用信息\n</span></span><br><span class="line"><span class="string">- app类型：IOS平台</span></span><br><span class="line"><span class="string">- 应用名称：<span class="variable">$&#123;displayName&#125;</span></span></span><br><span class="line"><span class="string">- 项目名：<span class="variable">$&#123;schemeName&#125;</span></span></span><br><span class="line"><span class="string">- 打包类型：<span class="variable">$( [ "$PackageMethod" == "Debug" ] &amp;&amp; echo "测试" || echo "正式" )</span></span></span><br><span class="line"><span class="string">- 版本：<span class="variable">$&#123;version&#125;</span></span></span><br><span class="line"><span class="string">- bundle identifier：<span class="variable">$&#123;bundleIdentifier&#125;</span></span></span><br><span class="line"><span class="string">- IPA包地址：<span class="variable">$&#123;DOWNLOAD_URL&#125;</span></span></span><br><span class="line"><span class="string">- Plist地址：<span class="variable">$&#123;PLIST_URL&#125;</span></span></span><br><span class="line"><span class="string">- 二维码：</span></span><br><span class="line"><span class="string">![下载链接二维码](<span class="variable">$&#123;REMOTE_QR_URL&#125;</span>)</span></span><br><span class="line"><span class="string">安装链接：[点击下载](<span class="variable">$APP_INSTALL_URL</span>)"</span></span><br></pre></td></tr></table></figure>
+<p>• 生成带二维码和安装链接的Markdown消息体：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSON_MESSAGE=$(<span class="built_in">printf</span> <span class="string">'&#123;"msgtype":"markdown","markdown":&#123;"title":"应用打包已完成！","text":"%s"&#125;&#125;'</span> <span class="string">"<span class="variable">$MESSAGE</span>"</span>)</span><br></pre></td></tr></table></figure>
+<p>• 使用oapi.dingtalk.com像钉钉发送消息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl <span class="string">'https://oapi.dingtalk.com/robot/send?access_token='</span><span class="variable">$TOKEN</span> \</span><br><span class="line">  -H <span class="string">'Content-Type: application/json'</span> \</span><br><span class="line">  -d <span class="string">"<span class="variable">$&#123;JSON_MESSAGE&#125;</span>"</span> \</span><br></pre></td></tr></table></figure>
+<p>到这儿就所有的shell脚本逻辑完成，这样子就可以自动化打包了。</p>
+<p><strong>以下是所有的详细脚本:</strong> </p>
+<p><font color='red'>里面的Access Token、ACCESS_KEY_ID、ACCESS_KEY_SECRET等不要使用，并且都是为了更加真实然后你替换成你自己的，这些信息都是后面被修改过的。</font></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#  Script.sh</span></span><br><span class="line"><span class="comment">#  Package</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#  Created by wws on 2023/02/25.</span></span><br><span class="line"><span class="comment">#  Copyright © 2023 年 wws. All rights reserved.</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定要打包编译的方式 : Release,Debug...</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$PackageMethod</span> == <span class="string">"Debug"</span> ]; <span class="keyword">then</span></span><br><span class="line">    build_configuration=<span class="string">"Debug"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"打包方式：Debug"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    build_configuration=<span class="string">"Release"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"打包方式：Release"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否编译工作空间 (例:若是用Cocopods管理的.xcworkspace项目,赋值true;用Xcode默认创建的.xcodeproj,赋值false)</span></span><br><span class="line">is_workspace=<span class="string">"true"</span></span><br><span class="line"><span class="comment"># 进入项目工程目录</span></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$WORKSPACE</span></span><br><span class="line"><span class="comment"># 获取项目名称</span></span><br><span class="line">projectName=`find . -name *.xcodeproj | awk -F <span class="string">"[/.]"</span> <span class="string">'&#123;print $(NF-1)&#125;'</span>`</span><br><span class="line"><span class="comment"># Scheme Name</span></span><br><span class="line">schemeName=<span class="variable">$&#123;projectName&#125;</span></span><br><span class="line"><span class="comment"># user Name</span></span><br><span class="line">macName=<span class="variable">$USER</span></span><br><span class="line"><span class="comment"># 打包所有生成路径</span></span><br><span class="line">ipaPath=<span class="string">"/Users/<span class="variable">$&#123;macName&#125;</span>/Desktop/<span class="variable">$&#123;schemeName&#125;</span>"</span></span><br><span class="line"><span class="comment"># 临时生成APP路径</span></span><br><span class="line">buildDir=<span class="string">"<span class="variable">$&#123;ipaPath&#125;</span>/<span class="variable">$&#123;schemeName&#125;</span>.xcarchive"</span></span><br><span class="line"><span class="comment"># 桌面脚本目录</span></span><br><span class="line">plistPath=<span class="string">"/Users/<span class="variable">$&#123;macName&#125;</span>/Desktop/IOSPackageScript"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导出ipa所需要的plist文件路径 (默认为AdHocExportOptionsPlist.plist)</span></span><br><span class="line">exportOptionsPlistPath=<span class="string">"<span class="variable">$&#123;plistPath&#125;</span>/AdHocExportOptionsPlist.plist"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"数据信息"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"pro path: <span class="variable">$WORKSPACE</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"macName: <span class="variable">$macName</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"projectName: <span class="variable">$projectName</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"schemeName: <span class="variable">$schemeName</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"build_configuration: <span class="variable">$build_configuration</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"buildDir: <span class="variable">$buildDir</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"ipaPath: <span class="variable">$ipaPath</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"plistPath: <span class="variable">$plistPath</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"exportOptionsPlistPath: <span class="variable">$exportOptionsPlistPath</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 开始时间</span></span><br><span class="line">beginTime=`date +%s`</span><br><span class="line"></span><br><span class="line"><span class="comment"># 蒲公英分发参数 不分发可忽略 默认不分发 下面的两个KEY是默认测试的网址对应KEY</span></span><br><span class="line">isUploadPgyer=<span class="string">"0"</span></span><br><span class="line">USERKEY=<span class="string">"xxx"</span></span><br><span class="line">APIKEY=<span class="string">"xxx"</span></span><br><span class="line"></span><br><span class="line">uploadFir=<span class="string">"0"</span></span><br><span class="line"><span class="comment"># fir分发参数 不分发可忽略 默认分发</span></span><br><span class="line">isUploadFir=<span class="variable">$&#123;uploadFir&#125;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"33[31m 上传参数值:<span class="variable">$&#123;isUploadFir&#125;</span> n 33[0m"</span></span><br><span class="line">FirApiToken=<span class="string">"931b41960fd41496b946e22c910adb97"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># AdHoc,AppStore,Enterprise三种打包方式的区别: http://blog.csdn.net/lwjok2007/article/details/46379945</span></span><br><span class="line"> <span class="built_in">echo</span> <span class="string">"\033[36;1m打包方式 \033[0m"</span></span><br><span class="line"> <span class="built_in">echo</span> <span class="string">"\033[33;1m1. AdHoc       \033[0m"</span></span><br><span class="line"> <span class="built_in">echo</span> <span class="string">"\033[33;1m2. AppStore    \033[0m"</span></span><br><span class="line"> <span class="built_in">echo</span> <span class="string">"\033[33;1m3. Enterprise  \033[0m"</span></span><br><span class="line"> <span class="built_in">echo</span> <span class="string">"\033[33;1m4. Development \033[0m"</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 判读用户打包类型</span></span><br><span class="line">packType=<span class="variable">$&#123;PackageType&#125;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"33[31m 打包参数值:<span class="variable">$&#123;packType&#125;</span> n 33[0m"</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$packType</span> == <span class="string">"AdHoc"</span> ] ; <span class="keyword">then</span></span><br><span class="line">exportOptionsPlistPath=<span class="string">"<span class="variable">$&#123;plistPath&#125;</span>/AdHocExportOptionsPlist.plist"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"当前选择构建AdHoc"</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$packType</span> == <span class="string">"AppStore"</span> ] ; <span class="keyword">then</span></span><br><span class="line">exportOptionsPlistPath=<span class="string">"<span class="variable">$&#123;plistPath&#125;</span>/AppStoreExportOptionsPlist.plist"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"当前选择构建AppStore"</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$packType</span> == <span class="string">"Enterprise"</span> ] ; <span class="keyword">then</span></span><br><span class="line">exportOptionsPlistPath=<span class="string">"<span class="variable">$&#123;plistPath&#125;</span>/EnterpriseExportOptionsPlist.plist"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"当前选择构建Enterprise"</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$packType</span> == <span class="string">"Development"</span> ] ; <span class="keyword">then</span></span><br><span class="line">exportOptionsPlistPath=<span class="string">"<span class="variable">$&#123;plistPath&#125;</span>/DevelopmentExportOptionsPlist.plist"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"当前选择构建Development"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"参数无效!!!"</span></span><br><span class="line"><span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"\033[32m*************************  开始构建项目  *************************  \033[0m"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定输出文件目录不存在则创建</span></span><br><span class="line"><span class="keyword">if</span> [ -d <span class="string">"<span class="variable">$ipaPath</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="comment"># 如果目录已经存在，则清空目录内的所有文件</span></span><br><span class="line">    rm -rf <span class="string">"<span class="variable">$&#123;ipaPath:?&#125;</span>/"</span>*</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="comment"># 如果目录不存在，则创建目录</span></span><br><span class="line">    mkdir -p <span class="string">"<span class="variable">$ipaPath</span>"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"目录:<span class="variable">$&#123;ipaPath&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Build 生成 APP</span></span><br><span class="line"><span class="comment"># 判断编译的项目类型是workspace还是project</span></span><br><span class="line"><span class="keyword">if</span> <span class="variable">$is_workspace</span> ; <span class="keyword">then</span></span><br><span class="line"><span class="comment"># 编译前清理工程</span></span><br><span class="line">xcodebuild clean -workspace <span class="variable">$&#123;projectName&#125;</span>.xcworkspace \</span><br><span class="line">                 -scheme <span class="variable">$&#123;schemeName&#125;</span> \</span><br><span class="line">                 -configuration <span class="variable">$&#123;build_configuration&#125;</span></span><br><span class="line"></span><br><span class="line">xcodebuild archive -workspace <span class="variable">$&#123;projectName&#125;</span>.xcworkspace \</span><br><span class="line">                   -scheme <span class="variable">$&#123;schemeName&#125;</span> \</span><br><span class="line">                   -configuration <span class="variable">$&#123;build_configuration&#125;</span> \</span><br><span class="line">                   -archivePath <span class="variable">$&#123;buildDir&#125;</span> \</span><br><span class="line">                   -destination <span class="string">'generic/platform=iOS'</span> \</span><br><span class="line">                   -quiet</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="comment"># 编译前清理工程</span></span><br><span class="line">xcodebuild clean -project <span class="variable">$&#123;projectName&#125;</span>.xcodeproj \</span><br><span class="line">                 -scheme <span class="variable">$&#123;schemeName&#125;</span> \</span><br><span class="line">                 -configuration <span class="variable">$&#123;build_configuration&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">xcodebuild archive -project <span class="variable">$&#123;projectName&#125;</span>.xcodeproj \</span><br><span class="line">                   -scheme <span class="variable">$&#123;schemeName&#125;</span> \</span><br><span class="line">                   -configuration <span class="variable">$&#123;build_configuration&#125;</span> \</span><br><span class="line">                   -archivePath <span class="variable">$&#123;buildDir&#125;</span> \</span><br><span class="line">                   -destination <span class="string">'generic/platform=iOS'</span> \</span><br><span class="line">                   -quiet</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="comment"># 检查是否构建成功</span></span><br><span class="line"><span class="comment"># 检查 $&#123;buildDir&#125; 目录是否存在有效的 .xcarchive 文件</span></span><br><span class="line"><span class="keyword">if</span> [ -d <span class="string">"<span class="variable">$&#123;buildDir&#125;</span>"</span> ] &amp;&amp; [ -n <span class="string">"<span class="variable">$(ls -A $&#123;buildDir&#125;/Products/Applications)</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"\033[32;1m项目构建成功\033[0m"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"\033[31;1m项目构建失败\033[0m"</span></span><br><span class="line">  <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"33[31m appName:<span class="variable">$projectName</span> n 33[0m"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成 ipa</span></span><br><span class="line"><span class="comment">#xcodebuild -exportArchive -archivePath $&#123;buildDir&#125; -exportOptionsPlist $&#123;exportOptionsPlistPath&#125; -exportPath $&#123;ipaPath&#125; -allowProvisioningUpdates $&#123;YES&#125; -allowProvisioningDeviceRegistration $&#123;YES&#125; -exportFileName "$&#123;schemeName&#125;.ipa"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成 ipa</span></span><br><span class="line">xcodebuild -exportArchive \</span><br><span class="line">  -archivePath <span class="variable">$&#123;buildDir&#125;</span> \</span><br><span class="line">  -exportOptionsPlist <span class="variable">$&#123;exportOptionsPlistPath&#125;</span> \</span><br><span class="line">  -exportPath <span class="variable">$&#123;ipaPath&#125;</span> \</span><br><span class="line">  -allowProvisioningUpdates <span class="variable">$&#123;YES&#125;</span> \</span><br><span class="line">  -allowProvisioningDeviceRegistration <span class="variable">$&#123;YES&#125;</span> \</span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历指定目录下的所有 IPA 文件</span></span><br><span class="line"><span class="keyword">for</span> ipas <span class="keyword">in</span> <span class="string">"<span class="variable">$&#123;ipaPath&#125;</span>"</span>/*.ipa; <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [ -f <span class="string">"<span class="variable">$ipas</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="comment"># 如果当前路径存在 IPA 文件，则判断文件名是否等于 schemeName，如果不是则重命名该文件</span></span><br><span class="line">        ipaName=$(basename <span class="string">"<span class="variable">$ipas</span>"</span>)</span><br><span class="line">        <span class="keyword">if</span> [ <span class="string">"<span class="variable">$&#123;ipaName%.*&#125;</span>"</span> != <span class="string">"<span class="variable">$schemeName</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">            ipaExt=<span class="string">"<span class="variable">$&#123;ipaName##*.&#125;</span>"</span></span><br><span class="line">            newIpaName=<span class="string">"<span class="variable">$&#123;schemeName&#125;</span>.<span class="variable">$&#123;ipaExt&#125;</span>"</span></span><br><span class="line">            mv <span class="string">"<span class="variable">$ipas</span>"</span> <span class="string">"<span class="variable">$&#123;ipaPath&#125;</span>/<span class="variable">$&#123;newIpaName&#125;</span>"</span></span><br><span class="line">            <span class="built_in">echo</span> <span class="string">"已将 <span class="variable">$&#123;ipaName&#125;</span> 重命名为 <span class="variable">$&#123;newIpaName&#125;</span>"</span></span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [[ $? = 0 ]]; <span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"33[31m n 生成 IPA 成功 nnnnn33[0m"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"33[31m n 生成 IPA 失败 nnnnn33[0m"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">rm -rf <span class="variable">$&#123;buildDir&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义变量（修改为 IPA 文件的实际路径）</span></span><br><span class="line">IPA_FILE=<span class="string">"<span class="variable">$&#123;ipaPath&#125;</span>/<span class="variable">$&#123;schemeName&#125;</span>.ipa"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"正在查寻包体信息: <span class="variable">$IPA_FILE</span>"</span></span><br><span class="line"><span class="comment"># 获取 IPA 文件所在目录</span></span><br><span class="line">IPA_DIR=<span class="string">"<span class="variable">$(dirname "$IPA_FILE")</span>"</span></span><br><span class="line"><span class="comment"># 解压 IPA 文件</span></span><br><span class="line">unzip -o <span class="string">"<span class="variable">$IPA_FILE</span>"</span> -d <span class="string">"<span class="variable">$IPA_DIR</span>"</span> &gt; /dev/null 2&gt;&amp;1</span><br><span class="line"><span class="comment"># 获取 CFBundleShortVersionString</span></span><br><span class="line">version=$(/usr/libexec/PlistBuddy -c <span class="string">"Print :CFBundleShortVersionString"</span> <span class="string">"<span class="variable">$IPA_DIR</span>/Payload/"</span>*.app/Info.plist)</span><br><span class="line"><span class="comment"># 获取 CFBundleIdentifier</span></span><br><span class="line">bundleIdentifier=$(/usr/libexec/PlistBuddy -c <span class="string">"Print :CFBundleIdentifier"</span> <span class="string">"<span class="variable">$IPA_DIR</span>/Payload/"</span>*.app/Info.plist)</span><br><span class="line"><span class="comment"># 获取 CFBundleDisplayName</span></span><br><span class="line">displayName=$(/usr/libexec/PlistBuddy -c <span class="string">"Print :CFBundleDisplayName"</span> <span class="string">"<span class="variable">$IPA_DIR</span>/Payload/"</span>*.app/Info.plist)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Version: <span class="variable">$version</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Bundle Identifier: <span class="variable">$bundleIdentifier</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Display Name: <span class="variable">$displayName</span>"</span></span><br><span class="line"><span class="comment"># 删除解压后的文件夹</span></span><br><span class="line">rm -rf <span class="string">"<span class="variable">$IPA_DIR</span>/Payload"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 上传fir</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$isUploadFir</span> == <span class="string">"1"</span> ]; <span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"正在上传fir..."</span></span><br><span class="line">    fir p <span class="string">"<span class="variable">$&#123;ipaPath&#125;</span>/<span class="variable">$&#123;displayName&#125;</span>/<span class="variable">$&#123;displayName&#125;</span>.ipa"</span> -T <span class="variable">$&#123;FirApiToken&#125;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 6.上传蒲公英分发平台</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$isUploadPgyer</span> == <span class="string">"1"</span> ]; <span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"正在上传蒲公英..."</span></span><br><span class="line">curl -F <span class="string">"file=@<span class="variable">$ipaPath</span>/<span class="variable">$&#123;displayName&#125;</span>/<span class="variable">$&#123;displayName&#125;</span>.ipa"</span> -F <span class="string">"uKey=<span class="variable">$USERKEY</span>"</span> -F <span class="string">"_api_key=<span class="variable">$APIKEY</span>"</span> http://www.pgyer.com/apiv1/app/upload</span><br><span class="line"></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结束时间</span></span><br><span class="line">endTime=`date +%s`</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"打包时间$[ endTime - beginTime ]秒"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置AccessKeyId和AccessKeySecret</span></span><br><span class="line">ACCESS_KEY_ID=<span class="string">"LTA55tLFuiiD5aRBKqrqkwtBh"</span></span><br><span class="line">ACCESS_KEY_SECRET=<span class="string">"vlKDQCe694U77loc6iU752v8tE"</span></span><br><span class="line"><span class="comment"># 设置阿里云存储空间名称（bucketName）</span></span><br><span class="line">BUCKET_NAME=<span class="string">"archive-app"</span></span><br><span class="line"><span class="comment"># 设置阿里云地域（Region ID）</span></span><br><span class="line">REGION_ID=<span class="string">"oss-cn-shanghai"</span></span><br><span class="line"><span class="comment"># 设置阿里云目标路径（需先手动创建）</span></span><br><span class="line">REMOTE_PATH=<span class="string">"ios/"</span></span><br><span class="line"><span class="comment"># 设置本地文件名</span></span><br><span class="line">FILE_NAME=<span class="string">"<span class="variable">$&#123;schemeName&#125;</span>.ipa"</span></span><br><span class="line"><span class="comment"># 提取最后一部分</span></span><br><span class="line">last_part=$(<span class="built_in">echo</span> <span class="variable">$bundleIdentifier</span> | awk -F <span class="string">"."</span> <span class="string">'&#123;print $NF&#125;'</span>)</span><br><span class="line"><span class="comment"># 设置生成的plist文件名称</span></span><br><span class="line">PLIST_NAME=<span class="string">"<span class="variable">$&#123;schemeName&#125;</span>.plist"</span></span><br><span class="line"><span class="comment"># 设置安装包的下载链接，需要先将阿里云存储空间中对应文件的外网访问地址填入这里</span></span><br><span class="line">DOWNLOAD_URL=<span class="string">"https://archive-app.oss-cn-shanghai.aliyuncs.com/<span class="variable">$&#123;REMOTE_PATH&#125;</span><span class="variable">$&#123;projectName&#125;</span>.ipa"</span></span><br><span class="line"><span class="comment"># Plist安装包的下载链接，</span></span><br><span class="line">PLIST_URL=<span class="string">"https://archive-app.oss-cn-shanghai.aliyuncs.com/<span class="variable">$&#123;REMOTE_PATH&#125;</span><span class="variable">$&#123;PLIST_NAME&#125;</span>"</span></span><br><span class="line"><span class="comment"># app安装地址链接，</span></span><br><span class="line">APP_INSTALL_URL=<span class="string">"itms-services://?action=download-manifest&amp;url=https://archive-app.oss-cn-shanghai.aliyuncs.com/<span class="variable">$&#123;REMOTE_PATH&#125;</span><span class="variable">$&#123;PLIST_NAME&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行上传ipa文件操作并记录日志</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"开始上传ipa文件到阿里云OSS..."</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"AccessKeyId: <span class="variable">$ACCESS_KEY_ID</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"AccessKeySecret: <span class="variable">$ACCESS_KEY_SECRET</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Bucket Name: <span class="variable">$BUCKET_NAME</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Region ID: <span class="variable">$REGION_ID</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Remote Path: <span class="variable">$REMOTE_PATH</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"File Name: <span class="variable">$FILE_NAME</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">""</span></span><br><span class="line">/usr/<span class="built_in">local</span>/bin/ossutil -i <span class="variable">$ACCESS_KEY_ID</span> -k <span class="variable">$ACCESS_KEY_SECRET</span> \</span><br><span class="line">    -e <span class="variable">$REGION_ID</span>.aliyuncs.com \</span><br><span class="line">    cp <span class="variable">$IPA_FILE</span> oss://<span class="variable">$BUCKET_NAME</span>/<span class="variable">$REMOTE_PATH</span><span class="variable">$FILE_NAME</span> \</span><br><span class="line">    &gt;&gt; upload.log 2&gt;&amp;1</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"ipa文件上传完成！请到阿里云控制台确认。"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行上传plist文件操作并记录日志</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"开始上传plist文件..."</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"AccessKeyId: <span class="variable">$ACCESS_KEY_ID</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"AccessKeySecret: <span class="variable">$ACCESS_KEY_SECRET</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Bucket Name: <span class="variable">$BUCKET_NAME</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Region ID: <span class="variable">$REGION_ID</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Remote Path: <span class="variable">$REMOTE_PATH</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"File Name: <span class="variable">$PLIST_NAME</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成plist文件并记录日志</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"开始生成plist文件..."</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"ipa Download URL: <span class="variable">$DOWNLOAD_URL</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Plist Download URL: <span class="variable">$PLIST_URL</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"APP Install URL: <span class="variable">$&#123;APP_INSTALL_URL&#125;</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Bundle Identifier: <span class="variable">$bundleIdentifier</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Bundle Version: <span class="variable">$version</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Display Name: <span class="variable">$displayName</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">""</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'&lt;?xml version="1.0" encoding="UTF-8"?&gt;'</span>&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'&lt;plist version="1.0"&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'&lt;dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'    &lt;key&gt;items&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'    &lt;array&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'        &lt;dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'            &lt;key&gt;assets&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'            &lt;array&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                &lt;dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;key&gt;kind&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;string&gt;software-package&lt;/string&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;key&gt;url&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"                    &lt;string&gt;<span class="variable">$DOWNLOAD_URL</span>&lt;/string&gt;"</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                &lt;/dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                &lt;dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;key&gt;kind&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;string&gt;full-size-image&lt;/string&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;key&gt;needs-shine&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;true/&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;key&gt;url&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;string&gt;&lt;/string&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                &lt;/dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                &lt;dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;key&gt;kind&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;string&gt;display-image&lt;/string&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                   &lt;key&gt;needs-shine&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;true/&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;key&gt;url&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                    &lt;string&gt;&lt;/string&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                &lt;/dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'            &lt;/array&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'            &lt;key&gt;metadata&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'            &lt;dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'               &lt;key&gt;bundle-identifier&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"                &lt;string&gt;<span class="variable">$bundleIdentifier</span>&lt;/string&gt;"</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                &lt;key&gt;bundle-version&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"                &lt;string&gt;<span class="variable">$version</span>&lt;/string&gt;"</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                &lt;key&gt;kind&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                &lt;string&gt;software&lt;/string&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'                &lt;key&gt;title&lt;/key&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"                &lt;string&gt;<span class="variable">$displayName</span>&lt;/string&gt;"</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'            &lt;/dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'        &lt;/dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'    &lt;/array&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'&lt;/dict&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'&lt;/plist&gt;'</span> &gt;&gt; <span class="variable">$PLIST_NAME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将 Plist 文件保存到指定目录</span></span><br><span class="line">mv <span class="variable">$&#123;PLIST_NAME&#125;</span> <span class="variable">$&#123;ipaPath&#125;</span></span><br><span class="line"><span class="comment"># 定义变量（plist实际路径）</span></span><br><span class="line">PLIST_FILE=<span class="string">"<span class="variable">$&#123;ipaPath&#125;</span>/<span class="variable">$&#123;schemeName&#125;</span>.plist"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Local File: <span class="variable">$PLIST_FILE</span>"</span></span><br><span class="line"></span><br><span class="line">/usr/<span class="built_in">local</span>/bin/ossutil -i <span class="variable">$ACCESS_KEY_ID</span> -k <span class="variable">$ACCESS_KEY_SECRET</span> \</span><br><span class="line">    -e <span class="variable">$REGION_ID</span>.aliyuncs.com \</span><br><span class="line">    cp <span class="variable">$PLIST_FILE</span> oss://<span class="variable">$BUCKET_NAME</span>/<span class="variable">$REMOTE_PATH</span><span class="variable">$PLIST_NAME</span> \</span><br><span class="line">    &gt;&gt; upload.log 2&gt;&amp;1</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"plist文件上传完成！请到阿里云控制台确认。"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义 urlencode 函数，用于对 URL 进行编码</span></span><br><span class="line"><span class="function"><span class="title">urlencode</span></span>() &#123;</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"<span class="variable">$1</span>"</span> | sed <span class="string">'s/%/%25/g; s/\&amp;/%26/g; s/ /%20/g; s/"/%22/g; s/#/%23/g; s/\//%2F/g; s/:/%3A/g; s/\?/%3F/g; s/@/%40/g; s/\+/%2B/g; s/\=/%3D/g'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"下载二维码并保存到本地..."</span></span><br><span class="line"><span class="comment"># 下载二维码并保存到本地</span></span><br><span class="line">QR_CODE_API=<span class="string">"https://api.qrserver.com/v1/create-qr-code/?size=80x80&amp;data=<span class="variable">$(urlencode "$APP_INSTALL_URL")</span>"</span></span><br><span class="line"><span class="comment">#远程qr图片名字（添加时间戳）</span></span><br><span class="line">QR_NAME=<span class="string">"<span class="variable">$&#123;last_part&#125;</span>_qr_<span class="variable">$(date +%Y%m%d%H%M%S)</span>.png"</span></span><br><span class="line"><span class="comment">#保存在本地qr地址</span></span><br><span class="line">QR_LOCAL_PATH=<span class="variable">$&#123;IPA_DIR&#125;</span>/<span class="variable">$&#123;QR_NAME&#125;</span></span><br><span class="line"><span class="comment">##生成二维码图片</span></span><br><span class="line">curl -o <span class="variable">$&#123;QR_LOCAL_PATH&#125;</span> <span class="variable">$&#123;QR_CODE_API&#125;</span></span><br><span class="line"><span class="comment">#远程qr地址</span></span><br><span class="line">REMOTE_QR_URL=<span class="string">"https://archive-app.oss-cn-shanghai.aliyuncs.com/<span class="variable">$&#123;REMOTE_PATH&#125;</span><span class="variable">$&#123;QR_NAME&#125;</span>"</span></span><br><span class="line"><span class="comment"># 上传链接地址二维码到阿里云记录日志</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"上传二维码图片链接到阿里云..."</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Local QR Path : <span class="variable">$QR_LOCAL_PATH</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Remote QR URL: <span class="variable">$REMOTE_QR_URL</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">""</span></span><br><span class="line">/usr/<span class="built_in">local</span>/bin/ossutil -i <span class="variable">$ACCESS_KEY_ID</span> -k <span class="variable">$ACCESS_KEY_SECRET</span> \</span><br><span class="line">    -e <span class="variable">$REGION_ID</span>.aliyuncs.com \</span><br><span class="line">    cp <span class="variable">$QR_LOCAL_PATH</span> oss://<span class="variable">$BUCKET_NAME</span>/<span class="variable">$REMOTE_PATH</span><span class="variable">$QR_NAME</span> \</span><br><span class="line">    &gt;&gt; upload.log 2&gt;&amp;1</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"开始发送钉钉通知消息..."</span></span><br><span class="line"><span class="comment"># 钉钉机器人</span></span><br><span class="line">ROBOT=<span class="string">"04667c64-08b1-4ip8f-be72-d18a66342"</span></span><br><span class="line"><span class="comment"># 定义钉钉机器人的 Access Token</span></span><br><span class="line">TOKEN=<span class="string">"c91944e04095uui05yb11c6e1c1d0f4567b785a907c51dde8889d8"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"robot : <span class="variable">$ROBOT</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"robot access token: <span class="variable">$TOKEN</span>"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打包编译方式</span></span><br><span class="line">MESSAGE=<span class="string">"#### 打包应用信息\n</span></span><br><span class="line"><span class="string">- app类型：IOS平台</span></span><br><span class="line"><span class="string">- 应用名称：<span class="variable">$&#123;displayName&#125;</span></span></span><br><span class="line"><span class="string">- 项目名：<span class="variable">$&#123;schemeName&#125;</span></span></span><br><span class="line"><span class="string">- 打包类型：<span class="variable">$( [ "$PackageMethod" == "Debug" ] &amp;&amp; echo "测试" || echo "正式" )</span></span></span><br><span class="line"><span class="string">- 版本：<span class="variable">$&#123;version&#125;</span></span></span><br><span class="line"><span class="string">- bundle identifier：<span class="variable">$&#123;bundleIdentifier&#125;</span></span></span><br><span class="line"><span class="string">- IPA包地址：<span class="variable">$&#123;DOWNLOAD_URL&#125;</span></span></span><br><span class="line"><span class="string">- Plist地址：<span class="variable">$&#123;PLIST_URL&#125;</span></span></span><br><span class="line"><span class="string">- 二维码：</span></span><br><span class="line"><span class="string">![下载链接二维码](<span class="variable">$&#123;REMOTE_QR_URL&#125;</span>)</span></span><br><span class="line"><span class="string">安装链接：[点击下载](<span class="variable">$APP_INSTALL_URL</span>)"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 生成带二维码和安装链接的Markdown消息体</span></span><br><span class="line">JSON_MESSAGE=$(<span class="built_in">printf</span> <span class="string">'&#123;"msgtype":"markdown","markdown":&#123;"title":"应用打包已完成！","text":"%s"&#125;&#125;'</span> <span class="string">"<span class="variable">$MESSAGE</span>"</span>)</span><br><span class="line"></span><br><span class="line">curl <span class="string">'https://oapi.dingtalk.com/robot/send?access_token='</span><span class="variable">$TOKEN</span> \</span><br><span class="line">  -H <span class="string">'Content-Type: application/json'</span> \</span><br><span class="line">  -d <span class="string">"<span class="variable">$&#123;JSON_MESSAGE&#125;</span>"</span> \</span><br></pre></td></tr></table></figure>
+
+
+
+<p>• 使用时在jekenis需要两个参数：</p>
+<p><a href="https://imgse.com/i/p9h6cs1" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2023/05/19/p9h6cs1.png" alt="p9h6cs1.png"></a></p>
+<p> 判读用户 AdHoc AppStore Enterprise Development </p>
+<blockquote>
+<p>如果打包出现证书匹配问题，如果选择的auto 脚本里需要配置，上面脚本已经配置。</p>
+<p> -allowProvisioningUpdates ${YES}</p>
+<p> -allowProvisioningDeviceRegistration ${YES}</p>
+</blockquote>
+<p>• 使用archive失败。</p>
+<blockquote>
+<p>如果打包报其他错误，请先在Xcode项目上保证能archive，先解决掉代码上的错误才能保证脚本打包。</p>
+<p>请先配置好项目Auto自动证书，和手动打包的证书，并且在打包的Mac系统上有这些证书存在。</p>
+<p>如果还包括，检查你的项目使用Xcode是否能archive成功，然后看看是否缺失lib和或者其他sdk库。</p>
+</blockquote>
+<p>• 打包完成过后就会出现在钉钉消息里</p>
+<p><a href="https://imgse.com/i/p9h6ozd" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2023/05/19/p9h6ozd.png" alt="p9h6ozd.png"></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2023/02/10/technology20230210090112/" data-id="clhu4yj2x00692w8d1pho19sg" class="article-share-link" data-share="baidu" data-title="利用jekenis自动打包上传阿里云下载和通知钉钉机器人">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2023/02/10/technology20230210090112/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/" rel="tag">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
+
+    </footer>
+  </div>
+  
+    <!-- 
+<nav id="article-nav">
+  
+  
+    <a href="/2023/01/21/technology20230121151206/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">IOS项目脚本自动化批量打包并上传第三方平台</div>
+    </a>
+  
+</nav>
+  -->
+
+
+
+
+
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2023/01/21/technology20230121151206/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><font size="2" color="#708090">上一篇 older</font></strong>
+      <div class="article-nav-title"><font color="#555">IOS项目脚本自动化批量打包并上传第三方平台</font></div>
+    </a>
+   
+</nav>
+
+
+  
+</article>
+
+  <section id="comments">
+    <div id="valine_thread">
+      <div class="comment"></div>
+    </div>
+  </section>
+</section>
+      
+      <aside id="sidebar">
+  
+    
+<div class="widget-wrap">
+  <h3 class="widget-title">关于</h3>
+  <ul class="widget about-me">
+    
+    <li><img class="author" title="About me" src="/img/github.png" /></li>
+    
+    
+    <li ><font color="#424242" size="2em">苹果应用软件开发 & 游戏软件开发</font></li>
+    
+    <li ><font color="#424242" size="2em">email: ggb.chen@foxmail.com</font></li>
+    
+  </ul>
+</div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/charles/">charles</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocoapods/">cocoapods</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocosCreator/">cocosCreator</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/error/">error</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/regexp/">regexp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/">诗</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%BD%AC%E5%BD%95/">转录</a><span class="category-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoapods/" rel="tag">cocoapods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/" rel="tag">flutter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/" rel="tag">ios</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/poetry/" rel="tag">poetry</a><span class="tag-list-count">46</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regexp/" rel="tag">regexp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology/" rel="tag">technology</a><span class="tag-list-count">23</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/android/" style="font-size: 12px;">android</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/cocosCreator/" style="font-size: 16px;">cocosCreator</a> <a href="/tags/flutter/" style="font-size: 10px;">flutter</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 16px;">hexo</a> <a href="/tags/ios/" style="font-size: 14px;">ios</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/poetry/" style="font-size: 20px;">poetry</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/technology/" style="font-size: 18px;">technology</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <!--<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">5</span></li></ul> -->
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">2023年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">2022年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">2021年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">2020年</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019年</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">2017年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/10/technology20230210090112/">利用jekenis自动打包上传阿里云下载和通知钉钉机器人</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/21/technology20230121151206/">IOS项目脚本自动化批量打包并上传第三方平台</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/20/technology20230120161001/">IOS项目单独脚本自动化打包</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/16/poetry20221016194425/">《叹平生》</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/16/technology20221016191405/">Pycharm2021破解版安装教程</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://github.com/kziwws" target="_blank">github</a>
+          </li>
+        
+          <li>
+            <a href="https://shevakuilin.com" target="_blank">shevakuilin</a>
+          </li>
+        
+          <li>
+            <a href="https://hans2936.github.io" target="_blank">hans2936</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 <a href="https://github.com/kziwws" target="_blank">kziwws</a> 
+      Powered by hexo,Theme by landscape-plus.
+    </div>
+    <div id="footer-info" class="inner">
+      本站博客采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank">[知识共享署名-非商业性使用-相同方式共享 3.0 中国大陆许可协议]</a> 进行许可
+    </div>
+  </div>
+</footer>
+
+
+<!--
+<div id="footer-info" class="inner">
+     &copy; 2023 kziwws<br>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+     .
+     Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+   </div>
+</div>
+-->
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/tags/technology" class="mobile-nav-link">编程技术</a>
+  
+    <a href="/tags/poetry" class="mobile-nav-link">诗</a>
+  
+    <a href="/tags/life" class="mobile-nav-link">生活随笔</a>
+  
+    <a href="/archives" class="mobile-nav-link">所有文章</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<!--载入js，在</body>之前插入即可-->
+    <!--Leancloud 操作库:-->
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!--Valine 的核心代码库-->
+    <script src="/js/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV, 
+            el: '.comment',
+            app_id: 'zh2N00Qk2UIsu1N8Qfu468TH-gzGzoHsz',
+            app_key: 'BJrjTSEoKMfc05OMLWhCzmHk',
+            placeholder: '想说点什么...',
+            pageSize: 15,
+            notify: false,
+            verify: false,
+        });
+    </script>
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+                processEscapes: true
+                    
+}
+  
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                  
+}
+    
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                            all[i].SourceElement().parentNode.className += ' has-jax';
+                                    
+            }
+                
+        });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+</div>
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="icon-search"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.local-search-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+                  
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><span id="icon-search"></span></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><span id="icon-frown"></span></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+          
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+</body>
+</html>
+
