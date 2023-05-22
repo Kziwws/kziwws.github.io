@@ -138,11 +138,9 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="利用jekenis自动打包、上传阿里云OSS生成二维码下载链接、通知钉钉机器人生成打包信息。"><a href="#利用jekenis自动打包、上传阿里云OSS生成二维码下载链接、通知钉钉机器人生成打包信息。" class="headerlink" title="利用jekenis自动打包、上传阿里云OSS生成二维码下载链接、通知钉钉机器人生成打包信息。"></a>利用jekenis自动打包、上传阿里云OSS生成二维码下载链接、通知钉钉机器人生成打包信息。</h5><p>前面介绍了单项目打包，和多项目打包，<a href="https://kziwws.github.io/2023/01/20/technology20230120161001/">IOS项目单独打包 </a>、<a href="https://kziwws.github.io/2023/01/21/technology20230121151206/">IOS脚本批量打包</a>。<br>现在在单独打包的基础上增加一些功能：</p>
+        <h5 id="利用jekenis自动打包、上传阿里云OSS生成二维码下载链接、通知钉钉机器人发送打包信息。"><a href="#利用jekenis自动打包、上传阿里云OSS生成二维码下载链接、通知钉钉机器人发送打包信息。" class="headerlink" title="利用jekenis自动打包、上传阿里云OSS生成二维码下载链接、通知钉钉机器人发送打包信息。"></a>利用jekenis自动打包、上传阿里云OSS生成二维码下载链接、通知钉钉机器人发送打包信息。</h5><p>前面介绍了单项目打包，和多项目打包，<a href="https://kziwws.github.io/2023/01/20/technology20230120161001/">IOS项目单独打包 </a>、<a href="https://kziwws.github.io/2023/01/21/technology20230121151206/">IOS脚本批量打包</a>。<br>现在在单独打包的基础上增加一些功能：</p>
 <blockquote>
-<p>打包完成过后，自动生成Plists文件上传到阿里云OSS, itms-services:// URL,这个 URL 是 iOS 应用程序安装包的协议格式，而不是 HTTP 或 HTTPS 协议格式的链接。</p>
-<p>利用ossutil上传IPA包到阿里云OSS过后，然后利用qrserver服务生成QR二维码，同样子上传到阿里云。</p>
-<p>使用markdown语法再转发生成的二维码链接直接下载。</p>
+<p>打包完成过后，自动生成Plists文件上传到阿里云OSS, itms-services:// URL,这个 URL 是 iOS 应用程序安装包的协议格式，而不是 HTTP 或 HTTPS 协议格式的链接。<br>利用ossutil上传IPA包到阿里云OSS过后，然后利用qrserver服务生成QR二维码，同样子上传到阿里云。<br>使用markdown语法再转发生成的二维码链接直接下载。</p>
 </blockquote>
 <ul>
 <li><a href="#ios_jekenis">mac安装jekenis</a></li>
@@ -153,7 +151,7 @@ var _hmt = _hmt || [];
 <li><a href="#ios_ding">通知钉钉发送打包消息</a></li>
 </ul>
 <p><a name='ios_jekenis'><strong>一、mac安装jekenis</strong></a></p>
-<h5 id="安装地址-https-www-jenkins-io-download-lts-macos"><a href="#安装地址-https-www-jenkins-io-download-lts-macos" class="headerlink" title="安装地址  https://www.jenkins.io/download/lts/macos/"></a>安装地址  <a href="https://www.jenkins.io/download/lts/macos/" target="_blank" rel="noopener">https://www.jenkins.io/download/lts/macos/</a></h5><p><code>brew install jenkins-lts</code> 安装最近最新的一次版本</p>
+<h5 id="安装地址-https-www-jenkins-io-download-lts-macos"><a href="#安装地址-https-www-jenkins-io-download-lts-macos" class="headerlink" title="安装地址   https://www.jenkins.io/download/lts/macos/"></a>安装地址   <a href="https://www.jenkins.io/download/lts/macos/" target="_blank" rel="noopener">https://www.jenkins.io/download/lts/macos/</a></h5><p><code>brew install jenkins-lts</code> 安装最近最新的一次版本</p>
 <p><code>brew install jenkins-lts@YOUR_VERSION</code> 安装对应的其他版本</p>
 <p>如果遇到 </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Error1：brew install jenkins <span class="built_in">Error</span>: The following directories are not writable by your user</span><br><span class="line">在终端执行:</span><br><span class="line">sudo chown -R whoami:admin /usr/local/bin</span><br><span class="line">sudo chown -R whoami:admin /usr/local/share</span><br><span class="line"></span><br><span class="line">Error2：遇到其他位置问题，重新安装一下最新的Homebrew</span><br><span class="line">可参考地址 https:<span class="comment">//www.cnblogs.com/somepark/p/16813250.html</span></span><br><span class="line"></span><br><span class="line">在Terminal 执行 /bin/zsh -c <span class="string">"$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"</span>，</span><br><span class="line">这里最好选择第<span class="number">2</span>个源，清华大学下载源。然后根据提示安装</span><br></pre></td></tr></table></figure>
@@ -180,7 +178,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2023/02/10/technology20230210090112/" data-id="clhu53qjj00686y8d8ogd3m9g" class="article-share-link" data-share="baidu" data-title="利用jekenis自动打包上传阿里云下载和通知钉钉机器人">分享到</a>
+        <a data-url="https://kziwws.github.io/2023/02/10/technology20230210090112/" data-id="clhyquqbk0061k08d4crsa85b" class="article-share-link" data-share="baidu" data-title="利用jekenis自动打包上传阿里云下载和通知钉钉机器人">分享到</a>
       
 
     
@@ -239,7 +237,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2023/01/21/technology20230121151206/" data-id="clhu53qji00656y8d5lxq4xnd" class="article-share-link" data-share="baidu" data-title="IOS项目脚本自动化批量打包并上传第三方平台">分享到</a>
+        <a data-url="https://kziwws.github.io/2023/01/21/technology20230121151206/" data-id="clhyquqbl0066k08dgxpw7ryq" class="article-share-link" data-share="baidu" data-title="IOS项目脚本自动化批量打包并上传第三方平台">分享到</a>
       
 
     
@@ -298,7 +296,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2023/01/20/technology20230120161001/" data-id="clhu53qjh00606y8d98pw50zn" class="article-share-link" data-share="baidu" data-title="IOS项目单独脚本自动化打包">分享到</a>
+        <a data-url="https://kziwws.github.io/2023/01/20/technology20230120161001/" data-id="clhyquqbn006dk08d8d0ifj4n" class="article-share-link" data-share="baidu" data-title="IOS项目单独脚本自动化打包">分享到</a>
       
 
     
@@ -347,7 +345,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2022/10/16/poetry20221016194425/" data-id="clhu53qis003y6y8dhy0e7o8n" class="article-share-link" data-share="baidu" data-title="《叹平生》">分享到</a>
+        <a data-url="https://kziwws.github.io/2022/10/16/poetry20221016194425/" data-id="clhyquqay003wk08d3uhcf17y" class="article-share-link" data-share="baidu" data-title="《叹平生》">分享到</a>
       
 
     
@@ -425,7 +423,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2022/10/16/technology20221016191405/" data-id="clhu53qjh005x6y8dd74o9aal" class="article-share-link" data-share="baidu" data-title="Pycharm2021破解版安装教程">分享到</a>
+        <a data-url="https://kziwws.github.io/2022/10/16/technology20221016191405/" data-id="clhyquqbj005yk08dfjs45gmk" class="article-share-link" data-share="baidu" data-title="Pycharm2021破解版安装教程">分享到</a>
       
 
     
@@ -486,7 +484,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2022/09/16/technology20220916182205/" data-id="clhu53qjg005s6y8dbf7chfd5" class="article-share-link" data-share="baidu" data-title="Pycharm运行闪退报parseVMOptions PYCHARM_VM_OPTIONS">分享到</a>
+        <a data-url="https://kziwws.github.io/2022/09/16/technology20220916182205/" data-id="clhyquqbm0069k08d5ozh87a6" class="article-share-link" data-share="baidu" data-title="Pycharm运行闪退报parseVMOptions PYCHARM_VM_OPTIONS">分享到</a>
       
 
     
@@ -549,7 +547,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2021/12/10/technology20211210100122/" data-id="clhu53qjf005p6y8dame5ae2n" class="article-share-link" data-share="baidu" data-title="Mac青花瓷Charles抓包使用详解">分享到</a>
+        <a data-url="https://kziwws.github.io/2021/12/10/technology20211210100122/" data-id="clhyquqbi005tk08d81ake50j" class="article-share-link" data-share="baidu" data-title="Mac青花瓷Charles抓包使用详解">分享到</a>
       
 
     
@@ -624,7 +622,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2021/10/10/technology20211010110234/" data-id="clhu53qje005k6y8dexifbs8v" class="article-share-link" data-share="baidu" data-title="flutter基础学习">分享到</a>
+        <a data-url="https://kziwws.github.io/2021/10/10/technology20211010110234/" data-id="clhyquqbh005qk08ddads70yl" class="article-share-link" data-share="baidu" data-title="flutter基础学习">分享到</a>
       
 
     
@@ -673,7 +671,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2021/08/21/poetry20210821102025/" data-id="clhu53qir003v6y8d69ur7y2i" class="article-share-link" data-share="baidu" data-title="《晚秋》">分享到</a>
+        <a data-url="https://kziwws.github.io/2021/08/21/poetry20210821102025/" data-id="clhyquqaz0041k08d65or6yje" class="article-share-link" data-share="baidu" data-title="《晚秋》">分享到</a>
       
 
     
@@ -747,7 +745,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2020/11/05/technology20201105160509/" data-id="clhu53qjd005h6y8d0c5l917m" class="article-share-link" data-share="baidu" data-title="CocosCreator运行自带的模拟器报spawn python ENOENT">分享到</a>
+        <a data-url="https://kziwws.github.io/2020/11/05/technology20201105160509/" data-id="clhyquqbd005ak08dg7tcb9t4" class="article-share-link" data-share="baidu" data-title="CocosCreator运行自带的模拟器报spawn python ENOENT">分享到</a>
       
 
     
