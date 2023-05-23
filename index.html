@@ -154,7 +154,7 @@ var _hmt = _hmt || [];
 <h5 id="安装地址-https-www-jenkins-io-download-lts-macos"><a href="#安装地址-https-www-jenkins-io-download-lts-macos" class="headerlink" title="安装地址   https://www.jenkins.io/download/lts/macos/"></a>安装地址   <a href="https://www.jenkins.io/download/lts/macos/" target="_blank" rel="noopener">https://www.jenkins.io/download/lts/macos/</a></h5><p><code>brew install jenkins-lts</code> 安装最近最新的一次版本</p>
 <p><code>brew install jenkins-lts@YOUR_VERSION</code> 安装对应的其他版本</p>
 <p>如果遇到 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Error1：brew install jenkins <span class="built_in">Error</span>: The following directories are not writable by your user</span><br><span class="line">在终端执行:</span><br><span class="line">sudo chown -R whoami:admin /usr/local/bin</span><br><span class="line">sudo chown -R whoami:admin /usr/local/share</span><br><span class="line"></span><br><span class="line">Error2：遇到其他位置问题，重新安装一下最新的Homebrew</span><br><span class="line">可参考地址 https:<span class="comment">//www.cnblogs.com/somepark/p/16813250.html</span></span><br><span class="line"></span><br><span class="line">在Terminal 执行 /bin/zsh -c <span class="string">"$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"</span>，</span><br><span class="line">这里最好选择第<span class="number">2</span>个源，清华大学下载源。然后根据提示安装</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Error1：brew install jenkins Error: The following directories are not writable by your user</span><br><span class="line">在终端执行:</span><br><span class="line">sudo chown -R whoami:admin /usr/<span class="built_in">local</span>/bin</span><br><span class="line">sudo chown -R whoami:admin /usr/<span class="built_in">local</span>/share</span><br><span class="line"></span><br><span class="line">Error2：遇到其他位置问题，重新安装一下最新的Homebrew</span><br><span class="line">可参考地址 https://www.cnblogs.com/somepark/p/16813250.html</span><br><span class="line"></span><br><span class="line">在Terminal 执行 /bin/zsh -c <span class="string">"<span class="variable">$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)</span>"</span>，</span><br><span class="line">这里最好选择第2个源，清华大学下载源。然后根据提示安装</span><br></pre></td></tr></table></figure>
 
 <p>以上安装完成 在重新<code>brew install jenkins-lts</code>执行下载安装 jenkins，如果失败，请选网络或者重试。</p>
 <h5 id="运行Jenkins"><a href="#运行Jenkins" class="headerlink" title="运行Jenkins"></a>运行Jenkins</h5><p><code>brew services start jenkins-lts</code> 开启jenkins</p>
@@ -165,10 +165,10 @@ var _hmt = _hmt || [];
 <p>• 获取项目工程名：</p>
 <p><code>find . -name *.xcodeproj | awk -F &quot;[/.]&quot; &#39;{print $(NF-1)}</code> 中获取。</p>
 <p>• 获取打包AdHoc、AppStore、Enterprise、Development 所需的plist目录，这个目录在打包脚本的目录里。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 判读用户打包类型</span><br><span class="line">packType=$&#123;PackageType&#125;</span><br><span class="line">echo <span class="string">"33[31m 打包参数值:$&#123;packType&#125; n 33[0m"</span></span><br><span class="line"><span class="keyword">if</span> [ $packType == <span class="string">"AdHoc"</span> ] ; then</span><br><span class="line">exportOptionsPlistPath=<span class="string">"$&#123;plistPath&#125;/AdHocExportOptionsPlist.plist"</span></span><br><span class="line">echo <span class="string">"当前选择构建AdHoc"</span></span><br><span class="line">elif [ $packType == <span class="string">"AppStore"</span> ] ; then</span><br><span class="line">exportOptionsPlistPath=<span class="string">"$&#123;plistPath&#125;/AppStoreExportOptionsPlist.plist"</span></span><br><span class="line">echo <span class="string">"当前选择构建AppStore"</span></span><br><span class="line">elif [ $packType == <span class="string">"Enterprise"</span> ] ; then</span><br><span class="line">exportOptionsPlistPath=<span class="string">"$&#123;plistPath&#125;/EnterpriseExportOptionsPlist.plist"</span></span><br><span class="line">echo <span class="string">"当前选择构建Enterprise"</span></span><br><span class="line">elif [ $packType == <span class="string">"Development"</span> ] ; then</span><br><span class="line">exportOptionsPlistPath=<span class="string">"$&#123;plistPath&#125;/DevelopmentExportOptionsPlist.plist"</span></span><br><span class="line">echo <span class="string">"当前选择构建Development"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">echo <span class="string">"参数无效!!!"</span></span><br><span class="line">exit <span class="number">1</span></span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 判读用户打包类型</span></span><br><span class="line">packType=<span class="variable">$&#123;PackageType&#125;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"33[31m 打包参数值:<span class="variable">$&#123;packType&#125;</span> n 33[0m"</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$packType</span> == <span class="string">"AdHoc"</span> ] ; <span class="keyword">then</span></span><br><span class="line">exportOptionsPlistPath=<span class="string">"<span class="variable">$&#123;plistPath&#125;</span>/AdHocExportOptionsPlist.plist"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"当前选择构建AdHoc"</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$packType</span> == <span class="string">"AppStore"</span> ] ; <span class="keyword">then</span></span><br><span class="line">exportOptionsPlistPath=<span class="string">"<span class="variable">$&#123;plistPath&#125;</span>/AppStoreExportOptionsPlist.plist"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"当前选择构建AppStore"</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$packType</span> == <span class="string">"Enterprise"</span> ] ; <span class="keyword">then</span></span><br><span class="line">exportOptionsPlistPath=<span class="string">"<span class="variable">$&#123;plistPath&#125;</span>/EnterpriseExportOptionsPlist.plist"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"当前选择构建Enterprise"</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$packType</span> == <span class="string">"Development"</span> ] ; <span class="keyword">then</span></span><br><span class="line">exportOptionsPlistPath=<span class="string">"<span class="variable">$&#123;plistPath&#125;</span>/DevelopmentExportOptionsPlist.plist"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"当前选择构建Development"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"参数无效!!!"</span></span><br><span class="line"><span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
 
 <p>• 执行xcodebuild打包IPA。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"># Build 生成 APP</span><br><span class="line"># 判断编译的项目类型是workspace还是project</span><br><span class="line"><span class="keyword">if</span> $is_workspace ; then</span><br><span class="line"># 编译前清理工程</span><br><span class="line">xcodebuild clean -workspace $&#123;projectName&#125;.xcworkspace \</span><br><span class="line">                 -scheme $&#123;schemeName&#125; \</span><br><span class="line">                 -configuration $&#123;build_configuration&#125;</span><br><span class="line">xcodebuild archive -workspace $&#123;projectName&#125;.xcworkspace \</span><br><span class="line">                   -scheme $&#123;schemeName&#125; \</span><br><span class="line">                   -configuration $&#123;build_configuration&#125; \</span><br><span class="line">                   -archivePath $&#123;buildDir&#125; \</span><br><span class="line">                   -destination <span class="string">'generic/platform=iOS'</span> \</span><br><span class="line">                   -quiet</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"># 编译前清理工程</span><br><span class="line">xcodebuild clean -project $&#123;projectName&#125;.xcodeproj \</span><br><span class="line">                 -scheme $&#123;schemeName&#125; \</span><br><span class="line">                 -configuration $&#123;build_configuration&#125;</span><br><span class="line">xcodebuild archive -project $&#123;projectName&#125;.xcodeproj \</span><br><span class="line">                   -scheme $&#123;schemeName&#125; \</span><br><span class="line">                   -configuration $&#123;build_configuration&#125; \</span><br><span class="line">                   -archivePath $&#123;buildDir&#125; \</span><br><span class="line">                   -destination <span class="string">'generic/platform=iOS'</span> \</span><br><span class="line">                   -quiet</span><br><span class="line"># 生成 ipa</span><br><span class="line">xcodebuild -exportArchive \</span><br><span class="line">  -archivePath $&#123;buildDir&#125; \</span><br><span class="line">  -exportOptionsPlist $&#123;exportOptionsPlistPath&#125; \</span><br><span class="line">  -exportPath $&#123;ipaPath&#125; \</span><br><span class="line">  -allowProvisioningUpdates $&#123;YES&#125; \</span><br><span class="line">  -allowProvisioningDeviceRegistration $&#123;YES&#125; \</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Build 生成 APP</span></span><br><span class="line"><span class="comment"># 判断编译的项目类型是workspace还是project</span></span><br><span class="line"><span class="keyword">if</span> <span class="variable">$is_workspace</span> ; <span class="keyword">then</span></span><br><span class="line"><span class="comment"># 编译前清理工程</span></span><br><span class="line">xcodebuild clean -workspace <span class="variable">$&#123;projectName&#125;</span>.xcworkspace \</span><br><span class="line">                 -scheme <span class="variable">$&#123;schemeName&#125;</span> \</span><br><span class="line">                 -configuration <span class="variable">$&#123;build_configuration&#125;</span></span><br><span class="line">xcodebuild archive -workspace <span class="variable">$&#123;projectName&#125;</span>.xcworkspace \</span><br><span class="line">                   -scheme <span class="variable">$&#123;schemeName&#125;</span> \</span><br><span class="line">                   -configuration <span class="variable">$&#123;build_configuration&#125;</span> \</span><br><span class="line">                   -archivePath <span class="variable">$&#123;buildDir&#125;</span> \</span><br><span class="line">                   -destination <span class="string">'generic/platform=iOS'</span> \</span><br><span class="line">                   -quiet</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="comment"># 编译前清理工程</span></span><br><span class="line">xcodebuild clean -project <span class="variable">$&#123;projectName&#125;</span>.xcodeproj \</span><br><span class="line">                 -scheme <span class="variable">$&#123;schemeName&#125;</span> \</span><br><span class="line">                 -configuration <span class="variable">$&#123;build_configuration&#125;</span></span><br><span class="line">xcodebuild archive -project <span class="variable">$&#123;projectName&#125;</span>.xcodeproj \</span><br><span class="line">                   -scheme <span class="variable">$&#123;schemeName&#125;</span> \</span><br><span class="line">                   -configuration <span class="variable">$&#123;build_configuration&#125;</span> \</span><br><span class="line">                   -archivePath <span class="variable">$&#123;buildDir&#125;</span> \</span><br><span class="line">                   -destination <span class="string">'generic/platform=iOS'</span> \</span><br><span class="line">                   -quiet</span><br><span class="line"><span class="comment"># 生成 ipa</span></span><br><span class="line">xcodebuild -exportArchive \</span><br><span class="line">  -archivePath <span class="variable">$&#123;buildDir&#125;</span> \</span><br><span class="line">  -exportOptionsPlist <span class="variable">$&#123;exportOptionsPlistPath&#125;</span> \</span><br><span class="line">  -exportPath <span class="variable">$&#123;ipaPath&#125;</span> \</span><br><span class="line">  -allowProvisioningUpdates <span class="variable">$&#123;YES&#125;</span> \</span><br><span class="line">  -allowProvisioningDeviceRegistration <span class="variable">$&#123;YES&#125;</span> \</span><br></pre></td></tr></table></figure>
         
           <p class="article-more-link">
             <a href="/2023/02/10/technology20230210090112/#more">Read More</a>
@@ -178,7 +178,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2023/02/10/technology20230210090112/" data-id="clhyquqbk0061k08d4crsa85b" class="article-share-link" data-share="baidu" data-title="利用jekenis自动打包上传阿里云下载和通知钉钉机器人">分享到</a>
+        <a data-url="https://kziwws.github.io/2023/02/10/technology20230210090112/" data-id="clhztqj850064ya8ddxq4f2ox" class="article-share-link" data-share="baidu" data-title="利用jekenis自动打包上传阿里云下载和通知钉钉机器人">分享到</a>
       
 
     
@@ -221,7 +221,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h5 id="由于公司项目需求然后想要一个项目打包多个包，然后app名字、bundleId、服务器连接URL、appIocn、app项目内容渠道参数不一样，针对网上看了一些教程和方式，现在总结一下。"><a href="#由于公司项目需求然后想要一个项目打包多个包，然后app名字、bundleId、服务器连接URL、appIocn、app项目内容渠道参数不一样，针对网上看了一些教程和方式，现在总结一下。" class="headerlink" title="由于公司项目需求然后想要一个项目打包多个包，然后app名字、bundleId、服务器连接URL、appIocn、app项目内容渠道参数不一样，针对网上看了一些教程和方式，现在总结一下。"></a>由于公司项目需求然后想要一个项目打包多个包，然后app名字、bundleId、服务器连接URL、appIocn、app项目内容渠道参数不一样，针对网上看了一些教程和方式，现在总结一下。</h5><p>如果想要知道单个项目脚本打包请查看<a href="https://kziwws.github.io/2023/01/20/technology20230120161001/">IOS脚本单独打包</a></p>
-<h5 id="一、Shell脚本"><a href="#一、Shell脚本" class="headerlink" title="一、Shell脚本"></a><strong>一、Shell脚本</strong></h5><p>Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。<a href="https://www.runoob.com/linux/linux-shell.html" target="_blank" rel="noopener">shell脚本基础学习</a></p>
+<h5 id="一、bash脚本"><a href="#一、bash脚本" class="headerlink" title="一、bash脚本"></a><strong>一、bash脚本</strong></h5><p>bash 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。bash 既是一种命令语言，又是一种程序设计语言。<a href="https://www.runoob.com/linux/linux-bash.html" target="_blank" rel="noopener">bash脚本基础学习</a></p>
 <p><strong>项目目录结构</strong></p>
 <p><a href="https://imgse.com/i/pp97uJs" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2023/02/27/pp97uJs.png" alt="pp97uJs.png"></a></p>
 <p><strong>结构说明：</strong></p>
@@ -237,7 +237,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2023/01/21/technology20230121151206/" data-id="clhyquqbl0066k08dgxpw7ryq" class="article-share-link" data-share="baidu" data-title="IOS项目脚本自动化批量打包并上传第三方平台">分享到</a>
+        <a data-url="https://kziwws.github.io/2023/01/21/technology20230121151206/" data-id="clhztqj83005xya8dhms6ebnm" class="article-share-link" data-share="baidu" data-title="IOS项目脚本自动化批量打包并上传第三方平台">分享到</a>
       
 
     
@@ -296,7 +296,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2023/01/20/technology20230120161001/" data-id="clhyquqbn006dk08d8d0ifj4n" class="article-share-link" data-share="baidu" data-title="IOS项目单独脚本自动化打包">分享到</a>
+        <a data-url="https://kziwws.github.io/2023/01/20/technology20230120161001/" data-id="clhztqj81005lya8d2r425n2e" class="article-share-link" data-share="baidu" data-title="IOS项目单独脚本自动化打包">分享到</a>
       
 
     
@@ -345,7 +345,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2022/10/16/poetry20221016194425/" data-id="clhyquqay003wk08d3uhcf17y" class="article-share-link" data-share="baidu" data-title="《叹平生》">分享到</a>
+        <a data-url="https://kziwws.github.io/2022/10/16/poetry20221016194425/" data-id="clhztqj7l0047ya8d6xym87dc" class="article-share-link" data-share="baidu" data-title="《叹平生》">分享到</a>
       
 
     
@@ -423,7 +423,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2022/10/16/technology20221016191405/" data-id="clhyquqbj005yk08dfjs45gmk" class="article-share-link" data-share="baidu" data-title="Pycharm2021破解版安装教程">分享到</a>
+        <a data-url="https://kziwws.github.io/2022/10/16/technology20221016191405/" data-id="clhztqj860069ya8dcrbbg3e1" class="article-share-link" data-share="baidu" data-title="Pycharm2021破解版安装教程">分享到</a>
       
 
     
@@ -484,7 +484,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2022/09/16/technology20220916182205/" data-id="clhyquqbm0069k08d5ozh87a6" class="article-share-link" data-share="baidu" data-title="Pycharm运行闪退报parseVMOptions PYCHARM_VM_OPTIONS">分享到</a>
+        <a data-url="https://kziwws.github.io/2022/09/16/technology20220916182205/" data-id="clhztqj840061ya8d3psj9wwk" class="article-share-link" data-share="baidu" data-title="Pycharm运行闪退报parseVMOptions PYCHARM_VM_OPTIONS">分享到</a>
       
 
     
@@ -547,7 +547,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2021/12/10/technology20211210100122/" data-id="clhyquqbi005tk08d81ake50j" class="article-share-link" data-share="baidu" data-title="Mac青花瓷Charles抓包使用详解">分享到</a>
+        <a data-url="https://kziwws.github.io/2021/12/10/technology20211210100122/" data-id="clhztqj80005iya8dfetmbumt" class="article-share-link" data-share="baidu" data-title="Mac青花瓷Charles抓包使用详解">分享到</a>
       
 
     
@@ -622,7 +622,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2021/10/10/technology20211010110234/" data-id="clhyquqbh005qk08ddads70yl" class="article-share-link" data-share="baidu" data-title="flutter基础学习">分享到</a>
+        <a data-url="https://kziwws.github.io/2021/10/10/technology20211010110234/" data-id="clhztqj81005pya8d1ut0cg7w" class="article-share-link" data-share="baidu" data-title="flutter基础学习">分享到</a>
       
 
     
@@ -671,7 +671,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2021/08/21/poetry20210821102025/" data-id="clhyquqaz0041k08d65or6yje" class="article-share-link" data-share="baidu" data-title="《晚秋》">分享到</a>
+        <a data-url="https://kziwws.github.io/2021/08/21/poetry20210821102025/" data-id="clhztqj7h003qya8d5h1sdefk" class="article-share-link" data-share="baidu" data-title="《晚秋》">分享到</a>
       
 
     
@@ -745,7 +745,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2020/11/05/technology20201105160509/" data-id="clhyquqbd005ak08dg7tcb9t4" class="article-share-link" data-share="baidu" data-title="CocosCreator运行自带的模拟器报spawn python ENOENT">分享到</a>
+        <a data-url="https://kziwws.github.io/2020/11/05/technology20201105160509/" data-id="clhztqj7x0056ya8d6hd64fjf" class="article-share-link" data-share="baidu" data-title="CocosCreator运行自带的模拟器报spawn python ENOENT">分享到</a>
       
 
     
