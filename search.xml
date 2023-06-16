@@ -395,7 +395,7 @@
   <entry>
     <title>使用fvm管理Flutter SDK版本</title>
     <url>/2022/10/12/technology20221012070215/</url>
-    <content><![CDATA[<h3 id="使用fvm管理Flutter-SDK"><a href="#使用fvm管理Flutter-SDK" class="headerlink" title="使用fvm管理Flutter SDK"></a>使用fvm管理Flutter SDK</h3><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>fvm是一个非常有用的工具，可以帮助我们在Flutter项目中管理不同版本的Flutter SDK。使用fvm，我们可以轻松切换和管理项目所使用的Flutter SDK版本。</p>
+    <content><![CDATA[<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>fvm是一个非常有用的工具，可以帮助我们在Flutter项目中管理不同版本的Flutter SDK。使用fvm，我们可以轻松切换和管理项目所使用的Flutter SDK版本。</p>
 <h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>以下是使用fvm的步骤：</p>
 <p>安装fvm：打开终端并运行以下命令来安装fvm：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pub global activate fvm</span><br></pre></td></tr></table></figure>
@@ -428,6 +428,22 @@
 
 <p>如果 <code>fvm current</code>运行查看当前使用的指令，当前使用的已经是想要的flutter SDK 版本了，还是不行的话，请检查例如使用 Android Studio中 Fluter SDK path使用的路径，如果你之前是使用的绝对路径，请替换成fvm 当前指定的路径，/Users/mac/.fvm/current  替换成你的电脑名字。</p>
 <p><a href="https://imgse.com/i/pCKtJeK" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2023/06/15/pCKtJeK.jpg" alt="pCKtJeK.jpg"></a></p>
+<p>Dart path: /Users/mac/.fvm/current/bin/cache/dart-sdk</p>
+<p>Flutter SDK path: /Users/mac/.fvm/current</p>
+<p>这儿如果你选择了过后发现 version中的版本 没有变动的话，证明这个目录没有下载成功或者其他原因。如果没有下载或者残损，重新执行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fvm install &lt;version&gt; 所对应的版本下载</span><br></pre></td></tr></table></figure>
+
+<p>如果想卸载掉一个对应的版本</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fvm flutter uninstall &lt;version&gt; 所对应的版本</span><br></pre></td></tr></table></figure>
+
+<p>1、如果遇到：</p>
+<p><font color='red'>fvm use 3.0.1 Switch flutter to =&gt; version:3.0.1-stable Now using flutter version:3.0.1-stable…(Please wait a moment when first switch to it!!!) /usr/local/Cellar/fvm/1.1.6/libexec/fvm.sh: 行 117: flutter: 未找到命令</font></p>
+<p>解决：/Users/mac/.bash_profile 找到这个文件 然后打开编辑添加，使用fvm之前没有正确配置Flutter环境变量所致。</p>
+<p>export PATH=”/Users/mac/.pub-cache/bin:$PATH”<br>export PATH=”/Users/mac/.fvm/current/bin:$PATH”</p>
+<p>然后执行： source /Users/mac/.bash_profile</p>
+<p>然后在使用命令 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fvm use 3.0.1</span><br></pre></td></tr></table></figure>
+
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>通过使用fvm，我们能够更好地管理Flutter项目中的不同版本的Flutter SDK。这个工具让我们可以轻松切换和管理不同版本的SDK，从而使我们能够更灵活地开发和测试Flutter应用程序。</p>
 ]]></content>
       <categories>
@@ -473,6 +489,33 @@
       <tags>
         <tag>technology</tag>
         <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何解绑微信小程序游戏</title>
+    <url>/2022/01/03/technology20220103111021/</url>
+    <content><![CDATA[<p>本文将介绍如何在手机上解绑微信小程序，并提供详细的操作步骤和截图，帮助您顺利解除与小程序的关联。</p>
+<p>打开微信应用 首先，确保您已经打开了微信应用程序并登录到自己的账号。</p>
+<h4 id="1、微信里进入-【小程序助手】"><a href="#1、微信里进入-【小程序助手】" class="headerlink" title="1、微信里进入 【小程序助手】"></a>1、微信里进入 【小程序助手】</h4><p>微信小程序。可以通过微信聊天界面中的小程序图标进入，也可以通过微信中的“发现”–&gt;“小程序”进入。在小程序界面中，我们可以看到所有已经添加的小程序，以及个人信息等选项。备注：这个小程序名字就是叫《小程序助手》</p>
+<h4 id="2、找到需要解绑的小程序"><a href="#2、找到需要解绑的小程序" class="headerlink" title="2、找到需要解绑的小程序"></a>2、找到需要解绑的小程序</h4><p>在【小程序助手】管理页面中，浏览已关联的小程序列表，找到您需要解绑的小程序。<br><a href="https://imgse.com/i/pCM0d8U" target="_blank" rel="noopener"><br>    <img src="https://s1.ax1x.com/2023/06/16/pCM0d8U.jpg" alt="图片描述" width="375" height="667"><br></a></p>
+<h4 id="3、点击顶部要解绑的小程序"><a href="#3、点击顶部要解绑的小程序" class="headerlink" title="3、点击顶部要解绑的小程序"></a>3、点击顶部要解绑的小程序</h4><p>在您找到需要解绑的小程序后，点击对应小程序顶部按钮。<br><a href="https://imgse.com/i/pCM0w2F" target="_blank" rel="noopener"><br>    <img src="https://s1.ax1x.com/2023/06/16/pCM0w2F.jpg" alt="图片描述" width="375" height="667"><br></a></p>
+<h4 id="4、进入【解绑】页面"><a href="#4、进入【解绑】页面" class="headerlink" title="4、进入【解绑】页面"></a>4、进入【解绑】页面</h4><p>在小程序的设置页中，找到“解绑”选项，点击进入【解绑】页面。<br><a href="https://imgse.com/i/pCM0aCT" target="_blank" rel="noopener"><br>    <img src="https://s1.ax1x.com/2023/06/16/pCM0aCT.jpg" alt="图片描述" width="375" height="667"><br></a></p>
+<h4 id="5、确认解绑操作"><a href="#5、确认解绑操作" class="headerlink" title="5、确认解绑操作"></a>5、确认解绑操作</h4><p>在【解绑】页面中，系统将提醒您解绑后将无法再使用该小程序的相关功能。请仔细阅读提示并确认解绑操作。</p>
+<h4 id="6、点击【解绑】按钮"><a href="#6、点击【解绑】按钮" class="headerlink" title="6、点击【解绑】按钮"></a>6、点击【解绑】按钮</h4><p>在确认无误后，点击页面底部的“解绑”按钮，完成解绑操作。</p>
+<p>注意事项：</p>
+<ul>
+<li>解绑小程序后，您将无法再访问和使用该小程序的相关功能。请确保您不再需要与该小程序有任何关联。</li>
+<li>解绑小程序不会删除您的个人信息或数据。如果您需要删除与该小程序相关的个人信息，请联系小程序开发者。</li>
+<li>在解绑小程序之前，您可以备份和保存与该小程序相关的任何数据或信息。</li>
+</ul>
+<p>通过以上步骤，您可以在手机上轻松解绑微信小程序。请确保您在解绑之前仔细阅读提示信息并确认解绑操作，以免造成不必要的麻烦。如果您需要重新关联或有任何问题，请联系小程序的开发者或寻求微信客服的帮助。</p>
+]]></content>
+      <categories>
+        <category>knowledge</category>
+      </categories>
+      <tags>
+        <tag>technology</tag>
+        <tag>knowledge</tag>
       </tags>
   </entry>
   <entry>
