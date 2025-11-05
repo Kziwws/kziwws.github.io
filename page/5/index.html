@@ -1,0 +1,1311 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>向🐑</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="向🐑">
+<meta property="og:url" content="https://kziwws.github.io/page/5/index.html">
+<meta property="og:site_name" content="向🐑">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="kziwws">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="向🐑" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  <!--  -->
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?51e08434b847b38641d02f11be4eb143";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">向🐑</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">一只站在树上的鸟，从来不害怕树枝突然折断，因为它相信的不是树枝，而是它自己的翅膀！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/tags/technology">编程技术</a>
+        
+          <a class="main-nav-link" href="/tags/poetry">诗</a>
+        
+          <a class="main-nav-link" href="/tags/life">生活随笔</a>
+        
+          <a class="main-nav-link" href="/archives">所有文章</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        
+        
+        <a href="javascript:;" class="popup-trigger nav-icon" id="nav-search-btn"></a>
+        
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="kziwws.github.io">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="local-search-inner"><div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <span id="icon-search"></span>
+    </span>
+    <span class="popup-btn-close">
+      <span id="icon-close"></span>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="本地搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div></div>
+</header>
+
+
+
+    <div class="outer">
+      <section id="main">
+  
+    <article id="post-technology20191206020145" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/06/technology20191206020145/" class="article-date">
+  <time datetime="2019-12-05T18:01:45.000Z" itemprop="datePublished">2019-12-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cocoapods/">cocoapods</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/06/technology20191206020145/">Mac上安装Cocoapods基础和一些踩坑记录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="Cocoapods-为Xcode中的项目添加依赖库，我其实觉得这个真不好用，用过Android-Studio本身自带，链接第三方依赖库比这个方便。废话不多说，直接上步骤。"><a href="#Cocoapods-为Xcode中的项目添加依赖库，我其实觉得这个真不好用，用过Android-Studio本身自带，链接第三方依赖库比这个方便。废话不多说，直接上步骤。" class="headerlink" title="Cocoapods 为Xcode中的项目添加依赖库，我其实觉得这个真不好用，用过Android Studio本身自带，链接第三方依赖库比这个方便。废话不多说，直接上步骤。"></a>Cocoapods 为Xcode中的项目添加依赖库，我其实觉得这个真不好用，用过Android Studio本身自带，链接第三方依赖库比这个方便。废话不多说，直接上步骤。</h5><h4 id="Cocoapods安装步骤"><a href="#Cocoapods安装步骤" class="headerlink" title="Cocoapods安装步骤"></a>Cocoapods安装步骤</h4><p><strong>一、更新Ruby环境</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem update --system</span><br></pre></td></tr></table></figure>
+<p><strong>二、换Ruby镜像</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gem sources -l  #查看当前镜像</span><br><span class="line">gem sources --remove https:&#x2F;&#x2F;rubygems.org&#x2F; #移除当前的镜像 淘宝的Ruby镜像也不更新</span><br><span class="line">gem sources -a https:&#x2F;&#x2F;gems.ruby-china.com  #换成这个</span><br></pre></td></tr></table></figure>
+<p><strong>三、安装CocoaPods</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem install cocoapods</span><br></pre></td></tr></table></figure>
+
+<p>上面如果没有权限需要输入 <code>sudo gem install -n /usr/local/bin cocoapods</code> ，横下以下是各种折腾。</p>
+<hr>
+<p><font color="#4183C4"> 如果出现: </font>  MacBook-Air ~ % sudo gem install cocoapods<br>ERROR:  Could not find a valid gem ‘cocoapods’ (&gt;= 0), here is why:<br>          Unable to download data from <a href="https://rubygems.org/" target="_blank" rel="noopener">https://rubygems.org/</a> - timed out (<a href="https://rubygems.org/specs.4.8.gz" target="_blank" rel="noopener">https://rubygems.org/specs.4.8.gz</a>)</p>
+<p>请检查 <code>gem sources -l</code>是否是 <a href="https://gems.ruby-china.com" target="_blank" rel="noopener">https://gems.ruby-china.com</a></p>
+<p><font color="red">如果再出现各种奇葩问题，这儿可以卸载 gem 安装的所有东西然后再重新安装。</font></p>
+<p>可以在终端输入 <code>sudo rm -rf /usr/local/bin/pod</code>  然后在查看<code>gem list</code>看到中间部分以cocoapods开头的列表  </p>
+<p>cocoapods (1.9.2)<br>cocoapods-core (1.9.2)<br>cocoapods-deintegrate (1.0.4)<br>cocoapods-downloader (1.3.0)<br>cocoapods-plugins (1.0.0)<br>cocoapods-search (1.0.0)<br>cocoapods-stats (1.1.0)<br>cocoapods-trunk (1.5.0)<br>cocoapods-try (1.2.0)</p>
+<p>这儿以第一个为例挨个卸载，sudo gem uninstall cocoapods -v 1.9.2  sudo gem uninstall cocoapods-core -v 1.9.2 后面的类似。删除过后再执行重新<code>sudo gem install cocoapods</code></p>
+<p><font color="red">上面的完成过后再次执行下面的命令，关键的时候来了，呵呵呵…. (网上说 这个过程是漫长的，要有耐心)，这哪是慢，根本不行好么，坑死人了。</font></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod setup</span><br></pre></td></tr></table></figure>
+
+<p>看别人说pod setup 过后会出现 Setting up CocoaPods master repo这个，这个至少会去下载，我特么直接出现Setup completed 这个，无论怎么网上的找方法试过了都没折，自己的笔记本上再 <font color="#4183C4">活动监视器</font> 搜索git至少还在 10k/s再走，然后之前回家等了两三个小时 然后居然直接中断了，什么垃圾东西呀，这是人干的事么。</p>
+<p>我公司这一台什么都没有下载直接Setup completed 说完成了，clone repo到本地成功，压根就没有下载下来。然后我在电脑上执行 <code>pod search AFNetworking</code></p>
+<p>是100%的出现 <font color="#4183C4">[!] Unable to find a pod with name, author, summary, or description matching AFNetworking</font></p>
+<p>关于出现这个的帖子<a href="https://www.cnblogs.com/huaida/p/12701080.html" target="_blank" rel="noopener">https://www.cnblogs.com/huaida/p/12701080.html</a>,大部分说是因为缓存,然后删除~/Library/Caches/CocoaPods/search_index.json,这根本没用好么，然后试了一下这个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pod repo remove master</span><br><span class="line">cd ~&#x2F;.cocoapods&#x2F;repos</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;CocoaPods&#x2F;Specs.git master</span><br><span class="line">rm ~&#x2F;Library&#x2F;Caches&#x2F;CocoaPods&#x2F;search_index.json</span><br><span class="line">pod search afnetworking</span><br></pre></td></tr></table></figure>
+
+<p>这个执行到从git仓库拉一样的慢成”苟“我去这个也太受不了了，恶心人么，这不是。</p>
+<p>冷静一下 <code>pod setup</code>本身是把这个 <a href="https://github.com/CocoaPods/Specs.git" target="_blank" rel="noopener">https://github.com/CocoaPods/Specs.git</a> 地址中的文件clone下来，这儿慢的原因就是从git上下载，后来了解到可以直接把这个仓库克隆到国内的码云<a href="https://gitee.com" target="_blank" rel="noopener">https://gitee.com</a> ,这样子再从码云上clone下来。</p>
+<p>然后这个是从git导入到码云上的地址: <a href="https://gitee.com/Kziwws/Specs.git" target="_blank" rel="noopener">https://gitee.com/Kziwws/Specs.git</a> ，然后把这句<code>git clone https://github.com/CocoaPods/Specs.git master</code> 换成 <code>git clone https://gitee.com/Kziwws/Specs.git</code>，这个clone 到 ~/.cocoapods/repos 这个目录。这下速度从三四个小时变成七八分钟就完成了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@MacBook-Pro ~ % cd ~&#x2F;.cocoapods&#x2F;</span><br><span class="line">@MacBook-Pro .cocoapods % du -sh *</span><br><span class="line">1.6G	repos #这大概1.81G呢 你得稍微等一下</span><br></pre></td></tr></table></figure>
+
+
+
+<p>其实上面 <code>pod setup</code>和 <code>git clone https://gitee.com/Kziwws/Specs.git ~/.cocoapods/repos/master</code>等效的。如果上面不行用这个句命令。</p>
+<hr>
+<p>经过上面一些列的折腾基本上一会下载完成了，然后你再输入 <code>pod search AFNetworking</code>,如果出现 Creating search index for spec repo ‘master’.. Done! 一直等待。你就安静等一会儿。 </p>
+<p><font color="#4183C4">如果出现:</font> </p>
+<p>[!] CDN: trunk URL couldn’t be downloaded: <a href="https://cdn.cocoapods.org/all_pods_versions_8_9_b.txt" target="_blank" rel="noopener">https://cdn.cocoapods.org/all_pods_versions_8_9_b.txt</a> Response: Timeout was reached</p>
+<p>或者</p>
+<p>[!] CDN: trunk Repo update failed - 3 error(s):</p>
+<p>CDN: trunk URL couldn’t be downloaded: <a href="https://cdn.cocoapods.org/Specs/a/e/1/XJNetworking/1.0.0/XJNetworking.podspec.json" target="_blank" rel="noopener">https://cdn.cocoapods.org/Specs/a/e/1/XJNetworking/1.0.0/XJNetworking.podspec.json</a> Response: Timeout was reached</p>
+<p>CDN: trunk URL couldn’t be downloaded: <a href="https://cdn.cocoapods.org/Specs/a/e/1/XJNetworking/1.0.1/XJNetworking.podspec.json" target="_blank" rel="noopener">https://cdn.cocoapods.org/Specs/a/e/1/XJNetworking/1.0.1/XJNetworking.podspec.json</a> Response: Timeout was reached</p>
+<p>CDN: trunk URL couldn’t be downloaded: <a href="https://cdn.cocoapods.org/Specs/a/e/1/XJNetworking/1.0.2/XJNetworking.podspec.json" target="_blank" rel="noopener">https://cdn.cocoapods.org/Specs/a/e/1/XJNetworking/1.0.2/XJNetworking.podspec.json</a> Response: Timeout was reached</p>
+<p><font color="red">解决:CDN: trunk URL couldn’t be downloaded </font>,参考一下这篇帖子<a href="https://blog.csdn.net/miaopf123/article/details/104406595" target="_blank" rel="noopener">https://blog.csdn.net/miaopf123/article/details/104406595</a>,然后再 pod search AFNetworking 会出现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">-&gt; AFNetworking (4.0.1)</span><br><span class="line">   A delightful networking framework for Apple platforms.</span><br><span class="line">   pod &#39;AFNetworking&#39;, &#39;~&gt; 4.0.1&#39;</span><br><span class="line">   - Homepage: https:&#x2F;&#x2F;github.com&#x2F;AFNetworking&#x2F;AFNetworking</span><br><span class="line">   - Source:   https:&#x2F;&#x2F;github.com&#x2F;AFNetworking&#x2F;AFNetworking.git</span><br><span class="line">   - Versions: 4.0.1, 4.0.0, 3.2.1, 3.2.0, 3.1.0, 3.0.4, 3.0.3, 3.0.2, 3.0.1,</span><br><span class="line">   3.0.0, 3.0.0-beta.3, 3.0.0-beta.2, 3.0.0-beta.1, 2.7.0, 2.6.3, 2.6.2, 2.6.1,</span><br><span class="line">   2.6.0, 2.5.4, 2.5.3, 2.5.2, 2.5.1, 2.5.0, 2.4.1, 2.4.0, 2.3.1, 2.3.0, 2.2.4,</span><br><span class="line">   2.2.3, 2.2.2, 2.2.1, 2.2.0, 2.1.0, 2.0.3, 2.0.2, 2.0.1, 2.0.0, 2.0.0-RC3,</span><br><span class="line">   2.0.0-RC2, 2.0.0-RC1, 1.3.4, 1.3.3, 1.3.2, 1.3.1, 1.3.0, 1.2.1, 1.2.0, 1.1.0,</span><br><span class="line">   1.0.1, 1.0, 1.0RC3, 1.0RC2, 1.0RC1, 0.10.1, 0.10.0, 0.9.2, 0.9.1, 0.9.0,</span><br><span class="line">   0.7.0, 0.5.1 [master repo] ～</span><br></pre></td></tr></table></figure>
+
+<p>这儿在多说一点，如果经过上面的折腾还是没有成功，你直接<a href="https://gitee.com/Kziwws/Specs.git" target="_blank" rel="noopener">https://gitee.com/Kziwws/Specs.git</a> 下载这个到桌面然后zip大概 367M，也相对挺快的。</p>
+<p><img src="https://s1.ax1x.com/2020/06/19/Nu1kSU.png" alt=""></p>
+<p>把右边的标记1～8的文件拷贝到左边的目录里，然后右边标记的零的如果直接拷贝不过来的，直接用记事本挨个打开把内容拷贝到右边来的文件相应的里面来。然后执行 <code>pod repo remove trunk</code>，基本就可以使用了。</p>
+<hr>
+<p><strong>四、CocoaPods基础使用</strong></p>
+<p>  一、找到项目目录 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;Users&#x2F;wenshuang&#x2F;Desktop&#x2F;testPodDemo</span><br><span class="line">touch  Podfile   #项目里会出现Podfile文件</span><br><span class="line">vim pod file     #开始打开Podfile文件</span><br></pre></td></tr></table></figure>
+
+<p> 二、输入i 开始编辑，输入所需要到的第三方库,如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">platform :ios,‘8.0’</span><br><span class="line">target‘testPodDemo’do</span><br><span class="line">pod‘AFNetworking’,‘~&gt; 3.0.4’</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+<p>三、在按 esc 然后输入 : 然后再输入wq 然后回车，保存。</p>
+<p>四、在终端里输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod install</span><br></pre></td></tr></table></figure>
+
+<p>然后等一会就会出现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">MacBook-Pro testPodDemo % pod install</span><br><span class="line">Analyzing dependencies</span><br><span class="line">Downloading dependencies</span><br><span class="line">Installing AFNetworking (3.0.4)</span><br><span class="line">Generating Pods project</span><br><span class="line">Integrating client project</span><br><span class="line"></span><br><span class="line">[!] Please close any current Xcode sessions and use &#96;testPodDemo.xcworkspace&#96; for this project from now on.</span><br><span class="line"></span><br><span class="line">Pod installation complete! There is 1 dependency from the Podfile and 1 total pod installed.</span><br></pre></td></tr></table></figure>
+
+<p>然后再用Xcode重新打开 testPodDemo.xcworkspace 这个文件就可以了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2019/12/06/technology20191206020145/" data-id="cmhlytugj005a11jj66xbbe5f" class="article-share-link" data-share="baidu" data-title="Mac上安装Cocoapods基础和一些踩坑记录">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2019/12/06/technology20191206020145/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoapods/" rel="tag">cocoapods</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-poetry20191017032345" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/17/poetry20191017032345/" class="article-date">
+  <time datetime="2019-10-16T19:23:45.000Z" itemprop="datePublished">2019-10-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%97/">诗</a>►<a class="article-category-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/17/poetry20191017032345/">《庾居》</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>顾长人决终渐歇<br>谁执低眉纸迹往事越<br>翌生两世<br>患失不惑<br>夜长身影疏狂<br>薄年清辉待敛容<br>袂尔星辰夜寐<br>蕎麦苦瘠白花开<br>菡萏染淤清浮来<br>不辨妍媸<br>不论相识<br>不可思量<br>心生久腹分自当<br>背时离其问何妨<br>结侣提携<br>夙明初日熟稔乡<br>共卮回时残缺辞<br>生有所畏<br>清霄温凉<br>误尽人间芳菲</p>
+<p>by:霜</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2019/10/17/poetry20191017032345/" data-id="cmhlytugd001i11jjajlv6ock" class="article-share-link" data-share="baidu" data-title="《庾居》">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2019/10/17/poetry20191017032345/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poetry/" rel="tag">poetry</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-poetry20190901052013" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/01/poetry20190901052013/" class="article-date">
+  <time datetime="2019-08-31T21:20:13.000Z" itemprop="datePublished">2019-09-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%97/">诗</a>►<a class="article-category-link" href="/categories/%E8%AF%97/%E8%BD%AC%E5%BD%95/">转录</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/01/poetry20190901052013/">《妄念》</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>“我们凭着本能，在黑夜中开了迷宫的门，没有走出去。在一次次的碰壁中，我们擦燃了火焰。一个人就是木屑或是草堆，是易燃的，不然何来那么多的心如死灰。”</p>
+<p>嘴唇尝到泪水，<br>身体正经历一个雨天，它在收尾，可收尾是那么迟缓。<br>用颤栗的手掌握着你临近深渊的手掌，<br>将散的魂魄仍在寻觅缺失的螺丝，<br>我无法解决自己在人世间松动的问题，<br>为你摇曳，不确定何为悲，何为欢。<br>一直坠，<br>也一直追。<br>鲸鱼搁浅，为一生到异地，见风景，死而无憾。<br>我拂逆青春太多年，匆忙成熟，只为你摘我一瓣花。<br>花，你摘去，香气附赠。<br>郁郁的我啊，<br>去舀一勺你的泪，来解渴，来弥补缺失，来劝说自己值得。<br>秋天凝一滴心头血给这个清晨，<br>露珠重，滑离了叶。<br>大树于是恸哭。<br>你未醒来，我未醒来的清晨，<br>鸟鸣过于烈脆，如恶语，不承认我们的重叠。<br>瓜分昙花一现的温柔。<br>洗去昨夜的风。</p>
+<p>《转自片刻-卡尔西法》</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2019/09/01/poetry20190901052013/" data-id="cmhlytugc001411jjcyjg26xf" class="article-share-link" data-share="baidu" data-title="《妄念》">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2019/09/01/poetry20190901052013/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poetry/" rel="tag">poetry</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-technology20190801101045" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/01/technology20190801101045/" class="article-date">
+  <time datetime="2019-08-01T02:10:45.000Z" itemprop="datePublished">2019-08-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cocosCreator/">cocosCreator</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/01/technology20190801101045/">CocosCreator中XMLHttpReques 网络数据请求</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>XMLHttpRequest 用于短连接, Web 平台上最广泛使用的标准网络接口，在IOS中 类似 AFNetworking 做IOS的应该知道。标准文档请参考 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest" target="_blank" rel="noopener">MDN 中文文档</a>。</p>
+<p><strong>初始化</strong></p>
+<ul>
+<li>可以直接使用 <code>new XMLHttpRequest()</code> 来创建一个连接对象。</li>
+<li><code>cc.loader.getXMLHttpRequest()</code> 来创建。</li>
+</ul>
+<p><strong>使用</strong><br>提交一个表单，它里面有两个字段，假如为 phone = 10086888888 和 password=1234`x。参数有特殊符号转换为ASCII HEX值。如果你用 POST 方法，那么服务器将会接收到一个字符串类似于下面三种情况之一，其中的区别依赖于你采用何种编码类型:</p>
+<ul>
+<li><p>POST ,Content-Type 为  application/x-www-form-urlencoded 编码类型</p>
+<blockquote>
+<p> Content-Type: application/x-www-form-urlencoded<br>phone=10086888888&amp;password=1234%60x</p>
+</blockquote>
+</li>
+<li><p>POST ,Content-Type 为  text/plain 编码类型</p>
+<blockquote>
+<p>Content-Type: text/plain<br>phone=10086888888<br>password=1234%60x</p>
+</blockquote>
+</li>
+<li><p>POST ,Content-Type 为  multipart/form-data 编码类型<br>multipart/form-data不会对参数编码，使用的boundary(分割线)，相当于&amp;，<br>boundary的值是——–314911788813839</p>
+<blockquote>
+<p>Content-Type: multipart/form-data;<br>——–314911788813839<br>Content-Disposition: form-data; name=”phone”<br>10086888888&amp;<br>——–314911788813839<br>Content-Disposition: form-data; name=”password”<br>1234%60x<br>——–314911788813839</p>
+</blockquote>
+</li>
+<li><p>使用 GET 方法 请求Content-Type 属性会被忽略，像下面这样的字符串将被简单的附加到 URL</p>
+<blockquote>
+<p>?phone=10086888888&amp;password=1234%60x</p>
+</blockquote>
+</li>
+</ul>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest" target="_blank" rel="noopener">XMLHttpRequest的基础使用在MDN web docs参考</a>,<font color="red"></p>
+<p>直接上代码。如果有问题可以下面评论留言交流。</font></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/08/01/technology20190801101045/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2019/08/01/technology20190801101045/" data-id="cmhlytugj005211jjagy21sz2" class="article-share-link" data-share="baidu" data-title="CocosCreator中XMLHttpReques 网络数据请求">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2019/08/01/technology20190801101045/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-poetry20190722034245" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/22/poetry20190722034245/" class="article-date">
+  <time datetime="2019-07-21T19:42:45.000Z" itemprop="datePublished">2019-07-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%97/">诗</a>►<a class="article-category-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/22/poetry20190722034245/">《半承言》</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>风雨如晦即君子，酒故重逢伴乌蓬。<br>匆揉四海据拥有，闲岁梦入北风中。</p>
+<p>by:霜</p>
+<p>[风雨如晦，鸡鸣不已。<br>既见君子，云胡不喜？<br>风雨交加昏天地，窗外鸡鸣声不息。<br>风雨之时见到你，心里怎能不欢喜。]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2019/07/22/poetry20190722034245/" data-id="cmhlytugc001011jj1wvfepl9" class="article-share-link" data-share="baidu" data-title="《半承言》">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2019/07/22/poetry20190722034245/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poetry/" rel="tag">poetry</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-poetry20190707032356" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/07/poetry20190707032356/" class="article-date">
+  <time datetime="2019-07-06T19:23:56.000Z" itemprop="datePublished">2019-07-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%97/">诗</a>►<a class="article-category-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/07/poetry20190707032356/">《赤雨》</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>隐雨飒沓檐声无边<br>淋落在晦黯之间<br>绿阴泛起了思恋<br>长天皓洁一瞬<br>是谁乱了经年<br>变迁红尘蔓延<br>把一缕缠绵化作美眷<br>誓言心田<br>付流蒹葭<br>揭颜一发<br>一盏清茶<br>心自放下<br>泼墨熟宣执笔而画<br>微微红浥侧面脸颊<br>情愫一遍<br>昨日丢失梦里的潇洒<br>一匣信件<br>道不尽情意的话<br>谁能轻易<br>赴约此间风月<br>乱成桑麻<br>难情落寞心血来合<br>凭谁问<br>钟鼓馔玉<br>枯骨青灰皆如何</p>
+<p>by:霜</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2019/07/07/poetry20190707032356/" data-id="cmhlytugd001711jj2f6e8aut" class="article-share-link" data-share="baidu" data-title="《赤雨》">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2019/07/07/poetry20190707032356/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poetry/" rel="tag">poetry</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-poetry20190624025820" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/24/poetry20190624025820/" class="article-date">
+  <time datetime="2019-06-23T18:58:20.000Z" itemprop="datePublished">2019-06-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%97/">诗</a>►<a class="article-category-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/24/poetry20190624025820/">《半生客》</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>明月谱上轩窗<br>几度借閒云伴容妆<br>滋味难当<br>叹息浮生<br>月影门前照东墙<br>君子契阔<br>半生青丝白唯长<br>樽酒一杯醉兀人数几时休<br>多少人知灯火阑珊轻抚泪角<br>静夜疯长各恃一方<br>清风寄沥浥轻尘<br>蛐曲新色<br>岁聿其莫<br>轻离别<br>几团圆月<br>春归故园情如昨丝<br>过一段温暖时光<br>度一夜清凉夜色<br>此生渺<br>夜色故<br>三生六尘绕过归墟<br>画中知晓<br>玫瑰花香<br>抚一曲<br>宛若星河似你</p>
+<p>by:霜</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2019/06/24/poetry20190624025820/" data-id="cmhlytugc000x11jjbut50xdn" class="article-share-link" data-share="baidu" data-title="《半生客》">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2019/06/24/poetry20190624025820/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poetry/" rel="tag">poetry</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-poetry20190512025624" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/12/poetry20190512025624/" class="article-date">
+  <time datetime="2019-05-11T18:56:24.000Z" itemprop="datePublished">2019-05-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%97/">诗</a>►<a class="article-category-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/12/poetry20190512025624/">《寄俗》</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>林泉鹿栖复一身，叶落终閒滋无穷。<br>酒醴霜风有虏尘，竹帘疏漏半锩空。<br>三生六尘濯百绮，凌山云蕴君难迹。</p>
+<p>by:霜</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2019/05/12/poetry20190512025624/" data-id="cmhlytugc000r11jj25x9bcdc" class="article-share-link" data-share="baidu" data-title="《寄俗》">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2019/05/12/poetry20190512025624/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poetry/" rel="tag">poetry</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-technology20190504061234" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/04/technology20190504061234/" class="article-date">
+  <time datetime="2019-05-03T22:12:34.000Z" itemprop="datePublished">2019-05-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cocosCreator/">cocosCreator</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/04/technology20190504061234/">CocosCreator打包原生Android项目接入微信登陆</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前往 <a href="https://developers.weixin.qq.com/doc/oplatform/Downloads/Android_Resource.html" target="_blank" rel="noopener">微信官方文档 •开放平台</a> ，<a href="https://dl.bintray.com/wechat-sdk-team/maven/com/tencent/mm/opensdk/wechat-sdk-android-without-mta/6.6.4/" target="_blank" rel="noopener">Android开发工具包下载</a>，范例代码<a href="https://res.wx.qq.com/op_res/dl_hmdniBHBL1Jh2zHwHaZ-FM8YE9hTH6H6U7NKwbshR0QSgb7vH5aL4zwhtGqEt" target="_blank" rel="noopener">HelloWeixin下载</a>。</p>
+<p><img src="https://s1.ax1x.com/2020/06/22/NGhlSe.png" alt=""></p>
+<h5 id="一、生成安卓keystore签名"><a href="#一、生成安卓keystore签名" class="headerlink" title=" 一、生成安卓keystore签名"></a><font color="#4183C4"> 一、生成安卓keystore签名</font></h5><p>使用这个Android Studio 生成的keystore，有一个在线生成<a href="http://www.applicationloader.net/appuploader/keystore.php" target="_blank" rel="noopener">安卓证书在线制作工具</a></p>
+<p><img src="https://s1.ax1x.com/2020/06/22/NGzbMn.png" alt=""></p>
+<h5 id="二、在所在包名下的目录新建一个文件夹wxapi"><a href="#二、在所在包名下的目录新建一个文件夹wxapi" class="headerlink" title=" 二、在所在包名下的目录新建一个文件夹wxapi"></a><font color="#4183C4"> 二、在所在包名下的目录新建一个文件夹wxapi</font></h5><p>然后新建一个类 <code>WXEntryActivity.java</code>名字和文件名需要一样。</p>
+<p><img src="https://s1.ax1x.com/2020/06/22/NJpatO.png" alt=""></p>
+<h5 id="三、实现WXEntryActivity-java代码"><a href="#三、实现WXEntryActivity-java代码" class="headerlink" title=" 三、实现WXEntryActivity.java代码"></a><font color="#4183C4"> 三、实现WXEntryActivity.java代码</font></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> Copyright (c) 2015-2016 Chukong Technologies Inc.</span></span><br><span class="line"><span class="comment"> Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.</span></span><br><span class="line"><span class="comment"> http://www.cocos2d-x.org</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">package</span> com.ds.quwami.wxapi;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.app.Activity;</span><br><span class="line"><span class="keyword">import</span> android.content.Intent;</span><br><span class="line"><span class="keyword">import</span> android.os.Bundle;</span><br><span class="line"><span class="keyword">import</span> android.util.Log;</span><br><span class="line"><span class="keyword">import</span> android.widget.Toast;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.tencent.mm.opensdk.modelbase.BaseReq;</span><br><span class="line"><span class="keyword">import</span> com.tencent.mm.opensdk.modelbase.BaseResp;</span><br><span class="line"><span class="keyword">import</span> com.tencent.mm.opensdk.modelmsg.SendAuth;</span><br><span class="line"><span class="keyword">import</span> com.tencent.mm.opensdk.openapi.IWXAPI;</span><br><span class="line"><span class="keyword">import</span> com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;</span><br><span class="line"><span class="keyword">import</span> com.tencent.mm.opensdk.openapi.WXAPIFactory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.cocos2dx.javascript.AppActivity;</span><br><span class="line"><span class="keyword">import</span> org.cocos2dx.lib.Cocos2dxJavascriptJavaBridge;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WXEntryActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">IWXAPIEventHandler</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String APP_ID = <span class="string">"wxq28466eh4b48be59"</span>;<span class="comment">//这个ID是错误的换成你自己的</span></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 微信的登录</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> IWXAPI api;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line"></span><br><span class="line">        api= WXAPIFactory.createWXAPI(<span class="keyword">this</span>,APP_ID,<span class="keyword">true</span>);</span><br><span class="line">        api.registerApp(APP_ID);</span><br><span class="line">        api.handleIntent(getIntent(), <span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onNewIntent</span><span class="params">(Intent intent)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onNewIntent(intent);</span><br><span class="line">        setIntent(intent);</span><br><span class="line">        api.handleIntent(intent,<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReq</span><span class="params">(BaseReq baseReq)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResp</span><span class="params">(BaseResp resp)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> errorCode = resp.errCode;</span><br><span class="line">        <span class="keyword">switch</span> (errorCode) &#123;</span><br><span class="line">            <span class="keyword">case</span> BaseResp.ErrCode.ERR_OK:</span><br><span class="line">                <span class="comment">//用户同意</span></span><br><span class="line">                <span class="keyword">final</span> String code = ((SendAuth.Resp) resp).code;</span><br><span class="line">                Log.i(<span class="string">"WXEntryActivity"</span>, <span class="string">"WXEntryActivity onResp:  code="</span> + code);</span><br><span class="line"></span><br><span class="line">                AppActivity.calljs(code);</span><br><span class="line"></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> BaseResp.ErrCode.ERR_AUTH_DENIED:</span><br><span class="line">                <span class="comment">//用户拒绝</span></span><br><span class="line">                Toast.makeText(<span class="keyword">this</span>, <span class="string">"微信登录 用户拒绝"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> BaseResp.ErrCode.ERR_USER_CANCEL:</span><br><span class="line">                <span class="comment">//用户取消</span></span><br><span class="line">                Toast.makeText(<span class="keyword">this</span>, <span class="string">"微信登录 用户取消"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        finish();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后在<font color="#4183C4"> <strong>AndroidManifest.xml</strong></font>主文件中添加</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">activity</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:name</span>=<span class="string">"com.ds.~.wxapi.WXEntryActivity"</span>//这儿换成你自己的</span></span><br><span class="line"><span class="tag">    <span class="attr">android:label</span>=<span class="string">"@string/app_name"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:theme</span>=<span class="string">"@android:style/Theme.Translucent.NoTitleBar"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:taskAffinity</span>=<span class="string">"com.ds.～"</span>//这儿换成你自己的</span></span><br><span class="line"><span class="tag">    <span class="attr">android:exported</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:launchMode</span>=<span class="string">"singleTask"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>添加位置，如图红色框的部分:</p>
+<p><img src="https://s1.ax1x.com/2020/06/22/NJPe0I.png" alt=""></p>
+<p>其中<code>android:name = &quot;com.~.wxapi.WXEntryActivity&quot;</code>这个就是对应这个路径目录。</p>
+<p><font color="#4183C4"> 添加WXAPI依赖</font>，打开build.gradle文件,注意是proj.android-studio/～你的项目名字 目录下,在dependencies中加下面的代码 <code>api &#39;com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+&#39;</code>，这儿game下的 build.gradle也要添加。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])</span><br><span class="line">    implementation fileTree(dir: "/Applications/CocosCreator2.3.2.app/Contents/Resources/cocos2d-x/cocos/platform/android/java/libs", include: ['*.jar'])</span><br><span class="line">    implementation project(':libcocos2dx')</span><br><span class="line">    api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+' </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>AppActivity.java中的实现，wxLogin函数必须是静态的,这样才可以去外部调用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> Copyright (c) 2015-2016 Chukong Technologies Inc.</span></span><br><span class="line"><span class="comment"> Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.</span></span><br><span class="line"><span class="comment"> http://www.cocos2d-x.org</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">package</span> org.cocos2dx.javascript;</span><br><span class="line"><span class="keyword">import</span> android.content.Intent;</span><br><span class="line"><span class="keyword">import</span> android.content.res.Configuration;</span><br><span class="line"><span class="keyword">import</span> android.os.Bundle;</span><br><span class="line"><span class="keyword">import</span> android.widget.Toast;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.tencent.mm.opensdk.modelmsg.SendAuth;</span><br><span class="line"><span class="keyword">import</span> com.tencent.mm.opensdk.openapi.IWXAPI;</span><br><span class="line"><span class="keyword">import</span> com.tencent.mm.opensdk.openapi.WXAPIFactory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.cocos2dx.lib.Cocos2dxActivity;</span><br><span class="line"><span class="keyword">import</span> org.cocos2dx.lib.Cocos2dxGLSurfaceView;</span><br><span class="line"><span class="keyword">import</span> org.cocos2dx.lib.Cocos2dxJavascriptJavaBridge;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AppActivity</span> <span class="keyword">extends</span> <span class="title">Cocos2dxActivity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String APP_ID = <span class="string">"wxq28466eh4b48be59"</span>;<span class="comment">//这个ID是错误的换成你自己的</span></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 微信的登录</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> IWXAPI api;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> AppActivity act;</span><br><span class="line">  </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        <span class="keyword">if</span> (!isTaskRoot()) &#123;</span><br><span class="line">            <span class="comment">// Android launched another instance of the root activity into an existing task</span></span><br><span class="line">            <span class="comment">// so just quietly finish and go away, dropping the user back into the activity</span></span><br><span class="line">            <span class="comment">// at the top of the stack (ie: the last state of this task)</span></span><br><span class="line">            <span class="comment">// Don't need to finish it again since it's finished in super.onCreate .</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// DO OTHER INITIALIZATION BELOW</span></span><br><span class="line">        SDKWrapper.getInstance().init(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">        api= WXAPIFactory.createWXAPI(<span class="keyword">this</span>,APP_ID);</span><br><span class="line">        api.registerApp(APP_ID);</span><br><span class="line">        act = <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Cocos2dxGLSurfaceView <span class="title">onCreateView</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Cocos2dxGLSurfaceView glSurfaceView = <span class="keyword">new</span> Cocos2dxGLSurfaceView(<span class="keyword">this</span>);</span><br><span class="line">        <span class="comment">// TestCpp should create stencil buffer</span></span><br><span class="line">        glSurfaceView.setEGLConfigChooser(<span class="number">5</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">0</span>, <span class="number">16</span>, <span class="number">8</span>);</span><br><span class="line">        SDKWrapper.getInstance().setGLSurfaceView(glSurfaceView, <span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> glSurfaceView;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onResume();</span><br><span class="line">        SDKWrapper.getInstance().onResume();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onPause();</span><br><span class="line">        SDKWrapper.getInstance().onPause();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onDestroy();</span><br><span class="line">        <span class="keyword">if</span> (!isTaskRoot()) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        SDKWrapper.getInstance().onDestroy();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onActivityResult</span><span class="params">(<span class="keyword">int</span> requestCode, <span class="keyword">int</span> resultCode, Intent data)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onActivityResult(requestCode, resultCode, data);</span><br><span class="line">        SDKWrapper.getInstance().onActivityResult(requestCode, resultCode, data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onNewIntent</span><span class="params">(Intent intent)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onNewIntent(intent);</span><br><span class="line">        SDKWrapper.getInstance().onNewIntent(intent);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onRestart</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onRestart();</span><br><span class="line">        SDKWrapper.getInstance().onRestart();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onStop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onStop();</span><br><span class="line">        SDKWrapper.getInstance().onStop();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBackPressed</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        SDKWrapper.getInstance().onBackPressed();</span><br><span class="line">        <span class="keyword">super</span>.onBackPressed();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onConfigurationChanged</span><span class="params">(Configuration newConfig)</span> </span>&#123;</span><br><span class="line">        SDKWrapper.getInstance().onConfigurationChanged(newConfig);</span><br><span class="line">        <span class="keyword">super</span>.onConfigurationChanged(newConfig);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onRestoreInstanceState</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        SDKWrapper.getInstance().onRestoreInstanceState(savedInstanceState);</span><br><span class="line">        <span class="keyword">super</span>.onRestoreInstanceState(savedInstanceState);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onSaveInstanceState</span><span class="params">(Bundle outState)</span> </span>&#123;</span><br><span class="line">        SDKWrapper.getInstance().onSaveInstanceState(outState);</span><br><span class="line">        <span class="keyword">super</span>.onSaveInstanceState(outState);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onStart</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        SDKWrapper.getInstance().onStart();</span><br><span class="line">        <span class="keyword">super</span>.onStart();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 微信登录-唤起微信</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">wxLogin</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!api.isWXAppInstalled()) &#123;</span><br><span class="line">            Toast.makeText(act, <span class="string">"您还未安装微信客户端"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            SendAuth.Req req=<span class="keyword">new</span> SendAuth.Req();</span><br><span class="line">            req.scope=<span class="string">"snsapi_userinfo"</span>;</span><br><span class="line">            req.state=<span class="string">"wx_login"</span>;</span><br><span class="line">            api.sendReq(req);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">calljs</span><span class="params">(<span class="keyword">final</span> String code)</span></span>&#123;</span><br><span class="line">        act.runOnGLThread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="keyword">final</span> String jvCallCode =String.format(<span class="string">"cc.jsEngineCallback(\"%s\")"</span>,code);</span><br><span class="line">                Cocos2dxJavascriptJavaBridge.evalString(jvCallCode);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><font color="#4183C4">  cocos登陆页面调用，微信登陆。</font></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">wxChatLogin()&#123;</span><br><span class="line">    <span class="keyword">if</span>(cc.sys.OS_ANDROID == cc.sys.os)&#123;<span class="comment">//安卓</span></span><br><span class="line">        jsb.reflection.callStaticMethod(<span class="string">"org/cocos2dx/javascript/AppActivity"</span>, <span class="string">"wxLogin"</span>, <span class="string">"()V"</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(cc.sys.OS_IOS == cc.sys.os)&#123;<span class="comment">//苹果</span></span><br><span class="line">       jsb.reflection.callStaticMethod(<span class="string">"AppController"</span>, <span class="string">"wxSendAuth"</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        cc.hud.show(<span class="number">1.5</span>,<span class="string">'非移动客户端暂不支持微信登陆'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//响应过后传递过来的值</span></span><br><span class="line">    cc.jsEngineCallback = <span class="function"><span class="keyword">function</span>(<span class="params">wxCode</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.getWXCodeSuceess(wxCode);</span><br><span class="line">    &#125;.bind(<span class="keyword">this</span>);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p><font color="#4183C4"> 这儿微信登陆需要真机调试，为了方便直接打包debug和release使用之前生成keystore。</font></p>
+<p><img src="https://s1.ax1x.com/2020/06/22/NJZCb4.png" alt=""></p>
+<p>上面的密码改成生成 keystore时的密码，然后再调试运行在手机上。</p>
+<p>这儿如果有什么问题可以直接企鹅上留言: <font color="#4183C4">1197696574</font> 交流。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2019/05/04/technology20190504061234/" data-id="cmhlytugi004w11jjcsts7wnb" class="article-share-link" data-share="baidu" data-title="CocosCreator打包原生Android项目接入微信登陆">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2019/05/04/technology20190504061234/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/" rel="tag">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-poetry20190317032120" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/17/poetry20190317032120/" class="article-date">
+  <time datetime="2019-03-16T19:21:20.000Z" itemprop="datePublished">2019-03-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%97/">诗</a>►<a class="article-category-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/17/poetry20190317032120/">《白首辞》</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>梨花参差春带雨，揽衣起舞暮暮情。<br>昨夜星辰昨夜风，月如君兮君不梦。<br>十里煌绸心聒碎，觑于朝暮翩跹度。<br>落樱春水世难顾，共逝与谁续白昼。<br>枕疏眉语几声留，相寻娇云东逝走。<br>清风拂尘契相生，只语阑珊未羞眸。<br>等闲春深懒红妆，彻鼓欲新待思量。<br>孤鸿寒枝未可栖，天地风情任由意。<br>有情萧何百年过，身陷囹圄良人许。<br>斯时一人一心忧，月上柳梢云未休。<br>何人与你共消酒，化作相思酿作泥。<br>誓恨成蝶伴花丛，枫林风下诉情话。<br>烟雨朦胧未见他，念旧时过往真假。<br>谦逊言温婉举止，再梦回红尘晚霞。<br>形单影只长路漫，不畏牵绊朱颜改。<br>天若有情天亦老，步尘时遥知谁好。<br>知荣岁月度匆忙，恋一生儿女情长。<br>悲欢离合世事道，策马一声诲人啸。</p>
+<p>by:霜</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2019/03/17/poetry20190317032120/" data-id="cmhlytugc000o11jjfuyu19nq" class="article-share-link" data-share="baidu" data-title="《白首辞》">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2019/03/17/poetry20190317032120/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poetry/" rel="tag">poetry</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/4/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/">下一页</a>
+  </nav>
+</section>
+      
+      <aside id="sidebar">
+  
+    
+<div class="widget-wrap">
+  <h3 class="widget-title">关于</h3>
+  <ul class="widget about-me">
+    
+    <li><img class="author" title="About me" src="/img/github.png" /></li>
+    
+    
+    <li ><font color="#424242" size="2em">苹果应用软件开发 & 游戏软件开发</font></li>
+    
+    <li ><font color="#424242" size="2em">email: ggb.chen@foxmail.com</font></li>
+    
+  </ul>
+</div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/charles/">charles</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocoapods/">cocoapods</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocosCreator/">cocosCreator</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/error/">error</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/knowledge/">knowledge</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/regexp/">regexp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/">诗</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%BD%AC%E5%BD%95/">转录</a><span class="category-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoapods/" rel="tag">cocoapods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/" rel="tag">flutter</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/" rel="tag">ios</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knowledge/" rel="tag">knowledge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/poetry/" rel="tag">poetry</a><span class="tag-list-count">46</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regexp/" rel="tag">regexp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology/" rel="tag">technology</a><span class="tag-list-count">28</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/android/" style="font-size: 11.67px;">android</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/cocosCreator/" style="font-size: 16.67px;">cocosCreator</a> <a href="/tags/flutter/" style="font-size: 11.67px;">flutter</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/ios/" style="font-size: 13.33px;">ios</a> <a href="/tags/knowledge/" style="font-size: 10px;">knowledge</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/poetry/" style="font-size: 20px;">poetry</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/technology/" style="font-size: 18.33px;">technology</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <!--<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">5</span></li></ul> -->
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">2025年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">2023年</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">2022年</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">2021年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">2020年</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019年</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">2017年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/11/05/technology20251105090825/">Sudoku Game Privacy Policy_ Zero Personal Data Collection, Pure Gaming Experience</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/14/technology20230314101225/">利用python脚本拆解游戏中的图集资源</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/10/technology20230210090112/">利用jekenis自动打包上传阿里云下载和通知钉钉机器人</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/21/technology20230121151206/">IOS项目脚本自动化批量打包并上传第三方平台</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/20/technology20230120161001/">IOS项目单独脚本自动化打包</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://github.com/kziwws" target="_blank">github</a>
+          </li>
+        
+          <li>
+            <a href="https://shevakuilin.com" target="_blank">shevakuilin</a>
+          </li>
+        
+          <li>
+            <a href="https://hans2936.github.io" target="_blank">hans2936</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 <a href="https://github.com/kziwws" target="_blank">kziwws</a> 
+      Powered by hexo,Theme by landscape-plus.
+    </div>
+    <div id="footer-info" class="inner">
+      本站博客采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank">[知识共享署名-非商业性使用-相同方式共享 3.0 中国大陆许可协议]</a> 进行许可
+    </div>
+  </div>
+</footer>
+
+
+<!--
+<div id="footer-info" class="inner">
+     &copy; 2025 kziwws<br>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+     .
+     Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+   </div>
+</div>
+-->
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/tags/technology" class="mobile-nav-link">编程技术</a>
+  
+    <a href="/tags/poetry" class="mobile-nav-link">诗</a>
+  
+    <a href="/tags/life" class="mobile-nav-link">生活随笔</a>
+  
+    <a href="/archives" class="mobile-nav-link">所有文章</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<!--载入js，在</body>之前插入即可-->
+    <!--Leancloud 操作库:-->
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!--Valine 的核心代码库-->
+    <script src="/js/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV, 
+            el: '.comment',
+            app_id: 'zh2N00Qk2UIsu1N8Qfu468TH-gzGzoHsz',
+            app_key: 'BJrjTSEoKMfc05OMLWhCzmHk',
+            placeholder: '想说点什么...',
+            pageSize: 15,
+            notify: false,
+            verify: false,
+        });
+    </script>
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+                processEscapes: true
+                    
+}
+  
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                  
+}
+    
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                            all[i].SourceElement().parentNode.className += ' has-jax';
+                                    
+            }
+                
+        });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+</div>
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="icon-search"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.local-search-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+                  
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><span id="icon-search"></span></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><span id="icon-frown"></span></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+          
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+</body>
+</html>
+

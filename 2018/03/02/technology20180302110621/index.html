@@ -1,0 +1,841 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo博客landscape-plus加入评论系统Valine | 向🐑</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="landscape-plus主题博客加入评论系统Valine">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo博客landscape-plus加入评论系统Valine">
+<meta property="og:url" content="https://kziwws.github.io/2018/03/02/technology20180302110621/index.html">
+<meta property="og:site_name" content="向🐑">
+<meta property="og:description" content="landscape-plus主题博客加入评论系统Valine">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-03-02T03:06:21.000Z">
+<meta property="article:modified_time" content="2024-06-03T06:38:47.000Z">
+<meta property="article:author" content="kziwws">
+<meta property="article:tag" content="hexo博客">
+<meta property="article:tag" content="landscape-plus，评论系统Valine">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="向🐑" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  <!--  -->
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?51e08434b847b38641d02f11be4eb143";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">向🐑</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">一只站在树上的鸟，从来不害怕树枝突然折断，因为它相信的不是树枝，而是它自己的翅膀！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/tags/technology">编程技术</a>
+        
+          <a class="main-nav-link" href="/tags/poetry">诗</a>
+        
+          <a class="main-nav-link" href="/tags/life">生活随笔</a>
+        
+          <a class="main-nav-link" href="/archives">所有文章</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        
+        
+        <a href="javascript:;" class="popup-trigger nav-icon" id="nav-search-btn"></a>
+        
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="kziwws.github.io">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="local-search-inner"><div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <span id="icon-search"></span>
+    </span>
+    <span class="popup-btn-close">
+      <span id="icon-close"></span>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="本地搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div></div>
+</header>
+
+
+
+    <div class="outer">
+      <section id="main"><article id="post-technology20180302110621" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/02/technology20180302110621/" class="article-date">
+  <time datetime="2018-03-02T03:06:21.000Z" itemprop="datePublished">2018-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo博客landscape-plus加入评论系统Valine
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Landscape-plus主题使用的是”多说“，但是多说早就停止运营了。</p>
+<p>所以考虑其他的评论系统替换，这儿我查找了其他的评论如<code>Disqus</code>、<code>Gitment</code>、<code>来必力</code>等，如果需要集成Gitment评论系统的可以参考<a href="https://imsun.net/posts/gitment-introduction/" target="_blank" rel="noopener">这一篇文章</a>，我最后选择了valine。</p>
+<p>这儿参考了<a href="https://bfdz.github.io/2017/10/29/60/" target="_blank" rel="noopener">博客添加评论系统</a>这篇文章，感谢这位小哥！</p>
+<h4 id="使用valine介绍"><a href="#使用valine介绍" class="headerlink" title="使用valine介绍"></a>使用valine介绍</h4><p>   高速，使用国内后端云服务提供商 LeanCloud 提供的存储服务<br>   开源，自定义程度高<br>   支持邮件通知<br>   支持验证码<br>   支持 Markdown</p>
+<h4 id="valine-的安装和使用"><a href="#valine-的安装和使用" class="headerlink" title="valine 的安装和使用"></a>valine 的安装和使用</h4><ul>
+<li><p>前往<a href="https://leancloud.cn注册" target="_blank" rel="noopener">https://leancloud.cn注册</a> appid和appkey。</p>
+</li>
+<li><p>这儿是对<a href="https://github.com/xiangming/landscape-plus" target="_blank" rel="noopener">landscape-plus</a>修改，替换之前的<code>Duoshuo</code>，首先打开主题下的<code>_config.yml</code>去掉主题下的</p>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Duoshuo</span><br><span class="line">duoshuo_shortname: reqianduan</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p>“换成”</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#valine leancloud</span><br><span class="line">valine_enable: true # 是否开启 控制评论的开关</span><br><span class="line">valine:</span><br><span class="line">  appid: kh6N00Qk8UIhu1N8Qfu168TH-g3gzo7sz #leancloud中的appid  换成你申请的 这儿这个id是无效的</span><br><span class="line">  appkey: YJrjTtExKMfc45OMLWhCzpHk #leancloud中的appKey 换成你申请的 这儿这个key是无效的</span><br><span class="line">  placeholder: 想说点什么...  #默认留言框内的文字</span><br><span class="line">  notify: false  #新留言是否需要通知 https://github.com/xCss/Valine/wiki</span><br><span class="line">  verify: false  #是否需要验证 验证比较反人类建议false关闭</span><br><span class="line">  avatar: mm  #是否需要验证 验证比较反人类建议false关闭 #默认头像 hide:不显示头像 mm:一个灰白的头像 identicon:抽象的几何图形(根据邮箱或者昵称生成) monsterid:小怪物 wavatar:用不同面孔和背景组合生成的头像(根据邮箱或者昵称生成) retro:八位像素复古头像(根据邮箱或者昵称生成) </span><br><span class="line">  guest_info: nick,mail # 默认留言框的头部需要访问者输入的信息</span><br><span class="line">  pageSize: 15 #默认单页的留言条数</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>再打开<code>\themes\landscape-plus\layout_partial\after-footer.ejs</code><a href="https://github.com/xiangming/landscape-plus/blob/master/layout/_partial/after-footer.ejs" target="_blank" rel="noopener">after-footer.ejs文件</a>从第4行到32行换成valine的。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (config.duoshuo_shortname || theme.duoshuo_shortname)&#123; %&gt;</span><br><span class="line">&lt;!-- 多说公共js代码 start --&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"><span class="keyword">var</span> duoshuoQuery = &#123;<span class="attr">short_name</span>:<span class="string">"&lt;%= config.duoshuo_shortname || theme.duoshuo_shortname %&gt;"</span>&#125;;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ds = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">    ds.type = <span class="string">'text/javascript'</span>;ds.async = <span class="literal">true</span>;</span><br><span class="line">    ds.src = (<span class="built_in">document</span>.location.protocol == <span class="string">'https:'</span> ? <span class="string">'https:'</span> : <span class="string">'http:'</span>) + <span class="string">'//static.duoshuo.com/embed.js'</span>;</span><br><span class="line">    ds.charset = <span class="string">'UTF-8'</span>;</span><br><span class="line">    (<span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>]</span><br><span class="line">     || <span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>]).appendChild(ds);</span><br><span class="line">  &#125;)();</span><br><span class="line">  &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;!-- 多说公共js代码 end --&gt;</span></span><br><span class="line"><span class="regexp">&lt;% &#125; else if (config.disqus_shortname || theme.disqus_shortname)&#123; %&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">  var disqus_shortname = '&lt;%= config.disqus_shortname || theme.disqus_shortname %&gt;';</span></span><br><span class="line"><span class="regexp">  &lt;% if (page.permalink)&#123; %&gt;</span></span><br><span class="line"><span class="regexp">  var disqus_url = '&lt;%= page.permalink %&gt;';</span></span><br><span class="line"><span class="regexp">  &lt;% &#125; %&gt;</span></span><br><span class="line"><span class="regexp">  (function()&#123;</span></span><br><span class="line"><span class="regexp">    var dsq = document.createElement('script');</span></span><br><span class="line"><span class="regexp">    dsq.type = 'text/</span>javascript<span class="string">';</span></span><br><span class="line"><span class="string">    dsq.async = true;</span></span><br><span class="line"><span class="string">    dsq.src = '</span><span class="comment">//' + disqus_shortname + '.disqus.com/&lt;% if (page.comments) &#123; %&gt;embed.js&lt;% &#125; else &#123; %&gt;count.js&lt;% &#125; %&gt;';</span></span><br><span class="line">    (<span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>] || <span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>]).appendChild(dsq);</span><br><span class="line">  &#125;)();</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;% &#125; %&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">"换成"</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;% if (config.valine_enable || theme.valine_enable)&#123; %&gt;</span></span><br><span class="line"><span class="regexp">&lt;!--载入js，在&lt;/</span>body&gt;之前插入即可--&gt;</span><br><span class="line">    &lt;!--Leancloud 操作库:--&gt;</span><br><span class="line">    &lt;script src=<span class="string">"//cdn1.lncld.net/static/js/3.0.4/av-min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">    &lt;!--Valine 的核心代码库--&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script src="/</span>js/Valine.min.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">    &lt;script&gt;</span></span><br><span class="line"><span class="string">        new Valine(&#123;</span></span><br><span class="line"><span class="string">            av: AV, </span></span><br><span class="line"><span class="string">            el: '.comment',</span></span><br><span class="line"><span class="string">            app_id: '&lt;%= theme.valine.appid %&gt;',</span></span><br><span class="line"><span class="string">            app_key: '&lt;%= theme.valine.appkey %&gt;',</span></span><br><span class="line"><span class="string">            placeholder: '&lt;%= theme.valine.placeholder %&gt;',</span></span><br><span class="line"><span class="string">            pageSize: &lt;%= theme.valine.pageSize %&gt;,</span></span><br><span class="line"><span class="string">            notify: &lt;%= theme.valine.notify %&gt;,</span></span><br><span class="line"><span class="string">            verify: &lt;%= theme.valine.verify %&gt;,</span></span><br><span class="line"><span class="string">        &#125;);</span></span><br><span class="line"><span class="string">    &lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;% &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这儿值得注意的是</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">这种格式的在next主题下是可以读取的</span><br><span class="line">在landscape-plus主题下要用&lt;% ~ %&gt;，如果是字符串的前后有一个 ` 符号。</span><br><span class="line">如果是<span class="keyword">boolean</span>和<span class="keyword">int</span>类型的值，则不需要前后的这个符号。</span><br><span class="line">app_id: `&#123;&#123; theme.valine.appkey &#125;&#125;` 要改成 `&lt;%= theme.valine.appkey %&gt;`</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>然后再打开<code>/themes/landscape-plus/layout/_partial/article.ejs</code> <a href="https://github.com/xiangming/landscape-plus/blob/master/layout/_partial/article.ejs" target="_blank" rel="noopener">article.ejs文件</a>从32行到36换成valine的代码。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (post.comments &amp;&amp; (config.duoshuo_shortname || theme.duoshuo_shortname))&#123; %&gt;</span><br><span class="line">        &lt;a href=<span class="string">"&lt;%- post.permalink %&gt;#ds-thread"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"article-comment-link"</span>&gt;&lt;%= __(<span class="string">'comments'</span>) %&gt;&lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp">      &lt;% &#125; else if (post.comments &amp;&amp; (config.disqus_shortname || theme.disqus_shortname))&#123; %&gt;</span></span><br><span class="line"><span class="regexp">        &lt;a href="&lt;%- post.permalink %&gt;#disqus_thread" class="article-comment-link"&gt;&lt;%= __('comments') %&gt;&lt;/</span>a&gt;</span><br><span class="line"> &lt;% &#125; %&gt;</span><br><span class="line"></span><br><span class="line"> “换成”</span><br><span class="line"></span><br><span class="line">&lt;% <span class="keyword">if</span> (post.comments &amp;&amp; (config.valine_enable || theme.valine_enable))&#123; %&gt;</span><br><span class="line">   &lt;a href=<span class="string">"&lt;%- post.permalink %&gt;#valine_thread"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"article-comment-link"</span>&gt;&lt;%= __(<span class="string">'comments'</span>) %&gt;&lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp">&lt;% &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>还是该文件把46行到56行替换掉</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (!index &amp;&amp; post.comments &amp;&amp; (config.duoshuo_shortname || theme.duoshuo_shortname))&#123; %&gt;</span><br><span class="line">  &lt;section id=<span class="string">"comments"</span>&gt;</span><br><span class="line">    &lt;div id=<span class="string">"ds-thread"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"ds-thread"</span> data-thread-key=<span class="string">"&lt;%= post.path %&gt;"</span> data-title=<span class="string">"&lt;%= post.title %&gt;"</span> data-url=<span class="string">"&lt;%= post.permalink %&gt;"</span>&gt;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>section&gt;</span><br><span class="line">&lt;% &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!index &amp;&amp; post.comments &amp;&amp; (config.disqus_shortname || theme.disqus_shortname))&#123; %&gt;</span><br><span class="line">  &lt;section id=<span class="string">"comments"</span>&gt;</span><br><span class="line">    &lt;div id=<span class="string">"disqus_thread"</span>&gt;</span><br><span class="line">      &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=<span class="string">"//disqus.com/?ref_noscript"</span>&gt;comments powered by Disqus.&lt;<span class="regexp">/a&gt;&lt;/</span>noscript&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>section&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line"></span><br><span class="line">  “换成“</span><br><span class="line">  </span><br><span class="line">&lt;% <span class="keyword">if</span> (!index &amp;&amp; post.comments &amp;&amp; (config.valine_enable || theme.valine_enable))&#123; %&gt;</span><br><span class="line">  &lt;section id=<span class="string">"comments"</span>&gt;</span><br><span class="line">    &lt;div id=<span class="string">"valine_thread"</span>&gt;</span><br><span class="line">      &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"comment"</span>&gt;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  &lt;<span class="regexp">/section&gt;</span></span><br><span class="line"><span class="regexp">&lt;% &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>最后一步<code>Valine.min.js</code>放到 <code>/themes\landscape-plus\source\js</code>文件夹内，这儿是<a href="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/" target="_blank" rel="noopener">Valine.min.js下载链接</a>，只保存Valine.min.js文件就行了。因为前面 <font color =red>&lt;script src=”/js/Valine.min.js”&gt;&lt;/script&gt; </font>已经引用的这个文件。</li>
+</ul>
+<h4 id="这儿为止-valine就替换完成了"><a href="#这儿为止-valine就替换完成了" class="headerlink" title="这儿为止,valine就替换完成了"></a>这儿为止,valine就替换完成了</h4><p><code>hexo clean</code>重新清除一下，然后再<code>hexo g</code>重新生成就可以看到评论系统了。</p>
+<p>如果出现评论按钮没有说明你这儿写的格式有问题:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Valine(&#123;</span><br><span class="line">    av: AV, </span><br><span class="line">    el: <span class="string">'.comment'</span>,</span><br><span class="line">    app_id: <span class="string">'&lt;%= theme.valine.appid %&gt;'</span>,</span><br><span class="line">    app_key: <span class="string">'&lt;%= theme.valine.appkey %&gt;'</span>,</span><br><span class="line">    placeholder: <span class="string">'&lt;%= theme.valine.placeholder %&gt;'</span>,</span><br><span class="line">    pageSize: &lt;%= theme.valine.pageSize %&gt;,</span><br><span class="line">    notify: &lt;%= theme.valine.notify %&gt;,</span><br><span class="line">    verify: &lt;%= theme.valine.verify %&gt;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>仔细再检查一下，不行的话只添加av、el、app_id、app_key试试看看能不能正常运行，一个一个字段的添加。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2018/03/02/technology20180302110621/" data-id="cmhlytugi004e11jjaac70cfu" class="article-share-link" data-share="baidu" data-title="Hexo博客landscape-plus加入评论系统Valine">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2018/03/02/technology20180302110621/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
+
+    </footer>
+  </div>
+  
+    <!-- 
+<nav id="article-nav">
+  
+    <a href="/2018/03/12/technology20180312011233/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          Hexo博客landscape-plus新建分类写文章和基础配置介绍
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/16/technology20180216011233/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">Hexo博客landscape-plus移值next主题的站内搜索功能</div>
+    </a>
+  
+</nav>
+  -->
+
+
+
+
+
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2018/03/12/technology20180312011233/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><font size="2" color="#708090">下一篇 newer</font></strong>
+      <div class="article-nav-title">
+        
+          <font color="#555">Hexo博客landscape-plus新建分类写文章和基础配置介绍</font>
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/16/technology20180216011233/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><font size="2" color="#708090">上一篇 older</font></strong>
+      <div class="article-nav-title"><font color="#555">Hexo博客landscape-plus移值next主题的站内搜索功能</font></div>
+    </a>
+   
+</nav>
+
+
+  
+</article>
+
+  <section id="comments">
+    <div id="valine_thread">
+      <div class="comment"></div>
+    </div>
+  </section>
+</section>
+      
+      <aside id="sidebar">
+  
+    
+<div class="widget-wrap">
+  <h3 class="widget-title">关于</h3>
+  <ul class="widget about-me">
+    
+    <li><img class="author" title="About me" src="/img/github.png" /></li>
+    
+    
+    <li ><font color="#424242" size="2em">苹果应用软件开发 & 游戏软件开发</font></li>
+    
+    <li ><font color="#424242" size="2em">email: ggb.chen@foxmail.com</font></li>
+    
+  </ul>
+</div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/charles/">charles</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocoapods/">cocoapods</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocosCreator/">cocosCreator</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/error/">error</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/knowledge/">knowledge</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/regexp/">regexp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/">诗</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%BD%AC%E5%BD%95/">转录</a><span class="category-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoapods/" rel="tag">cocoapods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/" rel="tag">flutter</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/" rel="tag">ios</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knowledge/" rel="tag">knowledge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/poetry/" rel="tag">poetry</a><span class="tag-list-count">46</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regexp/" rel="tag">regexp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology/" rel="tag">technology</a><span class="tag-list-count">28</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/android/" style="font-size: 11.67px;">android</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/cocosCreator/" style="font-size: 16.67px;">cocosCreator</a> <a href="/tags/flutter/" style="font-size: 11.67px;">flutter</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/ios/" style="font-size: 13.33px;">ios</a> <a href="/tags/knowledge/" style="font-size: 10px;">knowledge</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/poetry/" style="font-size: 20px;">poetry</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/technology/" style="font-size: 18.33px;">technology</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <!--<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">5</span></li></ul> -->
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">2025年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">2023年</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">2022年</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">2021年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">2020年</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019年</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">2017年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/11/05/technology20251105090825/">Sudoku Game Privacy Policy_ Zero Personal Data Collection, Pure Gaming Experience</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/14/technology20230314101225/">利用python脚本拆解游戏中的图集资源</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/10/technology20230210090112/">利用jekenis自动打包上传阿里云下载和通知钉钉机器人</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/21/technology20230121151206/">IOS项目脚本自动化批量打包并上传第三方平台</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/20/technology20230120161001/">IOS项目单独脚本自动化打包</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://github.com/kziwws" target="_blank">github</a>
+          </li>
+        
+          <li>
+            <a href="https://shevakuilin.com" target="_blank">shevakuilin</a>
+          </li>
+        
+          <li>
+            <a href="https://hans2936.github.io" target="_blank">hans2936</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 <a href="https://github.com/kziwws" target="_blank">kziwws</a> 
+      Powered by hexo,Theme by landscape-plus.
+    </div>
+    <div id="footer-info" class="inner">
+      本站博客采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank">[知识共享署名-非商业性使用-相同方式共享 3.0 中国大陆许可协议]</a> 进行许可
+    </div>
+  </div>
+</footer>
+
+
+<!--
+<div id="footer-info" class="inner">
+     &copy; 2025 kziwws<br>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+     .
+     Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+   </div>
+</div>
+-->
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/tags/technology" class="mobile-nav-link">编程技术</a>
+  
+    <a href="/tags/poetry" class="mobile-nav-link">诗</a>
+  
+    <a href="/tags/life" class="mobile-nav-link">生活随笔</a>
+  
+    <a href="/archives" class="mobile-nav-link">所有文章</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<!--载入js，在</body>之前插入即可-->
+    <!--Leancloud 操作库:-->
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!--Valine 的核心代码库-->
+    <script src="/js/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV, 
+            el: '.comment',
+            app_id: 'zh2N00Qk2UIsu1N8Qfu468TH-gzGzoHsz',
+            app_key: 'BJrjTSEoKMfc05OMLWhCzmHk',
+            placeholder: '想说点什么...',
+            pageSize: 15,
+            notify: false,
+            verify: false,
+        });
+    </script>
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+                processEscapes: true
+                    
+}
+  
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                  
+}
+    
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                            all[i].SourceElement().parentNode.className += ' has-jax';
+                                    
+            }
+                
+        });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+</div>
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="icon-search"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.local-search-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+                  
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><span id="icon-search"></span></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><span id="icon-frown"></span></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+          
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+</body>
+</html>
+

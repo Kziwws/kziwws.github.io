@@ -1,0 +1,832 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>flutter基础学习 | 向🐑</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="flutter基础学习语法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flutter基础学习">
+<meta property="og:url" content="https://kziwws.github.io/2021/10/10/technology20211010110234/index.html">
+<meta property="og:site_name" content="向🐑">
+<meta property="og:description" content="flutter基础学习语法">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-10-10T03:02:34.000Z">
+<meta property="article:modified_time" content="2024-06-03T06:38:47.000Z">
+<meta property="article:author" content="kziwws">
+<meta property="article:tag" content="flutter学习">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="向🐑" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  <!--  -->
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?51e08434b847b38641d02f11be4eb143";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">向🐑</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">一只站在树上的鸟，从来不害怕树枝突然折断，因为它相信的不是树枝，而是它自己的翅膀！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/tags/technology">编程技术</a>
+        
+          <a class="main-nav-link" href="/tags/poetry">诗</a>
+        
+          <a class="main-nav-link" href="/tags/life">生活随笔</a>
+        
+          <a class="main-nav-link" href="/archives">所有文章</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        
+        
+        <a href="javascript:;" class="popup-trigger nav-icon" id="nav-search-btn"></a>
+        
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="kziwws.github.io">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="local-search-inner"><div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <span id="icon-search"></span>
+    </span>
+    <span class="popup-btn-close">
+      <span id="icon-close"></span>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="本地搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div></div>
+</header>
+
+
+
+    <div class="outer">
+      <section id="main"><article id="post-technology20211010110234" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/10/10/technology20211010110234/" class="article-date">
+  <time datetime="2021-10-10T03:02:34.000Z" itemprop="datePublished">2021-10-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/flutter/">flutter</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      flutter基础学习
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近学习了一周flutter,做了一下笔记，之前看到一个推荐入门的视频，初步看了一下很不错，推荐给大家。<strong><strong><a href="https://www.bilibili.com/video/BV1kh411a7Lr?p=2" target="_blank" rel="noopener">全新升级小码哥Flutter实战教学完整版附资料</a></strong></strong> ，如果有Android和IOS原生开发经验的感觉学起来是相对好理解一点。最后面也分享一下写的一个页面代码，由于最近一周公司内部的业务笔记多相对较忙，然后断断续续的学。</p>
+<p><font color="#B22222">1、</font>stl 回车快捷键创建 <code>StatelessWidget</code>。</p>
+<p><font color="#B22222">2、</font>如果像<code>IOS UITableViewCell</code>中子视图设置间距的话，可以使用<code>SizeBox(height: 8)</code>,就是设置上下之前的控件距离8个像素，<br>有点类似<code>IOS ToolBar</code>中添加多个item时的 <code>UIBarButtonSystemItemFlexibleSpace.</code></p>
+<p><font color="#B22222">3、</font>去掉APP展示<code>debug LOGO</code>时在启动 MaterialAPP内 使用<code>debugShowCheckedModeBanner: false</code>。</p>
+<p><font color="#B22222">4、</font> 关于widget 有状态的Widget:StatefulWidget在运行过程中有一些状态data数据需要改变，无状态的widget:StatelessWidget内容是确定的没有状态data数据的改变。</p>
+<p><font color="#B22222">5、</font>两个组件widget并排时用Row组件可以放多个组件，想要水平居中，使用Center组件包裹。想要Row里面的子元素在父widget x轴居中 使用<code>mainAxisAlignment: MainAxisAlignment.center.</code></p>
+<p><font color="#B22222">6、</font>想要子元素垂直流水布局使用Cloumn组件，也是widget但是如果里面的元素超出手机最大长度，就是不能滚动的区域，会展示黄色条纹斑马线的多余区域，解决办法就是使用ListView 可滚动的widget。</p>
+<p><font color="#B22222">7、</font>使用网络加载图片<code>Image.network(url)</code>。</p>
+<p><font color="#B22222">8、</font>statelessWidget里的属性必须是不可修改的 用<code>final</code>修饰。并且是实现构造函数就是当前类型传进去的命名的各个参数。</p>
+<p><font color="#B22222">9、</font>如果使用Checkbox组件有按钮点击回调参数如 <code>onChangeed:(value) =&gt;flag = value.</code></p>
+<p><font color="#B22222">10、</font>@immutable注解标明的类或者子类都必须是不可变的。所以比如statelessWidget类的属性用final修饰。</p>
+<p><font color="#B22222">11、</font>StatefullWidget继承自StatefulWidget的类(可以接受父Widget传过来的数据/state类(状态))。StatefulWidget 要实现 <code>createState()</code>方法，然后实现State类 这个类就是实现可变的属性。</p>
+<p><font color="#B22222">12、</font>如果实现边框和内间距可以使用Container，<code>alt + enter</code> 快捷键可实现一个Widget快速包裹一个Container. Container其中有一个属性decoration翻译过来为装饰，<code>BoxDecoration(border: Border.all( width: 5</code>,//设置边框的宽度, <code>color: Colors.purple</code>//设置边框的颜色))。如果设置Container内间距(子视图到Container的内部间距) padding: EdgeInsets.all(8) 上下左右为8个像素的间距。</p>
+<p><font color="#B22222">13、</font>Text组件中的textAlign相当于IOS中的UILable中的属性<code>textAlignment</code>。</p>
+<p><font color="#B22222">14、</font>Column中属性主轴和交叉轴 <code>mainAxisAlignment: MainAxisAlignment.center</code> 交叉轴<code>crossAxisAlignment: CrossAxisAlignment.start</code>(就是开始元素在) Column中开始最左边显示。如果<code>CrossAxisAlignment.end</code> 从右边开始显示相当于。(Column垂直方向就是主轴，Row来说水平方向是主轴).</p>
+<p><font color="#B22222">14、</font>一个类中如果有@protected 如: <code>createState()</code>修饰表示该方法是必须实现的。widget类是不加下划线的，暴露给别人使用,State是加下划线的，状态这个类只给widget使用。为什么Flutter在设计的时候StatefulWidget的build方法放在State中？原因有 一、build出来的Widget是需要依赖State中的变量(状态/数量) 二、在运行的过程中 widget是不断的销毁和创建的。当自己的状态发生改变时，并不希望重新创建一个新的State类。</p>
+<p><font color="#B22222">15、</font>RaisedButton按钮组件 <code>Raisebutton( child; Icon(Icons.add)),onPressed:()=&gt; print(&quot;点击+&quot;)) Icon</code>是展示图标。</p>
+<p><font color="#B22222">16、</font>如果在State状态类中想可变的参数和不可变的参数（接受StatefulWidget的值时），State本身会持有所归属的widget组件，所以在StatefulWidget类中之间申请属性然后直接可以使用<code>${widget.message}</code> 这儿的widget就是前面自定义的StatefulWidget组件 message属性就是自定义的StatefulWidget类的属性。</p>
+<p><font color="#B22222">17、</font>StatelessWidget的生命周期： 只有本身的构造方法和<code>build(BuildContext context)</code>方法。<br>   StatefulWidget 的生命周期包括两个类widget和state，其中StatefulWidget的生命周期是<code>Constructor</code>、<code>Widget.createState()</code>. State类生命周期 先调用Constructor（构造方法）、initState(初始化状态)、<code>didChangeDependencies</code>(状态值发生改变的时候)、<code>build</code>、<code>dispose</code>(销毁方法)，这儿如果子类中实现了initState方法，这个方法在父内中是@mustCallSuper意思是自内必须调用的。调用会对父类做一些初始化，同理dispose方法也是一样子。</p>
+<p><font color="#B22222">18、</font>state类里调用<code>setState(VoidCallback fn)</code>，会去先执行fn(),然后setState里会去执行<code>markneedsBuild()</code>方法，然后去执行build(),刷新UI。</p>
+<p><font color="#B22222">19、</font>带边框的按钮OutlineButton、平坦的按钮FlatButton、浮动按钮<code>FloatingActionButton(child: Icon(Icons.add),onPressed:()=&gt;)</code>、凸出的按钮RaiseButton.</p>
+<p><font color="#B22222">20、</font>当自定义按钮时<code>FlatButton(color: Colors.red,child: Row(mainAxisSize: MainAxisSize.max,children: &lt;widget&gt;[Icon(Icons.favorite,color: Colors.red,),Text(&quot;A&quot;)]),onPressed:(){})</code>, mainAxisSize 主轴上的大小。</p>
+<p><font color="#B22222">21、</font>FlatButton使用圆角时<code>shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))</code>。</p>
+<p><font color="#B22222">22、</font>加载图片<code>Image(image: NetworkImage(&quot;https://~&quot;)),width: 200,height:200,fit:BoxFit.fitWidth,alignment: Alignment.BottomCenter)</code>。其中如果设置了图片的背景颜色是会覆盖在最上层，不过可以设置颜色混入模式与图片融合一体，<code>color: Colors.red,colorBlendMode: BlendMode.colorDodge</code>.</p>
+<a id="more"></a>
+
+<p><font color="#B22222">23、</font>加载本地图片<code>Image(image: AssetImage(&quot;&quot;))</code>，这个里面的图片路径有3个步骤，1、在项目中创建一个文件夹，存储图片 2、在pubspec.yaml进行配置 3、使用图片 如pubspec里的配置 <code>assets: - assets/images/ 这儿后面的可以不写图片名字</code>，就加载所有这个images目录的图片资源，然后在使用的时候<code>Image(image: AssetImage(&quot;assets/images/图片名字.png&quot;))</code>.</p>
+<p><font color="#B22222">24、</font>FlatButton按钮如果再Column中会自动展示 48px间距，如果不足48px会自动填充48 padded，如果想去掉使用，<code>FlatButton(Flatbutton(color: Colors.red,materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,child: Text(&quot;Flot Button&quot;),textColor: Colors.white,onPressed:(){}))</code>.</p>
+<p><font color="#B22222">25、</font>将StatelessWidget转 StatefulWidget 鼠标选中需要转换的类名,或光标放到类名之间 option + enter，抽取代码为单独的Widget 有时候代码嵌套太多,不方便阅读,抽取Widget为一个单独的类,提高代码的阅读性 鼠标选中需要转换的类名,或光标放到类名之间<code>command  + option + W</code>。</p>
+<p><font color="#B22222">26、</font>初始化函数 <code>Person(this.name,{int age}):this.age = age ?? 10{}</code>。</p>
+<p><font color="#B22222">27、</font><code>decoration = decoration ?? (color != null ? BoxDecorayion(color: color):null)</code>就是一个赋值语句，意思就是decoration不为空就用这个值，否则就用后面的值。</p>
+<p><strong>一个注册页面</strong></p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/cupertino.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/gestures.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:pro_summary/utils/util.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WSLoginPage</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> WSLoginPage(&#123;Key? key&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  _WSLoginPageState createState() =&gt; _WSLoginPageState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_WSLoginPageState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">WSLoginPage</span>&gt; </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> themeColor = <span class="keyword">const</span> Color.fromRGBO(<span class="number">250</span>, <span class="number">250</span>, <span class="number">250</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">        appBar: AppBar(</span><br><span class="line">          title: <span class="keyword">const</span> Text(<span class="string">"注册"</span>, style: TextStyle(color: Colors.black)),</span><br><span class="line">          backgroundColor: themeColor,</span><br><span class="line">          elevation: <span class="number">0</span>, <span class="comment">//默认为4 设置成零就没有阴影</span></span><br><span class="line">          <span class="comment">//设置主题颜色无效</span></span><br><span class="line">          <span class="comment">/*iconTheme: IconThemeData(</span></span><br><span class="line"><span class="comment">            color: themeColor,</span></span><br><span class="line"><span class="comment">          ),*/</span></span><br><span class="line">          <span class="comment">//修改返回按钮的颜色</span></span><br><span class="line">          leading: BackButton(color: Colors.grey.withOpacity(<span class="number">0.5</span>)),</span><br><span class="line">        ),</span><br><span class="line">        backgroundColor: themeColor,</span><br><span class="line">        body: WSContentBody());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WSContentBody</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> WSContentBody(&#123;Key? key&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  State&lt;WSContentBody&gt; createState() =&gt; _WSContentBodyState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_WSContentBodyState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">WSContentBody</span>&gt; </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> ListView(</span><br><span class="line">      padding: <span class="keyword">const</span> EdgeInsets.fromLTRB(<span class="number">15</span>, kToolbarHeight, <span class="number">15</span>, <span class="number">0</span>),</span><br><span class="line">      children: [</span><br><span class="line">        Expanded(</span><br><span class="line">          child: Column(children: [</span><br><span class="line">            BoxCellContainer(</span><br><span class="line">                <span class="string">"请输入邀请码"</span>, Toast2.loadImage(<span class="string">"icon_inputbox_recommend"</span>), <span class="number">0</span>),</span><br><span class="line">            BoxCellContainer(</span><br><span class="line">                <span class="string">"请输入11位手机号码"</span>, Toast2.loadImage(<span class="string">"icon_inputbox_phone"</span>), <span class="number">1</span>),</span><br><span class="line">            BoxCellContainer(</span><br><span class="line">                <span class="string">"请输入验证码"</span>, Toast2.loadImage(<span class="string">"icon_inputbox_code"</span>), <span class="number">2</span>),</span><br><span class="line">            <span class="keyword">const</span> SizedBox(height: <span class="number">38</span>),</span><br><span class="line">            getNextBtn()</span><br><span class="line">          ] <span class="comment">//下一步按钮,</span></span><br><span class="line">              ),</span><br><span class="line">        ),</span><br><span class="line">        <span class="keyword">const</span> SizedBox(height: <span class="number">350</span>),</span><br><span class="line">        buildBottomRich()</span><br><span class="line">      ],</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*构建底部富文本*/</span></span><br><span class="line">  buildBottomRich() &#123;</span><br><span class="line">    <span class="keyword">return</span> Expanded(</span><br><span class="line">      child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [</span><br><span class="line">        SizedBox(</span><br><span class="line">          width: <span class="number">34</span>,</span><br><span class="line">          height: <span class="number">34</span>,</span><br><span class="line">          child: FlatButton(</span><br><span class="line">              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,</span><br><span class="line">              splashColor: Colors.white10,</span><br><span class="line">              highlightColor: Colors.white,</span><br><span class="line">              padding:</span><br><span class="line">                  <span class="keyword">const</span> EdgeInsets.only(left: <span class="number">0</span>, top: <span class="number">0</span>, right: <span class="number">0</span>, bottom: <span class="number">18</span>),</span><br><span class="line">              child: Image(</span><br><span class="line">                  width: <span class="number">14</span>,</span><br><span class="line">                  height: <span class="number">14</span>,</span><br><span class="line">                  image: AssetImage(Toast2.loadImage(<span class="string">"btn_bottom_agree_nor"</span>)),</span><br><span class="line">                  fit: BoxFit.contain),</span><br><span class="line">              <span class="comment">//color: const Color.fromRGBO(153, 153, 153, 0.3),</span></span><br><span class="line">              <span class="comment">//textColor: Colors.white,</span></span><br><span class="line">              onPressed: () &#123;&#125;),</span><br><span class="line">        ),</span><br><span class="line">        RichText(</span><br><span class="line">            textAlign: TextAlign.justify,</span><br><span class="line">            maxLines: <span class="number">2</span>,</span><br><span class="line">            text: TextSpan(</span><br><span class="line">                <span class="comment">//协议说明文案</span></span><br><span class="line">                text: <span class="string">"阅读并同意"</span>,</span><br><span class="line">                style: <span class="keyword">const</span> TextStyle(color: Colors.grey),</span><br><span class="line">                children: [</span><br><span class="line">                  <span class="comment">// Expanded(child: )</span></span><br><span class="line">                  TextSpan(</span><br><span class="line">                    text: <span class="string">"《喔刷伙伴Pro支付经销商协议》"</span>,</span><br><span class="line">                    style: <span class="keyword">const</span> TextStyle(color: Colors.blue),</span><br><span class="line">                    recognizer: TapGestureRecognizer()</span><br><span class="line">                      ..onTap = () &#123;</span><br><span class="line">                        opendUserProtocol();</span><br><span class="line">                      &#125;,</span><br><span class="line">                  ),</span><br><span class="line">                  <span class="keyword">const</span> TextSpan(</span><br><span class="line">                      text: <span class="string">"\n与"</span>, style: TextStyle(color: Colors.grey)),</span><br><span class="line">                  TextSpan(</span><br><span class="line">                    text: <span class="string">"《隐私协议》"</span>,</span><br><span class="line">                    style: <span class="keyword">const</span> TextStyle(color: Colors.blue),</span><br><span class="line">                    recognizer: TapGestureRecognizer()</span><br><span class="line">                      ..onTap = () &#123;</span><br><span class="line">                        opendUserProtocol();</span><br><span class="line">                      &#125;,</span><br><span class="line">                  )</span><br><span class="line">                ]))</span><br><span class="line">      ]),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*打开协议*/</span></span><br><span class="line">  opendUserProtocol() &#123;&#125;</span><br><span class="line"></span><br><span class="line">  getNextBtn() &#123;</span><br><span class="line">    <span class="keyword">final</span> size = MediaQuery.of(context).size;</span><br><span class="line">    <span class="keyword">return</span> TextButton(</span><br><span class="line">        onPressed: _onPressed(<span class="string">""</span>),</span><br><span class="line">        child: <span class="keyword">const</span> Text(<span class="string">"下一步"</span>),</span><br><span class="line">        autofocus: <span class="keyword">true</span>,</span><br><span class="line">        <span class="comment">/*style: TextButton.styleFrom(</span></span><br><span class="line"><span class="comment">            //定义文本样式 这里设置的颜色是不起作用的</span></span><br><span class="line"><span class="comment">            textStyle: const TextStyle(fontSize: 19,color: Colors.white),</span></span><br><span class="line"><span class="comment">            padding: const EdgeInsets.all(15),</span></span><br><span class="line"><span class="comment">            backgroundColor: const Color.fromRGBO(153, 153, 153, 0.3)</span></span><br><span class="line"><span class="comment">          ),*/</span></span><br><span class="line">        style: ButtonStyle(</span><br><span class="line">            <span class="comment">//定义文本样式 这里设置的颜色是不起作用的</span></span><br><span class="line">            textStyle: MaterialStateProperty.all(</span><br><span class="line">              <span class="keyword">const</span> TextStyle(</span><br><span class="line">                  fontSize: <span class="number">19</span>, color: Color.fromRGBO(<span class="number">153</span>, <span class="number">153</span>, <span class="number">153</span>, <span class="number">0.3</span>)),</span><br><span class="line">            ),</span><br><span class="line">            <span class="comment">//设置按钮字体颜色</span></span><br><span class="line">            foregroundColor: MaterialStateProperty.resolveWith((states) &#123;</span><br><span class="line">              <span class="keyword">if</span> (states.contains(MaterialState.focused) &amp;&amp;</span><br><span class="line">                  !states.contains(MaterialState.pressed)) &#123;</span><br><span class="line">                <span class="comment">//获取焦点时的颜色</span></span><br><span class="line">                <span class="keyword">return</span> Colors.blue;</span><br><span class="line">              &#125; <span class="keyword">else</span> <span class="keyword">if</span> (states.contains(MaterialState.pressed)) &#123;</span><br><span class="line">                <span class="keyword">return</span> Colors.red;</span><br><span class="line">              &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> Colors.white;</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;),</span><br><span class="line">            <span class="comment">//按钮的背景颜色</span></span><br><span class="line">            backgroundColor: MaterialStateProperty.resolveWith((states) &#123;</span><br><span class="line">              <span class="keyword">const</span> btnBGColor = Color.fromRGBO(<span class="number">153</span>, <span class="number">153</span>, <span class="number">153</span>, <span class="number">0.3</span>);</span><br><span class="line">              <span class="keyword">if</span> (states.contains(MaterialState.pressed)) &#123;</span><br><span class="line">                <span class="keyword">return</span> btnBGColor;</span><br><span class="line">              &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> btnBGColor;</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;),</span><br><span class="line">            <span class="comment">//padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(15, 0, 15, 0)),</span></span><br><span class="line">            <span class="comment">//设置按钮大小</span></span><br><span class="line">            minimumSize: MaterialStateProperty.all(Size(size.width, <span class="number">52</span>)),</span><br><span class="line">            <span class="comment">//设置水波纹颜色</span></span><br><span class="line">            overlayColor: MaterialStateProperty.all(Colors.purple)));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*按钮事件*/</span></span><br><span class="line">  _onPressed(states) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"点击了按钮"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*单元格*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BoxCellContainer</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span> placeholder;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span> iconName;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">int</span> index;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> BoxCellContainer(<span class="keyword">this</span>.placeholder, <span class="keyword">this</span>.iconName, <span class="keyword">this</span>.index,</span><br><span class="line">      &#123;Key? key&#125;)</span><br><span class="line">      : <span class="keyword">super</span>(key: key);</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> SizedBox(</span><br><span class="line">      height: <span class="number">75</span>,</span><br><span class="line">      child: Column(children: [</span><br><span class="line">        Row(</span><br><span class="line">          mainAxisSize: MainAxisSize.max,</span><br><span class="line">          mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">          children: &lt;Widget&gt;[</span><br><span class="line">            Image(</span><br><span class="line">                width: <span class="number">20</span>,</span><br><span class="line">                height: <span class="number">20</span>,</span><br><span class="line">                image: AssetImage(iconName),</span><br><span class="line">                fit: BoxFit.contain),</span><br><span class="line">            Expanded(</span><br><span class="line">              child: CupertinoTextField(</span><br><span class="line">                padding: <span class="keyword">const</span> EdgeInsets.only(left: <span class="number">15</span>, right: <span class="number">40</span>),</span><br><span class="line">                placeholder: placeholder,</span><br><span class="line">                decoration: BoxDecoration(</span><br><span class="line">                    borderRadius: BorderRadius.circular(<span class="number">2.0</span>),</span><br><span class="line">                    border: Border.all(</span><br><span class="line">                        color: <span class="keyword">const</span> Color.fromRGBO(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>),</span><br><span class="line">                        style: BorderStyle.solid,</span><br><span class="line">                        width: <span class="number">2.0</span>)),</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">            <span class="keyword">if</span> (index == <span class="number">0</span>)</span><br><span class="line">              Image(</span><br><span class="line">                  width: <span class="number">20</span>,</span><br><span class="line">                  height: <span class="number">20</span>,</span><br><span class="line">                  image: AssetImage(Toast2.loadImage(<span class="string">"btn_inputbox_scan_nor"</span>)),</span><br><span class="line">                  fit: BoxFit.cover),</span><br><span class="line">            <span class="comment">//获取验证码</span></span><br><span class="line">            <span class="keyword">if</span> (index == <span class="number">2</span>)</span><br><span class="line">              FlatButton(</span><br><span class="line">                  child: <span class="keyword">const</span> Text(<span class="string">"获取验证码"</span>),</span><br><span class="line">                  color: <span class="keyword">const</span> Color.fromRGBO(<span class="number">153</span>, <span class="number">153</span>, <span class="number">153</span>, <span class="number">0.3</span>),</span><br><span class="line">                  textColor: Colors.white,</span><br><span class="line">                  onPressed: () &#123;&#125;)</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">        <span class="keyword">const</span> Divider(</span><br><span class="line">            height: <span class="number">10</span>,</span><br><span class="line">            <span class="comment">//分割线区域的高度，并非分割线的高度</span></span><br><span class="line">            thickness: <span class="number">0.8</span>,</span><br><span class="line">            <span class="comment">//分割线的厚度，真正的分割线的高度</span></span><br><span class="line">            color: Color.fromRGBO(<span class="number">153</span>, <span class="number">153</span>, <span class="number">153</span>, <span class="number">0.3</span>),</span><br><span class="line">            <span class="comment">//分割线颜色</span></span><br><span class="line">            indent: <span class="number">0</span>,</span><br><span class="line">            <span class="comment">//起点缩进距离</span></span><br><span class="line">            endIndent: <span class="number">0</span>) <span class="comment">//终点缩进距离</span></span><br><span class="line">      ]),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2021/10/10/technology20211010110234/" data-id="cmhlytugk006311jjdim4f7ze" class="article-share-link" data-share="baidu" data-title="flutter基础学习">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2021/10/10/technology20211010110234/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/" rel="tag">flutter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
+
+    </footer>
+  </div>
+  
+    <!-- 
+<nav id="article-nav">
+  
+    <a href="/2021/12/10/technology20211210100122/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          Mac青花瓷Charles抓包使用详解
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/08/21/poetry20210821102025/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">《晚秋》</div>
+    </a>
+  
+</nav>
+  -->
+
+
+
+
+
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2021/12/10/technology20211210100122/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><font size="2" color="#708090">下一篇 newer</font></strong>
+      <div class="article-nav-title">
+        
+          <font color="#555">Mac青花瓷Charles抓包使用详解</font>
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/08/21/poetry20210821102025/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><font size="2" color="#708090">上一篇 older</font></strong>
+      <div class="article-nav-title"><font color="#555">《晚秋》</font></div>
+    </a>
+   
+</nav>
+
+
+  
+</article>
+
+  <section id="comments">
+    <div id="valine_thread">
+      <div class="comment"></div>
+    </div>
+  </section>
+</section>
+      
+      <aside id="sidebar">
+  
+    
+<div class="widget-wrap">
+  <h3 class="widget-title">关于</h3>
+  <ul class="widget about-me">
+    
+    <li><img class="author" title="About me" src="/img/github.png" /></li>
+    
+    
+    <li ><font color="#424242" size="2em">苹果应用软件开发 & 游戏软件开发</font></li>
+    
+    <li ><font color="#424242" size="2em">email: ggb.chen@foxmail.com</font></li>
+    
+  </ul>
+</div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/charles/">charles</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocoapods/">cocoapods</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocosCreator/">cocosCreator</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/error/">error</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/knowledge/">knowledge</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/regexp/">regexp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/">诗</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%BD%AC%E5%BD%95/">转录</a><span class="category-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoapods/" rel="tag">cocoapods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/" rel="tag">flutter</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/" rel="tag">ios</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knowledge/" rel="tag">knowledge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/poetry/" rel="tag">poetry</a><span class="tag-list-count">46</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regexp/" rel="tag">regexp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology/" rel="tag">technology</a><span class="tag-list-count">28</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/android/" style="font-size: 11.67px;">android</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/cocosCreator/" style="font-size: 16.67px;">cocosCreator</a> <a href="/tags/flutter/" style="font-size: 11.67px;">flutter</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/ios/" style="font-size: 13.33px;">ios</a> <a href="/tags/knowledge/" style="font-size: 10px;">knowledge</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/poetry/" style="font-size: 20px;">poetry</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/technology/" style="font-size: 18.33px;">technology</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <!--<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">5</span></li></ul> -->
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">2025年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">2023年</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">2022年</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">2021年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">2020年</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019年</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">2017年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/11/05/technology20251105090825/">Sudoku Game Privacy Policy_ Zero Personal Data Collection, Pure Gaming Experience</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/14/technology20230314101225/">利用python脚本拆解游戏中的图集资源</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/10/technology20230210090112/">利用jekenis自动打包上传阿里云下载和通知钉钉机器人</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/21/technology20230121151206/">IOS项目脚本自动化批量打包并上传第三方平台</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/20/technology20230120161001/">IOS项目单独脚本自动化打包</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://github.com/kziwws" target="_blank">github</a>
+          </li>
+        
+          <li>
+            <a href="https://shevakuilin.com" target="_blank">shevakuilin</a>
+          </li>
+        
+          <li>
+            <a href="https://hans2936.github.io" target="_blank">hans2936</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 <a href="https://github.com/kziwws" target="_blank">kziwws</a> 
+      Powered by hexo,Theme by landscape-plus.
+    </div>
+    <div id="footer-info" class="inner">
+      本站博客采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank">[知识共享署名-非商业性使用-相同方式共享 3.0 中国大陆许可协议]</a> 进行许可
+    </div>
+  </div>
+</footer>
+
+
+<!--
+<div id="footer-info" class="inner">
+     &copy; 2025 kziwws<br>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+     .
+     Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+   </div>
+</div>
+-->
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/tags/technology" class="mobile-nav-link">编程技术</a>
+  
+    <a href="/tags/poetry" class="mobile-nav-link">诗</a>
+  
+    <a href="/tags/life" class="mobile-nav-link">生活随笔</a>
+  
+    <a href="/archives" class="mobile-nav-link">所有文章</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<!--载入js，在</body>之前插入即可-->
+    <!--Leancloud 操作库:-->
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!--Valine 的核心代码库-->
+    <script src="/js/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV, 
+            el: '.comment',
+            app_id: 'zh2N00Qk2UIsu1N8Qfu468TH-gzGzoHsz',
+            app_key: 'BJrjTSEoKMfc05OMLWhCzmHk',
+            placeholder: '想说点什么...',
+            pageSize: 15,
+            notify: false,
+            verify: false,
+        });
+    </script>
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+                processEscapes: true
+                    
+}
+  
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                  
+}
+    
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                            all[i].SourceElement().parentNode.className += ' has-jax';
+                                    
+            }
+                
+        });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+</div>
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="icon-search"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.local-search-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+                  
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><span id="icon-search"></span></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><span id="icon-frown"></span></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+          
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+</body>
+</html>
+

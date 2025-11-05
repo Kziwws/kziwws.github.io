@@ -1,0 +1,850 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo博客landscape-plus新建分类写文章和基础配置介绍 | 向🐑</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Hexo写文章新建分类和基础配置介绍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo博客landscape-plus新建分类写文章和基础配置介绍">
+<meta property="og:url" content="https://kziwws.github.io/2018/03/12/technology20180312011233/index.html">
+<meta property="og:site_name" content="向🐑">
+<meta property="og:description" content="Hexo写文章新建分类和基础配置介绍">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-03-11T17:12:33.000Z">
+<meta property="article:modified_time" content="2024-06-03T06:38:47.000Z">
+<meta property="article:author" content="kziwws">
+<meta property="article:tag" content="hexo博客">
+<meta property="article:tag" content="landscape-plus，新建分类，基础配置介绍">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="向🐑" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  <!--  -->
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?51e08434b847b38641d02f11be4eb143";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">向🐑</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">一只站在树上的鸟，从来不害怕树枝突然折断，因为它相信的不是树枝，而是它自己的翅膀！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/tags/technology">编程技术</a>
+        
+          <a class="main-nav-link" href="/tags/poetry">诗</a>
+        
+          <a class="main-nav-link" href="/tags/life">生活随笔</a>
+        
+          <a class="main-nav-link" href="/archives">所有文章</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        
+        
+        <a href="javascript:;" class="popup-trigger nav-icon" id="nav-search-btn"></a>
+        
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="kziwws.github.io">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="local-search-inner"><div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <span id="icon-search"></span>
+    </span>
+    <span class="popup-btn-close">
+      <span id="icon-close"></span>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="本地搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div></div>
+</header>
+
+
+
+    <div class="outer">
+      <section id="main"><article id="post-technology20180312011233" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/12/technology20180312011233/" class="article-date">
+  <time datetime="2018-03-11T17:12:33.000Z" itemprop="datePublished">2018-03-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo博客landscape-plus新建分类写文章和基础配置介绍
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>这儿有一个整体主题使用排名: <a href="https://www.hexothe.me" target="_blank" rel="noopener">https://www.hexothe.me</a></strong></p>
+<p>在网上找了很多hexo主题，其中有的还是挺好看的。我喜欢简约看上去”干净”的主题，最后选择了<font color='red'>landscape-plus</font>的确满足我的风格，<a href="https://arvinxiang.com/landscape-plus/" target="_blank" rel="noopener">主题演示</a>，主题github下载地址:<a href="https://github.com/xiangming/landscape-plus" target="_blank" rel="noopener">https://github.com/xiangming/landscape-plus</a>，而我的在这个基础上整合网上的大佬们整改了一些样式和一些细节处理，因为我感觉自己有”强迫症“。</p>
+<p><strong>首先我推荐自己感觉还不错的hexo主题:</strong></p>
+<ul>
+<li><p>skapp主题地址: <a href="https://github.com/Mrminfive/hexo-theme-skapp" target="_blank" rel="noopener">https://github.com/Mrminfive/hexo-theme-skapp</a>   <a href="http://blog.minfive.com/" target="_blank" rel="noopener">预览效果</a></p>
+</li>
+<li><p>smackdown主题地址: <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank" rel="noopener">https://github.com/smackgg/hexo-theme-smackdown</a>  <a href="http://oldblog.smackgg.cn/" target="_blank" rel="noopener">预览效果</a></p>
+</li>
+<li><p>light主题地址: <a href="https://github.com/hexojs/hexo-theme-light" target="_blank" rel="noopener">https://github.com/hexojs/hexo-theme-light</a> </p>
+</li>
+<li><p>even主题地址: <a href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">https://github.com/ahonn/hexo-theme-even</a></p>
+</li>
+<li><p>基于next主题修改 地址: <a href="https://github.com/Lruihao/hexo-theme-next" target="_blank" rel="noopener">https://github.com/Lruihao/hexo-theme-next</a>   <a href="https://www.lruihao.cn" target="_blank" rel="noopener">预览效果</a></p>
+</li>
+<li><p>TKL主题地址: <a href="https://github.com/SuperKieran/TKL" target="_blank" rel="noopener">https://github.com/SuperKieran/TKL</a>    <a href="https://go.kieran.top/post/14/" target="_blank" rel="noopener">预览效果</a></p>
+<p>感谢这些制作和修改主题和爱分享的小伙伴们。</p>
+</li>
+</ul>
+<a id="more"></a>
+<h4 id="主题安装"><a href="#主题安装" class="headerlink" title="主题安装:"></a>主题安装:</h4><p>这儿下载安装主题 以landscape-plus为例 <code>git clone https://github.com/xiangming/landscape-plus.git themes/landscape-plus</code> ，只要把这个主题名字修改成你喜欢的主题名字就行了。</p>
+<p>然后修改根目录下的<code>_config.yml</code>把 <code>theme</code>的值设置为<code>landscape-plus</code>，然后运行<code>hexo clean</code>在执行<code>hexo  g</code>重新生成一下就换掉主题了。</p>
+<h4 id="配置介绍"><a href="#配置介绍" class="headerlink" title="配置介绍:"></a>配置介绍:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br></pre></td><td class="code"><pre><span class="line"># Hexo Configuration</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;configuration.html</span><br><span class="line">## Source: https:&#x2F;&#x2F;github.com&#x2F;hexojs&#x2F;hexo&#x2F;</span><br><span class="line"># en</span><br><span class="line"># Site</span><br><span class="line">title: &#39;向阳&#39; #网站名称</span><br><span class="line">subtitle: &#39;一只站在树上的鸟，从来不害怕树枝突然折断，因为它相信的不是树枝，而是它自己的翅膀！&#39; #副标题</span><br><span class="line">description: &#39;&#39; #描述</span><br><span class="line">keywords:</span><br><span class="line">author: kziwws #底部作者</span><br><span class="line">language: zh-CN #显示中文</span><br><span class="line">timezone: &#39;&#39;</span><br><span class="line"></span><br><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &#39;http:&#x2F;&#x2F;yoursite.com&#x2F;child&#39; and root as &#39;&#x2F;child&#x2F;&#39;</span><br><span class="line">url: #如果有网址填写你的域名 没有可以填写服务器IP地址</span><br><span class="line">root: &#x2F;</span><br><span class="line">permalink: :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;</span><br><span class="line">permalink_defaults:</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: true # Set to false to remove trailing &#39;index.html&#39; from permalinks</span><br><span class="line">  trailing_html: true # Set to false to remove trailing &#39;.html&#39; from permalinks</span><br><span class="line"></span><br><span class="line"># Directory</span><br><span class="line">source_dir: source</span><br><span class="line">public_dir: public</span><br><span class="line">tag_dir: tags</span><br><span class="line">archive_dir: archives</span><br><span class="line">category_dir: categories</span><br><span class="line">code_dir: downloads&#x2F;code</span><br><span class="line">i18n_dir: :lang</span><br><span class="line">skip_render:</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"># Writing</span><br><span class="line">new_post_name: :title.md # File name of new posts</span><br><span class="line">default_layout: post</span><br><span class="line">titlecase: false # Transform title into titlecase</span><br><span class="line">external_link:</span><br><span class="line">  enable: true # Open external links in new tab</span><br><span class="line">  field: site # Apply to the whole site</span><br><span class="line">  exclude: &#39;&#39;</span><br><span class="line">filename_case: 0</span><br><span class="line">render_drafts: false</span><br><span class="line">post_asset_folder: false</span><br><span class="line">relative_link: false</span><br><span class="line">future: true</span><br><span class="line">highlight:</span><br><span class="line">  enable: true</span><br><span class="line">  line_number: true</span><br><span class="line">  auto_detect: false</span><br><span class="line">  tab_replace: &#39;&#39;</span><br><span class="line">  wrap: true</span><br><span class="line">  hljs: false</span><br><span class="line"></span><br><span class="line"># Home page setting</span><br><span class="line"># path: Root path for your blogs index page. (default &#x3D; &#39;&#39;)</span><br><span class="line"># per_page: Posts displayed per page. (0 &#x3D; disable pagination)</span><br><span class="line"># order_by: Posts order. (Order by date descending by default)</span><br><span class="line">index_generator:</span><br><span class="line">  path: &#39;&#39;</span><br><span class="line">  per_page: 8</span><br><span class="line">  order_by: -date</span><br><span class="line"></span><br><span class="line"># Category &amp; Tag</span><br><span class="line">default_category: uncategorized</span><br><span class="line">category_map:</span><br><span class="line">tag_map:</span><br><span class="line"></span><br><span class="line"># search</span><br><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 1000</span><br><span class="line"></span><br><span class="line"># Valine.</span><br><span class="line"># You can get your appid and appkey from https:&#x2F;&#x2F;leancloud.cn</span><br><span class="line"># more info please open https:&#x2F;&#x2F;valine.js.org</span><br><span class="line">  </span><br><span class="line"># Metadata elements</span><br><span class="line">## https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;HTML&#x2F;Element&#x2F;meta</span><br><span class="line">meta_generator: true</span><br><span class="line"></span><br><span class="line"># Date &#x2F; Time format</span><br><span class="line">## Hexo uses Moment.js to parse and display date</span><br><span class="line">## You can customize the date format as defined in</span><br><span class="line">## http:&#x2F;&#x2F;momentjs.com&#x2F;docs&#x2F;#&#x2F;displaying&#x2F;format&#x2F;</span><br><span class="line">date_format: YYYY-MM-DD</span><br><span class="line">time_format: HH:mm:ss</span><br><span class="line">## Use posts date for updated date unless set in front-matter</span><br><span class="line">use_date_for_updated: false</span><br><span class="line"></span><br><span class="line"># Pagination</span><br><span class="line">## Set per_page to 0 to disable pagination</span><br><span class="line">per_page: 15</span><br><span class="line">pagination_dir: page</span><br><span class="line"></span><br><span class="line"># Include &#x2F; Exclude file(s)</span><br><span class="line">## include:&#x2F;exclude: options only apply to the &#39;source&#x2F;&#39; folder</span><br><span class="line">include:</span><br><span class="line">exclude:</span><br><span class="line">ignore:</span><br><span class="line"></span><br><span class="line"># Extensions</span><br><span class="line">## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;</span><br><span class="line">## Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;</span><br><span class="line">theme: landscape-plus</span><br><span class="line"></span><br><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">#使用git提交到github仓库里</span><br><span class="line">#xxx换成你的使用的github的用户名</span><br><span class="line">deploy:</span><br><span class="line">  type: git #这儿前面有两个空格 中间有一个空格 后面的类似</span><br><span class="line">  repository: git@github.com:xxx&#x2F;xxx.github.io.git </span><br><span class="line">  branch: master</span><br><span class="line">  </span><br><span class="line">#如果是使用rsync部署到服务器 </span><br><span class="line">deploy:</span><br><span class="line">  type: rsync</span><br><span class="line">  host: 服务器名 主机IP</span><br><span class="line">  user: 用户名 ssh的用户名</span><br><span class="line">  root: 远程主机目录</span><br><span class="line">  port: ssh登录端口 如22</span><br></pre></td></tr></table></figure>
+
+<h4 id="关于写文章和新建分类"><a href="#关于写文章和新建分类" class="headerlink" title="关于写文章和新建分类:"></a>关于写文章和新建分类:</h4><ul>
+<li><p><code>hexo new page categories</code> 这儿本身有 _posts和tags 新建过后会出现一个文件，然后打开这个文件,打开里面的<code>index.md</code>,写上 <code>type: &quot;categories&quot;</code>，类别建立成功。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2020-01-06 15:51:07</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新写文章 <code>hexo new &quot;文件名字如:title&quot;</code>会在 <code>source/_post</code> 文件夹下创建一个文件，命名为：<code>title.md</code>.</p>
+</li>
+<li><p>这儿打开过后</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 比如hexo如果写文件</span><br><span class="line">date: 2018-03-18 04:31:11</span><br><span class="line">categories:&#x2F;&#x2F;这个是文章对应的分类，如果一篇文章只能属于一个大的分类，但是这个大的分类又可以细分，比如这儿这儿写的这篇属于技术technology，细分过后属于hexo 博客搭建，这儿写上阶梯型的就像是二叉树一样的结构。这个当然你明白了就行了，后面也可以根据分类去查找文章</span><br><span class="line"> - technology</span><br><span class="line"> - hexo</span><br><span class="line">tags: &#x2F;&#x2F;这儿文章可以属于任何一个标签，你喜欢它属于哪一个标签就写上，同一篇文章可以属于不同的标签，这个理解没有问题吧，先懂这点就行,因为建类别的时候就是根据这个标签去查找的。这个是如果有同阶梯的，表示同等级的权重。</span><br><span class="line"> - hexo</span><br><span class="line">keywords: hexo博客,landscape-plus，新建分类，基础配置介绍</span><br><span class="line">description: Hexo写文章新建分类和基础配置介绍</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>写文章这儿推荐使用<a href="http://soft.down9.xyz/typoraformac_1503.dmg" target="_blank" rel="noopener">Typora</a> 这个链接我放了一个Mac版本的，不知道是不是最新，自己鉴定，不过是真心好用的。如果你SSH工具使用的是<a href="http://www.hostbuf.com/" target="_blank" rel="noopener">FinalShell 前往下载</a>这个的话，你可以直接设置<code>文件点击右键-&gt;选择文本编辑器-&gt;设置外部文本编辑器-&gt;然后选择Typora</code>下一次打开方式选择<code>文本编辑器</code>,就方便多了，只要在文章的时候就会打开这个方便的工具。</p>
+</li>
+<li><p>现在开始如何设置分类。现在 <code>/soft/hexo/nginxblog/themes/landscape-plus</code>我的是这目录，你的我不知道，现在要打开的是主题下<code>landscape-plus-&gt;_config.yml</code>，直接上配置更加直观。里面会详细介绍。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  首页: &#x2F;</span><br><span class="line">  编程技术: &#x2F;tags&#x2F;technology </span><br><span class="line">  诗: &#x2F;tags&#x2F;poetry</span><br><span class="line">  生活随笔: &#x2F;tags&#x2F;life</span><br><span class="line">  所有文章: &#x2F;archives</span><br><span class="line">rss: &#x2F;atom.xml</span><br><span class="line"></span><br><span class="line">#上面分类解释一下,前面不是介绍了tags和categories这儿举一个例子，就拿编程技术来说有两种都可以，第一种根据tags标签来分类，&#x2F;tags&#x2F;technology 凡是文章属于大的标签”技术“都是属于这一类，还有另外一种就是&#x2F;categories&#x2F;technology&#x2F;hexo 也可以塞选出来。但是遇到分类的时候就会出现塞选不全面。所以使用tags感觉好一点。</span><br><span class="line"></span><br><span class="line"># Content</span><br><span class="line">excerpt_link: &quot;阅读全文&quot; #Read More 这个是查看更多是文本</span><br><span class="line">fancybox: true #相册功能</span><br><span class="line">mathjax: true  #开启渲染数学公式</span><br><span class="line"></span><br><span class="line"># Sidebar</span><br><span class="line">sidebar: right #左边sidebar位置</span><br><span class="line">widgets:       #各个挂件的widget</span><br><span class="line">- category</span><br><span class="line">- tag</span><br><span class="line">- tagcloud</span><br><span class="line">- archive</span><br><span class="line">- recent_posts</span><br><span class="line">- links</span><br><span class="line"></span><br><span class="line"># Links</span><br><span class="line">links: #友情链接</span><br><span class="line">  github: ～</span><br><span class="line"></span><br><span class="line"># Miscellaneous</span><br><span class="line"># google_analytics: UA-066185928-1 #这个东西需要翻墙,谷歌统计分析，这儿是一个不能使用的ID，后来我放弃了。所以被我改成百度统计了</span><br><span class="line"></span><br><span class="line">baidu_tongji: &#39;81e087347845b30641d06f11be8hb143&#39;#去百度统计里注册,谷歌统计分析，这儿是一个不能使用的ID,只是为了模拟数据</span><br><span class="line">favicon: &#x2F;favicon.png</span><br><span class="line">twitter:</span><br><span class="line">google_plus:</span><br><span class="line">fb_admins: </span><br><span class="line">fb_app_id:</span><br><span class="line"></span><br><span class="line"># Toc</span><br><span class="line">toc:</span><br><span class="line">  article: true   ## show contents in article.</span><br><span class="line">  aside: true     ## show contents in aside.</span><br><span class="line"># Scroll to top</span><br><span class="line">go_top: true</span><br><span class="line"></span><br><span class="line"># search # 这儿之前是跳转到百度搜索引擎 于是参考网上的小伙伴分享的技术和自己的琢磨移植了next主题内部的搜素功能，又很多坑，我趟过来了。哈哈后面我会将具体的移值分分享。</span><br><span class="line">local_search:</span><br><span class="line">  enable: true </span><br><span class="line">  trigger: auto  #表示搜索结果会不会打字时自动显示</span><br><span class="line">  top_n_per_article: -1 #表示每篇文章最多显示几条结果（-1为不限数字）</span><br><span class="line"></span><br><span class="line"># Duoshuo</span><br><span class="line"># duoshuo_shortname: reqianduan</span><br><span class="line">#这儿之前是”多说“现在官网都打不开了好吧,然后移植了leancloud, 后面也会分享出来的。</span><br><span class="line"></span><br><span class="line"># valine leancloud</span><br><span class="line">valine_enable: true # valine评论是否开启</span><br><span class="line">valine:</span><br><span class="line">  appid: vh2N08Qk3UIsu1N8QHu468BH-gzGZoHsz #leancloud中的appid 这儿是模拟的一个ID，无效你需要注册替换成你自己官网注册的。</span><br><span class="line">  appkey: JxrjTSEoPMfc35OMLWhHzcHk #leancloud中的appKey这儿是模拟的一个ID，无效你需要注册替换成你自己官网注册的。</span><br><span class="line">  placeholder: 想说点什么...  #默认留言框内的文字</span><br><span class="line">  notify: false  #新留言是否需要通知 https:&#x2F;&#x2F;github.com&#x2F;xCss&#x2F;Valine&#x2F;wiki</span><br><span class="line">  verify: false  #是否需要验证 验证比较反人类建议false关闭</span><br><span class="line">  avatar: mm  #默认头像</span><br><span class="line">  guest_info: nick,mail # 默认留言框的头部需要访问者输入的信息</span><br><span class="line">  pageSize: 15 #默认单页的留言条数</span><br><span class="line">  </span><br><span class="line"># Baidu share</span><br><span class="line">baidushare: true #是否开启百度分享</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这儿由于上面的移植next主题search功能，和替换掉了”多说”评论 valine leancloud,所以里面的代码肯定是没有修改过的，你先屏蔽掉。然后运行，应该你想要的样子新的类别和新写的文章和一些<code>config.yml</code>里设置的基础配置应该就出来。</p>
+</li>
+</ul>
+<h4 id="这儿再分享一个404页面"><a href="#这儿再分享一个404页面" class="headerlink" title="这儿再分享一个404页面:"></a>这儿再分享一个404页面:</h4><ul>
+<li><p>当服务器在找不到页面和加载失败的时候使用,直接保存成<code>404x.html</code>文件放在nginx所在的目录下。<code>/usr/local/nginx/html</code>我的是这个目录，放进去过后是<code>/usr/local/nginx/html/404x.html</code>，中间有三个链接，自己填成你的。这个页面也是网上看到扁平化简约风格页面我挺喜欢。也在次感谢提供这个<code>h5</code>的小伙伴。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Error<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">body, div, h3, h4, li, ol &#123;</span><br><span class="line">	margin: 0;</span><br><span class="line">	padding: 0</span><br><span class="line">&#125;</span><br><span class="line">body &#123;</span><br><span class="line">	font: 14px/1.5 'Microsoft YaHei', '微软雅黑', Helvetica, Sans-serif;</span><br><span class="line">	min-width: 1100px;</span><br><span class="line"><span class="css">	<span class="selector-tag">background</span>: <span class="selector-id">#f0f1f3</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-pseudo">:focus</span> &#123;</span></span><br><span class="line">	outline: 0</span><br><span class="line">&#125;</span><br><span class="line">h3, h4, strong &#123;</span><br><span class="line">	font-weight: 700</span><br><span class="line">&#125;</span><br><span class="line">a &#123;</span><br><span class="line"><span class="css">	<span class="selector-tag">color</span>: <span class="selector-id">#428bca</span>;</span></span><br><span class="line">	text-decoration: none</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line">	text-decoration: underline</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.error-page</span> &#123;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">background</span>: <span class="selector-id">#f0f1f3</span>;</span></span><br><span class="line">	padding: 80px 0 180px</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.error-page-container</span> &#123;</span></span><br><span class="line">	position: relative;</span><br><span class="line">	z-index: 1</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.error-page-main</span> &#123;</span></span><br><span class="line">	position: relative;</span><br><span class="line"><span class="css">	<span class="selector-tag">background</span>: <span class="selector-id">#f9f9f9</span>;</span></span><br><span class="line">	margin: 0 auto;</span><br><span class="line">	width: 617px;</span><br><span class="line">	-ms-box-sizing: border-box;</span><br><span class="line">	-webkit-box-sizing: border-box;</span><br><span class="line">	-moz-box-sizing: border-box;</span><br><span class="line">	box-sizing: border-box;</span><br><span class="line">	padding: 50px 50px 70px</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.error-page-main</span><span class="selector-pseudo">:before</span> &#123;</span></span><br><span class="line">	content: '';</span><br><span class="line">	display: block;</span><br><span class="line">	background: url(img/errorPageBorder.png?1427783409637);</span><br><span class="line">	height: 7px;</span><br><span class="line">	position: absolute;</span><br><span class="line">	top: -7px;</span><br><span class="line">	width: 100%;</span><br><span class="line">	left: 0</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.error-page-main</span> <span class="selector-tag">h3</span> &#123;</span></span><br><span class="line">	font-size: 24px;</span><br><span class="line">	font-weight: 400;</span><br><span class="line"><span class="css">	<span class="selector-tag">border-bottom</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#d0d0d0</span></span></span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.error-page-main</span> <span class="selector-tag">h3</span> <span class="selector-tag">strong</span> &#123;</span></span><br><span class="line">	font-size: 54px;</span><br><span class="line">	font-weight: 400;</span><br><span class="line">	margin-right: 20px</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="css"><span class="selector-class">.error-page-main</span> <span class="selector-tag">h4</span> &#123;</span></span><br><span class="line">	font-size: 20px;</span><br><span class="line">	font-weight: 400;</span><br><span class="line"><span class="css">	<span class="selector-tag">color</span>: <span class="selector-id">#333</span></span></span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.error-page-actions</span> &#123;</span></span><br><span class="line">	font-size: 0;</span><br><span class="line">	z-index: 100</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.error-page-actions</span> <span class="selector-tag">div</span> &#123;</span></span><br><span class="line">	font-size: 14px;</span><br><span class="line">	display: inline-block;</span><br><span class="line">	padding: 30px 0 0 10px;</span><br><span class="line">	width: 50%;</span><br><span class="line">	-ms-box-sizing: border-box;</span><br><span class="line">	-webkit-box-sizing: border-box;</span><br><span class="line">	-moz-box-sizing: border-box;</span><br><span class="line">	box-sizing: border-box;</span><br><span class="line"><span class="css">	<span class="selector-tag">color</span>: <span class="selector-id">#838383</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="css"><span class="selector-class">.error-page-actions</span> <span class="selector-tag">ol</span> &#123;</span></span><br><span class="line">	list-style: decimal;</span><br><span class="line">	padding-left: 20px</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.error-page-actions</span> <span class="selector-tag">li</span> &#123;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">line-height</span>: 2<span class="selector-class">.5em</span></span></span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.error-page-actions</span><span class="selector-pseudo">:before</span> &#123;</span></span><br><span class="line">	content: '';</span><br><span class="line">	display: block;</span><br><span class="line">	position: absolute;</span><br><span class="line">	z-index: -1;</span><br><span class="line">	bottom: 17px;</span><br><span class="line">	left: 50px;</span><br><span class="line">	width: 200px;</span><br><span class="line">	height: 10px;</span><br><span class="line"><span class="css">	<span class="selector-tag">-moz-box-shadow</span>: 4<span class="selector-tag">px</span> 5<span class="selector-tag">px</span> 31<span class="selector-tag">px</span> 11<span class="selector-tag">px</span> <span class="selector-id">#999</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">-webkit-box-shadow</span>: 4<span class="selector-tag">px</span> 5<span class="selector-tag">px</span> 31<span class="selector-tag">px</span> 11<span class="selector-tag">px</span> <span class="selector-id">#999</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">box-shadow</span>: 4<span class="selector-tag">px</span> 5<span class="selector-tag">px</span> 31<span class="selector-tag">px</span> 11<span class="selector-tag">px</span> <span class="selector-id">#999</span>;</span></span><br><span class="line">	-moz-transform: rotate(-4deg);</span><br><span class="line">	-webkit-transform: rotate(-4deg);</span><br><span class="line">	-ms-transform: rotate(-4deg);</span><br><span class="line">	-o-transform: rotate(-4deg);</span><br><span class="line">	transform: rotate(-4deg)</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.error-page-actions</span><span class="selector-pseudo">:after</span> &#123;</span></span><br><span class="line">	content: '';</span><br><span class="line">	display: block;</span><br><span class="line">	position: absolute;</span><br><span class="line">	z-index: -1;</span><br><span class="line">	bottom: 17px;</span><br><span class="line">	right: 50px;</span><br><span class="line">	width: 200px;</span><br><span class="line">	height: 10px;</span><br><span class="line"><span class="css">	<span class="selector-tag">-moz-box-shadow</span>: 4<span class="selector-tag">px</span> 5<span class="selector-tag">px</span> 31<span class="selector-tag">px</span> 11<span class="selector-tag">px</span> <span class="selector-id">#999</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">-webkit-box-shadow</span>: 4<span class="selector-tag">px</span> 5<span class="selector-tag">px</span> 31<span class="selector-tag">px</span> 11<span class="selector-tag">px</span> <span class="selector-id">#999</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">box-shadow</span>: 4<span class="selector-tag">px</span> 5<span class="selector-tag">px</span> 31<span class="selector-tag">px</span> 11<span class="selector-tag">px</span> <span class="selector-id">#999</span>;</span></span><br><span class="line">	-moz-transform: rotate(4deg);</span><br><span class="line">	-webkit-transform: rotate(4deg);</span><br><span class="line">	-ms-transform: rotate(4deg);</span><br><span class="line">	-o-transform: rotate(4deg);</span><br><span class="line">	transform: rotate(4deg)</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"error-page"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"error-page-container"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"error-page-main"</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">h3</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">strong</span>&gt;</span>404<span class="tag">&lt;/<span class="name">strong</span>&gt;</span>很抱歉，您要访问的页面不存在！</span><br><span class="line">				<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"error-page-actions"</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">						<span class="tag">&lt;<span class="name">h4</span>&gt;</span>可能原因：<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">						<span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">							<span class="tag">&lt;<span class="name">li</span>&gt;</span>网络信号差不稳定<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">							<span class="tag">&lt;<span class="name">li</span>&gt;</span>找不到请求的页面<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">							<span class="tag">&lt;<span class="name">li</span>&gt;</span>输入的网址不正确<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">						<span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">						<span class="tag">&lt;<span class="name">h4</span>&gt;</span>可以尝试：<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">						<span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">							<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.rumoss.cn"</span>&gt;</span>返回首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">							<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>留言反馈<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">							<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>联系站长<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">						<span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>nginx中去配置:</p>
+<p>对应的nginx配置目录<code>/usr/local/nginx/conf/nginx.conf</code>,然后打开</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># redirect server error pages to the static page &#x2F;50x.html</span><br><span class="line">error_page   500 502 503 504 404 &#x2F;404x.html;</span><br><span class="line">location &#x3D; &#x2F;404x.html &#123;</span><br><span class="line">    root   html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><strong>我这个主题相对于landscape-plus来说修改了一些细节上的样式，好奇的话后面我会发一篇，具体的修改了哪些样式。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2018/03/12/technology20180312011233/" data-id="cmhlytugi004o11jjdkp0d0ww" class="article-share-link" data-share="baidu" data-title="Hexo博客landscape-plus新建分类写文章和基础配置介绍">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2018/03/12/technology20180312011233/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
+
+    </footer>
+  </div>
+  
+    <!-- 
+<nav id="article-nav">
+  
+    <a href="/2018/03/20/technology20180320113530/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          Hexo博客landscape-plus主题修改侧边栏颜色
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/02/technology20180302110621/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">Hexo博客landscape-plus加入评论系统Valine</div>
+    </a>
+  
+</nav>
+  -->
+
+
+
+
+
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2018/03/20/technology20180320113530/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><font size="2" color="#708090">下一篇 newer</font></strong>
+      <div class="article-nav-title">
+        
+          <font color="#555">Hexo博客landscape-plus主题修改侧边栏颜色</font>
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/02/technology20180302110621/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><font size="2" color="#708090">上一篇 older</font></strong>
+      <div class="article-nav-title"><font color="#555">Hexo博客landscape-plus加入评论系统Valine</font></div>
+    </a>
+   
+</nav>
+
+
+  
+</article>
+
+  <section id="comments">
+    <div id="valine_thread">
+      <div class="comment"></div>
+    </div>
+  </section>
+</section>
+      
+      <aside id="sidebar">
+  
+    
+<div class="widget-wrap">
+  <h3 class="widget-title">关于</h3>
+  <ul class="widget about-me">
+    
+    <li><img class="author" title="About me" src="/img/github.png" /></li>
+    
+    
+    <li ><font color="#424242" size="2em">苹果应用软件开发 & 游戏软件开发</font></li>
+    
+    <li ><font color="#424242" size="2em">email: ggb.chen@foxmail.com</font></li>
+    
+  </ul>
+</div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/charles/">charles</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocoapods/">cocoapods</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocosCreator/">cocosCreator</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/error/">error</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/knowledge/">knowledge</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/regexp/">regexp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/">诗</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%BD%AC%E5%BD%95/">转录</a><span class="category-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoapods/" rel="tag">cocoapods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/" rel="tag">flutter</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/" rel="tag">ios</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knowledge/" rel="tag">knowledge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/poetry/" rel="tag">poetry</a><span class="tag-list-count">46</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regexp/" rel="tag">regexp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology/" rel="tag">technology</a><span class="tag-list-count">28</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/android/" style="font-size: 11.67px;">android</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/cocosCreator/" style="font-size: 16.67px;">cocosCreator</a> <a href="/tags/flutter/" style="font-size: 11.67px;">flutter</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/ios/" style="font-size: 13.33px;">ios</a> <a href="/tags/knowledge/" style="font-size: 10px;">knowledge</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/poetry/" style="font-size: 20px;">poetry</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/technology/" style="font-size: 18.33px;">technology</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <!--<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">5</span></li></ul> -->
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">2025年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">2023年</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">2022年</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">2021年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">2020年</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019年</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">2017年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/11/05/technology20251105090825/">Sudoku Game Privacy Policy_ Zero Personal Data Collection, Pure Gaming Experience</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/14/technology20230314101225/">利用python脚本拆解游戏中的图集资源</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/10/technology20230210090112/">利用jekenis自动打包上传阿里云下载和通知钉钉机器人</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/21/technology20230121151206/">IOS项目脚本自动化批量打包并上传第三方平台</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/20/technology20230120161001/">IOS项目单独脚本自动化打包</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://github.com/kziwws" target="_blank">github</a>
+          </li>
+        
+          <li>
+            <a href="https://shevakuilin.com" target="_blank">shevakuilin</a>
+          </li>
+        
+          <li>
+            <a href="https://hans2936.github.io" target="_blank">hans2936</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 <a href="https://github.com/kziwws" target="_blank">kziwws</a> 
+      Powered by hexo,Theme by landscape-plus.
+    </div>
+    <div id="footer-info" class="inner">
+      本站博客采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank">[知识共享署名-非商业性使用-相同方式共享 3.0 中国大陆许可协议]</a> 进行许可
+    </div>
+  </div>
+</footer>
+
+
+<!--
+<div id="footer-info" class="inner">
+     &copy; 2025 kziwws<br>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+     .
+     Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+   </div>
+</div>
+-->
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/tags/technology" class="mobile-nav-link">编程技术</a>
+  
+    <a href="/tags/poetry" class="mobile-nav-link">诗</a>
+  
+    <a href="/tags/life" class="mobile-nav-link">生活随笔</a>
+  
+    <a href="/archives" class="mobile-nav-link">所有文章</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<!--载入js，在</body>之前插入即可-->
+    <!--Leancloud 操作库:-->
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!--Valine 的核心代码库-->
+    <script src="/js/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV, 
+            el: '.comment',
+            app_id: 'zh2N00Qk2UIsu1N8Qfu468TH-gzGzoHsz',
+            app_key: 'BJrjTSEoKMfc05OMLWhCzmHk',
+            placeholder: '想说点什么...',
+            pageSize: 15,
+            notify: false,
+            verify: false,
+        });
+    </script>
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+                processEscapes: true
+                    
+}
+  
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                  
+}
+    
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                            all[i].SourceElement().parentNode.className += ' has-jax';
+                                    
+            }
+                
+        });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+</div>
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="icon-search"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.local-search-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+                  
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><span id="icon-search"></span></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><span id="icon-frown"></span></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+          
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+</body>
+</html>
+

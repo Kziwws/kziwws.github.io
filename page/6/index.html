@@ -1,0 +1,2210 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>向🐑</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="向🐑">
+<meta property="og:url" content="https://kziwws.github.io/page/6/index.html">
+<meta property="og:site_name" content="向🐑">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="kziwws">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="向🐑" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  <!--  -->
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?51e08434b847b38641d02f11be4eb143";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">向🐑</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">一只站在树上的鸟，从来不害怕树枝突然折断，因为它相信的不是树枝，而是它自己的翅膀！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/tags/technology">编程技术</a>
+        
+          <a class="main-nav-link" href="/tags/poetry">诗</a>
+        
+          <a class="main-nav-link" href="/tags/life">生活随笔</a>
+        
+          <a class="main-nav-link" href="/archives">所有文章</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        
+        
+        <a href="javascript:;" class="popup-trigger nav-icon" id="nav-search-btn"></a>
+        
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="kziwws.github.io">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="local-search-inner"><div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <span id="icon-search"></span>
+    </span>
+    <span class="popup-btn-close">
+      <span id="icon-close"></span>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="本地搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div></div>
+</header>
+
+
+
+    <div class="outer">
+      <section id="main">
+  
+    <article id="post-technology20190305060134" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/05/technology20190305060134/" class="article-date">
+  <time datetime="2019-03-04T22:01:34.000Z" itemprop="datePublished">2019-03-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/regexp/">regexp</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/05/technology20190305060134/">基础正则表达式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>正则表达式</strong>，又称规则表达式<strong>。</strong>在代码中常简写为regex、regexp或RE，计算机科学的一个概念。正则表达式通常被用来检索、替换那些符合某个模式(规则)的文本。</p>
+<p>给定一个正则表达式和另一个字符串，我们可以达到如下的目的：</p>
+<blockquote>
+<p>给定的字符串是否符合正则表达式的过滤逻辑（“匹配”）；<br>通过正则表达式，从文本字符串中获取我们想要的特定部分（“过滤”）。</p>
+</blockquote>
+<h5 id="正则表达式匹配规则"><a href="#正则表达式匹配规则" class="headerlink" title="正则表达式匹配规则"></a>正则表达式匹配规则</h5><ul>
+<li><a href="#ZF_install">字符</a></li>
+<li><a href="#YDZF_install">预定义字符集</a>(可以写在字符集[…]中)</li>
+<li><a href="#SL_install">数量词</a>(用在字符或(…)之后)</li>
+<li><a href="#BJPP_install">边界匹配</a>(不消耗待匹配字符串中的字符)</li>
+<li><a href="#LJFZ_install">逻辑、分组</a></li>
+<li><a href="#TSGZ_install">特殊构造</a>(不作为分组)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">语法</th>
+<th align="left">说明</th>
+<th align="center">表达式实例</th>
+<th align="center">完整匹配的字符串</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="left"><a name='ZF_install'><strong><font color = red>字符</font></strong></a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">一般字符</td>
+<td align="left">匹配自身</td>
+<td align="center">abc</td>
+<td align="center">abc</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="left">匹配任意除换行符”\n”外的字符。在DOTALL模式中也能匹配换行符。</td>
+<td align="center">a.c</td>
+<td align="center">abc</td>
+</tr>
+<tr>
+<td align="center">\</td>
+<td align="left">转义字符，使后一个字符改变原来的意思,如果字符串中有字符<em>需要匹配，可以使用\</em>或者字符集[*].</td>
+<td align="center">a\.c   a\\c</td>
+<td align="center">a\c</td>
+</tr>
+<tr>
+<td align="center">[…]</td>
+<td align="left">字符集(字符类)。对应的位置可以是字符集中任意字符。字符集中的字符可以逐个列出，也可以给出范围，如[abc]或[a-c].第一个字符如果是^则表示取反，如[^abc]表示不是abc的其他字符。所有的特殊字符在字符集中都失去其原有的特俗含义。在字符集中如果要使用]、-或^,可以在前面加上反斜杠,或把]、-放在第一个字符，把^放在非第一个字符。</td>
+<td align="center">a[bcd]c</td>
+<td align="center">abe ace ade</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><a name='YDZF_install'><strong><font color = red>预定义字符集</font></strong></a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">\d</td>
+<td align="left">数字:[0-9]</td>
+<td align="center">a\dc</td>
+<td align="center">a1c</td>
+</tr>
+<tr>
+<td align="center">\D</td>
+<td align="left">非数字:[^\d]</td>
+<td align="center">a\Dc</td>
+<td align="center">abc</td>
+</tr>
+<tr>
+<td align="center">\s</td>
+<td align="left">空白字符:[&lt;空格&gt;\t\r\n\f\v]</td>
+<td align="center">a\sc</td>
+<td align="center">a c</td>
+</tr>
+<tr>
+<td align="center">\w</td>
+<td align="left">单词字符:[A-Z a-Z 0-9_]</td>
+<td align="center">a\wc</td>
+<td align="center">abc</td>
+</tr>
+<tr>
+<td align="center">\W</td>
+<td align="left">非单词字符:[^\W]</td>
+<td align="center">a\Wc</td>
+<td align="center">a c</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><a name='SL_install'><strong><font color = red>数量词</font></strong></a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="left">匹配前一个字符0或无限次</td>
+<td align="center">abc*</td>
+<td align="center">ab abcc</td>
+</tr>
+<tr>
+<td align="center">+</td>
+<td align="left">匹配前一个字符1次或无限次</td>
+<td align="center">abc+</td>
+<td align="center">abc abcc</td>
+</tr>
+<tr>
+<td align="center">?</td>
+<td align="left">匹配前一个字符0次或1次</td>
+<td align="center">abc?</td>
+<td align="center">ab abc abbc</td>
+</tr>
+<tr>
+<td align="center">{m}</td>
+<td align="left">匹配前一个字符m次</td>
+<td align="center">ab{2}c</td>
+<td align="center">abbc</td>
+</tr>
+<tr>
+<td align="center">{m,n}</td>
+<td align="left">匹配前一个字符m至n次。m和n可以省略:若省略m,则匹配0至n次；若省略n则匹配m至无限次。</td>
+<td align="center">ab{1,2}c</td>
+<td align="center">abc abbc</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><a name='BJPP_install'><strong><font color = red>边界匹配</font></strong></a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td align="left">匹配字符串开头。在多行模式中匹配每一行的开头</td>
+<td align="center">^abc</td>
+<td align="center">abc</td>
+</tr>
+<tr>
+<td align="center">$</td>
+<td align="left">匹配字符串末尾。在多行模式中匹配每一行的末尾</td>
+<td align="center">abc$</td>
+<td align="center">abc</td>
+</tr>
+<tr>
+<td align="center">\A</td>
+<td align="left">仅匹配字符串开头。</td>
+<td align="center">\Aabc</td>
+<td align="center">abc</td>
+</tr>
+<tr>
+<td align="center">\Z</td>
+<td align="left">仅匹配字符串末尾。</td>
+<td align="center">abc\Z</td>
+<td align="center">abc</td>
+</tr>
+<tr>
+<td align="center">\b</td>
+<td align="left">匹配字\w和\W之间。</td>
+<td align="center">a\b!bc</td>
+<td align="center">a!bc</td>
+</tr>
+<tr>
+<td align="center">\B</td>
+<td align="left">[^\b]</td>
+<td align="center">a\Bbc</td>
+<td align="center">abc</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><a name='LJFZ_install'><strong><font color = red>逻辑分组</font></strong></a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">|</td>
+<td align="left">|代表左右表达式任意匹配一个。它总是先尝试匹配左边的表达式，一旦成功匹配则跳过匹配右边的表达式。如果|没有被包括在()中,则它的范围是整个正则表达式。</td>
+<td align="center">abc|def</td>
+<td align="center">abc def</td>
+</tr>
+<tr>
+<td align="center">(…)</td>
+<td align="left">被括起来的表达式将作为分组，从表达式左边开始每遇到一个分组的左括号’(‘,编号+1.另外分组表达式作为一个整体,可以后接数量词。表达式中的|仅在该组中有效。</td>
+<td align="center">(abc){2} a{123|456)c</td>
+<td align="center">abcabc a456c</td>
+</tr>
+<tr>
+<td align="center">(?P&lt;name&gt;…)</td>
+<td align="left">分组除了原来的编号另外再指定一个额外的别名。</td>
+<td align="center">(?P&lt;id&gt;abc){2}</td>
+<td align="center">abcabc</td>
+</tr>
+<tr>
+<td align="center">\&lt;number&gt;</td>
+<td align="left">引用编号为&lt;number&gt;的分组匹配到的字符串。</td>
+<td align="center">(\d)abc\1</td>
+<td align="center">1abc1 5abc5</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><a name='TSGZ_install'><strong><font color = red>特殊构造</font></strong></a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">(?…)</td>
+<td align="left">(…)的部分组版本，用于使用”|”或后接数量词。</td>
+<td align="center">(?:abc){2}</td>
+<td align="center">abcabc</td>
+</tr>
+<tr>
+<td align="center">(?iLmsux)</td>
+<td align="left">iLmsux的每个字符代表一个匹配模式，只能用在正则表达式的开头，可选多个。匹配模式将在下文介绍。</td>
+<td align="center">(?i)abc</td>
+<td align="center">Abc</td>
+</tr>
+<tr>
+<td align="center">(?#…)</td>
+<td align="left">#后的内容将作为注释被忽略。</td>
+<td align="center">abc(?#comment)123</td>
+<td align="center">abc123</td>
+</tr>
+<tr>
+<td align="center">(?=…)</td>
+<td align="left">之后的字符串内容需要匹配表达式。才能成功匹配。不消耗字符串内容。</td>
+<td align="center">a(?=\d)后面是数字的a</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">(?!…)</td>
+<td align="left">之后的字符串内容需要不匹配表达式。才能成功匹配。不消耗字符串内容。</td>
+<td align="center">a(?!\d) 后面不是数字的a</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">(?&lt;=…)</td>
+<td align="left">之前的字符串内容需要匹配表达式。才能成功匹配。不消耗字符串内容。</td>
+<td align="center">a(?&lt;=\d)a 前面是数字的a</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">(?&lt;!…)</td>
+<td align="left">之前的字符串内容需要不匹配表达式。才能成功匹配。不消耗字符串内容。</td>
+<td align="center">a(?&lt;!\d)a 前面不是数字的a</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>表达式</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">[abc]</td>
+<td>字符集。匹配集合中所含的任一字符。</td>
+</tr>
+<tr>
+<td align="center">[^abc]</td>
+<td>否定字符集。匹配任何不在集合中的字符。</td>
+</tr>
+<tr>
+<td align="center">[a-z]</td>
+<td>字符范围。匹配指定范围内的任意字符。</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td>匹配除换行符以外的任何单个字符。</td>
+</tr>
+<tr>
+<td align="center">\</td>
+<td>转义字符。</td>
+</tr>
+<tr>
+<td align="center">\w</td>
+<td>匹配任何字母数字，包括下划线（等价于<code>[A-Za-z0-9_]</code>）。</td>
+</tr>
+<tr>
+<td align="center">\W</td>
+<td>匹配任何非字母数字（等价于<code>[^A-Za-z0-9_]</code>）。</td>
+</tr>
+<tr>
+<td align="center">\d</td>
+<td>数字。匹配任何数字。</td>
+</tr>
+<tr>
+<td align="center">\D</td>
+<td>非数字。匹配任何非数字字符。</td>
+</tr>
+<tr>
+<td align="center">\s</td>
+<td>空白。匹配任何空白字符，包括空格、制表符等。</td>
+</tr>
+<tr>
+<td align="center">\S</td>
+<td>非空白。匹配任何非空白字符。</td>
+</tr>
+<tr>
+<td align="center">(expression)</td>
+<td>分组。匹配括号里的整个表达式。</td>
+</tr>
+<tr>
+<td align="center">(?:expression)</td>
+<td>非捕获分组。匹配括号里的整个字符串但不获取匹配结果，拿不到分组引用。</td>
+</tr>
+<tr>
+<td align="center">\num</td>
+<td>对前面所匹配分组的引用。比如<code>(\d)\1</code>可以匹配两个相同的数字，<code>(Code)(Sheep)\1\2</code>则可以匹配<code>CodeSheepCodeSheep</code>。</td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td>匹配字符串或行开头。</td>
+</tr>
+<tr>
+<td align="center">$</td>
+<td>匹配字符串或行结尾。</td>
+</tr>
+<tr>
+<td align="center">\b</td>
+<td>匹配单词边界。比如Sheep\b可以匹配CodeSheep末尾的Sheep，不能匹配CodeSheepCode中的Sheep</td>
+</tr>
+<tr>
+<td align="center">\B</td>
+<td>匹配非单词边界。比如Code\B可以匹配HelloCodeSheep中的Code，不能匹配HelloCode中的Code。</td>
+</tr>
+<tr>
+<td align="center">?</td>
+<td>匹配前面的表达式0个或1个。即表示可选项。</td>
+</tr>
+<tr>
+<td align="center">+</td>
+<td>匹配前面的表达式至少1个。</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>匹配前面的表达式0个或多个。</td>
+</tr>
+<tr>
+<td align="center">|</td>
+<td>或运算符。并集，可以匹配符号前后的表达式。</td>
+</tr>
+<tr>
+<td align="center">{m}</td>
+<td>匹配前面的表达式m个。</td>
+</tr>
+<tr>
+<td align="center">{m,}</td>
+<td>匹配前面的表达式最少m个。</td>
+</tr>
+<tr>
+<td align="center">{m,n}</td>
+<td>匹配前面的表达式最少m个，最多n个。</td>
+</tr>
+<tr>
+<td align="center">(?=)</td>
+<td>正向预查。比如Code(?=Sheep)能匹配CodeSheep中的Code，但不能匹配CodePig中的Code。</td>
+</tr>
+<tr>
+<td align="center">(?!)</td>
+<td>正向否定预查。比如`Code(?!Sheep)不能匹配CodeSheep中的Code，但能匹配CodePig中的Code。</td>
+</tr>
+<tr>
+<td align="center">(?&lt;=)</td>
+<td>反向预查。比如(?&lt;=Code)Sheep能匹配CodeSheep中的Sheep，但不能匹配`ReadSheep中的Sheep。</td>
+</tr>
+<tr>
+<td align="center">(?&lt;!)</td>
+<td>反向否定预查。比如(?&lt;!Code)Sheep不能匹配CodeSheep中的Sheep，但能匹配`ReadSheep中的Sheep。</td>
+</tr>
+<tr>
+<td align="center">/…/i</td>
+<td>忽略大小写。</td>
+</tr>
+<tr>
+<td align="center">/…/g</td>
+<td>全局匹配。</td>
+</tr>
+<tr>
+<td align="center">/…/m</td>
+<td>多行修饰符。用于多行匹配。</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>数字校验</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>描述</strong></th>
+<th><strong>正则表达式</strong></th>
+<th><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数字</td>
+<td><code>^[0-9]*$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>n位数字</td>
+<td><code>^\d{n}$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>至少n位数字</td>
+<td><code>^\d{n,}$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>m~n位数字</td>
+<td><code>^\d{m,n}$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>整数</td>
+<td><code>^(-?[1-9]\d*)$</code></td>
+<td>非0开头，包括正整数和负整数</td>
+</tr>
+<tr>
+<td>正整数</td>
+<td><code>^[1-9]\d*$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>负整数</td>
+<td><code>^-[1-9]\d*$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>非负整数</td>
+<td>`^(([1-9]\d*)</td>
+<td>0)$`</td>
+</tr>
+<tr>
+<td>非正整数</td>
+<td>`^((-[1-9]\d*)</td>
+<td>0)$`</td>
+</tr>
+<tr>
+<td>浮点数</td>
+<td>`^-?(?:[1-9]\d<em>.\d</em></td>
+<td>0.\d<em>[1-9]\d</em></td>
+</tr>
+<tr>
+<td>正浮点数</td>
+<td>`^(?:[1-9]\d<em>.\d</em></td>
+<td>0.\d<em>[1-9]\d</em>)$`</td>
+</tr>
+<tr>
+<td>负浮点数</td>
+<td>`^-(?:[1-9]\d<em>.\d</em></td>
+<td>0.\d<em>[1-9]\d</em>)$`</td>
+</tr>
+<tr>
+<td>非正浮点数</td>
+<td>`^(?:-(?:[1-9]\d*.\d+</td>
+<td>0.\d<em>[1-9]\d</em>)</td>
+</tr>
+<tr>
+<td>非负浮点数</td>
+<td>`^(?:[1-9]\d*.\d+</td>
+<td>0.\d+</td>
+</tr>
+<tr>
+<td>仅一位小数</td>
+<td>`^-?(?:0</td>
+<td>[1-9][0-9]*).[0-9]{1}$`</td>
+</tr>
+<tr>
+<td>最少一位小数</td>
+<td>`^-?(?:0</td>
+<td>[1-9][0-9]*).[0-9]{1,}$`</td>
+</tr>
+<tr>
+<td>最多两位小数</td>
+<td>`^-?(?:0</td>
+<td>[1-9][0-9]*).[0-9]{1,2}$`</td>
+</tr>
+<tr>
+<td>连续重复的数字</td>
+<td><code>^(\d)\1+$</code></td>
+<td>例如：<code>111</code>，<code>222</code></td>
+</tr>
+</tbody></table>
+<hr>
+<ul>
+<li><strong>字符校验</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>描述</strong></th>
+<th><strong>正则表达式</strong></th>
+<th><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>中文</td>
+<td><code>^[\u4E00-\u9FA5]+$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>全角字符</td>
+<td><code>^[\uFF00-\uFFFF]+$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>半角字符</td>
+<td><code>^[\u0000-\u00FF]+$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>英文字符串（大写）</td>
+<td><code>^[A-Z]+$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>英文字符串（小写）</td>
+<td><code>^[a-z]+$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>英文字符串（不区分大小写）</td>
+<td><code>^[A-Za-z]+$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>中文和数字</td>
+<td>`^(?:[\u4E00-\u9FA5]{0,}</td>
+<td>\d)+$`</td>
+</tr>
+<tr>
+<td>英文和数字</td>
+<td><code>^[A-Za-z0-9]+$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>数字、英文字母或者下划线组成的字符串</td>
+<td><code>^\w+$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>中文、英文、数字包括下划线</td>
+<td><code>^[\u4E00-\u9FA5\w]+$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>不含字母的字符串</td>
+<td><code>^[^A-Za-z]*$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>连续重复的字符串</td>
+<td><code>^(.)\1+$</code></td>
+<td>例如：<code>aa</code>，<code>bb</code></td>
+</tr>
+<tr>
+<td>长度为n的字符串</td>
+<td><code>^.{n}$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>ASCII</td>
+<td><code>^[ -~]$</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<ul>
+<li><strong>日期和时间校验</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>描述</strong></th>
+<th><strong>正则表达式</strong></th>
+<th><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>日期</td>
+<td>`^\d{1,4}-(?:1[0-2]</td>
+<td>0?[1-9])-(?:0?[1-9]</td>
+</tr>
+<tr>
+<td>日期</td>
+<td>`^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]</td>
+<td>1[0-2])-(?:0[1-9]</td>
+</tr>
+<tr>
+<td>时间</td>
+<td>`^(?:1[0-2]</td>
+<td>0?[1-9]):[0-5]\d:[0-5]\d$`</td>
+</tr>
+<tr>
+<td>时间</td>
+<td>`^(?:[01]\d</td>
+<td>2[0-3]):[0-5]\d:[0-5]\d$`</td>
+</tr>
+<tr>
+<td>日期+时间</td>
+<td>`^(\d{1,4}-(?:1[0-2]</td>
+<td>0?[1-9])-(?:0?[1-9]</td>
+</tr>
+</tbody></table>
+<hr>
+<ul>
+<li><strong>日常生活相关</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>描述</strong></th>
+<th><strong>正则表达式</strong></th>
+<th><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>中文名</td>
+<td><code>^[\u4E00-\u9FA5·]{2,16}$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>英文名</td>
+<td><code>^[a-zA-Z][a-zA-Z\s]{0,20}[a-zA-Z]$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>车牌号</td>
+<td><code>^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领][A-HJ-NP-Z][A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳]$</code></td>
+<td>不含新能源</td>
+</tr>
+<tr>
+<td>车牌号</td>
+<td>`^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领]<a href="?:(?:[A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳]">A-HJ-NP-Z</a></td>
+<td>(?:(?:\d{5}[A-HJK])</td>
+</tr>
+<tr>
+<td>火车车次</td>
+<td><code>^[GCDZTSPKXLY1-9]\d{1,4}$</code></td>
+<td>例如：<code>G1234</code></td>
+</tr>
+<tr>
+<td>手机号</td>
+<td>`^(?:(?:+</td>
+<td>00)86)?1[3-9]\d{9}$`</td>
+</tr>
+<tr>
+<td>手机号</td>
+<td>`^(?:(?:+</td>
+<td>00)86)?1(?:(?:3[\d])</td>
+</tr>
+<tr>
+<td>固话号码</td>
+<td>`^(?:(?:\d{3}-)?\d{8}</td>
+<td>^(?:\d{4}-)?\d{7,8})(?:-\d+)?$`</td>
+</tr>
+<tr>
+<td>手机IMEI码</td>
+<td><code>^\d{15,17}$</code></td>
+<td>一般是15位</td>
+</tr>
+<tr>
+<td>邮编</td>
+<td>`^(?:0[1-7]</td>
+<td>1[0-356]</td>
+</tr>
+<tr>
+<td>统一社会信用代码</td>
+<td><code>^[0-9A-HJ-NPQRTUWXY]{2}\d{6}[0-9A-HJ-NPQRTUWXY]{10}$</code></td>
+<td></td>
+</tr>
+<tr>
+<td>身份证号码(1代)</td>
+<td>`^[1-9]\d{7}(?:0\d</td>
+<td>10</td>
+</tr>
+<tr>
+<td>身份证号码(2代)</td>
+<td>`^[1-9]\d{5}(?:18</td>
+<td>19</td>
+</tr>
+<tr>
+<td>QQ号</td>
+<td><code>^[1-9][0-9]{4,}$</code></td>
+<td>一般是5到10位</td>
+</tr>
+<tr>
+<td>微信号</td>
+<td><code>^[a-zA-Z][-_a-zA-Z0-9]{5,19}$</code></td>
+<td>一般6~20位，字母开头，可包含字母、数字、-、_，不含特殊字符</td>
+</tr>
+<tr>
+<td>股票代码</td>
+<td>`^(s[hz]</td>
+<td>S[HZ])(000[\d]{3}</td>
+</tr>
+<tr>
+<td>银行卡卡号</td>
+<td>`^[1-9]{1}(?:\d{15}</td>
+<td>\d{18})$`</td>
+</tr>
+</tbody></table>
+<hr>
+<ul>
+<li><strong>互联网相关</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>描述</strong></th>
+<th><strong>正则表达式</strong></th>
+<th><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>域名</td>
+<td><code>^[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+$</code></td>
+<td>例如：<code>r2coding.com</code></td>
+</tr>
+<tr>
+<td>网址</td>
+<td><code>^(?:https?:\/\/)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+$</code></td>
+<td>例如：<code>https://www.r2coding.com/</code></td>
+</tr>
+<tr>
+<td>带端口号的网址(或IP)</td>
+<td><code>^(?:https?:\/\/)?[\w-]+(?:\.[\w-]+)+:\d{1,5}\/?$</code></td>
+<td>例如：<code>http://127.0.0.1:8888/</code></td>
+</tr>
+<tr>
+<td>URL</td>
+<td><code>^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()!@:%_\+.~#?&amp;\/\/=]*)$</code></td>
+<td>例如：<code>https://www.r2coding.com/#/README?id=1</code></td>
+</tr>
+<tr>
+<td>邮箱email</td>
+<td><code>^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+$</code></td>
+<td>支持中文，例如：<code>codesheep@cs.com</code></td>
+</tr>
+<tr>
+<td>用户名</td>
+<td><code>^[a-zA-Z0-9_-]{4,20}$</code></td>
+<td>4到20位</td>
+</tr>
+<tr>
+<td>弱密码</td>
+<td><code>^[\w]{6,16}$</code></td>
+<td>6~16位，包含大小写字母和数字的组合</td>
+</tr>
+<tr>
+<td>强密码</td>
+<td><code>^.*(?=.{6,})(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@\.#$%^&amp;*? ]).*$</code></td>
+<td>至少6位，包括至少1个大写字母，1个小写字母，1个数字，1个特殊字符</td>
+</tr>
+<tr>
+<td>端口号</td>
+<td>`^(?:[0-9]</td>
+<td>[1-9][0-9]{1,3}</td>
+</tr>
+<tr>
+<td>IPv4地址</td>
+<td>`^(?:(?:\d</td>
+<td>[1-9]\d</td>
+</tr>
+<tr>
+<td>IPv4地址+端口</td>
+<td>`^(?:(?:\d</td>
+<td>[1-9]\d</td>
+</tr>
+<tr>
+<td>IPv6地址</td>
+<td>`^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}</td>
+<td>([0-9a-fA-F]{1,4}:){1,7}:</td>
+</tr>
+<tr>
+<td>IPv6地址+端口</td>
+<td>`^[(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}</td>
+<td>([0-9a-fA-F]{1,4}:){1,7}:</td>
+</tr>
+<tr>
+<td>子网掩码</td>
+<td>`^(?:254</td>
+<td>252</td>
+</tr>
+<tr>
+<td>MAC地址</td>
+<td>`^(?:(?:[a-f0-9A-F]{2}:){5}</td>
+<td>(?:[a-f0-9A-F]{2}-){5})[a-f0-9A-F]{2}$`</td>
+</tr>
+<tr>
+<td>Version版本号</td>
+<td><code>^\d+(?:\.\d+){2}$</code></td>
+<td>例如：<code>12.1.1</code></td>
+</tr>
+<tr>
+<td>图片后缀</td>
+<td>`.(gif</td>
+<td>png</td>
+</tr>
+<tr>
+<td>视频后缀</td>
+<td>`.(swf</td>
+<td>avi</td>
+</tr>
+<tr>
+<td>图片链接</td>
+<td>`(?:https?://)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+.+.(gif</td>
+<td>png</td>
+</tr>
+<tr>
+<td>视频链接</td>
+<td>`(?:https?://)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+.+.(swf</td>
+<td>avi</td>
+</tr>
+<tr>
+<td>迅雷链接</td>
+<td><code>thunderx?:\/\/[a-zA-Z\d]+=</code></td>
+<td></td>
+</tr>
+<tr>
+<td>ed2k链接</td>
+<td><code>ed2k:\/\/|file|.+|\/</code></td>
+<td></td>
+</tr>
+<tr>
+<td>磁力链接</td>
+<td><code>magnet:\?xt=urn:btih:[0-9a-fA-F]{40,}.*</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<ul>
+<li><strong>其他</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>描述</strong></th>
+<th><strong>正则表达式</strong></th>
+<th><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MD5格式</td>
+<td>`^(?:[a-f\d]{32}</td>
+<td>[A-F\d]{32})$`</td>
+</tr>
+<tr>
+<td>BASE64格式</td>
+<td><code>^\s*data:(?:[a-z]+\/[a-z0-9-+.]+(?:;[a-z-]+=[a-z0-9-]+)?)?(?:;base64)?,([a-z0-9!$&amp;&#39;,()*+;=\-._~:@/?%\s]*?)\s*$</code></td>
+<td>例如：<code>data:image/jpeg;base64,xxxx==</code></td>
+</tr>
+<tr>
+<td>UUID</td>
+<td><code>^[a-f\d]{4}(?:[a-f\d]{4}-){4}[a-f\d]{12}$</code></td>
+<td>例如：<code>94f9d45a-71b0-4b3c-b69d-20c4bc9c8fdd</code></td>
+</tr>
+<tr>
+<td>16进制</td>
+<td><code>^[A-Fa-f0-9]+$</code></td>
+<td>例如：<code>FFFFFF</code></td>
+</tr>
+<tr>
+<td>16进制颜色</td>
+<td>`^#?([0-9a-fA-F]{3}</td>
+<td>[0-9a-fA-F]{6})$`</td>
+</tr>
+<tr>
+<td>SQL语句</td>
+<td>`^(?:select</td>
+<td>drop</td>
+</tr>
+<tr>
+<td>Java包名</td>
+<td><code>^(?:[a-zA-Z_]\w*)+(?:[.][a-zA-Z_]\w*)+$</code></td>
+<td>例如：<code>com.r2coding.controller</code></td>
+</tr>
+<tr>
+<td>文件扩展名</td>
+<td>`.(?:doc</td>
+<td>pdf</td>
+</tr>
+<tr>
+<td>Windows文件路径</td>
+<td><code>^[a-zA-Z]:(?:\\[\w\u4E00-\u9FA5\s]+)+[.\w\u4E00-\u9FA5\s]+$</code></td>
+<td>例如：<code>C:\Users\Administrator\Desktop\a.txt</code></td>
+</tr>
+<tr>
+<td>Windows文件夹路径</td>
+<td><code>^[a-zA-Z]:(?:\\[\w\u4E00-\u9FA5\s]+)+$</code></td>
+<td>例如：<code>C:\Users\Administrator\Desktop</code></td>
+</tr>
+<tr>
+<td>Linux文件路径</td>
+<td><code>^\/(?:[^/]+\/)*[^/]+$</code></td>
+<td>例如：<code>/root/library/a.txt</code></td>
+</tr>
+<tr>
+<td>Linux文件夹路径</td>
+<td><code>^\/(?:[^/]+\/)*$</code></td>
+<td>例如：<code>/root/library/</code></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2019/03/05/technology20190305060134/" data-id="cmhlytugj005c11jjbg8oapl6" class="article-share-link" data-share="baidu" data-title="基础正则表达式">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2019/03/05/technology20190305060134/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/regexp/" rel="tag">regexp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-poetry20190122003921" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/22/poetry20190122003921/" class="article-date">
+  <time datetime="2019-01-21T16:39:21.000Z" itemprop="datePublished">2019-01-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%97/">诗</a>►<a class="article-category-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/22/poetry20190122003921/">《故乡桃花》</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>十里桃花<br>三月情染风韵年华<br>冰冷指间<br>难解落雁为谁红霞<br>飘洒延绵风纱<br>漫天定温婉如画<br>空留一毯绿叶红花<br>故乡的桃花<br>风悠悠相思寄眉头<br>十里桃花<br>倔强的年华<br>挥洒热血<br>梦里烟花<br>三春遗落成过往<br>缠绵成桂香<br>镜花水月<br>回眸映前世三千姻缘<br>故乡那时的桃花</p>
+<p>by:霜</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2019/01/22/poetry20190122003921/" data-id="cmhlytugf002o11jjcys03mht" class="article-share-link" data-share="baidu" data-title="《故乡桃花》">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2019/01/22/poetry20190122003921/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poetry/" rel="tag">poetry</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-technology20190112101223" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/12/technology20190112101223/" class="article-date">
+  <time datetime="2019-01-12T02:12:23.000Z" itemprop="datePublished">2019-01-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/12/technology20190112101223/">Python基础语法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><font color="#4183C4">1、</font>以单下划线开头 _foo 的代表不能直接访问的类属性，需通过类提供的接口进行访问，不能用 from xxx import * 而导入。</p>
+<p><font color="#4183C4">2、</font>以双下划线开头的_<em>foo 代表类的私有成员，以双下划线开头和结尾的_<em>foo</em></em> 代表 Python 里特殊方法专用的标识，如_<em>init_</em>() 代表类的构造函数。</p>
+<p><font color="#4183C4">3、</font>Python 的关键字只包含小写字母，and、exec、not、assert、finally、or、break、for    pass、class、from、print、continue、global    、raise、def、if、return、del、import、try、elif、in、while、else、is、with、except、lambda、yield。</p>
+<p><font color="#4183C4">4、</font>缩进的空白数量是可变的，但是所有代码块语句必须包含相同的缩进空白数量，这个必须严格执行。</p>
+<p><font color="#4183C4">5、</font>Python语句中一般以新行作为语句的结束符，一行可以执行多个语句用;分开，可以使用斜杠\将一行的语句分为多行显示。</p>
+<p><font color="#4183C4">6、</font>使用引号( ‘ )、双引号( “ )、三引号( ‘’’ 或 “”” ) 来表示字符串，三引号可以由多行组成，编写多行文本的快捷语法，常用于文档字符串，在文件的特定地点，被当做注释。</p>
+<p><font color="#4183C4">7、</font>python中单行注释采用 # 开头，多行注释使用三个单引号(‘’’)或三个双引号(“””)。</p>
+<p><font color="#4183C4">8、</font>print 默认输出是换行的，如果要实现不换行需要在变量末尾加上逗号 ,。</p>
+<p><font color="#4183C4">9、</font>Python 中的变量赋值不需要类型声明，每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建。</p>
+<p><font color="#4183C4">10、</font>标准数据类型，Numbers（数字）、String（字符串）、List（列表）、Tuple（元组）、Dictionary（字典）。</p>
+<p><font color="#4183C4">11、</font>Python支持四种不同的数字类型，int（有符号整型）、long（长整型[也可以代表八进制和十六进制])、float（浮点型）、complex（复数）</p>
+<p><font color="#4183C4">12、</font>Python 还支持复数，复数由实数部分和虚数部分构成，可以用 a + bj,或者 complex(a,b) 表示， 复数的实部 a 和虚部 b 都是浮点型。 </p>
+<p><font color="#4183C4">13、</font>字符串截取 [头下标:尾下标] 获取的子字符串包含头下标的字符，但不包含尾下标的字符。例如 s = ‘abcdef’ s[1:5] 输出’bcde’，s[2:]，输出从第三个字符开始的字符串 s[1] 的值 b ，s[5] 的值 f。</p>
+<p><font color="#4183C4">14、</font>列表相当于IOS中的数组。截取可以接收第三个参数，参数作用是截取的步长，以下实例在索引 1 到索引 4 的位置并设置为步长为 2（间隔一个位置）来截取字符串，如：ss = [‘c’,’h’,’e’,’c’,’k’,’i’,’o’] ss[1:4:2] 结果为[‘h’,’c’]。</p>
+<p><font color="#4183C4">15、</font>加号（+）是字符串连接运算符 str + “TEST” ，星号（*）是重复操作 s * 2 输出字符串两次。</p>
+<p><font color="#4183C4">16、</font>元组是另一个数据类型，类似于 List（列表）。元组用 () 标识。内部元素用逗号隔开。但是元组不能二次赋值，相当于只读列表。tuple = ( ‘runoob’, 786 , 2.23, ‘john’, 70.2 ) list = [ ‘runoob’, 786 , 2.23, ‘john’, 70.2 ] tuple[2] = 1000 元组中是非法应用 list[2] = 1000 列表中是合法应用</p>
+<p><font color="#4183C4">17、</font>pythan中的字典当中的元素是通过键来存取的，而不是通过偏移存取。字典用”{ }”标识。字典由索引(key)和它对应的值value组成。dict.keys()取出所有键 dict.values()取出所有值 和IOS基本无异。</p>
+<p><font color="#4183C4">18、</font>数据类型转换 float(x) 将x转换到一个浮点数 int(x [,base])将x转换为一个整数 str(x) 将对象 x 转换为字符串 set(s) 转换为可变集合 dict(d) 创建一个字典。d 必须是一个序列 (key,value)元组。</p>
+<p><font color="#4183C4">19、</font>算术运算符，这儿介绍一个// 取整除 - 返回商的整数部分（向下取整）9//2 4 和js基本无异。</p>
+<p><font color="#4183C4">20、</font>Python身份运算符 is 是判断两个标识符是不是引用自一个对象 x is y,  id() 函数用于获取对象内存地址 类似 id(x) == id(y) , 如果引用的是同一个对象则返回 True，否则返回 False is not 是判断两个标识符是不是引用自不同对象</p>
+<p><font color="#4183C4">21、</font>is 与 == 区别 is 用于判断两个变量引用对象是否为同一个(同一块内存空间)， == 用于判断引用变量的值是否相等。</p>
+<p><font color="#4183C4">22、</font>简单的语句，可以在同一行的位置上使用if条件判断语句，如：var = 100 ;if ( var  == 100 ) : print “变量 var 的值为100” .</p>
+<p><font color="#4183C4">23、</font>Python for 循环语句 for iterating_var in sequence: statements(s) for letter in ‘Python’:     # 第一个实例  print ‘当前字母 :’, letter </p>
+<p><font color="#4183C4">24、 </font>使用 class 语句来创建一个新类，class 之后为类的名称并以冒号结尾:<br>class Employee:<br>   ‘所有员工的基类’<br>   empCount = 0</p>
+<p>   def <strong>init</strong>(self, name, salary):<br>      self.name = name<br>      self.salary = salary<br>      Employee.empCount += 1</p>
+<p>   def displayCount(self):<br>     print “Total Employee %d” % Employee.empCount</p>
+<p>   def displayEmployee(self):<br>      print “Name : “, self.name,  “, Salary: “, self.salary</p>
+<p>empCount 变量是一个类变量，它的值将在这个类的所有实例之间共享。你可以在内部类或外部类使用 Employee.empCount 访问。第一种方法<strong>init</strong>()方法是一种特殊的方法，被称为类的构造函数或初始化方法，当创建了这个类的实例时就会调用该方法，self 代表类的实例，self 在定义类的方法时是必须有的，虽然在调用时不必传入相应的参数。</p>
+<p><font color="#4183C4">25、</font>self代表类的实例，而非类 类的方法与普通的函数只有一个特别的区别——它们必须有一个额外的第一个参数名称, 按照惯例它的名称是 self。<br>class Test:<br>    def prt(self):<br>        print(self)<br>        print(self.<strong>class</strong>)</p>
+<p>t = Test()<br>t.prt()</p>
+<p><font color="#4183C4">26、</font>使用点号 . 来访问对象的属性。使用如下类的名称访问类变量:</p>
+<p>emp1.displayEmployee()<br>emp2.displayEmployee()<br>print “Total Employee %d” % Employee.empCount</p>
+<p>也可以删除 del emp1.age  # 删除 ‘age’ 属性</p>
+<p>hasattr(emp1, ‘age’)    # 如果存在 ‘age’ 属性返回 True。<br>getattr(emp1, ‘age’)    # 返回 ‘age’ 属性的值<br>setattr(emp1, ‘age’, 8) # 添加属性 ‘age’ 值为 8<br>delattr(emp1, ‘age’)    # 删除属性 ‘age’</p>
+<p><font color="#4183C4">27、</font>pythan可以多继承，继承过后父类方法的功能不能满足你的需求，子类重写你父类的方法。你可以使用issubclass()或者isinstance()方法来检测。issubclass() - 布尔函数判断一个类是另一个类的子类或者子孙类，语法：issubclass(sub,sup)， isinstance(obj, Class) 布尔函数如果obj是Class类的实例对象或者是一个Class子类的实例对象则返回true。</p>
+<p><font color="#4183C4">28、</font>Python同样支持运算符重载，实例如下：</p>
+<p>class Vector:<br>   def _<em>init_</em>(self, a, b):<br>      self.a = a<br>      self.b = b</p>
+<p>   def _<em>str_</em>(self):<br>      return ‘Vector (%d, %d)’ % (self.a, self.b)</p>
+<p>   def_<em>add_</em>(self,other):<br>      return Vector(self.a + other.a, self.b + other.b)</p>
+<p>v1 = Vector(2,10)<br>v2 = Vector(5,-2)<br>print v1 + v2<br>结果：Vector(7,8)</p>
+<p><font color="#4183C4">29、</font>类的私有属性__private_attrs：两个下划线开头，声明该属性为私有，不能在类的外部被使用或直接访问。在类内部的方法中使用时 self.__private_attrs，在类的内部，使用 def 关键字可以为类定义一个方法，与一般函数定义不同，类方法必须包含参数 self,且为第一个参数。</p>
+<p><font color="#4183C4">30、</font>单下划线、双下划线、头尾双下划线说明：<br>_<em>foo_</em>: 定义的是特殊方法，一般是系统定义名字 ，类似_<em>init_</em>() 之类的。</p>
+<p> _foo: 以单下划线开头的表示的是 protected 类型的变量，即保护类型只能允许其本身与子类进行访问，不能用于 from module import *</p>
+<p>__foo: 双下划线的表示的是私有类型(private)的变量, 只能是允许这个类本身进行访问了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2019/01/12/technology20190112101223/" data-id="cmhlytugi004k11jjggjj7jsz" class="article-share-link" data-share="baidu" data-title="Python基础语法">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2019/01/12/technology20190112101223/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-poetry20181223024620" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/23/poetry20181223024620/" class="article-date">
+  <time datetime="2018-12-22T18:46:20.000Z" itemprop="datePublished">2018-12-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%97/">诗</a>►<a class="article-category-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/23/poetry20181223024620/">《再无春夏与秋冬》</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>凡尘疑似千非尽<br>生命有时就像花开时<br>花开蝶影总会有好多顾虑<br>也许都隐藏了自己的多少秘密<br>生活不知道诉说了多少不甘和苦涩<br>又在黑夜里放纵了多少笙歌<br>灵魂里沉睡的自己<br>不知道何时会有希望和光明<br>一个又一个的懦弱和胆怯<br>一个又一个的倾述和陪伴<br>时间里的那些人<br>永远总会有人去你不该去的地方<br>做你不可能做的事情<br>你不理解她的过去<br>也不明白她的未来<br>所有存储在大脑里的絮物<br>都像风一样<br>有的飘走<br>有的视如自己犹如生命的东西<br>都在漠然里退场<br>有时候不知道是岁月伤害了我<br>还是承诺辜负了岁月<br>当你拼命去想拯救的东西<br>后来都变成新的曲殇<br>有时候很想问<br>这个世界上哪有沾满鲜血的手<br>是不去曾经掏过别人的心的<br>枝头的鸟<br>明天会迎来新的黎明<br>岁月的伤痕<br>永远都会慢慢流失<br>只是生活不曾实现过承诺<br>也没能挽救那只<br>想要日落黄昏归去的小鸟<br>于是一次又一次的在夜幕里<br>黑暗笼罩了它的双眼<br>再也找不到自己的方向<br>如果小鸟饮的不是淡水<br>那它应该也不会”食盐”吧<br>在黑夜里寂静的死亡<br>等待的又一个黎明<br>只是再无那只小鸟<br>再无春夏与秋冬</p>
+<p>by:霜</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2018/12/23/poetry20181223024620/" data-id="cmhlytugc000t11jjcanj139r" class="article-share-link" data-share="baidu" data-title="《再无春夏与秋冬》">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2018/12/23/poetry20181223024620/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poetry/" rel="tag">poetry</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-technology20181110040214" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/10/technology20181110040214/" class="article-date">
+  <time datetime="2018-11-09T20:02:14.000Z" itemprop="datePublished">2018-11-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/git/">git</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/10/technology20181110040214/">使用git在码云gitee和github上提交代码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><a href="https://gitee.com/login" target="_blank" rel="noopener">gitee码云</a></strong> </p>
+<p>这儿我以我自己的 BankLoans 这个仓库名为例。对应的仓库地址为<a href="https://gitee.com/Kziwws/BankLoans.git" target="_blank" rel="noopener">https://gitee.com/Kziwws/BankLoans.git</a></p>
+<ul>
+<li><strong>第一种</strong> ：向仓库里提交代码，是从项目上拉取下来，然后修改了再提交上去。</li>
+<li><strong>第二种</strong>：仓库为空的，直接将本地连接到此仓库，然后再全部提交上去。</li>
+</ul>
+<h4 id="方法一、先将仓库clone到本地，修改后再push到码云的仓库仓库。"><a href="#方法一、先将仓库clone到本地，修改后再push到码云的仓库仓库。" class="headerlink" title="方法一、先将仓库clone到本地，修改后再push到码云的仓库仓库。"></a>方法一、先将仓库clone到本地，修改后再push到码云的仓库仓库。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;gitee.com&#x2F;Kziwws&#x2F;BankLoans.git #将远程仓库克隆到本地</span><br></pre></td></tr></table></figure>
+
+<p>克隆下来过后，找到这个文件路径，mac端的话 cd 然后拖入回车就好了.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;~你的目录路径</span><br></pre></td></tr></table></figure>
+
+<p>修改代码后,在仓库目录下执行下面命令，将当前目录所有文件添加到git暂存区</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+<p>提交并备注提交信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;项目第一次上传&quot;</span><br></pre></td></tr></table></figure>
+<p>将本地提交推送到远程仓库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<p>克隆下来如果是私有仓库，需要输入码云的账号和密码。</p>
+<h4 id="方法二、本地初始化一个仓库，设置远程仓库地址后再做push。"><a href="#方法二、本地初始化一个仓库，设置远程仓库地址后再做push。" class="headerlink" title="方法二、本地初始化一个仓库，设置远程仓库地址后再做push。"></a>方法二、本地初始化一个仓库，设置远程仓库地址后再做push。</h4><p>找到你项目目录文件路径，mac端的话 cd 然后拖入回车就好了.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;~你的项目目录路径</span><br></pre></td></tr></table></figure>
+<p>始化一个仓库，本地仓库默认创建 master 分支,设置远程仓库地址，这儿这个地址要先去<a href="https://gitee.com/" target="_blank" rel="noopener">https://gitee.com/</a>建立一个私有仓库。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init </span><br><span class="line">git remote add origin https:&#x2F;&#x2F;gitee.com&#x2F;Kziwws&#x2F;BankLoans.git</span><br></pre></td></tr></table></figure>
+
+<p>然后再push推送上去</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;项目第一次上传&quot;</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果是提交时可能会存在冲突，这时用户需要选择的是保留线上的文件或者舍弃线上的文件，如果您舍弃线上的文件，则在推送时选择强制推送，强制推送需要执行下面的命令(默认不推荐该行为):<code>git push origin master -f</code>，如果您选择保留线上的 readme 文件,则需要先执行：<code>git pull origin master</code></p>
+<p><a href="https://github.com/login?return_to=%2Fjoin" target="_blank" rel="noopener">gitHub</a></p>
+<p>这儿我以我自己的 BankLoans 这个仓库名为例。对应的仓库地址为<a href="https://github.com/Kziwws/BankLoans.git" target="_blank" rel="noopener">https://github.com/Kziwws/BankLoans.git</a></p>
+<ul>
+<li><strong>第一种</strong>：向仓库里提交代码，是从项目上拉取下来，然后修改了再提交上去。</li>
+<li><strong>第二种</strong>：仓库为空的，直接将本地连接到此仓库，然后再全部提交上去。</li>
+</ul>
+<h4 id="方法一、先将仓库clone到本地，修改后再push到github的仓库仓库。"><a href="#方法一、先将仓库clone到本地，修改后再push到github的仓库仓库。" class="headerlink" title="方法一、先将仓库clone到本地，修改后再push到github的仓库仓库。"></a>方法一、先将仓库clone到本地，修改后再push到github的仓库仓库。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;Kziwws&#x2F;BankLoans.git #将远程仓库克隆到本地</span><br><span class="line">cd &#x2F;~你克隆下来的目录路径</span><br><span class="line">git add .  #.是把文件夹下面的文件都添加进来   </span><br><span class="line">git commit  -m &quot;提交的更新信息&quot; </span><br><span class="line">git push -u origin master #此步骤需要你输入帐号和密码</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="方法二、本地初始化一个仓库，设置远程仓库地址后再做push。-1"><a href="#方法二、本地初始化一个仓库，设置远程仓库地址后再做push。-1" class="headerlink" title="方法二、本地初始化一个仓库，设置远程仓库地址后再做push。"></a>方法二、本地初始化一个仓库，设置远程仓库地址后再做push。</h4><p>找到你项目目录文件路径，mac端的话 cd 然后拖入回车就好了.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;~你的项目目录路径</span><br></pre></td></tr></table></figure>
+
+<p>始化一个仓库，设置远程仓库地址，这儿这个地址要先去<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a>建立一个私有仓库。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init </span><br><span class="line">git remote add origin https:&#x2F;&#x2F;github.com&#x2F;Kziwws&#x2F;BankLoans.git</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;项目第一次上传&quot;</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2018/11/10/technology20181110040214/" data-id="cmhlytugi004r11jjbukwh5nq" class="article-share-link" data-share="baidu" data-title="使用git在码云gitee和github上提交代码">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2018/11/10/technology20181110040214/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-technology20180815161022" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/15/technology20180815161022/" class="article-date">
+  <time datetime="2018-08-15T08:10:02.000Z" itemprop="datePublished">2018-08-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cocosCreator/">cocosCreator</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/15/technology20180815161022/">CocosCreator中JS调用Android平台实现复制功能</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在cocos2dx-js中先在判断是否是手机端<code>isMobile</code>,手机端包括手机网页<code>isNative</code>和手机原生端<code>cc.sys.OS_IOS 、 cc.sys.OS_ANDROID</code>，web端<code>isBrowser</code>。</p>
+<p><strong>在cocos项目中需要点击复制的地方写上方法</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2018/08/15/technology20180815161022/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2018/08/15/technology20180815161022/" data-id="cmhlytugj005511jj4jkx7j4v" class="article-share-link" data-share="baidu" data-title="CocosCreator中JS调用Android平台实现复制功能">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2018/08/15/technology20180815161022/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-technology20180810152102" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/10/technology20180810152102/" class="article-date">
+  <time datetime="2018-08-10T07:21:02.000Z" itemprop="datePublished">2018-08-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cocosCreator/">cocosCreator</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/10/technology20180810152102/">CocosCreator游戏开发打包安卓apk</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>我自己测试通过的打包所使用的开发工具和版本</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">开发工具版本</th>
+<th align="center">测试版本</th>
+<th align="right">下载</th>
+<th align="center">前往官网</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">CocosCreator</td>
+<td align="center">2.0～2.2</td>
+<td align="right"><a href="http://cocos2d-x.org/filedown/CocosCreator_v2.2.1_mac" target="_blank" rel="noopener">直接下载2.2Mac版</a></td>
+<td align="center"><a href="https://www.cocos.com/creator" target="_blank" rel="noopener">官网选择其它版本</a></td>
+</tr>
+<tr>
+<td align="center">android-sdk</td>
+<td align="center">android-21</td>
+<td align="right"><a href="https://pan.baidu.com/s/1o6v7E2I?utm_source=androiddevtools&utm_medium=website&errno=0&errmsg=Auth%20Login%20Sucess&&bduss=&ssnerror=0&traceid=" target="_blank" rel="noopener">直接下载android sdk21-5.0</a></td>
+<td align="center"><a href="https://www.androiddevtools.cn" target="_blank" rel="noopener">选择其他SDK版本</a></td>
+</tr>
+<tr>
+<td align="center">android-ndk</td>
+<td align="center">android-ndk-r16-beta1</td>
+<td align="right"><a href="https://dl.google.com/android/repository/android-ndk-r16-beta1-darwin-x86_64.zip?utm_source=androiddevtools&utm_medium=website" target="_blank" rel="noopener">直接下载android ndk-r16-beta1</a></td>
+<td align="center"><a href="https://www.androiddevtools.cn" target="_blank" rel="noopener">选择其他NDK版本</a></td>
+</tr>
+</tbody></table>
+        
+          <p class="article-more-link">
+            <a href="/2018/08/10/technology20180810152102/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2018/08/10/technology20180810152102/" data-id="cmhlytugi004y11jjbapc8a8i" class="article-share-link" data-share="baidu" data-title="CocosCreator游戏开发打包安卓apk">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2018/08/10/technology20180810152102/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-poetry20180805051120" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/05/poetry20180805051120/" class="article-date">
+  <time datetime="2018-08-04T21:11:20.000Z" itemprop="datePublished">2018-08-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%97/">诗</a>►<a class="article-category-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/05/poetry20180805051120/">《梦宵》</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>梦里想见到的人<br>大概在梦里也会找她吧<br>寻寻觅觅<br>大概也会从梦里惊醒吧<br>山中兰若<br>绝迹蓬蒿<br>云雨楚楚<br>化作烟雨倾覆你<br>执枪八方<br>暮雪空壕<br>沙场言笑<br>吹彻画角<br>江南晚客红绳发梢<br>胜者归来<br>卿与良宵</p>
+<p>by:霜</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2018/08/05/poetry20180805051120/" data-id="cmhlytugb000j11jjhe08fyqx" class="article-share-link" data-share="baidu" data-title="《梦宵》">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2018/08/05/poetry20180805051120/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poetry/" rel="tag">poetry</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-poetry20180728015635" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/28/poetry20180728015635/" class="article-date">
+  <time datetime="2018-07-27T17:56:35.000Z" itemprop="datePublished">2018-07-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%97/">诗</a>►<a class="article-category-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/28/poetry20180728015635/">《彼岸》</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>晚风给予你一丝清凉<br>抚去欲望与焦灼<br>每个闯荡归来的人<br>暮色都会赐予神秘的面纱<br>至此不分娇韵的脸庞<br>从还音行断<br>沉色暗涌<br>半生月色意在眉弯<br>许诺风声余留两尖<br>蝉鸣不知白昼<br>逾越一个又一个萧稠<br>叶落不知殇秋<br>辜负了一个又一个挽留<br>涓涓溪流<br>日月盘恒邻水至洲<br>愿作你流淌着的热血<br>拥有你的生息与衰亡<br>寒风总伴夜雪苍白人<br>尤留世间容褶白赴<br>蒯覆石泐凝霜<br>回首凝望<br>愿你醒来亦是彼岸<br>拥有了不一样的星光</p>
+<p>by:霜</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2018/07/28/poetry20180728015635/" data-id="cmhlytugb000m11jj49ht69c1" class="article-share-link" data-share="baidu" data-title="《彼岸》">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2018/07/28/poetry20180728015635/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poetry/" rel="tag">poetry</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-poetry20180728015521" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/28/poetry20180728015521/" class="article-date">
+  <time datetime="2018-07-27T17:55:21.000Z" itemprop="datePublished">2018-07-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%97/">诗</a>►<a class="article-category-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/28/poetry20180728015521/">《余生》</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>弥静黑夜中的烛火<br>斑斑点点<br>彻夜通明<br>萦绕着小时候的记忆<br>你诉说理想<br>清澈明亮的眼睛<br>沾染不得生活的一丝浑浊<br>匆匆茫茫的行人<br>从不打烊的灯光<br>映忖着城市的繁华与喧嚣<br>每个长大的人<br>都演绎着哀忧悲怆<br>不一样的肝肠<br>痴心妄想的疯狂<br>从灵魂里涌入冰凉<br>遮住双眼<br>余生太长<br>这俗世<br>这一杯<br>这一次<br>为你行走锋芒</p>
+<p>by:霜</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2018/07/28/poetry20180728015521/" data-id="cmhlytugb000h11jj9h965an8" class="article-share-link" data-share="baidu" data-title="《余生》">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2018/07/28/poetry20180728015521/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poetry/" rel="tag">poetry</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/5/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/">下一页</a>
+  </nav>
+</section>
+      
+      <aside id="sidebar">
+  
+    
+<div class="widget-wrap">
+  <h3 class="widget-title">关于</h3>
+  <ul class="widget about-me">
+    
+    <li><img class="author" title="About me" src="/img/github.png" /></li>
+    
+    
+    <li ><font color="#424242" size="2em">苹果应用软件开发 & 游戏软件开发</font></li>
+    
+    <li ><font color="#424242" size="2em">email: ggb.chen@foxmail.com</font></li>
+    
+  </ul>
+</div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/charles/">charles</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocoapods/">cocoapods</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocosCreator/">cocosCreator</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/error/">error</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/knowledge/">knowledge</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/regexp/">regexp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/">诗</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%BD%AC%E5%BD%95/">转录</a><span class="category-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoapods/" rel="tag">cocoapods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/" rel="tag">flutter</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/" rel="tag">ios</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knowledge/" rel="tag">knowledge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/poetry/" rel="tag">poetry</a><span class="tag-list-count">46</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regexp/" rel="tag">regexp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology/" rel="tag">technology</a><span class="tag-list-count">28</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/android/" style="font-size: 11.67px;">android</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/cocosCreator/" style="font-size: 16.67px;">cocosCreator</a> <a href="/tags/flutter/" style="font-size: 11.67px;">flutter</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/ios/" style="font-size: 13.33px;">ios</a> <a href="/tags/knowledge/" style="font-size: 10px;">knowledge</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/poetry/" style="font-size: 20px;">poetry</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/technology/" style="font-size: 18.33px;">technology</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <!--<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">5</span></li></ul> -->
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">2025年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">2023年</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">2022年</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">2021年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">2020年</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019年</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">2017年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/11/05/technology20251105090825/">Sudoku Game Privacy Policy_ Zero Personal Data Collection, Pure Gaming Experience</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/14/technology20230314101225/">利用python脚本拆解游戏中的图集资源</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/10/technology20230210090112/">利用jekenis自动打包上传阿里云下载和通知钉钉机器人</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/21/technology20230121151206/">IOS项目脚本自动化批量打包并上传第三方平台</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/20/technology20230120161001/">IOS项目单独脚本自动化打包</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://github.com/kziwws" target="_blank">github</a>
+          </li>
+        
+          <li>
+            <a href="https://shevakuilin.com" target="_blank">shevakuilin</a>
+          </li>
+        
+          <li>
+            <a href="https://hans2936.github.io" target="_blank">hans2936</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 <a href="https://github.com/kziwws" target="_blank">kziwws</a> 
+      Powered by hexo,Theme by landscape-plus.
+    </div>
+    <div id="footer-info" class="inner">
+      本站博客采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank">[知识共享署名-非商业性使用-相同方式共享 3.0 中国大陆许可协议]</a> 进行许可
+    </div>
+  </div>
+</footer>
+
+
+<!--
+<div id="footer-info" class="inner">
+     &copy; 2025 kziwws<br>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+     .
+     Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+   </div>
+</div>
+-->
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/tags/technology" class="mobile-nav-link">编程技术</a>
+  
+    <a href="/tags/poetry" class="mobile-nav-link">诗</a>
+  
+    <a href="/tags/life" class="mobile-nav-link">生活随笔</a>
+  
+    <a href="/archives" class="mobile-nav-link">所有文章</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<!--载入js，在</body>之前插入即可-->
+    <!--Leancloud 操作库:-->
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!--Valine 的核心代码库-->
+    <script src="/js/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV, 
+            el: '.comment',
+            app_id: 'zh2N00Qk2UIsu1N8Qfu468TH-gzGzoHsz',
+            app_key: 'BJrjTSEoKMfc05OMLWhCzmHk',
+            placeholder: '想说点什么...',
+            pageSize: 15,
+            notify: false,
+            verify: false,
+        });
+    </script>
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+                processEscapes: true
+                    
+}
+  
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                  
+}
+    
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                            all[i].SourceElement().parentNode.className += ' has-jax';
+                                    
+            }
+                
+        });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+</div>
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="icon-search"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.local-search-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+                  
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><span id="icon-search"></span></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><span id="icon-frown"></span></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+          
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+</body>
+</html>
+
