@@ -145,7 +145,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2020/01/25/poetry20200125011002/" data-id="cmjmmsm0i0023o7d6971zcxcs" class="article-share-link" data-share="baidu" data-title="《道别》">分享到</a>
+        <a data-url="https://kziwws.github.io/2020/01/25/poetry20200125011002/" data-id="cmjque9c9001acgd68xrugk08" class="article-share-link" data-share="baidu" data-title="《道别》">分享到</a>
       
 
     
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2020/01/18/poetry20200118022002/" data-id="cmjmmsm0i0029o7d6gfiw7v3t" class="article-share-link" data-share="baidu" data-title="《孟春宿雨》">分享到</a>
+        <a data-url="https://kziwws.github.io/2020/01/18/poetry20200118022002/" data-id="cmjque9ca001ocgd6f2hq683y" class="article-share-link" data-share="baidu" data-title="《孟春宿雨》">分享到</a>
       
 
     
@@ -304,7 +304,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2019/12/06/technology20191206020145/" data-id="cmjmmsm0o005ro7d6ctgj2nl1" class="article-share-link" data-share="baidu" data-title="Mac上安装Cocoapods基础和一些踩坑记录">分享到</a>
+        <a data-url="https://kziwws.github.io/2019/12/06/technology20191206020145/" data-id="cmjque9cj006mcgd65e734oje" class="article-share-link" data-share="baidu" data-title="Mac上安装Cocoapods基础和一些踩坑记录">分享到</a>
       
 
     
@@ -313,6 +313,207 @@ var _hmt = _hmt || [];
 
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoapods/" rel="tag">cocoapods</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-technology20191104011115" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/04/technology20191104011115/" class="article-date">
+  <time datetime="2019-11-03T17:11:15.000Z" itemprop="datePublished">2019-11-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cocoapods/">cocoapods</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/04/technology20191104011115/">使用 rbenv 安装与管理 CocoaPods 环境</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="使用-rbenv-安装与管理-CocoaPods-环境完整指南"><a href="#使用-rbenv-安装与管理-CocoaPods-环境完整指南" class="headerlink" title="使用 rbenv 安装与管理 CocoaPods 环境完整指南"></a>使用 rbenv 安装与管理 CocoaPods 环境完整指南</h1><p>在使用 ElementX iOS 项目或其他 iOS 开发时，经常会遇到 CocoaPods 安装失败的问题，尤其是当系统 Ruby 版本（如 2.6.10）与项目要求的 Ruby 版本（≥ 3.1.0）不匹配时。本指南详细介绍如何使用 <strong>rbenv</strong> 这一 Ruby 版本管理工具，来创建隔离、可控的 CocoaPods 环境，彻底解决版本冲突和依赖问题。</p>
+<hr>
+<h2 id="第一部分：为什么需要-rbenv？"><a href="#第一部分：为什么需要-rbenv？" class="headerlink" title="第一部分：为什么需要 rbenv？"></a>第一部分：为什么需要 rbenv？</h2><h3 id="常见问题场景"><a href="#常见问题场景" class="headerlink" title="常见问题场景"></a>常见问题场景</h3><ol>
+<li><strong>系统 Ruby 版本过旧</strong>：macOS 自带的 Ruby 2.6.x 无法满足现代 gem 的要求</li>
+<li><strong>权限问题</strong>：使用 <code>sudo gem install</code> 可能导致系统文件混乱</li>
+<li><strong>版本冲突</strong>：不同项目需要不同版本的 Ruby 或 CocoaPods</li>
+<li><strong>环境污染</strong>：全局安装可能破坏系统工具依赖</li>
+</ol>
+<h3 id="rbenv-的优势"><a href="#rbenv-的优势" class="headerlink" title="rbenv 的优势"></a>rbenv 的优势</h3><ul>
+<li><strong>版本隔离</strong>：每个项目可使用独立的 Ruby 版本</li>
+<li><strong>无需 sudo</strong>：所有安装都在用户目录下</li>
+<li><strong>切换灵活</strong>：轻松在不同 Ruby 版本间切换</li>
+<li><strong>环境干净</strong>：不干扰系统 Ruby</li>
+</ul>
+<hr>
+<h2 id="第二部分：完整安装步骤"><a href="#第二部分：完整安装步骤" class="headerlink" title="第二部分：完整安装步骤"></a>第二部分：完整安装步骤</h2><h3 id="1-安装-Homebrew（如未安装）"><a href="#1-安装-Homebrew（如未安装）" class="headerlink" title="1. 安装 Homebrew（如未安装）"></a>1. 安装 Homebrew（如未安装）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;bin&#x2F;bash -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;HEAD&#x2F;install.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-安装-rbenv-和-ruby-build"><a href="#2-安装-rbenv-和-ruby-build" class="headerlink" title="2. 安装 rbenv 和 ruby-build"></a>2. 安装 rbenv 和 ruby-build</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install rbenv ruby-build</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-配置-Shell-环境"><a href="#3-配置-Shell-环境" class="headerlink" title="3. 配置 Shell 环境"></a>3. 配置 Shell 环境</h3><p>根据你使用的 Shell，将初始化脚本添加到配置文件：</p>
+<p><strong>Zsh 用户（macOS Catalina 及以后）</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &#39;eval &quot;$(rbenv init - zsh)&quot;&#39; &gt;&gt; ~&#x2F;.zshrc</span><br><span class="line">source ~&#x2F;.zshrc</span><br></pre></td></tr></table></figure>
+
+<p><strong>Bash 用户</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &#39;eval &quot;$(rbenv init -)&quot;&#39; &gt;&gt; ~&#x2F;.bash_profile</span><br><span class="line">source ~&#x2F;.bash_profile</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-验证-rbenv-安装"><a href="#4-验证-rbenv-安装" class="headerlink" title="4. 验证 rbenv 安装"></a>4. 验证 rbenv 安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rbenv --version</span><br><span class="line"># 应输出类似: rbenv 1.2.0</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="第三部分：安装和管理-Ruby"><a href="#第三部分：安装和管理-Ruby" class="headerlink" title="第三部分：安装和管理 Ruby"></a>第三部分：安装和管理 Ruby</h2><h3 id="1-查看可用的-Ruby-版本"><a href="#1-查看可用的-Ruby-版本" class="headerlink" title="1. 查看可用的 Ruby 版本"></a>1. 查看可用的 Ruby 版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rbenv install --list</span><br><span class="line"># 查看所有可用版本</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-安装所需-Ruby-版本"><a href="#2-安装所需-Ruby-版本" class="headerlink" title="2. 安装所需 Ruby 版本"></a>2. 安装所需 Ruby 版本</h3><p>ElementX 项目需要 Ruby ≥ 3.1.0，推荐安装最新稳定版：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 安装 Ruby 3.3.0</span><br><span class="line">rbenv install 3.3.0</span><br><span class="line"></span><br><span class="line"># 安装过程可能需要几分钟，请耐心等待</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-设置-Ruby-版本"><a href="#3-设置-Ruby-版本" class="headerlink" title="3. 设置 Ruby 版本"></a>3. 设置 Ruby 版本</h3><p><strong>全局设置</strong>（所有终端会话）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rbenv global 3.3.0</span><br></pre></td></tr></table></figure>
+
+<p><strong>局部设置</strong>（仅当前项目）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;path&#x2F;to&#x2F;your&#x2F;project</span><br><span class="line">rbenv local 3.3.0</span><br><span class="line"># 这会创建 .ruby-version 文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-验证-Ruby-版本"><a href="#4-验证-Ruby-版本" class="headerlink" title="4. 验证 Ruby 版本"></a>4. 验证 Ruby 版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ruby -v</span><br><span class="line"># 应输出: ruby 3.3.0...</span><br><span class="line">which ruby</span><br><span class="line"># 应输出: &#x2F;Users&#x2F;你的用户名&#x2F;.rbenv&#x2F;shims&#x2F;ruby</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="第四部分：安装-CocoaPods"><a href="#第四部分：安装-CocoaPods" class="headerlink" title="第四部分：安装 CocoaPods"></a>第四部分：安装 CocoaPods</h2><h3 id="1-安装-CocoaPods-gem"><a href="#1-安装-CocoaPods-gem" class="headerlink" title="1. 安装 CocoaPods gem"></a>1. 安装 CocoaPods gem</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 确保使用的是 rbenv 管理的 Ruby</span><br><span class="line">which ruby</span><br><span class="line"># 确认路径包含 .rbenv</span><br><span class="line"></span><br><span class="line"># 安装 CocoaPods</span><br><span class="line">gem install cocoapods</span><br><span class="line"></span><br><span class="line"># 可选：安装特定版本</span><br><span class="line"># gem install cocoapods -v 1.15.2</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-验证安装"><a href="#2-验证安装" class="headerlink" title="2. 验证安装"></a>2. 验证安装</h3><p>bash</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pod --version</span><br><span class="line"># 应输出: 1.16.2 或类似</span><br><span class="line">which pod</span><br><span class="line"># 应输出: &#x2F;Users&#x2F;你的用户名&#x2F;.rbenv&#x2F;shims&#x2F;pod</span><br></pre></td></tr></table></figure>
+
+<h2 id="第五部分：配置-CocoaPods-仓库"><a href="#第五部分：配置-CocoaPods-仓库" class="headerlink" title="第五部分：配置 CocoaPods 仓库"></a>第五部分：配置 CocoaPods 仓库</h2><h3 id="1-初始仓库状态"><a href="#1-初始仓库状态" class="headerlink" title="1. 初始仓库状态"></a>1. 初始仓库状态</h3><p>首次安装后，仓库是空的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pod repo list</span><br><span class="line"># 输出: 0 repos</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-添加-CocoaPods-主仓库"><a href="#2-添加-CocoaPods-主仓库" class="headerlink" title="2. 添加 CocoaPods 主仓库"></a>2. 添加 CocoaPods 主仓库</h3><p><strong>官方 CDN 源</strong>（国际网络推荐）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 移除可能的残留</span><br><span class="line">pod repo remove trunk 2&gt;&#x2F;dev&#x2F;null || true</span><br><span class="line"></span><br><span class="line"># 添加官方源</span><br><span class="line">pod repo add trunk https:&#x2F;&#x2F;cdn.cocoapods.org&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p><strong>国内镜像源</strong>（如遇网络问题）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pod repo remove trunk</span><br><span class="line">pod repo add trunk https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;git&#x2F;CocoaPods&#x2F;Specs.git</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-验证仓库配置"><a href="#3-验证仓库配置" class="headerlink" title="3. 验证仓库配置"></a>3. 验证仓库配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pod repo list</span><br><span class="line"># 现在应该能看到 trunk 仓库</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="第六部分：在项目中使用的完整流程"><a href="#第六部分：在项目中使用的完整流程" class="headerlink" title="第六部分：在项目中使用的完整流程"></a>第六部分：在项目中使用的完整流程</h2><h3 id="1-准备-ElementX-项目"><a href="#1-准备-ElementX-项目" class="headerlink" title="1. 准备 ElementX 项目"></a>1. 准备 ElementX 项目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 克隆项目（如尚未克隆）</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;element-hq&#x2F;element-x-ios.git</span><br><span class="line">cd element-x-ios</span><br><span class="line"></span><br><span class="line"># 设置项目 Ruby 版本</span><br><span class="line">rbenv local 3.3.0</span><br><span class="line"></span><br><span class="line"># 验证 Ruby 版本</span><br><span class="line">ruby -v</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-安装项目依赖"><a href="#2-安装项目依赖" class="headerlink" title="2. 安装项目依赖"></a>2. 安装项目依赖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 清理可能的旧配置</span><br><span class="line">rm -rf Pods Podfile.lock *.xcworkspace</span><br><span class="line"></span><br><span class="line"># 安装依赖（首次运行会下载完整仓库）</span><br><span class="line">pod install --repo-update</span><br><span class="line"></span><br><span class="line"># 或使用更详细的输出</span><br><span class="line">pod install --verbose --repo-update</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-打开项目"><a href="#3-打开项目" class="headerlink" title="3. 打开项目"></a>3. 打开项目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 使用生成的 workspace 文件</span><br><span class="line">open ElementX.xcworkspace</span><br><span class="line"># 或手动在 Finder 中双击</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-处理常见问题"><a href="#4-处理常见问题" class="headerlink" title="4. 处理常见问题"></a>4. 处理常见问题</h3><p><strong>问题1</strong>：<code>pod install</code> 失败，报网络错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 切换镜像源</span><br><span class="line">pod repo remove trunk</span><br><span class="line">pod repo add trunk https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;git&#x2F;CocoaPods&#x2F;Specs.git</span><br><span class="line">pod cache clean --all</span><br><span class="line">pod install</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>问题2</strong>：CocoaPods 版本不兼容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 查看项目是否有 Gemfile</span><br><span class="line">cat Gemfile</span><br><span class="line"></span><br><span class="line"># 如有 Gemfile，使用 bundler</span><br><span class="line">gem install bundler</span><br><span class="line">bundle install</span><br><span class="line">bundle exec pod install</span><br></pre></td></tr></table></figure>
+
+<p><strong>问题3</strong>：rbenv 命令找不到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 重新初始化</span><br><span class="line">echo &#39;export PATH&#x3D;&quot;$HOME&#x2F;.rbenv&#x2F;bin:$PATH&quot;&#39; &gt;&gt; ~&#x2F;.zshrc</span><br><span class="line">echo &#39;eval &quot;$(rbenv init -)&quot;&#39; &gt;&gt; ~&#x2F;.zshrc</span><br><span class="line">source ~&#x2F;.zshrc</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="第七部分：环境管理技巧"><a href="#第七部分：环境管理技巧" class="headerlink" title="第七部分：环境管理技巧"></a>第七部分：环境管理技巧</h2><h3 id="1-查看当前环境状态"><a href="#1-查看当前环境状态" class="headerlink" title="1. 查看当前环境状态"></a>1. 查看当前环境状态</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">echo &quot;&#x3D;&#x3D;&#x3D; Ruby 环境 &#x3D;&#x3D;&#x3D;&quot;</span><br><span class="line">echo &quot;版本: $(ruby -v)&quot;</span><br><span class="line">echo &quot;路径: $(which ruby)&quot;</span><br><span class="line">echo &quot;rbenv 版本: $(rbenv --version 2&gt;&#x2F;dev&#x2F;null || echo &#39;未安装&#39;)&quot;</span><br><span class="line"></span><br><span class="line">echo -e &quot;\n&#x3D;&#x3D;&#x3D; CocoaPods 环境 &#x3D;&#x3D;&#x3D;&quot;</span><br><span class="line">echo &quot;版本: $(pod --version 2&gt;&#x2F;dev&#x2F;null || echo &#39;未安装&#39;)&quot;</span><br><span class="line">echo &quot;路径: $(which pod 2&gt;&#x2F;dev&#x2F;null || echo &#39;未找到&#39;)&quot;</span><br><span class="line"></span><br><span class="line">echo -e &quot;\n&#x3D;&#x3D;&#x3D; 仓库状态 &#x3D;&#x3D;&#x3D;&quot;</span><br><span class="line">pod repo list 2&gt;&#x2F;dev&#x2F;null || echo &quot;仓库未配置&quot;</span><br><span class="line"></span><br><span class="line">echo -e &quot;\n&#x3D;&#x3D;&#x3D; 安装的 gems &#x3D;&#x3D;&#x3D;&quot;</span><br><span class="line">gem list | grep -E &quot;(cocoapods|bundler)&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-常用-rbenv-命令"><a href="#2-常用-rbenv-命令" class="headerlink" title="2. 常用 rbenv 命令"></a>2. 常用 rbenv 命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 查看已安装的 Ruby 版本</span><br><span class="line">rbenv versions</span><br><span class="line"></span><br><span class="line"># 切换 Ruby 版本</span><br><span class="line">rbenv shell 3.3.0    # 当前 shell</span><br><span class="line">rbenv local 3.2.0    # 当前目录</span><br><span class="line">rbenv global 3.3.0   # 全局</span><br><span class="line"></span><br><span class="line"># 卸载 Ruby 版本</span><br><span class="line">rbenv uninstall 2.7.0</span><br><span class="line"></span><br><span class="line"># 更新 rbenv</span><br><span class="line">brew upgrade rbenv ruby-build</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-清理和维护"><a href="#3-清理和维护" class="headerlink" title="3. 清理和维护"></a>3. 清理和维护</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 清理 CocoaPods 缓存</span><br><span class="line">pod cache clean --all</span><br><span class="line"></span><br><span class="line"># 更新所有 gems</span><br><span class="line">gem update</span><br><span class="line"></span><br><span class="line"># 清理旧版本的 gems</span><br><span class="line">gem cleanup</span><br><span class="line"></span><br><span class="line"># 重新生成 rbenv shims</span><br><span class="line">rbenv rehash</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="第八部分：文件位置说明"><a href="#第八部分：文件位置说明" class="headerlink" title="第八部分：文件位置说明"></a>第八部分：文件位置说明</h2><h3 id="rbenv-安装的文件结构"><a href="#rbenv-安装的文件结构" class="headerlink" title="rbenv 安装的文件结构"></a>rbenv 安装的文件结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">~&#x2F;.rbenv&#x2F;</span><br><span class="line">├── versions&#x2F;                    # 所有安装的 Ruby 版本</span><br><span class="line">│   └── 3.3.0&#x2F;</span><br><span class="line">│       ├── bin&#x2F;</span><br><span class="line">│       ├── lib&#x2F;</span><br><span class="line">│       │   └── ruby&#x2F;</span><br><span class="line">│       │       └── gems&#x2F;</span><br><span class="line">│       │           └── 3.3.0&#x2F;  # Gems 安装目录</span><br><span class="line">│       │               ├── gems&#x2F;</span><br><span class="line">│       │               │   └── cocoapods-1.16.2&#x2F;</span><br><span class="line">│       │               └── specifications&#x2F;</span><br><span class="line">│       └── share&#x2F;</span><br><span class="line">├── shims&#x2F;                       # 可执行文件代理</span><br><span class="line">└── plugins&#x2F;                     # rbenv 插件</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="CocoaPods-相关目录"><a href="#CocoaPods-相关目录" class="headerlink" title="CocoaPods 相关目录"></a>CocoaPods 相关目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">~&#x2F;.cocoapods&#x2F;repos&#x2F;             # Podspecs 仓库（pod repo add 后创建）</span><br><span class="line">    └── trunk&#x2F;                  # 主仓库</span><br><span class="line">        ├── Specs&#x2F;              # 所有 podspec 文件</span><br><span class="line">        └── .git&#x2F;</span><br><span class="line"></span><br><span class="line">~&#x2F;Library&#x2F;Caches&#x2F;CocoaPods&#x2F;     # 下载的 Pod 缓存</span><br><span class="line">    └── Pods&#x2F;</span><br><span class="line">        └── Release&#x2F;</span><br><span class="line"></span><br><span class="line">项目目录&#x2F;</span><br><span class="line">├── Podfile                    # 依赖定义</span><br><span class="line">├── Podfile.lock              # 版本锁定</span><br><span class="line">├── Pods&#x2F;                     # 安装的依赖（pod install 后生成）</span><br><span class="line">└ *.xcworkspace              # 工作空间文件</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="第九部分：项目特定配置示例"><a href="#第九部分：项目特定配置示例" class="headerlink" title="第九部分：项目特定配置示例"></a>第九部分：项目特定配置示例</h2><h3 id="ElementX-项目的典型配置"><a href="#ElementX-项目的典型配置" class="headerlink" title="ElementX 项目的典型配置"></a>ElementX 项目的典型配置</h3><p><strong>1. 项目根目录的 <code>.ruby-version</code> 文件</strong>（自动生成）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3.3.0</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>2. 可选的 <code>Gemfile</code></strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">source &quot;https:&#x2F;&#x2F;rubygems.org&quot;</span><br><span class="line"></span><br><span class="line">gem &quot;cocoapods&quot;, &quot;1.16.2&quot;</span><br><span class="line">gem &quot;fastlane&quot;</span><br><span class="line"></span><br><span class="line"># 平台特定</span><br><span class="line">platform :ruby do</span><br><span class="line">  gem &quot;ruby-macho&quot;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>3. 对应的 <code>Podfile</code> 关键部分</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 确保源配置正确</span><br><span class="line">source &#39;https:&#x2F;&#x2F;cdn.cocoapods.org&#x2F;&#39;</span><br><span class="line"># 或 source &#39;https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;git&#x2F;CocoaPods&#x2F;Specs.git&#39;</span><br><span class="line"></span><br><span class="line">platform :ios, &#39;15.0&#39;</span><br><span class="line">use_frameworks! :linkage &#x3D;&gt; :static</span><br><span class="line"></span><br><span class="line">target &#39;ElementX&#39; do</span><br><span class="line">  # 项目依赖...</span><br><span class="line">  pod &#39;MatrixSDK&#39;, &#39;~&gt; 0.24.0&#39;</span><br><span class="line">  pod &#39;MatrixSDK&#x2F;SwiftSupport&#39;</span><br><span class="line">  # ...其他依赖</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="第十部分：故障排除"><a href="#第十部分：故障排除" class="headerlink" title="第十部分：故障排除"></a>第十部分：故障排除</h2><h3 id="常见问题与解决方案"><a href="#常见问题与解决方案" class="headerlink" title="常见问题与解决方案"></a>常见问题与解决方案</h3><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>症状</th>
+<th>解决方案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>rbenv 命令未找到</strong></td>
+<td><code>zsh: command not found: rbenv</code></td>
+<td>1. 检查 <code>~/.zshrc</code> 配置 2. 重启终端 3. 运行 <code>rbenv init</code></td>
+</tr>
+<tr>
+<td><strong>pod 命令未找到</strong></td>
+<td><code>pod: command not found</code></td>
+<td>1. 运行 <code>rbenv rehash</code> 2. 验证 <code>which ruby</code> 路径 3. 重新安装 CocoaPods</td>
+</tr>
+<tr>
+<td><strong>仓库下载失败</strong></td>
+<td><code>[!] Unable to add a source...</code></td>
+<td>1. 检查网络连接 2. 切换镜像源 3. 使用 <code>pod install --verbose</code> 查看详情</td>
+</tr>
+<tr>
+<td><strong>Ruby 版本不匹配</strong></td>
+<td><code>requires Ruby version &gt;= 3.1.0</code></td>
+<td>1. <code>rbenv install 3.3.0</code> 2. <code>rbenv local 3.3.0</code> 3. 重新安装 gems</td>
+</tr>
+<tr>
+<td><strong>签名错误</strong></td>
+<td><code>Automatic signing failed</code></td>
+<td>1. 检查 Xcode 的 Bundle Identifier 2. 确保 Team 选择正确 3. 清理项目重新编译</td>
+</tr>
+</tbody></table>
+<h3 id="调试命令集"><a href="#调试命令集" class="headerlink" title="调试命令集"></a>调试命令集</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 完整环境检查</span><br><span class="line">rbenv doctor 2&gt;&#x2F;dev&#x2F;null || curl -fsSL https:&#x2F;&#x2F;github.com&#x2F;rbenv&#x2F;rbenv-installer&#x2F;raw&#x2F;main&#x2F;bin&#x2F;rbenv-doctor | bash</span><br><span class="line"></span><br><span class="line"># 诊断 CocoaPods 问题</span><br><span class="line">pod env</span><br><span class="line"></span><br><span class="line"># 查看详细的安装日志</span><br><span class="line">pod install --verbose 2&gt;&amp;1 | tee pod_install.log</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2019/11/04/technology20191104011115/" data-id="cmjque9cj006fcgd6e08kb959" class="article-share-link" data-share="baidu" data-title="使用 rbenv 安装与管理 CocoaPods 环境">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2019/11/04/technology20191104011115/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ruby/" rel="tag">Ruby</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoapods/" rel="tag">cocoapods</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rbenv/" rel="tag">rbenv</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
 
     </footer>
   </div>
@@ -353,7 +554,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2019/10/17/poetry20191017032345/" data-id="cmjmmsm0j002po7d67l2veat9" class="article-share-link" data-share="baidu" data-title="《庾居》">分享到</a>
+        <a data-url="https://kziwws.github.io/2019/10/17/poetry20191017032345/" data-id="cmjque9c90016cgd6bcula516" class="article-share-link" data-share="baidu" data-title="《庾居》">分享到</a>
       
 
     
@@ -403,7 +604,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2019/09/01/poetry20190901052013/" data-id="cmjmmsm0i002co7d663vs13x2" class="article-share-link" data-share="baidu" data-title="《妄念》">分享到</a>
+        <a data-url="https://kziwws.github.io/2019/09/01/poetry20190901052013/" data-id="cmjque9c90013cgd6234td495" class="article-share-link" data-share="baidu" data-title="《妄念》">分享到</a>
       
 
     
@@ -485,7 +686,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2019/08/01/technology20190801101045/" data-id="cmjmmsm0o0066o7d6c1i2dsls" class="article-share-link" data-share="baidu" data-title="CocosCreator中XMLHttpReques 网络数据请求">分享到</a>
+        <a data-url="https://kziwws.github.io/2019/08/01/technology20190801101045/" data-id="cmjque9ck0073cgd69kgp2ht2" class="article-share-link" data-share="baidu" data-title="CocosCreator中XMLHttpReques 网络数据请求">分享到</a>
       
 
     
@@ -535,7 +736,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2019/07/22/poetry20190722034245/" data-id="cmjmmsm0i0026o7d6alkf5tko" class="article-share-link" data-share="baidu" data-title="《半承言》">分享到</a>
+        <a data-url="https://kziwws.github.io/2019/07/22/poetry20190722034245/" data-id="cmjque9c8000zcgd64at20f42" class="article-share-link" data-share="baidu" data-title="《半承言》">分享到</a>
       
 
     
@@ -584,7 +785,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2019/07/07/poetry20190707032356/" data-id="cmjmmsm0e000qo7d60vvn1fg9" class="article-share-link" data-share="baidu" data-title="《赤雨》">分享到</a>
+        <a data-url="https://kziwws.github.io/2019/07/07/poetry20190707032356/" data-id="cmjque9c8000wcgd63wdc3br6" class="article-share-link" data-share="baidu" data-title="《赤雨》">分享到</a>
       
 
     
@@ -633,60 +834,11 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2019/06/24/poetry20190624025820/" data-id="cmjmmsm0i0021o7d67erk31jr" class="article-share-link" data-share="baidu" data-title="《半生客》">分享到</a>
+        <a data-url="https://kziwws.github.io/2019/06/24/poetry20190624025820/" data-id="cmjque9c8000qcgd6cxzy61no" class="article-share-link" data-share="baidu" data-title="《半生客》">分享到</a>
       
 
     
   <a href="https://kziwws.github.io/2019/06/24/poetry20190624025820/#valine_thread" class="article-comment-link">评论</a>
-
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poetry/" rel="tag">poetry</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-    <article id="post-poetry20190512025624" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/12/poetry20190512025624/" class="article-date">
-  <time datetime="2019-05-11T18:56:24.000Z" itemprop="datePublished">2019-05-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%97/">诗</a>►<a class="article-category-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/12/poetry20190512025624/">《寄俗》</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>林泉鹿栖复一身，叶落终閒滋无穷。<br>酒醴霜风有虏尘，竹帘疏漏半锩空。<br>三生六尘濯百绮，凌山云蕴君难迹。</p>
-<p>by:霜</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://kziwws.github.io/2019/05/12/poetry20190512025624/" data-id="cmjmmsm0h001zo7d6g50o178x" class="article-share-link" data-share="baidu" data-title="《寄俗》">分享到</a>
-      
-
-    
-  <a href="https://kziwws.github.io/2019/05/12/poetry20190512025624/#valine_thread" class="article-comment-link">评论</a>
 
 
       
@@ -728,7 +880,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/charles/">charles</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocoapods/">cocoapods</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocosCreator/">cocosCreator</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/error/">error</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/knowledge/">knowledge</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/regexp/">regexp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/">诗</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%BD%AC%E5%BD%95/">转录</a><span class="category-list-count">1</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/charles/">charles</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocoapods/">cocoapods</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocosCreator/">cocosCreator</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/error/">error</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/knowledge/">knowledge</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/regexp/">regexp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/">诗</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%BD%AC%E5%BD%95/">转录</a><span class="category-list-count">1</span></li></ul></li></ul>
     </div>
   </div>
 
@@ -737,7 +889,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MQTT/" rel="tag">MQTT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoapods/" rel="tag">cocoapods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/" rel="tag">flutter</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/" rel="tag">ios</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knowledge/" rel="tag">knowledge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/poetry/" rel="tag">poetry</a><span class="tag-list-count">46</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regexp/" rel="tag">regexp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology/" rel="tag">technology</a><span class="tag-list-count">30</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MQTT/" rel="tag">MQTT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/" rel="tag">Ruby</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoapods/" rel="tag">cocoapods</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/" rel="tag">flutter</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/" rel="tag">ios</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knowledge/" rel="tag">knowledge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/poetry/" rel="tag">poetry</a><span class="tag-list-count">46</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rbenv/" rel="tag">rbenv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regexp/" rel="tag">regexp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology/" rel="tag">technology</a><span class="tag-list-count">31</span></li></ul>
     </div>
   </div>
 
@@ -746,7 +898,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/android/" style="font-size: 11.67px;">android</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/cocosCreator/" style="font-size: 16.67px;">cocosCreator</a> <a href="/tags/flutter/" style="font-size: 11.67px;">flutter</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/ios/" style="font-size: 13.33px;">ios</a> <a href="/tags/knowledge/" style="font-size: 10px;">knowledge</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/poetry/" style="font-size: 20px;">poetry</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/technology/" style="font-size: 18.33px;">technology</a>
+      <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/android/" style="font-size: 11.67px;">android</a> <a href="/tags/cocoapods/" style="font-size: 11.67px;">cocoapods</a> <a href="/tags/cocosCreator/" style="font-size: 16.67px;">cocosCreator</a> <a href="/tags/flutter/" style="font-size: 11.67px;">flutter</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/ios/" style="font-size: 13.33px;">ios</a> <a href="/tags/knowledge/" style="font-size: 10px;">knowledge</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/poetry/" style="font-size: 20px;">poetry</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/rbenv/" style="font-size: 10px;">rbenv</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/technology/" style="font-size: 18.33px;">technology</a>
     </div>
   </div>
 
@@ -755,8 +907,8 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <!--<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">一月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">5</span></li></ul> -->
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">2025年</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">2023年</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">2022年</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">2021年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">2020年</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019年</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">2017年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年</a><span class="archive-list-count">6</span></li></ul>
+      <!--<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">一月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">5</span></li></ul> -->
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">2025年</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">2023年</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">2022年</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">2021年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">2020年</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019年</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">2017年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
