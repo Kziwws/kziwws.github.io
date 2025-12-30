@@ -1,0 +1,958 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Element X iOS 项目开发环境配置与编译打包完全指南：从依赖安装到签名配置的完整避坑记录 | 向🐑</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本文详细记录了在 macOS 上配置、编译和打包开源 Matrix 客户端 Element X iOS (SwiftUI 项目) 的完整过程，涵盖 Ruby (Bundler) 环境、Swift Package Manager 依赖、证书签名、应用扩展配置等一系列典型问题的解决方案。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Element X iOS 项目开发环境配置与编译打包完全指南：从依赖安装到签名配置的完整避坑记录">
+<meta property="og:url" content="https://kziwws.github.io/2025/12/26/technology20251226182457/index.html">
+<meta property="og:site_name" content="向🐑">
+<meta property="og:description" content="本文详细记录了在 macOS 上配置、编译和打包开源 Matrix 客户端 Element X iOS (SwiftUI 项目) 的完整过程，涵盖 Ruby (Bundler) 环境、Swift Package Manager 依赖、证书签名、应用扩展配置等一系列典型问题的解决方案。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-12-26T10:24:57.000Z">
+<meta property="article:modified_time" content="2025-12-30T02:17:58.592Z">
+<meta property="article:author" content="kziwws">
+<meta property="article:tag" content="Element X iOS">
+<meta property="article:tag" content=" SwiftUI">
+<meta property="article:tag" content=" 项目配置">
+<meta property="article:tag" content=" 打包">
+<meta property="article:tag" content=" 签名">
+<meta property="article:tag" content=" Bundle Identifier">
+<meta property="article:tag" content=" 踩坑">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="向🐑" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  <!--  -->
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?51e08434b847b38641d02f11be4eb143";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">向🐑</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">一只站在树上的鸟，从来不害怕树枝突然折断，因为它相信的不是树枝，而是它自己的翅膀！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/tags/technology">编程技术</a>
+        
+          <a class="main-nav-link" href="/tags/poetry">诗</a>
+        
+          <a class="main-nav-link" href="/tags/life">生活随笔</a>
+        
+          <a class="main-nav-link" href="/archives">所有文章</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        
+        
+        <a href="javascript:;" class="popup-trigger nav-icon" id="nav-search-btn"></a>
+        
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="kziwws.github.io">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="local-search-inner"><div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <span id="icon-search"></span>
+    </span>
+    <span class="popup-btn-close">
+      <span id="icon-close"></span>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="本地搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div></div>
+</header>
+
+
+
+    <div class="outer">
+      <section id="main"><article id="post-technology20251226182457" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2025/12/26/technology20251226182457/" class="article-date">
+  <time datetime="2025-12-26T10:24:57.000Z" itemprop="datePublished">2025-12-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/swiftUI/">swiftUI</a>►<a class="article-category-link" href="/categories/swiftUI/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Element X iOS 项目开发环境配置与编译打包完全指南：从依赖安装到签名配置的完整避坑记录
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="IOS-关于-element-x-ios-develop-SwiftUI-项目打包的完整踩坑教程"><a href="#IOS-关于-element-x-ios-develop-SwiftUI-项目打包的完整踩坑教程" class="headerlink" title="IOS 关于 element-x-ios-develop SwiftUI 项目打包的完整踩坑教程"></a>IOS 关于 <code>element-x-ios-develop</code> SwiftUI 项目打包的完整踩坑教程</h2><blockquote>
+<p>本文记录了从零开始配置、编译 Element X iOS（一个基于 SwiftUI 和 Matrix Rust SDK 的下一代开源聊天客户端）项目时，所遇到的一系列典型问题及其解决方案。涵盖环境依赖、证书签名、扩展配置等核心难题。</p>
+</blockquote>
+<h3 id="问题一：Ruby-环境与项目依赖安装失败"><a href="#问题一：Ruby-环境与项目依赖安装失败" class="headerlink" title="问题一：Ruby 环境与项目依赖安装失败"></a>问题一：Ruby 环境与项目依赖安装失败</h3><p><strong>报错信息</strong>：<code>Could not locate Gemfile</code> 或 <code>cocoapods is not currently included in the bundle</code></p>
+<p><strong>问题原因</strong>：<br>Element X iOS 项目使用 <code>Bundler</code> 来管理 Ruby 工具链（如 <code>fastlane</code>），确保团队开发环境一致。直接使用 <code>sudo gem install</code> 安装的包是全局的，与项目 <code>Gemfile</code> 中锁定的版本可能冲突，导致后续命令失败。</p>
+<p><strong>解决方案</strong>：<br>核心是使用 <code>bundle exec</code> 来运行项目锁定的工具版本。</p>
+<p>bash</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 1. 进入项目根目录</span><br><span class="line">cd &#x2F;path&#x2F;to&#x2F;element-x-ios-develop</span><br><span class="line"></span><br><span class="line"># 2. 使用 Bundler 安装 Gemfile 中指定的 Ruby 工具</span><br><span class="line"># 这会根据 Gemfile.lock 安装正确版本的 fastlane 等</span><br><span class="line">bundle install</span><br><span class="line"></span><br><span class="line"># 3. 使用 Bundler 来运行 CocoaPods 安装 iOS 依赖</span><br><span class="line"># 这样会使用项目指定的 CocoaPods 版本，避免版本冲突</span><br><span class="line">bundle exec pod install</span><br><span class="line"></span><br><span class="line"># 如果第3步失败，提示找不到 cocoapods，需要将其加入 Gemfile</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果 <code>bundle exec pod install</code> 失败并提示 CocoaPods 不在 bundle 中，需要在项目的 <code>Gemfile</code> 中添加 <code>gem &#39;cocoapods&#39;</code>，然后重新运行 <code>bundle install</code>。</p>
+<p><strong>避坑点</strong>：永远在项目目录下，优先使用 <code>bundle exec</code> 来执行 <code>pod</code>、<code>fastlane</code> 等命令，可以避免绝大多数因工具版本不匹配导致的问题。</p>
+<h3 id="问题二：Swift-Package-Manager-SPM-依赖下载失败"><a href="#问题二：Swift-Package-Manager-SPM-依赖下载失败" class="headerlink" title="问题二：Swift Package Manager (SPM) 依赖下载失败"></a>问题二：Swift Package Manager (SPM) 依赖下载失败</h3><p><strong>报错信息</strong>：<br><code>github.com: The server SSL certificate failed to verify.</code><br><code>Missing package product ‘Algorithms‘, ‘Compound‘...</code></p>
+<p><strong>问题原因</strong>：<br>项目大量依赖通过 Swift Package Manager (SPM) 从 GitHub 引入。在某些网络环境下（如公司内网、代理），Xcode 无法验证  GitHub 的 SSL 证书，导致依赖包无法下载，进而引发一系列连锁错误（如后续的签名配置问题）。</p>
+<p><strong>解决方案</strong>：</p>
+<ol>
+<li><p><strong>临时绕过 SSL 验证（快速解决问题）</strong>：<br>在终端执行以下命令，这通常是解决下载问题的关键第一步。</p>
+<p>bash</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.sslVerify false</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p><strong>注意</strong>：此操作会降低安全性，仅用于开发环境，解决问题后可通过 <code>git config --global http.sslVerify true</code> 恢复。</p>
+<p><strong>在 Xcode 中重置并重试</strong>：</p>
+<ul>
+<li><p>完全关闭 Xcode。</p>
+</li>
+<li><p>删除 Xcode 的包缓存和构建缓存：</p>
+<p>bash</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~&#x2F;Library&#x2F;Caches&#x2F;org.swift.swiftpm&#x2F;</span><br><span class="line">rm -rf ~&#x2F;Library&#x2F;Developer&#x2F;Xcode&#x2F;DerivedData&#x2F;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><ul>
+<li>重新打开 Xcode 项目，选择菜单：<strong>File → Packages → Reset Package Caches</strong>。</li>
+<li>接着选择：<strong>File → Packages → Resolve Package Versions</strong>。</li>
+</ul>
+</li>
+</ol>
+<p><strong>避坑点</strong>：SPM 的依赖下载失败是项目无法编译的<strong>万恶之源</strong>，会伪装成各种后续错误。优先解决网络连通性问题。</p>
+<h3 id="问题三：通知扩展-NSE-的证书配置错误"><a href="#问题三：通知扩展-NSE-的证书配置错误" class="headerlink" title="问题三：通知扩展 (NSE) 的证书配置错误"></a>问题三：通知扩展 (NSE) 的证书配置错误</h3><p><strong>报错信息</strong>：<br><code>Provisioning profile “iOS Team Provisioning Profile: com.youyue.demo“ doesn‘t  include the com.apple.developer.usernotifications.filtering entitlement.</code></p>
+<p><strong>问题原因</strong>：<br>“NSE” 是 <code>Notification Service Extension</code>（通知服务扩展）。这个错误是因为 <code>NSE</code> 在自身的权限文件 (<code>entitlements</code>) 中声明了 <code>com.apple.developer.usernotifications.filtering</code> 权限，但 Xcode 自动生成的通用描述文件不包含此权限。这<strong>常常是上一个问题（SPM依赖未下载）导致的</strong>，因为 Xcode 在依赖完整时才能正确识别扩展的所有配置。</p>
+<p><strong>解决方案</strong>：</p>
+<ol>
+<li><strong>确保 SPM 依赖已正确下载</strong>（见问题二），这是根本。</li>
+<li>在 Xcode 中，分别为主应用 (<code>ElementX</code>) 和扩展 (<code>ElementX NSE</code>) 配置签名：<ul>
+<li>在项目设置中，分别选中两个 Target。</li>
+<li>在 <strong>Signing &amp; Capabilities</strong> 标签页，勾选 <strong>“Automatically manage signing”</strong>，并为两者选择<strong>同一个</strong> Apple ID 团队。</li>
+<li>让 Xcode 自动管理描述文件和证书。</li>
+<li>或者手动删除Notification有关的文件entitlements文件临时。</li>
+</ul>
+</li>
+</ol>
+<p><strong>避坑点</strong>：不要一看到证书错误就去手动管理证书。项目依赖完整后，Xcode 的自动管理在大多数情况下都能很好地工作。</p>
+<h3 id="问题四：第三方库与-Xcode-SDK-版本不兼容"><a href="#问题四：第三方库与-Xcode-SDK-版本不兼容" class="headerlink" title="问题四：第三方库与 Xcode/SDK 版本不兼容"></a>问题四：第三方库与 Xcode/SDK 版本不兼容</h3><p><strong>报错信息</strong>：<br><code>Initializer ‘init(_:systemImage:value:content:)‘ requires that ‘LocalizedStringResource‘ conform to ‘StringProtocol‘</code><br><code>Compiling for iOS 15.6, but module ‘Compound‘ has a minimum deployment target of iOS 17.0</code></p>
+<p><strong>问题原因</strong>：</p>
+<ol>
+<li><strong>API 不兼容</strong>：<code>SFSafeSymbols</code> 等第三方库的最新代码可能使用了新版 iOS SDK（如 iOS 18/26）才提供的 API（如接受 <code>LocalizedStringResource</code> 参数的初始化器），而你的 Xcode 版本附带的 SDK 较旧。</li>
+<li><strong>部署目标过低</strong>：Element X iOS 项目及其依赖（如 <code>Compound</code>）要求最低部署目标为 iOS 17.0，但你的项目被错误地配置为更低的版本（如 iOS 15.6）。</li>
+</ol>
+<p><strong>解决方案</strong>：</p>
+<ol>
+<li><strong>锁定兼容的库版本</strong>：<ul>
+<li>在 Xcode 的 <strong>Package Dependencies</strong> 中，找到 <code>SFSafeSymbols</code>。</li>
+<li>将其版本规则从 “Up to Next Major” 修改为 <strong>“Exact Version”</strong>，并指定一个已知稳定的旧版本号，例如 <code>4.3.1</code>。</li>
+</ul>
+</li>
+<li><strong>提高项目的 iOS 部署目标</strong>：<ul>
+<li>在 Xcode 中，选中主 Target <code>ElementX</code>。</li>
+<li>在 <strong>General</strong> 标签页的 <strong>Minimum Deployments</strong> 部分，将 iOS 版本修改为 <strong>17.0</strong>。</li>
+<li><strong>务必同步检查并修改</strong> <code>ElementX NSE</code> 等其他 Target 的部署目标。</li>
+</ul>
+</li>
+</ol>
+<p><strong>避坑点</strong>：对于活跃的开源项目，直接使用依赖库的 <code>main</code> 分支最新提交可能有风险。在生产或稳定开发中，锁定具体的稳定版本号是更安全的选择。</p>
+<h3 id="问题五：应用图标-AppIcon-资源缺失"><a href="#问题五：应用图标-AppIcon-资源缺失" class="headerlink" title="问题五：应用图标 (AppIcon) 资源缺失"></a>问题五：应用图标 (AppIcon) 资源缺失</h3><p><strong>报错信息</strong>：<br><code>None of the input catalogs contained a matching stickers icon set, app icon set, or icon stack named “AppIcon”.</code></p>
+<p><strong>问题原因</strong>：<br>Xcode 在项目的资源目录 (<code>Assets.xcassets</code>) 中找不到名为 <code>AppIcon</code> 的应用图标集。Element X 作为开源项目，其应用图标可能因版权原因<strong>没有包含在代码仓库中</strong>，需要开发者自行提供。</p>
+<p><strong>解决方案</strong>：</p>
+<ol>
+<li><strong>创建占位图标集（用于编译测试）</strong>：<ul>
+<li>在 Xcode 的项目导航器中，右键点击 <code>Assets.xcassets</code>。</li>
+<li>选择 <strong>New App Icon</strong>。</li>
+<li>将新建的图标集命名为 <code>AppIcon</code>。</li>
+<li>你可以暂时使用单色图片或项目 Logo 生成所有尺寸的图标占位。</li>
+</ul>
+</li>
+<li><strong>检查配置</strong>：<ul>
+<li>选中 <code>ElementX</code> Target，进入 <strong>General</strong> 标签页。</li>
+<li>在 <strong>App Icons and Launch Screen</strong> 部分，确认 <strong>App Icons Source</strong> 指向了刚才创建的 <code>AppIcon</code>。</li>
+</ul>
+</li>
+</ol>
+<p><strong>避坑点</strong>：在编译开源 UI 项目时，图标、启动图等品牌资产缺失是非常常见的问题，准备一个占位图标集是快速推进开发的第一步。</p>
+<h3 id="问题六：应用扩展-App-Extension-包标识符冲突"><a href="#问题六：应用扩展-App-Extension-包标识符冲突" class="headerlink" title="问题六：应用扩展 (App Extension) 包标识符冲突"></a>问题六：应用扩展 (App Extension) 包标识符冲突</h3><p><strong>报错信息（模拟器安装失败）</strong>：</p>
+<p>text</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Failed to set app extension placeholders for com.youyue.demo</span><br><span class="line">Attempted to set app extension placeholder promise with bundle ID com.youyue.demo that does not match required prefix of com.youyue.demo. for parent</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>报错信息（真机构建产物冲突）</strong>：</p>
+<p>text</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Found bundle at ...&#x2F;ElementX.app&#x2F;PlugIns&#x2F;ShareExtension.appex with the same identifier (com.youyue.demo) as ...&#x2F;ElementX.app&#x2F;PlugIns&#x2F;NSE.appex</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>问题原因</strong>：<br>这是本教程最核心和棘手的错误之一。它包含了两个层面：</p>
+<ol>
+<li><strong>规则层面</strong>：iOS 规定，应用扩展（如 <code>NSE</code>, <code>ShareExtension</code>）的 <strong>Bundle Identifier</strong> 必须以主应用的 Bundle Identifier 为前缀。例如：<ul>
+<li>主应用：<code>com.youyue.demo</code></li>
+<li>通知扩展：<code>com.youyue.demo.NSE</code> (正确)</li>
+<li>分享扩展：<code>com.youyue.demo.ShareExtension</code> (正确)</li>
+<li>如果扩展也设置为 <code>com.youyue.demo</code> (错误)，则违反规则。</li>
+</ul>
+</li>
+<li><strong>实践层面</strong>：在真机编译报错中，两个扩展 (<code>NSE.appex</code> 和 <code>ShareExtension.appex</code>) 的标识符在最终产物中相同，说明<strong>项目的配置修改没有生效到构建产物中</strong>，通常是构建缓存或 <code>Info.plist</code> 硬编码导致。</li>
+</ol>
+<p><strong>解决方案</strong>：</p>
+<ol>
+<li><p><strong>检查并修正所有扩展的 Bundle Identifier</strong>：</p>
+<ul>
+<li>在 Xcode 的 <code>TARGETS</code> 列表中，检查<strong>每一个</strong>扩展 Target（<code>ElementX NSE</code>, <code>ShareExtension</code> 等）。</li>
+<li>在 <strong>Signing &amp; Capabilities</strong> 中，确保其 Bundle Identifier 格式为 <code>[主应用ID].[扩展后缀]</code>。</li>
+</ul>
+</li>
+<li><p><strong>检查 <code>Info.plist</code> 文件</strong>：</p>
+<ul>
+<li>打开每个扩展 Target 目录下的 <code>Info.plist</code> 文件。</li>
+<li>找到 <code>CFBundleIdentifier</code> 键，确保其值为 <strong><code>$(PRODUCT_BUNDLE_IDENTIFIER)</code></strong>，而不是一个硬编码的字符串。如果是硬编码的错误 ID，请修改。</li>
+</ul>
+</li>
+<li><p><strong>执行终极清理</strong>：</p>
+<p>bash</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 清除所有Xcode缓存</span><br><span class="line">rm -rf ~&#x2F;Library&#x2F;Developer&#x2F;Xcode&#x2F;DerivedData&#x2F;</span><br><span class="line"># 清除Swift包缓存</span><br><span class="line">rm -rf ~&#x2F;Library&#x2F;Caches&#x2F;org.swift.swiftpm&#x2F;</span><br><span class="line"># 重置模拟器（通过模拟器App或Xcode的设备管理）</span><br></pre></td></tr></table></figure>
+
+
+
+<ol>
+<li><strong>修改主应用ID（破釜沉舟）</strong>：<br>如果以上无效，尝试将主应用 ID 改为一个全新的（如 <code>com.youyue.demo.new</code>），让 Xcode 自动为所有扩展生成新的、正确的前缀ID。</li>
+</ol>
+<p><strong>避坑点</strong>：当修改了 Bundle Identifier 但错误依旧时，首先怀疑 <strong><code>Info.plist</code> 硬编码</strong>和<strong>构建缓存</strong>。进行最彻底的清理是打破僵局的关键。</p>
+<h3 id="问题七：Metal-工具链或模拟器运行时缺失"><a href="#问题七：Metal-工具链或模拟器运行时缺失" class="headerlink" title="问题七：Metal 工具链或模拟器运行时缺失"></a>问题七：Metal 工具链或模拟器运行时缺失</h3><p><strong>报错信息</strong>：<br><code>Encountered an error fetching additional Metal toolchain search paths. Error=...assetNotDownloaded(17C48)</code></p>
+<p><strong>问题原因</strong>：<br>Xcode 在编译或运行项目时，需要特定的模拟器运行时组件来支持图形（Metal）等功能，但这些组件没有安装。这在使用较新 iOS 版本模拟器（如 iOS 17）时可能出现。</p>
+<p><strong>解决方案</strong>：</p>
+<ol>
+<li><strong>在 Xcode 中检查并安装</strong>：<ul>
+<li>打开 <strong>Xcode → Settings… (Preferences)</strong>。</li>
+<li>切换到 <strong>Platforms</strong> 标签页。</li>
+<li>检查 “iOS 17.x Simulator” 的状态，如果显示未安装，点击下载按钮。</li>
+</ul>
+</li>
+<li><strong>手动下载安装（如果自动下载慢）</strong>：<ul>
+<li>访问 <a href="https://developer.apple.com/download/all/" target="_blank" rel="noopener">Apple Developer Downloads</a>。</li>
+<li>搜索 “iOS 17 Simulator Runtime” 并下载 <code>.dmg</code> 安装包。</li>
+<li>安装后重启 Xcode。</li>
+</ul>
+</li>
+</ol>
+<p><strong>避坑点</strong>：保持 Xcode 及其组件为最新版本，可以避免很多因工具链不匹配导致的诡异问题。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Element X iOS 作为一个大型、现代的 SwiftUI 项目，其配置过程串联了从 Ruby 工具链、Swift 包依赖管理、到复杂的应用扩展配置等 iOS 开发的多个核心领域。遇到问题时，建议遵循以下排查顺序：</p>
+<ol>
+<li><strong>基础环境</strong>：确保 <code>bundle install</code> 和 <code>pod install</code> (如适用) 成功。</li>
+<li><strong>网络与依赖</strong>：解决 SPM 下载问题（如 SSL 验证），这是后续问题的常见根源。</li>
+<li><strong>项目配置</strong>：检查 iOS 部署目标、库版本兼容性。</li>
+<li><strong>签名与标识</strong>：理解主应用与扩展的 Bundle ID 规则，善用自动签名，并警惕缓存。</li>
+<li><strong>清理重建</strong>：当任何配置修改看似无效时，执行深度清理 (<code>DerivedData</code>, 模拟器重置`) 往往是终极手段。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://kziwws.github.io/2025/12/26/technology20251226182457/" data-id="cmjryqh6m007fard67v2z3g9r" class="article-share-link" data-share="baidu" data-title="Element X iOS 项目开发环境配置与编译打包完全指南：从依赖安装到签名配置的完整避坑记录">分享到</a>
+      
+
+    
+  <a href="https://kziwws.github.io/2025/12/26/technology20251226182457/#valine_thread" class="article-comment-link">评论</a>
+
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ElementX/" rel="tag">ElementX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/" rel="tag">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swiftUI/" rel="tag">swiftUI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/technology/" rel="tag">technology</a></li></ul>
+
+    </footer>
+  </div>
+  
+    <!-- 
+<nav id="article-nav">
+  
+  
+    <a href="/2025/11/05/technology20251105090825/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">Sudoku Game Privacy Policy_ Zero Personal Data Collection, Pure Gaming Experience</div>
+    </a>
+  
+</nav>
+  -->
+
+
+
+
+
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2025/11/05/technology20251105090825/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><font size="2" color="#708090">上一篇 older</font></strong>
+      <div class="article-nav-title"><font color="#555">Sudoku Game Privacy Policy_ Zero Personal Data Collection, Pure Gaming Experience</font></div>
+    </a>
+   
+</nav>
+
+
+  
+</article>
+
+  <section id="comments">
+    <div id="valine_thread">
+      <div class="comment"></div>
+    </div>
+  </section>
+</section>
+      
+      <aside id="sidebar">
+  
+    
+<div class="widget-wrap">
+  <h3 class="widget-title">关于</h3>
+  <ul class="widget about-me">
+    
+    <li><img class="author" title="About me" src="/img/github.png" /></li>
+    
+    
+    <li ><font color="#424242" size="2em">苹果应用软件开发 & 游戏软件开发</font></li>
+    
+    <li ><font color="#424242" size="2em">email: ggb.chen@foxmail.com</font></li>
+    
+  </ul>
+</div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/charles/">charles</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocoapods/">cocoapods</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocosCreator/">cocosCreator</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/error/">error</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/knowledge/">knowledge</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/regexp/">regexp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/swiftUI/">swiftUI</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/swiftUI/ios/">ios</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/">诗</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E6%AD%8C/">诗歌</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%AF%97%E8%AF%8D/">诗词</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%97/%E8%BD%AC%E5%BD%95/">转录</a><span class="category-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ElementX/" rel="tag">ElementX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MQTT/" rel="tag">MQTT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/" rel="tag">Ruby</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoapods/" rel="tag">cocoapods</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocosCreator/" rel="tag">cocosCreator</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/" rel="tag">flutter</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/" rel="tag">ios</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knowledge/" rel="tag">knowledge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/poetry/" rel="tag">poetry</a><span class="tag-list-count">46</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rbenv/" rel="tag">rbenv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regexp/" rel="tag">regexp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swiftUI/" rel="tag">swiftUI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology/" rel="tag">technology</a><span class="tag-list-count">32</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ElementX/" style="font-size: 10px;">ElementX</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/android/" style="font-size: 11.43px;">android</a> <a href="/tags/cocoapods/" style="font-size: 11.43px;">cocoapods</a> <a href="/tags/cocosCreator/" style="font-size: 17.14px;">cocosCreator</a> <a href="/tags/flutter/" style="font-size: 11.43px;">flutter</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 15.71px;">hexo</a> <a href="/tags/ios/" style="font-size: 14.29px;">ios</a> <a href="/tags/knowledge/" style="font-size: 10px;">knowledge</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/poetry/" style="font-size: 20px;">poetry</a> <a href="/tags/python/" style="font-size: 12.86px;">python</a> <a href="/tags/rbenv/" style="font-size: 10px;">rbenv</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/swiftUI/" style="font-size: 10px;">swiftUI</a> <a href="/tags/technology/" style="font-size: 18.57px;">technology</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <!--<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">十二月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">一月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">5</span></li></ul> -->
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">2025年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">2023年</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">2022年</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">2021年</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">2020年</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019年</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">2017年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/12/26/technology20251226182457/">Element X iOS 项目开发环境配置与编译打包完全指南：从依赖安装到签名配置的完整避坑记录</a>
+          </li>
+        
+          <li>
+            <a href="/2025/11/05/technology20251105090825/">Sudoku Game Privacy Policy_ Zero Personal Data Collection, Pure Gaming Experience</a>
+          </li>
+        
+          <li>
+            <a href="/2025/01/15/technology20250115101210/">MQTT 在孪生物联网系统中的应用实践</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/10/technology20230910111821/">Hexo博客部署常见问题及解决方案</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/14/technology20230314101225/">利用python脚本拆解游戏中的图集资源</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://github.com/kziwws" target="_blank">github</a>
+          </li>
+        
+          <li>
+            <a href="https://shevakuilin.com" target="_blank">shevakuilin</a>
+          </li>
+        
+          <li>
+            <a href="https://hans2936.github.io" target="_blank">hans2936</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 <a href="https://github.com/kziwws" target="_blank">kziwws</a> 
+      Powered by hexo,Theme by landscape-plus.
+    </div>
+    <div id="footer-info" class="inner">
+      本站博客采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank">[知识共享署名-非商业性使用-相同方式共享 3.0 中国大陆许可协议]</a> 进行许可
+    </div>
+  </div>
+</footer>
+
+
+<!--
+<div id="footer-info" class="inner">
+     &copy; 2025 kziwws<br>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+     .
+     Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+   </div>
+</div>
+-->
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/tags/technology" class="mobile-nav-link">编程技术</a>
+  
+    <a href="/tags/poetry" class="mobile-nav-link">诗</a>
+  
+    <a href="/tags/life" class="mobile-nav-link">生活随笔</a>
+  
+    <a href="/archives" class="mobile-nav-link">所有文章</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<!--载入js，在</body>之前插入即可-->
+    <!--Leancloud 操作库:-->
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!--Valine 的核心代码库-->
+    <script src="/js/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV, 
+            el: '.comment',
+            app_id: 'zh2N00Qk2UIsu1N8Qfu468TH-gzGzoHsz',
+            app_key: 'BJrjTSEoKMfc05OMLWhCzmHk',
+            placeholder: '想说点什么...',
+            pageSize: 15,
+            notify: false,
+            verify: false,
+        });
+    </script>
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+                processEscapes: true
+                    
+}
+  
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                  
+}
+    
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                            all[i].SourceElement().parentNode.className += ' has-jax';
+                                    
+            }
+                
+        });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+</div>
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="icon-search"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.local-search-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+                  
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><span id="icon-search"></span></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><span id="icon-frown"></span></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+          
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+</body>
+</html>
+
