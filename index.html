@@ -141,25 +141,10 @@ var _hmt = _hmt || [];
         <h2 id="IOS-关于-element-x-ios-develop-SwiftUI-项目打包的完整踩坑教程"><a href="#IOS-关于-element-x-ios-develop-SwiftUI-项目打包的完整踩坑教程" class="headerlink" title="IOS 关于 element-x-ios-develop SwiftUI 项目打包的完整踩坑教程"></a>IOS 关于 <code>element-x-ios-develop</code> SwiftUI 项目打包的完整踩坑教程</h2><blockquote>
 <p>本文记录了从零开始配置、编译 Element X iOS（一个基于 SwiftUI 和 Matrix Rust SDK 的下一代开源聊天客户端）项目时，所遇到的一系列典型问题及其解决方案。涵盖环境依赖、证书签名、扩展配置等核心难题。</p>
 </blockquote>
-<h3 id="问题一：Ruby-环境与项目依赖安装失败"><a href="#问题一：Ruby-环境与项目依赖安装失败" class="headerlink" title="问题一：Ruby 环境与项目依赖安装失败"></a>问题一：Ruby 环境与项目依赖安装失败</h3><p><strong>报错信息</strong>：<code>Could not locate Gemfile</code> 或 <code>cocoapods is not currently included in the bundle</code></p>
+<h4 id="问题一：Ruby-环境与项目依赖安装失败"><a href="#问题一：Ruby-环境与项目依赖安装失败" class="headerlink" title="问题一：Ruby 环境与项目依赖安装失败"></a><font color='red'>问题一：Ruby 环境与项目依赖安装失败</font></h4><p><strong>报错信息</strong>：<code>Could not locate Gemfile</code> 或 <code>cocoapods is not currently included in the bundle</code></p>
 <p><strong>问题原因</strong>：<br>Element X iOS 项目使用 <code>Bundler</code> 来管理 Ruby 工具链（如 <code>fastlane</code>），确保团队开发环境一致。直接使用 <code>sudo gem install</code> 安装的包是全局的，与项目 <code>Gemfile</code> 中锁定的版本可能冲突，导致后续命令失败。</p>
-<p><strong>解决方案</strong>：<br>核心是使用 <code>bundle exec</code> 来运行项目锁定的工具版本。</p>
-<p>bash</p>
+<p><font color='green'><strong>解决方案</strong>：</font><br>核心是使用 <code>bundle exec</code> 来运行项目锁定的工具版本。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 1. 进入项目根目录</span><br><span class="line">cd &#x2F;path&#x2F;to&#x2F;element-x-ios-develop</span><br><span class="line"></span><br><span class="line"># 2. 使用 Bundler 安装 Gemfile 中指定的 Ruby 工具</span><br><span class="line"># 这会根据 Gemfile.lock 安装正确版本的 fastlane 等</span><br><span class="line">bundle install</span><br><span class="line"></span><br><span class="line"># 3. 使用 Bundler 来运行 CocoaPods 安装 iOS 依赖</span><br><span class="line"># 这样会使用项目指定的 CocoaPods 版本，避免版本冲突</span><br><span class="line">bundle exec pod install</span><br><span class="line"></span><br><span class="line"># 如果第3步失败，提示找不到 cocoapods，需要将其加入 Gemfile</span><br></pre></td></tr></table></figure>
-
-
-
-<p>如果 <code>bundle exec pod install</code> 失败并提示 CocoaPods 不在 bundle 中，需要在项目的 <code>Gemfile</code> 中添加 <code>gem &#39;cocoapods&#39;</code>，然后重新运行 <code>bundle install</code>。</p>
-<p><strong>避坑点</strong>：永远在项目目录下，优先使用 <code>bundle exec</code> 来执行 <code>pod</code>、<code>fastlane</code> 等命令，可以避免绝大多数因工具版本不匹配导致的问题。</p>
-<h3 id="问题二：Swift-Package-Manager-SPM-依赖下载失败"><a href="#问题二：Swift-Package-Manager-SPM-依赖下载失败" class="headerlink" title="问题二：Swift Package Manager (SPM) 依赖下载失败"></a>问题二：Swift Package Manager (SPM) 依赖下载失败</h3><p><strong>报错信息</strong>：<br><code>github.com: The server SSL certificate failed to verify.</code><br><code>Missing package product ‘Algorithms‘, ‘Compound‘...</code></p>
-<p><strong>问题原因</strong>：<br>项目大量依赖通过 Swift Package Manager (SPM) 从 GitHub 引入。在某些网络环境下（如公司内网、代理），Xcode 无法验证  GitHub 的 SSL 证书，导致依赖包无法下载，进而引发一系列连锁错误（如后续的签名配置问题）。</p>
-<p><strong>解决方案</strong>：</p>
-<ol>
-<li><p><strong>临时绕过 SSL 验证（快速解决问题）</strong>：<br>在终端执行以下命令，这通常是解决下载问题的关键第一步。</p>
-<p>bash</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.sslVerify false</span><br></pre></td></tr></table></figure>
         
           <p class="article-more-link">
             <a href="/2025/12/26/technology20251226182457/#more">Read More</a>
@@ -169,7 +154,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2025/12/26/technology20251226182457/" data-id="cmjryqh6m007fard67v2z3g9r" class="article-share-link" data-share="baidu" data-title="Element X iOS 项目开发环境配置与编译打包完全指南：从依赖安装到签名配置的完整避坑记录">分享到</a>
+        <a data-url="https://kziwws.github.io/2025/12/26/technology20251226182457/" data-id="cmjrz6hcc006yjid6a8vpfvpc" class="article-share-link" data-share="baidu" data-title="Element X iOS 项目开发环境配置与编译打包完全指南：从依赖安装到签名配置的完整避坑记录">分享到</a>
       
 
     
@@ -227,7 +212,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2025/11/05/technology20251105090825/" data-id="cmjryqh6m0078ard6azws2oyn" class="article-share-link" data-share="baidu" data-title="Sudoku Game Privacy Policy_ Zero Personal Data Collection, Pure Gaming Experience">分享到</a>
+        <a data-url="https://kziwws.github.io/2025/11/05/technology20251105090825/" data-id="cmjrz6hcc006vjid6gtya9ozx" class="article-share-link" data-share="baidu" data-title="Sudoku Game Privacy Policy_ Zero Personal Data Collection, Pure Gaming Experience">分享到</a>
       
 
     
@@ -293,7 +278,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2025/01/15/technology20250115101210/" data-id="cmjryqh6m007jard6d0ooeme8" class="article-share-link" data-share="baidu" data-title="MQTT 在孪生物联网系统中的应用实践">分享到</a>
+        <a data-url="https://kziwws.github.io/2025/01/15/technology20250115101210/" data-id="cmjrz6hcc0073jid683ms3yp3" class="article-share-link" data-share="baidu" data-title="MQTT 在孪生物联网系统中的应用实践">分享到</a>
       
 
     
@@ -349,7 +334,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2023/09/10/technology20230910111821/" data-id="cmjryqh6l006vard62o7n52xz" class="article-share-link" data-share="baidu" data-title="Hexo博客部署常见问题及解决方案">分享到</a>
+        <a data-url="https://kziwws.github.io/2023/09/10/technology20230910111821/" data-id="cmjrz6hcc006njid6gp2d88nl" class="article-share-link" data-share="baidu" data-title="Hexo博客部署常见问题及解决方案">分享到</a>
       
 
     
@@ -413,7 +398,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2023/03/14/technology20230314101225/" data-id="cmjryqh6l0073ard6es8w19y5" class="article-share-link" data-share="baidu" data-title="利用python脚本拆解游戏中的图集资源">分享到</a>
+        <a data-url="https://kziwws.github.io/2023/03/14/technology20230314101225/" data-id="cmjrz6hcc006ijid678kebqd0" class="article-share-link" data-share="baidu" data-title="利用python脚本拆解游戏中的图集资源">分享到</a>
       
 
     
@@ -495,7 +480,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2023/02/10/technology20230210090112/" data-id="cmjryqh6l0070ard667dm9ide" class="article-share-link" data-share="baidu" data-title="利用jekenis自动打包上传阿里云下载和通知钉钉机器人">分享到</a>
+        <a data-url="https://kziwws.github.io/2023/02/10/technology20230210090112/" data-id="cmjrz6hcc006qjid67njic7uc" class="article-share-link" data-share="baidu" data-title="利用jekenis自动打包上传阿里云下载和通知钉钉机器人">分享到</a>
       
 
     
@@ -554,7 +539,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2023/01/21/technology20230121151206/" data-id="cmjryqh6k006kard6bwi3hnnx" class="article-share-link" data-share="baidu" data-title="IOS项目脚本自动化批量打包并上传第三方平台">分享到</a>
+        <a data-url="https://kziwws.github.io/2023/01/21/technology20230121151206/" data-id="cmjrz6hcc006fjid6aeww23lp" class="article-share-link" data-share="baidu" data-title="IOS项目脚本自动化批量打包并上传第三方平台">分享到</a>
       
 
     
@@ -613,7 +598,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2023/01/20/technology20230120161001/" data-id="cmjryqh6l006nard61euqg6wb" class="article-share-link" data-share="baidu" data-title="IOS项目单独脚本自动化打包">分享到</a>
+        <a data-url="https://kziwws.github.io/2023/01/20/technology20230120161001/" data-id="cmjrz6hcb006bjid66gqugstm" class="article-share-link" data-share="baidu" data-title="IOS项目单独脚本自动化打包">分享到</a>
       
 
     
@@ -822,7 +807,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2023/01/06/technology20230106110520/" data-id="cmjryqh6m007bard62tamh1wi" class="article-share-link" data-share="baidu" data-title="Hexo文章上传指令操作">分享到</a>
+        <a data-url="https://kziwws.github.io/2023/01/06/technology20230106110520/" data-id="cmjrz6hcb0067jid689zhdcs7" class="article-share-link" data-share="baidu" data-title="Hexo文章上传指令操作">分享到</a>
       
 
     
@@ -871,7 +856,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2022/10/16/poetry20221016194425/" data-id="cmjryqh6h0049ard60hlo6z6p" class="article-share-link" data-share="baidu" data-title="《叹平生》">分享到</a>
+        <a data-url="https://kziwws.github.io/2022/10/16/poetry20221016194425/" data-id="cmjrz6hc8003xjid6ahaga65c" class="article-share-link" data-share="baidu" data-title="《叹平生》">分享到</a>
       
 
     

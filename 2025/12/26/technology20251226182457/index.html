@@ -14,7 +14,7 @@
 <meta property="og:description" content="本文详细记录了在 macOS 上配置、编译和打包开源 Matrix 客户端 Element X iOS (SwiftUI 项目) 的完整过程，涵盖 Ruby (Bundler) 环境、Swift Package Manager 依赖、证书签名、应用扩展配置等一系列典型问题的解决方案。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-12-26T10:24:57.000Z">
-<meta property="article:modified_time" content="2025-12-30T02:17:58.592Z">
+<meta property="article:modified_time" content="2025-12-30T02:35:08.720Z">
 <meta property="article:author" content="kziwws">
 <meta property="article:tag" content="Element X iOS">
 <meta property="article:tag" content=" SwiftUI">
@@ -150,27 +150,22 @@ var _hmt = _hmt || [];
         <h2 id="IOS-关于-element-x-ios-develop-SwiftUI-项目打包的完整踩坑教程"><a href="#IOS-关于-element-x-ios-develop-SwiftUI-项目打包的完整踩坑教程" class="headerlink" title="IOS 关于 element-x-ios-develop SwiftUI 项目打包的完整踩坑教程"></a>IOS 关于 <code>element-x-ios-develop</code> SwiftUI 项目打包的完整踩坑教程</h2><blockquote>
 <p>本文记录了从零开始配置、编译 Element X iOS（一个基于 SwiftUI 和 Matrix Rust SDK 的下一代开源聊天客户端）项目时，所遇到的一系列典型问题及其解决方案。涵盖环境依赖、证书签名、扩展配置等核心难题。</p>
 </blockquote>
-<h3 id="问题一：Ruby-环境与项目依赖安装失败"><a href="#问题一：Ruby-环境与项目依赖安装失败" class="headerlink" title="问题一：Ruby 环境与项目依赖安装失败"></a>问题一：Ruby 环境与项目依赖安装失败</h3><p><strong>报错信息</strong>：<code>Could not locate Gemfile</code> 或 <code>cocoapods is not currently included in the bundle</code></p>
+<h4 id="问题一：Ruby-环境与项目依赖安装失败"><a href="#问题一：Ruby-环境与项目依赖安装失败" class="headerlink" title="问题一：Ruby 环境与项目依赖安装失败"></a><font color='red'>问题一：Ruby 环境与项目依赖安装失败</font></h4><p><strong>报错信息</strong>：<code>Could not locate Gemfile</code> 或 <code>cocoapods is not currently included in the bundle</code></p>
 <p><strong>问题原因</strong>：<br>Element X iOS 项目使用 <code>Bundler</code> 来管理 Ruby 工具链（如 <code>fastlane</code>），确保团队开发环境一致。直接使用 <code>sudo gem install</code> 安装的包是全局的，与项目 <code>Gemfile</code> 中锁定的版本可能冲突，导致后续命令失败。</p>
-<p><strong>解决方案</strong>：<br>核心是使用 <code>bundle exec</code> 来运行项目锁定的工具版本。</p>
-<p>bash</p>
+<p><font color='green'><strong>解决方案</strong>：</font><br>核心是使用 <code>bundle exec</code> 来运行项目锁定的工具版本。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 1. 进入项目根目录</span><br><span class="line">cd &#x2F;path&#x2F;to&#x2F;element-x-ios-develop</span><br><span class="line"></span><br><span class="line"># 2. 使用 Bundler 安装 Gemfile 中指定的 Ruby 工具</span><br><span class="line"># 这会根据 Gemfile.lock 安装正确版本的 fastlane 等</span><br><span class="line">bundle install</span><br><span class="line"></span><br><span class="line"># 3. 使用 Bundler 来运行 CocoaPods 安装 iOS 依赖</span><br><span class="line"># 这样会使用项目指定的 CocoaPods 版本，避免版本冲突</span><br><span class="line">bundle exec pod install</span><br><span class="line"></span><br><span class="line"># 如果第3步失败，提示找不到 cocoapods，需要将其加入 Gemfile</span><br></pre></td></tr></table></figure>
 
-
+<a id="more"></a>
 
 <p>如果 <code>bundle exec pod install</code> 失败并提示 CocoaPods 不在 bundle 中，需要在项目的 <code>Gemfile</code> 中添加 <code>gem &#39;cocoapods&#39;</code>，然后重新运行 <code>bundle install</code>。</p>
 <p><strong>避坑点</strong>：永远在项目目录下，优先使用 <code>bundle exec</code> 来执行 <code>pod</code>、<code>fastlane</code> 等命令，可以避免绝大多数因工具版本不匹配导致的问题。</p>
-<h3 id="问题二：Swift-Package-Manager-SPM-依赖下载失败"><a href="#问题二：Swift-Package-Manager-SPM-依赖下载失败" class="headerlink" title="问题二：Swift Package Manager (SPM) 依赖下载失败"></a>问题二：Swift Package Manager (SPM) 依赖下载失败</h3><p><strong>报错信息</strong>：<br><code>github.com: The server SSL certificate failed to verify.</code><br><code>Missing package product ‘Algorithms‘, ‘Compound‘...</code></p>
+<h4 id="问题二：Swift-Package-Manager-SPM-依赖下载失败"><a href="#问题二：Swift-Package-Manager-SPM-依赖下载失败" class="headerlink" title="问题二：Swift Package Manager (SPM) 依赖下载失败"></a><font color='red'>问题二：Swift Package Manager (SPM) 依赖下载失败</font></h4><p><strong>报错信息</strong>：<br><code>github.com: The server SSL certificate failed to verify.</code><br><code>Missing package product ‘Algorithms‘, ‘Compound‘...</code></p>
 <p><strong>问题原因</strong>：<br>项目大量依赖通过 Swift Package Manager (SPM) 从 GitHub 引入。在某些网络环境下（如公司内网、代理），Xcode 无法验证  GitHub 的 SSL 证书，导致依赖包无法下载，进而引发一系列连锁错误（如后续的签名配置问题）。</p>
-<p><strong>解决方案</strong>：</p>
+<p><font color='green'><strong>解决方案</strong>：</font></p>
 <ol>
-<li><p><strong>临时绕过 SSL 验证（快速解决问题）</strong>：<br>在终端执行以下命令，这通常是解决下载问题的关键第一步。</p>
-<p>bash</p>
-</li>
+<li><strong>临时绕过 SSL 验证（快速解决问题）</strong>：<br>在终端执行以下命令，这通常是解决下载问题的关键第一步。</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.sslVerify false</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
 
 <p><strong>注意</strong>：此操作会降低安全性，仅用于开发环境，解决问题后可通过 <code>git config --global http.sslVerify true</code> 恢复。</p>
 <p><strong>在 Xcode 中重置并重试</strong>：</p>
@@ -178,7 +173,6 @@ var _hmt = _hmt || [];
 <li><p>完全关闭 Xcode。</p>
 </li>
 <li><p>删除 Xcode 的包缓存和构建缓存：</p>
-<p>bash</p>
 </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~&#x2F;Library&#x2F;Caches&#x2F;org.swift.swiftpm&#x2F;</span><br><span class="line">rm -rf ~&#x2F;Library&#x2F;Developer&#x2F;Xcode&#x2F;DerivedData&#x2F;</span><br></pre></td></tr></table></figure>
@@ -191,9 +185,9 @@ var _hmt = _hmt || [];
 </li>
 </ol>
 <p><strong>避坑点</strong>：SPM 的依赖下载失败是项目无法编译的<strong>万恶之源</strong>，会伪装成各种后续错误。优先解决网络连通性问题。</p>
-<h3 id="问题三：通知扩展-NSE-的证书配置错误"><a href="#问题三：通知扩展-NSE-的证书配置错误" class="headerlink" title="问题三：通知扩展 (NSE) 的证书配置错误"></a>问题三：通知扩展 (NSE) 的证书配置错误</h3><p><strong>报错信息</strong>：<br><code>Provisioning profile “iOS Team Provisioning Profile: com.youyue.demo“ doesn‘t  include the com.apple.developer.usernotifications.filtering entitlement.</code></p>
+<h4 id="问题三：通知扩展-NSE-的证书配置错误"><a href="#问题三：通知扩展-NSE-的证书配置错误" class="headerlink" title="问题三：通知扩展 (NSE) 的证书配置错误"></a><font color='red'>问题三：通知扩展 (NSE) 的证书配置错误</font></h4><p><strong>报错信息</strong>：<br><code>Provisioning profile “iOS Team Provisioning Profile: com.youyue.demo“ doesn‘t  include the com.apple.developer.usernotifications.filtering entitlement.</code></p>
 <p><strong>问题原因</strong>：<br>“NSE” 是 <code>Notification Service Extension</code>（通知服务扩展）。这个错误是因为 <code>NSE</code> 在自身的权限文件 (<code>entitlements</code>) 中声明了 <code>com.apple.developer.usernotifications.filtering</code> 权限，但 Xcode 自动生成的通用描述文件不包含此权限。这<strong>常常是上一个问题（SPM依赖未下载）导致的</strong>，因为 Xcode 在依赖完整时才能正确识别扩展的所有配置。</p>
-<p><strong>解决方案</strong>：</p>
+<p><font color='green'><strong>解决方案</strong>：</font></p>
 <ol>
 <li><strong>确保 SPM 依赖已正确下载</strong>（见问题二），这是根本。</li>
 <li>在 Xcode 中，分别为主应用 (<code>ElementX</code>) 和扩展 (<code>ElementX NSE</code>) 配置签名：<ul>
@@ -205,13 +199,13 @@ var _hmt = _hmt || [];
 </li>
 </ol>
 <p><strong>避坑点</strong>：不要一看到证书错误就去手动管理证书。项目依赖完整后，Xcode 的自动管理在大多数情况下都能很好地工作。</p>
-<h3 id="问题四：第三方库与-Xcode-SDK-版本不兼容"><a href="#问题四：第三方库与-Xcode-SDK-版本不兼容" class="headerlink" title="问题四：第三方库与 Xcode/SDK 版本不兼容"></a>问题四：第三方库与 Xcode/SDK 版本不兼容</h3><p><strong>报错信息</strong>：<br><code>Initializer ‘init(_:systemImage:value:content:)‘ requires that ‘LocalizedStringResource‘ conform to ‘StringProtocol‘</code><br><code>Compiling for iOS 15.6, but module ‘Compound‘ has a minimum deployment target of iOS 17.0</code></p>
+<h4 id="问题四：第三方库与-Xcode-SDK-版本不兼容"><a href="#问题四：第三方库与-Xcode-SDK-版本不兼容" class="headerlink" title="问题四：第三方库与 Xcode/SDK 版本不兼容"></a><font color='red'>问题四：第三方库与 Xcode/SDK 版本不兼容</font></h4><p><strong>报错信息</strong>：<br><code>Initializer ‘init(_:systemImage:value:content:)‘ requires that ‘LocalizedStringResource‘ conform to ‘StringProtocol‘</code><br><code>Compiling for iOS 15.6, but module ‘Compound‘ has a minimum deployment target of iOS 17.0</code></p>
 <p><strong>问题原因</strong>：</p>
 <ol>
 <li><strong>API 不兼容</strong>：<code>SFSafeSymbols</code> 等第三方库的最新代码可能使用了新版 iOS SDK（如 iOS 18/26）才提供的 API（如接受 <code>LocalizedStringResource</code> 参数的初始化器），而你的 Xcode 版本附带的 SDK 较旧。</li>
 <li><strong>部署目标过低</strong>：Element X iOS 项目及其依赖（如 <code>Compound</code>）要求最低部署目标为 iOS 17.0，但你的项目被错误地配置为更低的版本（如 iOS 15.6）。</li>
 </ol>
-<p><strong>解决方案</strong>：</p>
+<p><font color='green'><strong>解决方案</strong>：</font></p>
 <ol>
 <li><strong>锁定兼容的库版本</strong>：<ul>
 <li>在 Xcode 的 <strong>Package Dependencies</strong> 中，找到 <code>SFSafeSymbols</code>。</li>
@@ -226,9 +220,9 @@ var _hmt = _hmt || [];
 </li>
 </ol>
 <p><strong>避坑点</strong>：对于活跃的开源项目，直接使用依赖库的 <code>main</code> 分支最新提交可能有风险。在生产或稳定开发中，锁定具体的稳定版本号是更安全的选择。</p>
-<h3 id="问题五：应用图标-AppIcon-资源缺失"><a href="#问题五：应用图标-AppIcon-资源缺失" class="headerlink" title="问题五：应用图标 (AppIcon) 资源缺失"></a>问题五：应用图标 (AppIcon) 资源缺失</h3><p><strong>报错信息</strong>：<br><code>None of the input catalogs contained a matching stickers icon set, app icon set, or icon stack named “AppIcon”.</code></p>
+<h4 id="问题五：应用图标-AppIcon-资源缺失"><a href="#问题五：应用图标-AppIcon-资源缺失" class="headerlink" title="问题五：应用图标 (AppIcon) 资源缺失"></a><font color='red'>问题五：应用图标 (AppIcon) 资源缺失</font></h4><p><strong>报错信息</strong>：<br><code>None of the input catalogs contained a matching stickers icon set, app icon set, or icon stack named “AppIcon”.</code></p>
 <p><strong>问题原因</strong>：<br>Xcode 在项目的资源目录 (<code>Assets.xcassets</code>) 中找不到名为 <code>AppIcon</code> 的应用图标集。Element X 作为开源项目，其应用图标可能因版权原因<strong>没有包含在代码仓库中</strong>，需要开发者自行提供。</p>
-<p><strong>解决方案</strong>：</p>
+<p><font color='green'><strong>解决方案</strong>：</font></p>
 <ol>
 <li><strong>创建占位图标集（用于编译测试）</strong>：<ul>
 <li>在 Xcode 的项目导航器中，右键点击 <code>Assets.xcassets</code>。</li>
@@ -244,14 +238,12 @@ var _hmt = _hmt || [];
 </li>
 </ol>
 <p><strong>避坑点</strong>：在编译开源 UI 项目时，图标、启动图等品牌资产缺失是非常常见的问题，准备一个占位图标集是快速推进开发的第一步。</p>
-<h3 id="问题六：应用扩展-App-Extension-包标识符冲突"><a href="#问题六：应用扩展-App-Extension-包标识符冲突" class="headerlink" title="问题六：应用扩展 (App Extension) 包标识符冲突"></a>问题六：应用扩展 (App Extension) 包标识符冲突</h3><p><strong>报错信息（模拟器安装失败）</strong>：</p>
-<p>text</p>
+<h4 id="问题六：应用扩展-App-Extension-包标识符冲突"><a href="#问题六：应用扩展-App-Extension-包标识符冲突" class="headerlink" title="问题六：应用扩展 (App Extension) 包标识符冲突"></a><font color='red'>问题六：应用扩展 (App Extension) 包标识符冲突</font></h4><p><strong>报错信息（模拟器安装失败）</strong>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Failed to set app extension placeholders for com.youyue.demo</span><br><span class="line">Attempted to set app extension placeholder promise with bundle ID com.youyue.demo that does not match required prefix of com.youyue.demo. for parent</span><br></pre></td></tr></table></figure>
 
 
 
 <p><strong>报错信息（真机构建产物冲突）</strong>：</p>
-<p>text</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Found bundle at ...&#x2F;ElementX.app&#x2F;PlugIns&#x2F;ShareExtension.appex with the same identifier (com.youyue.demo) as ...&#x2F;ElementX.app&#x2F;PlugIns&#x2F;NSE.appex</span><br></pre></td></tr></table></figure>
 
 
@@ -267,7 +259,7 @@ var _hmt = _hmt || [];
 </li>
 <li><strong>实践层面</strong>：在真机编译报错中，两个扩展 (<code>NSE.appex</code> 和 <code>ShareExtension.appex</code>) 的标识符在最终产物中相同，说明<strong>项目的配置修改没有生效到构建产物中</strong>，通常是构建缓存或 <code>Info.plist</code> 硬编码导致。</li>
 </ol>
-<p><strong>解决方案</strong>：</p>
+<p><font color='green'><strong>解决方案</strong>：</font></p>
 <ol>
 <li><p><strong>检查并修正所有扩展的 Bundle Identifier</strong>：</p>
 <ul>
@@ -282,7 +274,6 @@ var _hmt = _hmt || [];
 </ul>
 </li>
 <li><p><strong>执行终极清理</strong>：</p>
-<p>bash</p>
 </li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 清除所有Xcode缓存</span><br><span class="line">rm -rf ~&#x2F;Library&#x2F;Developer&#x2F;Xcode&#x2F;DerivedData&#x2F;</span><br><span class="line"># 清除Swift包缓存</span><br><span class="line">rm -rf ~&#x2F;Library&#x2F;Caches&#x2F;org.swift.swiftpm&#x2F;</span><br><span class="line"># 重置模拟器（通过模拟器App或Xcode的设备管理）</span><br></pre></td></tr></table></figure>
@@ -293,9 +284,9 @@ var _hmt = _hmt || [];
 <li><strong>修改主应用ID（破釜沉舟）</strong>：<br>如果以上无效，尝试将主应用 ID 改为一个全新的（如 <code>com.youyue.demo.new</code>），让 Xcode 自动为所有扩展生成新的、正确的前缀ID。</li>
 </ol>
 <p><strong>避坑点</strong>：当修改了 Bundle Identifier 但错误依旧时，首先怀疑 <strong><code>Info.plist</code> 硬编码</strong>和<strong>构建缓存</strong>。进行最彻底的清理是打破僵局的关键。</p>
-<h3 id="问题七：Metal-工具链或模拟器运行时缺失"><a href="#问题七：Metal-工具链或模拟器运行时缺失" class="headerlink" title="问题七：Metal 工具链或模拟器运行时缺失"></a>问题七：Metal 工具链或模拟器运行时缺失</h3><p><strong>报错信息</strong>：<br><code>Encountered an error fetching additional Metal toolchain search paths. Error=...assetNotDownloaded(17C48)</code></p>
+<h4 id="问题七：Metal-工具链或模拟器运行时缺失"><a href="#问题七：Metal-工具链或模拟器运行时缺失" class="headerlink" title="问题七：Metal 工具链或模拟器运行时缺失"></a><font color='red'>问题七：Metal 工具链或模拟器运行时缺失</font></h4><p><strong>报错信息</strong>：<br><code>Encountered an error fetching additional Metal toolchain search paths. Error=...assetNotDownloaded(17C48)</code></p>
 <p><strong>问题原因</strong>：<br>Xcode 在编译或运行项目时，需要特定的模拟器运行时组件来支持图形（Metal）等功能，但这些组件没有安装。这在使用较新 iOS 版本模拟器（如 iOS 17）时可能出现。</p>
-<p><strong>解决方案</strong>：</p>
+<p><font color='green'><strong>解决方案</strong>：</font></p>
 <ol>
 <li><strong>在 Xcode 中检查并安装</strong>：<ul>
 <li>打开 <strong>Xcode → Settings… (Preferences)</strong>。</li>
@@ -324,7 +315,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://kziwws.github.io/2025/12/26/technology20251226182457/" data-id="cmjryqh6m007fard67v2z3g9r" class="article-share-link" data-share="baidu" data-title="Element X iOS 项目开发环境配置与编译打包完全指南：从依赖安装到签名配置的完整避坑记录">分享到</a>
+        <a data-url="https://kziwws.github.io/2025/12/26/technology20251226182457/" data-id="cmjrz6hcc006yjid6a8vpfvpc" class="article-share-link" data-share="baidu" data-title="Element X iOS 项目开发环境配置与编译打包完全指南：从依赖安装到签名配置的完整避坑记录">分享到</a>
       
 
     
